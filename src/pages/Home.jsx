@@ -5,6 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { useState, useEffect } from "react";
 import App from "../App";
 
+//componenets
+import Button from "../components/Button";
+
 //Assets
 import achiraImage from "../assets/achira.png";
 import overlayImage from "../assets/halftone_overlay.jpg";
@@ -215,7 +218,7 @@ const Home = () => {
       </div>
 
       <div className="h-screen flex flex-col flex-wrap top-0 left-0 z-20">
-        <h1
+        <div><h1
           id="achira"
           className="text-9xl font-bold text-copy-primary font-ibm top-0 mx-5 mt-5 flex flex-wrap"
         >
@@ -227,7 +230,11 @@ const Home = () => {
           className="text-9xl font-bold text-copy-primary font-ibm mx-5"
         >
           SILVA
-        </h1>
+        </h1></div>
+
+        <div className="m-7 flex items-start">
+          <p className="font-inter text-copy-primary text-3xl">Hi! I'm Achira Silva. I am a creative indiviual and etc....</p>
+        </div>
 
         <div className="flex items-center justify-center w-[100]">
           <div className="w-1/4">
@@ -244,9 +251,7 @@ const Home = () => {
         </div>
       </div>
 
-      <button className="p-5 bg-slate-500 rounded-lg m-5 text-white">
-        Test Button
-      </button>
+      <Button />
 
       <a>frgtrgtg</a>
     </div>

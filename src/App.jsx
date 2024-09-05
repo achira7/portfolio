@@ -81,8 +81,8 @@ function App() {
         </div>
       <NavBar className="flex flex-wrap z-10" />
       <Routes>
-        <Route className="flex flex-wrap -z-10" path="/" element={<Home />} />
-        <Route className="flex flex-wrap -z-10" path="/projects" element={<Projects />} />
+        <Route className="flex flex-wrap" path="/" element={<Home />} />
+        <Route className="flex flex-wrap" path="/projects" element={<Projects />} />
       </Routes>
     </Router>
   );
