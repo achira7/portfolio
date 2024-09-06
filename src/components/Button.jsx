@@ -1,15 +1,19 @@
-import React from 'react'
-import gif from "../assets/23.gif"
+import React from 'react';
 
-const Button = () => {
+const Button = ({ name, link }) => {
+  const isLinkProvided = !!link; 
+
   return (
-    <button
-        type=""
-        className="bg-slate-400 border-2 border-slate-700 rounded-lg font-inter px-4 py-2 m-5">
-            Sample Button
-    </button>
+    <a href={isLinkProvided ? link : '#'} target={isLinkProvided ? "_blank" : "_self"}>
+      <button
+        type="button"
+        className={`bg-slate-400 border-2 border-slate-700 rounded-lg font-inter px-4 py-2 m-5 z-10 ${!isLinkProvided && 'opacity-50 cursor-not-allowed'}`}
+        disabled={!isLinkProvided} 
+      >
+        {name}
+      </button>
+    </a>
+  );
+};
 
-  )
-}
-
-export default Button
+export default Button;

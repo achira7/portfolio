@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { useLayoutEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { useState, useEffect } from "react";
-import App from "../App";
 
 //componenets
 import Button from "../components/Button";
@@ -115,39 +114,16 @@ const Home = () => {
           stagger: 0.4,
           ease: "power1.in",
         });
-      gsap.to("#circle", {
-        rotation: 360,
-        duration: 4,
-        ease: "linear",
-        repeat: -1,
-        yoyo: true,
-      });
-
-      gsap.to("#circle", {
-        yPercent: "-100",
-        duration: 2,
-        ease: "power1.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
-
-      gsap.to("#circle", {
-        xPercent: "79",
-        duration: 3,
-        ease: "power1.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
     }, container);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className="light-mode bg-background)" ref={container}>
+    <div className="light-mode bg-background" ref={container}>
       <div
         id="cover"
-        className="h-full bg-[radial-gradient(169.40%_189.55%_at_94.76%_6.29%,rgba(10,10,10,10.00)_100%,rgba(255,255,255,0.00)_100%)] w-full absolute top-0 left-0 z-20 flex justify-center items-center "
+        className="h-full bg-[radial-gradient(169.40%_189.55%_at_94.76%_6.29%,rgba(10,10,10,10.00)_100%,rgba(255,255,255,0.00)_100%)] w-full absolute top-0 left-0 flex justify-center items-center "
       >
         <div className="flex flex-row">
           <p id="welcome-1" className="text-9xl font-bold text-white font-ibm">
@@ -233,7 +209,9 @@ const Home = () => {
         </h1></div>
 
         <div className="m-7 flex items-start">
-          <p className="font-inter text-copy-primary text-3xl">Hi! I'm Achira Silva. I am a creative indiviual and etc....</p>
+          <p className="font-space text-copy-primary text-3xl">
+            Hi! I'm Achira Silva. I am a creative indiviual and etc....
+          </p>
         </div>
 
         <div className="flex items-center justify-center w-[100]">
@@ -251,7 +229,7 @@ const Home = () => {
         </div>
       </div>
 
-      <Button />
+      <Button name="Test"/>
 
       <a>frgtrgtg</a>
     </div>

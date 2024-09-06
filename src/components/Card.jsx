@@ -1,21 +1,79 @@
 import React from "react";
+import Button from "./Button";
+import { languages as langLogos } from "../logos";
+import { libraries as libLogos } from "../logos";
 
-const Card = () => {
+const Card = ({
+  type,
+  projectName,
+  description,
+  gitLink,
+  demoLink,
+  languages,
+  libraries,
+}) => {
   return (
-    <div className="m-5">
-      <a
-        href="#"
-        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-      >
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Noteworthy technology acquisitions 2021
-        </h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so
-          far, in reverse chronological order.
-        </p>
-      </a>
-    </div>
+    <>
+      {type === "project" ? (
+        <div className="m-5 dark-mode bg-card rounded-xl">
+          <div className="p-4 z-10">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-copy-primary">
+              {projectName}
+            </h5>
+            <p className="font-normal text-copy-secondary">{description}</p>
+
+            <div className="flex flex-initial">
+              <div className="flex mx-5 my-2">
+                {Array.isArray(languages) && languages.length > 0 && (
+                  <div className="my-2">
+                    {languages.map((lang) => (
+                      <div
+                        key={lang}
+                        className="flex items-center text-copy-primary"
+                      >
+                        <img
+                          src={langLogos[lang]}
+                          alt={lang}
+                          className="w-6 h-6 mr-2"
+                        />
+                        <span>{lang}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex mx-5 my-2">
+                {Array.isArray(libraries) && libraries.length > 0 && (
+                  <div>
+                    {libraries.map((lib) => (
+                      <div
+                        key={lib}
+                        className="my-2 flex items-center text-copy-primary"
+                      >
+                        <img
+                          src={libLogos[lib]}
+                          alt={lib}
+                          className="w-6 h-6 mr-2"
+                        />
+                        <span className="capitalize">{lib}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <Button link={gitLink} name={"Git Repo"} />
+            <Button link={demoLink} name={"Live Demo"} />
+          </div>
+        </div>
+      ) : (
+        <div>
+          <p>Other</p>
+        </div>
+      )}
+    </>
   );
 };
 
