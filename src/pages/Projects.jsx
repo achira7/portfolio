@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
-import { languages as logos } from "../logos"; 
+import { languages as logos } from "../logos";
+import Button from "../components/Button";
+import DownloadCV from "../components/DownloadCV";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const baseLink =
+    "https://docs.google.com/document/d/1eKwEBL9Xr84v6u5D0hchfnOq_chXJ_VXyeUHkQWE4fU/export?format=";
+  const downloadLink = `${baseLink}${cvFormat}`;
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -22,7 +28,7 @@ const Projects = () => {
           })
         );
         setRepos(reposWithLanguages);
-        console.log(repos)
+        console.log(repos);
       } catch (error) {
         console.error("Error fetching data from GitHub:", error);
       }
@@ -45,6 +51,8 @@ const Projects = () => {
 
   return (
     <div className="light-mode bg-background">
+<DownloadCV />
+
       <div>
         <h1
           id="achira"
