@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import ChatBot from "./components/ChatBot";
 
 function App() {
   const flairRef = useRef(null);
@@ -83,6 +84,7 @@ function App() {
       <Routes>
         <Route className="flex flex-wrap z-10" path="/" element={<Home />} />
         <Route className="flex flex-wrap z-10" path="/projects" element={<Projects />} />
+        <Route className="flex flex-wrap z-10" path="/contact" element={<ChatBot />} />
       </Routes>
     </Router>
   );
