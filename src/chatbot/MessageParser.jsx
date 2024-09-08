@@ -8,6 +8,7 @@ class MessageParser {
     // Handle the user's message and trigger the action to send it to the API
     this.actionProvider.handleUserMessage(message);
   }
+
 }
 
 export default MessageParser;

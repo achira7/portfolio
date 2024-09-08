@@ -7,7 +7,7 @@ import Chat from "../components/Chat";
 //import Chatbot from "react-chatbot-kit";
 import ChatBot from "../components/ChatBot";
 
-import {CloseIcon, ChatIcon} from "../assets/icons/icons";
+import {CloseIcon, ChatIcon, AiChat, UpArrow} from "../assets/icons/icons";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
@@ -59,7 +59,13 @@ const Projects = () => {
         onClick={() => setIsChatOpen(true)}
         className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full"
       >
-        <ChatIcon />
+        <ChatIcon/>
+      </button>
+
+      <button
+        className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full mx-8"
+      >
+        <UpArrow />
       </button>
       
       <div>
