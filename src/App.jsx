@@ -76,7 +76,7 @@ function App() {
       <div
       ref={flairRef}
         id="cursor"
-        className="flair w-[100px] h-[100px] rounded-full fixed top-0 left-0 pointer-events-none z-30 bg-gradient-to-r from-orange-500 to-orange-300 mix-blend-difference">
+        className="flair w-[100px] h-[100px] rounded-full fixed top-0 left-0 pointer-events-none z-50 bg-gradient-to-r from-orange-500 to-orange-300 mix-blend-difference">
 
         </div>
         </div>

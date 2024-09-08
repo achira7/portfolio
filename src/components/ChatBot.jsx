@@ -12,9 +12,9 @@ const ChatBot = () => {
     <div className="bg-background z-10  ">
       This is the chatbot
       <Chatbot
-        config={config}
-        messageParser={MessageParser}
-        actionProvider={ActionProvider}
+        config={config} 
+        actionProvider={ActionProvider} 
+        messageParser={MessageParser} 
       />
     </div>
   )

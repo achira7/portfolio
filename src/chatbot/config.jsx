@@ -1,18 +1,15 @@
-import { createChatBotMessage } from 'react-chatbot-kit';
-
-const botName = "AchiraBot";
+// src/config.js
+import { createChatBotMessage } from "react-chatbot-kit";
 
 const config = {
-  botName: botName,
-  initialMessages: [
-    createChatBotMessage(`Hello! I'm ${botName}, and I'm here to answer any questions you have about Achira's skills, projects, and experience.`)
-  ],
+  initialMessages: [createChatBotMessage("Hi! Ask me anything about Achira.")],
+  botName: "AchiraBot",
   customStyles: {
     botMessageBox: {
-      backgroundColor: "#1F2937",
+      backgroundColor: "#376B7E",
     },
     chatButton: {
-      backgroundColor: "#1F2937",
+      backgroundColor: "#376B7E",
     },
   },
 };

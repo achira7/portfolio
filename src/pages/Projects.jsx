@@ -3,14 +3,16 @@ import Card from "../components/Card";
 import { languages as logos } from "../logos";
 import Button from "../components/Button";
 import DownloadCV from "../components/DownloadCV";
+import Chat from "../components/Chat";
+//import Chatbot from "react-chatbot-kit";
+import ChatBot from "../components/ChatBot";
+
+import {CloseIcon, ChatIcon} from "../assets/icons/icons";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-
-  const baseLink =
-    "https://docs.google.com/document/d/1eKwEBL9Xr84v6u5D0hchfnOq_chXJ_VXyeUHkQWE4fU/export?format=";
-  const downloadLink = `${baseLink}${cvFormat}`;
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -51,8 +53,15 @@ const Projects = () => {
 
   return (
     <div className="light-mode bg-background">
-<DownloadCV />
+      <DownloadCV />
 
+      <button
+        onClick={() => setIsChatOpen(true)}
+        className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full"
+      >
+        <ChatIcon />
+      </button>
+      
       <div>
         <h1
           id="achira"
@@ -106,6 +115,22 @@ const Projects = () => {
             ))}
         </div>
       </div>
+
+            {/* ChatBot Overlay */}
+            {isChatOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-50 z-30">
+          <div className="relative w-96 h-auto p-4 bg-white rounded-lg">
+            <button
+              onClick={() => setIsChatOpen(false)}
+              className="absolute top-2 right-2 text-red-500"
+            >
+              <CloseIcon/>
+            </button>
+            <ChatBot />
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
