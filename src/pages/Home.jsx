@@ -120,7 +120,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="light-mode bg-background" ref={container}>
+    <div className="bg-background" ref={container}>
       <div
         id="cover"
         className="h-full bg-[radial-gradient(169.40%_189.55%_at_94.76%_6.29%,rgba(10,10,10,10.00)_100%,rgba(255,255,255,0.00)_100%)] w-full absolute top-0 left-0 flex justify-center items-center "

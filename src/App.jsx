@@ -9,6 +9,13 @@ import ChatBot from "./components/ChatBot";
 function App() {
   const flairRef = useRef(null);
   const cursorContainer = useRef(null)
+  const mode = 'light-mode'
+
+  useEffect(() => {
+    const mode = localStorage.getItem('mode');
+
+  }, []);
+
 
   useEffect(() => {
     gsap.set(flairRef.current, { xPercent: -50, yPercent: -50, scale: 1 });
@@ -24,7 +31,7 @@ function App() {
     const handleMouseEnter = () => {
       gsap.to(flairRef.current, {
         clipPath: "polygon(40% 40%, 60% 100%, 100% 60%)",
-        scale: 1.7,
+        scale: 0.8,
         duration: 0.3,
         ease: "power2.inOut",
       });
@@ -33,7 +40,7 @@ function App() {
     const handleMouseLeave = () => {
       gsap.to(flairRef.current, {
         clipPath: "circle(45% at 50% 50%)",
-        scale: 1,
+        scale: 0.5,
         duration: 0.3,
         ease: "power2.inOut",
       });
@@ -80,11 +87,11 @@ function App() {
 
         </div>
         </div>
-      <NavBar className="flex flex-wrap z-20" />
+      <NavBar className={`flex flex-wrap z-20 ${mode}`} />
       <Routes>
-        <Route className="flex flex-wrap z-10" path="/" element={<Home />} />
-        <Route className="flex flex-wrap z-10" path="/projects" element={<Projects />} />
-        <Route className="flex flex-wrap z-10" path="/contact" element={<ChatBot />} />
+        <Route className={`flex flex-wrap z-10 ${mode}`} path="/" element={<Home />} />
+        <Route className={`flex flex-wrap z-10 ${mode}`} path="/projects" element={<Projects />} />
+        <Route className={`flex flex-wrap z-10 ${mode}`} path="/contact" element={<ChatBot />} />
       </Routes>
     </Router>
   );

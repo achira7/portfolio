@@ -14,7 +14,7 @@ button, a{
 .light-mode {
   --background: 245, 245, 245;
   --border: 212, 212, 212;
-  --card: 255, 255, 255;
+  --card: 240,236,236;
 
   --copy-primary: 34,67,120,255;
   --copy-secondary: 115, 115, 115;
@@ -29,7 +29,7 @@ button, a{
 .dark-mode {
   --background: 17, 17, 17;
   --border: 38, 38, 38;
-  --card: 30, 30, 30;
+  --card: 18, 37, 68;
 
   --copy-primary: 250, 250, 250;
   --copy-secondary: 115, 115, 115;

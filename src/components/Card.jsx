@@ -15,8 +15,8 @@ const Card = ({
   return (
     <>
       {type === "project" ? (
-        <div className="m-5 dark-mode bg-card rounded-xl">
-          <div className="p-4 z-10">
+        <div className="m-5 bg-card shadow-lg border-copy-primary z-10">
+          <div className="p-4">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-copy-primary">
               {projectName}
             </h5>

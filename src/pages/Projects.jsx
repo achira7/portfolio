@@ -7,6 +7,8 @@ import Chat from "../components/Chat";
 //import Chatbot from "react-chatbot-kit";
 import ChatBot from "../components/ChatBot";
 
+import DarkMode from "../components/DarkMode/DarkMode.jsx";
+
 import {CloseIcon, ChatIcon, AiChat, UpArrow} from "../assets/icons/icons";
 
 const Projects = () => {
@@ -52,8 +54,10 @@ const Projects = () => {
   );
 
   return (
-    <div className="light-mode bg-background">
+    <div className="bg-background">
       <DownloadCV />
+
+      <DarkMode />
 
       <button
         onClick={() => setIsChatOpen(true)}

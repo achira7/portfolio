@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 class ActionProvider {
-  constructor(createChatBotMessage, setStateFunc, api_key) {
+  constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
     this.api_key = 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;
