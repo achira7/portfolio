@@ -15,10 +15,15 @@ export default {
       colors: {
         background: "rgba(var(--background))",
         border: "rgba(var(--border))",
-        card: "rgba(var(--card))",
+        "card-primary": "rgba(var(--card-primary))",
+        "card-secondary": "rgba(var(--card-secondary))",
 
-        "copy-primary": "rgba(var(--copy-primary))",
-        "copy-secondary": "rgba(var(--copy-secondary))"
+        "color-primary": "rgba(var(--color-primary))",
+        "color-secondary": "rgba(var(--color-secondary))",
+
+        "color-green": "rgba(var(--color-green))",
+        "color-red": "rgba(var(--color-red))",
+        "color-yellow": "rgba(var(--color-yellow))",
       },
     },
   },

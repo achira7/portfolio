@@ -5,7 +5,7 @@ class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
-    this.api_key = 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;
+    // this.api_key = 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;
   }
 
   sendMessageToAPI = async (message) => {

@@ -12,7 +12,7 @@ const DownloadCV = () => {
   return (
     <div>
       <div className="flex-initial">
-        Get a Copy of my Resume
+        <span className="text-color-primary">Get a Copy of my Resume</span>
         <div className="flex">
           <input
             type="radio"

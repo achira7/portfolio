@@ -15,12 +15,12 @@ const Card = ({
   return (
     <>
       {type === "project" ? (
-        <div className="m-5 bg-card shadow-lg border-copy-primary z-10">
+        <div className="m-5 bg-card-primary shadow-lg border-color-primary z-10">
           <div className="p-4">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-copy-primary">
+            <h5 className="mb-2 text-2xl font-inter font-bold tracking-tight text-color-primary">
               {projectName}
             </h5>
-            <p className="font-normal text-copy-secondary">{description}</p>
+            <p className="font-normal text-color-secondary">{description}</p>
 
             <div className="flex flex-initial">
               <div className="flex mx-5 my-2">
@@ -29,14 +29,16 @@ const Card = ({
                     {languages.map((lang) => (
                       <div
                         key={lang}
-                        className="flex items-center text-copy-primary"
+                        className="my-2 flex items-center text-color-primary "
                       >
+                        <div className="bg-white p-1 mr-2">
                         <img
                           src={langLogos[lang]}
                           alt={lang}
-                          className="w-6 h-6 mr-2"
+                          className="w-6 h-6 "
                         />
-                        <span>{lang}</span>
+                        </div>
+                        <span className="capitalize">{lang}</span>
                       </div>
                     ))}
                   </div>
@@ -45,17 +47,19 @@ const Card = ({
 
               <div className="flex mx-5 my-2">
                 {Array.isArray(libraries) && libraries.length > 0 && (
-                  <div>
+                  <div  className="my-2">
                     {libraries.map((lib) => (
                       <div
                         key={lib}
-                        className="my-2 flex items-center text-copy-primary"
+                        className="my-2 flex items-center text-color-primary"
                       >
+                        <div className="bg-white p-1 mr-2">
                         <img
                           src={libLogos[lib]}
                           alt={lib}
-                          className="w-6 h-6 mr-2"
+                          className="w-6 h-6"
                         />
+                        </div>
                         <span className="capitalize">{lib}</span>
                       </div>
                     ))}
@@ -64,8 +68,8 @@ const Card = ({
               </div>
             </div>
 
-            <Button link={gitLink} name={"Git Repo"} />
-            <Button link={demoLink} name={"Live Demo"} />
+            <Button link={gitLink} name={"Git Repo"} color={`stone-500`}/>
+            <Button link={demoLink} name={"Live Demo"} color={`card-secondary`} />
           </div>
         </div>
       ) : (

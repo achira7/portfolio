@@ -9,7 +9,7 @@ import ChatBot from "../components/ChatBot";
 
 import DarkMode from "../components/DarkMode/DarkMode.jsx";
 
-import {CloseIcon, ChatIcon, AiChat, UpArrow} from "../assets/icons/icons";
+import {CloseIcon, ChatIcon, UpArrow} from "../assets/icons/icons";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
@@ -75,7 +75,7 @@ const Projects = () => {
       <div>
         <h1
           id="achira"
-          className="text-7xl font-bold text-copy-primary font-ibm top-0 mx-5 mt-5 flex flex-wrap"
+          className="text-7xl font-bold text-color-primary font-ibm top-0 mx-5 mt-5 flex flex-wrap"
         >
           Projects
         </h1>
@@ -83,7 +83,7 @@ const Projects = () => {
 
       <div className="flex text-3xl p-5 align-middle items-center">
         <svg
-          className="text-copy-primary mr-3"
+          className="text-color-primary mr-3"
           xmlns="http://www.w3.org/2000/svg"
           width="30"
           height="30"

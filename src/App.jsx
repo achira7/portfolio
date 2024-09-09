@@ -1,20 +1,32 @@
-import { useRef, useEffect, useLayoutEffect } from "react";
+import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import ChatBot from "./components/ChatBot";
+import Test from "./pages/test";
 
 function App() {
   const flairRef = useRef(null);
   const cursorContainer = useRef(null)
-  const mode = 'light-mode'
+  const [mode, setMode] = useState('light-mode');
 
   useEffect(() => {
-    const mode = localStorage.getItem('mode');
-
+    const storedMode = localStorage.getItem('mode') || 'light-mode';
+    setMode(storedMode); 
+    document.body.classList.add(storedMode); 
   }, []);
+
+  const toggleMode = () => {
+    const newMode = mode === 'light-mode' ? 'dark-mode' : 'light-mode'; // Toggle between modes
+    setMode(newMode);
+    document.body.classList.remove(mode); // Remove old mode class
+    document.body.classList.add(newMode); 
+    localStorage.setItem('mode', newMode); 
+  };
 
 
   useEffect(() => {
@@ -92,6 +104,7 @@ function App() {
         <Route className={`flex flex-wrap z-10 ${mode}`} path="/" element={<Home />} />
         <Route className={`flex flex-wrap z-10 ${mode}`} path="/projects" element={<Projects />} />
         <Route className={`flex flex-wrap z-10 ${mode}`} path="/contact" element={<ChatBot />} />
+        <Route className={`flex flex-wrap z-10 ${mode}`} path="/test" element={<Test />} />
       </Routes>
     </Router>
   );

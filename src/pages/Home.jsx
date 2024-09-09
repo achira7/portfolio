@@ -4,8 +4,10 @@ import { useLayoutEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { useState, useEffect } from "react";
 
+
 //componenets
 import Button from "../components/Button";
+import GradientComponent from "../components/GradientComponent";
 
 //Assets
 import achiraImage from "../assets/achira.png";
@@ -121,10 +123,14 @@ const Home = () => {
 
   return (
     <div className="bg-background" ref={container}>
+      
       <div
         id="cover"
-        className="h-full bg-[radial-gradient(169.40%_189.55%_at_94.76%_6.29%,rgba(10,10,10,10.00)_100%,rgba(255,255,255,0.00)_100%)] w-full absolute top-0 left-0 flex justify-center items-center "
+        // className="h-full bg-[radial-gradient(169.40%_189.55%_at_94.76%_6.29%,rgba(10,10,10,10.00)_100%,rgba(255,255,255,0.00)_100%)] w-full absolute top-0 left-0 flex justify-center items-center"
+        className="h-full  w-full absolute top-0 left-0 flex justify-center items-center"
       >
+
+
         <div className="flex flex-row">
           <p id="welcome-1" className="text-9xl font-bold text-white font-ibm">
             W
@@ -174,10 +180,13 @@ const Home = () => {
             className="w-56 h-56 bg-[radial-gradient(169.40%_189.40%_at_94.76%_6.29%,rgba(10,10,10,10.40)_0%,rgba(255,255,255,0.00)_100%)] rounded-full absolute "
           ></div>
         </div>
+
+        
+
       </div>
       <div
         id="intro-slider"
-        className="h-screen p-10 bg-gray-50 absolute top-0 left-0 font-ibm w-full flex flex-col gap-10 tracking-tight z-10"
+        className="h-screen AddAnimationHere p-10 bg-gray-50 absolute top-0 left-0 font-ibm w-full flex flex-col gap-10 tracking-tight z-10"
       >
         <h1 id="title-1" className="text-9xl">
           Software Engineer
@@ -193,28 +202,43 @@ const Home = () => {
         </h1>
       </div>
 
+    
+
       <div className="h-screen flex flex-col flex-wrap top-0 left-0 z-20">
         <div><h1
           id="achira"
-          className="text-9xl font-bold text-copy-primary font-ibm top-0 mx-5 mt-5 flex flex-wrap"
+          className="text-9xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap"
         >
           ACHIRA
         </h1>
 
         <h1
           id="silva"
-          className="text-9xl font-bold text-copy-primary font-ibm mx-5"
+          className="text-9xl font-bold text-color-secondary font-inter mx-5"
         >
           SILVA
         </h1></div>
 
         <div className="m-7 flex items-start">
-          <p className="font-space text-copy-primary text-3xl">
+          <p className="font-space text-color-primary text-3xl">
             Hi! I'm Achira Silva. I am a creative indiviual and etc....
           </p>
         </div>
 
+        <div className="flex bg-color-green">
+          To Projects
+        </div>
+
+        <div className="flex bg-color-yellow">
+          To Music
+        </div>
+
+        <div className="flex bg-color-red">
+          To Games
+        </div>
+
         <div className="flex items-center justify-center w-[100]">
+        <GradientComponent colorA={'#341abc'} colorB={'#341abc'} colorC={'#341abc'} />
           <div className="w-1/4">
             <img src={achiraImage} className="absolute w-[200] top-0 grayscale"/>
             <img
@@ -231,7 +255,7 @@ const Home = () => {
 
       <Button name="Test"/>
 
-      <a>frgtrgtg</a>
+      
     </div>
   );
 };
