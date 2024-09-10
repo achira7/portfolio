@@ -16,35 +16,60 @@ button, a{
 }
 
 .light-mode {
-  --background: 240, 240, 240, 1;
+  --background: 236,236,236, 1;
   --border: 212, 212, 212, 1;
-  --card-primary: 240,236,236, 1;
+
+  --card-primary-top: 237,237,237, 1;
+  --card-primary-bottom: 209,209,209, 1;
+  --card-primary-border: 185,185,185, 1;
+
   --card-secondary: 106,118,146, 1;
 
-  --color-primary: 9, 28, 65, 1; 
-  --color-secondary: 115, 115, 115, 1;
+  --color-primary: 14, 42, 113, 1; 
+  --color-secondary: 38,38,38, 1;
+  --color-tertiary:  121, 120, 120, 1;
 
-  --color-green: 177,238,128, 1;
-  --color-red: 255, 122, 115, 1;
-  --color-yellow: 255,215,64, 1;
+  --color-green: 53,199,90, 1;
+  --color-red: 255,59,47, 1;
+  --color-yellow: 255,204,0, 1;
   
+  --border-primary:41, 126, 255, 1;
+  --border-green: 111, 204, 37, 1;
+  --border-red:204, 37, 37, 1;
+  --border-yellow:255, 241, 41, 1;
+
+  --default-button: 14, 42, 113, 1; 
+  --button-text:236,236,236, 1;
+
   background: rgba(var(--background));
 }
 
 
-
 .dark-mode {
-  --background: 31, 31, 31, 1;
+  --background: 50, 50, 50, 1;
   --border: 38, 38, 38, 1;
-  --card-primary: 52,55,63, 1;
+
+  --card-primary-top: 80,78,80, 255;
+  --card-primary-bottom: 65, 63, 64, 255;
+  --card-primary-border: 25, 25, 25, 255;
+  
   --card-secondary: 106,118,146, 1;
 
-  --color-primary: 250, 250, 250, 1;
-  --color-secondary: 147, 202, 252, 1;
+  --color-primary: 64,198,223, 1;
+  --color-secondary: 247, 249, 255, 1;
+  --color-tertiary: 177, 177, 177, 1;
 
-  --color-green: 177,238,128, 1;
-  --color-red: 255, 122, 115, 1;
-  --color-yellow: 255,215,64, 1;
+  --color-green: 47,209,88, 1;
+  --color-red: 255,60,68, 1;
+  --color-yellow: 255,214,10, 1;
+
+  --border-primary:41, 126, 255, 1;
+  --border-green: 111, 204, 37, 1;
+  --border-red:204, 37, 37, 1;
+  --border-yellow:255, 241, 41, 1;
+
+  --default-button: 106, 118, 146, 1;
+  --button-text: 50, 50, 50, 1;
 
   background: rgba(var(--background));
 }
@@ -95,24 +120,6 @@ button, a{
 }
 
 
-
-/* @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.AddAnimationHere {
-  background: linear-gradient(270deg, #ff7e5f, #feb47b, #6a85b6, #bac8e0);
-  background-size: 800% 800%;
-  animation: gradient 15s ease infinite;
-} */
 
 @tailwind base;
 @tailwind components;

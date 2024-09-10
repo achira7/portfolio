@@ -10,10 +10,12 @@ const DownloadCV = () => {
   const downloadLink = `${baseLink}${cvFormat}`;
 
   return (
-    <div>
-      <div className="flex-initial">
-        <span className="text-color-primary">Get a Copy of my Resume</span>
-        <div className="flex">
+    <div className="inline-block m-5 border-card-primary-border flex-wrap rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-lg">
+      <div className="items-center content-center pt-6 pb-5 px-7">
+        <span className="text-color-primary font-inter text-2xl font-semibold">Get a Copy of my Resume</span>
+        <div className=" flex flex-row mt-2 items-center justify-center">
+
+        <div className="flex mx-3">
           <input
             type="radio"
             name="cv_format"
@@ -21,9 +23,9 @@ const DownloadCV = () => {
             checked={cvFormat === "pdf"}
             onChange={() => setCvFormat("pdf")}
           />
-          <span className="font-inter">PDF</span>
+          <span className="font-inter text-color-secondary ml-2">PDF</span>
         </div>
-        <div className="flex">
+        <div className="flex mx-3">
           <input
             type="radio"
             name="cv_format"
@@ -31,9 +33,12 @@ const DownloadCV = () => {
             checked={cvFormat === "docx"}
             onChange={() => setCvFormat("docx")}
           />
-          <span className="font-inter">Docs</span>
+          <span className="font-inter text-color-secondary ml-2">Docs</span>
         </div>
-        <div className="flex">
+
+        </div>
+        
+        <div className="flex items-center justify-center">
           <Button
             name={`Download as a ${cvFormat.toUpperCase()}`}
             link={downloadLink}

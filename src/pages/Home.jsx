@@ -45,13 +45,13 @@ const Home = () => {
       t1.from(
         [
           "#welcome-1",
-          "#welcome-2",
-          "#welcome-3",
-          "#welcome-4",
-          "#welcome-5",
-          "#welcome-6",
-          "#welcome-7",
-          "#welcome-8",
+          // "#welcome-2",
+          // "#welcome-3",
+          // "#welcome-4",
+          // "#welcome-5",
+          // "#welcome-6",
+          // "#welcome-7",
+          // "#welcome-8",
         ],
         {
           opacity: 0,
@@ -64,14 +64,14 @@ const Home = () => {
         .to(
           [
             "#welcome-1",
-            "#welcome-2",
-            "#welcome-3",
-            "#welcome-4",
-            "#welcome-5",
-            "#welcome-6",
-            "#welcome-7",
-            "#welcome-8",
-          ],
+          //   "#welcome-2",
+          //   "#welcome-3",
+          //   "#welcome-4",
+          //   "#welcome-5",
+          //   "#welcome-6",
+          //   "#welcome-7",
+          //   "#welcome-8",
+           ],
           {
             opacity: 0,
             y: "-=50",
@@ -123,19 +123,19 @@ const Home = () => {
 
   return (
     <div className="bg-background" ref={container}>
-      
+      <div className="bg-indigo-700 w-full z-30"> </div>
       <div
         id="cover"
         // className="h-full bg-[radial-gradient(169.40%_189.55%_at_94.76%_6.29%,rgba(10,10,10,10.00)_100%,rgba(255,255,255,0.00)_100%)] w-full absolute top-0 left-0 flex justify-center items-center"
-        className="h-full  w-full absolute top-0 left-0 flex justify-center items-center"
+        className="h-full bg-sky-950  w-full absolute top-0 left-0 flex justify-center items-center"
       >
 
 
-        <div className="flex flex-row">
-          <p id="welcome-1" className="text-9xl font-bold text-white font-ibm">
-            W
+        <div className="flex flex-row z-30">
+          <p id="welcome-1" className="text-9xl font-bold text-slate-500 font-ibm">
+            WELCOME.
           </p>
-          <p id="welcome-2" className="text-9xl font-bold text-white font-ibm">
+          {/* <p id="welcome-2" className="text-9xl font-bold text-white font-ibm">
             E
           </p>
           <p id="welcome-3" className="text-9xl font-bold text-white font-ibm">
@@ -155,7 +155,7 @@ const Home = () => {
           </p>
           <p id="welcome-8" className="text-9xl font-bold text-white font-ibm">
             .
-          </p>
+          </p> */}
         </div>
 
         <div className="flex">
@@ -186,7 +186,7 @@ const Home = () => {
       </div>
       <div
         id="intro-slider"
-        className="h-screen AddAnimationHere p-10 bg-gray-50 absolute top-0 left-0 font-ibm w-full flex flex-col gap-10 tracking-tight z-10"
+        className="h-screen  p-10 bg-sky-500 absolute top-0 left-0 font-ibm w-full flex flex-col gap-10 tracking-tight z-10"
       >
         <h1 id="title-1" className="text-9xl">
           Software Engineer

@@ -21,9 +21,9 @@ function App() {
   }, []);
 
   const toggleMode = () => {
-    const newMode = mode === 'light-mode' ? 'dark-mode' : 'light-mode'; // Toggle between modes
+    const newMode = mode === 'light-mode' ? 'dark-mode' : 'light-mode'; 
     setMode(newMode);
-    document.body.classList.remove(mode); // Remove old mode class
+    document.body.classList.remove(mode); 
     document.body.classList.add(newMode); 
     localStorage.setItem('mode', newMode); 
   };
@@ -43,7 +43,7 @@ function App() {
     const handleMouseEnter = () => {
       gsap.to(flairRef.current, {
         clipPath: "polygon(40% 40%, 60% 100%, 100% 60%)",
-        scale: 0.8,
+        scale: 1.4,
         duration: 0.3,
         ease: "power2.inOut",
       });
@@ -52,7 +52,7 @@ function App() {
     const handleMouseLeave = () => {
       gsap.to(flairRef.current, {
         clipPath: "circle(45% at 50% 50%)",
-        scale: 0.5,
+        scale: 1,
         duration: 0.3,
         ease: "power2.inOut",
       });
@@ -60,7 +60,7 @@ function App() {
 
     window.addEventListener("mousemove", handleMouseMove);
     
-    const links = document.querySelectorAll("li, a, button");
+    const links = document.querySelectorAll("li, a, button, input");
     links.forEach((link) => {
       link.addEventListener("mouseenter", handleMouseEnter);
       link.addEventListener("mouseleave", handleMouseLeave);
@@ -95,7 +95,7 @@ function App() {
       <div
       ref={flairRef}
         id="cursor"
-        className="flair w-[100px] h-[100px] rounded-full fixed top-0 left-0 pointer-events-none z-50 bg-gradient-to-r from-orange-500 to-orange-300 mix-blend-difference">
+        className="flair w-[50px] h-[50px] rounded-full fixed top-0 left-0 pointer-events-none z-50 bg-gradient-to-r from-orange-500 to-orange-300 mix-blend-difference">
 
         </div>
         </div>

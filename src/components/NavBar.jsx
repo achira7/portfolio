@@ -22,7 +22,7 @@ const NavBar = () => {
             <li
               key={id}
               onClick={() => navigate(url)}
-              className="text-color-primary text-5xl font-inter font-bold mx-5 my-2 py-3 px-4 z-10"
+              className="text-color-primary text-4xl font-inter font-bold mx-5 my-2 py-3 px-4 z-10"
               style={{
                 backgroundColor: "transparent",
                 position: "relative",

@@ -130,21 +130,25 @@ export const Sun = () => (
   </svg>
 );
 
-export const CloseIcon = () => (
+export const CloseIcon = ({ className }) => (
   <svg
+    fill="currentColor"
+    className={`${className}`}
+    version="1.1"
+    id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="feather feather-x"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 512 512"
+    xmlSpace="preserve"
   >
-    <line x1="18" y1="6" x2="6" y2="18"></line>
-    <line x1="6" y1="6" x2="18" y2="18"></line>
+    <g>
+      <g>
+        <polygon
+          points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512 
+			512,452.922 315.076,256 		"
+        />
+      </g>
+    </g>
   </svg>
 );
 
@@ -165,100 +169,36 @@ export const ChatIcon = () => (
   </svg>
 );
 
-export const AiChat = () => (
+export const SearchIcon = ({ className }) => (
   <svg
+    className={`${className}`} // Apply dynamic className for sizing and color
+    viewBox="0 0 512 512"
+    fill="currentColor" // This uses the current text color for fill
     xmlns="http://www.w3.org/2000/svg"
-    version="1.1"
-    width="50"
-    height="50"
-    viewBox="0 0 256 256"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    xmlSpace="preserve"
   >
-    <g
-      style={{
-        stroke: "none",
-        strokeWidth: 2,
-        strokeDasharray: "none",
-        strokeLinecap: "butt",
-        strokeLinejoin: "miter",
-        strokeMiterlimit: 10,
-        fill: "none",
-        fillRule: "nonzero",
-        opacity: 1,
-      }}
-      transform="translate(40.541 50.503) scale(1.93 1.93)"
-    >
-      <path
-        d="M 35.665 87.065 c -0.12 0 -0.241 -0.021 -0.358 -0.066 c -0.387 -0.147 -0.642 -0.52 -0.642 -0.934 V 66.268 H 7.106 C 3.188 66.268 0 63.08 0 59.162 V 10.041 c 0 -3.918 3.188 -7.106 7.106 -7.106 h 75.788 c 3.919 0 7.106 3.188 7.106 7.106 v 49.122 c 0 3.918 -3.188 7.105 -7.106 7.105 H 54.781 L 36.409 86.733 C 36.215 86.949 35.943 87.065 35.665 87.065 z M 7.106 4.935 C 4.291 4.935 2 7.225 2 10.041 v 49.122 c 0 2.815 2.291 5.105 5.106 5.105 h 28.559 c 0.552 0 1 0.447 1 1 v 18.187 L 53.591 64.6 c 0.189 -0.211 0.46 -0.332 0.744 -0.332 h 28.559 c 2.815 0 5.106 -2.29 5.106 -5.105 V 10.041 c 0 -2.815 -2.291 -5.106 -5.106 -5.106 H 7.106 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 2,
-          strokeLinecap: "round",
-          fill: "rgb(0,0,0)",
-        }}
-      />
-      <path
-        d="M 57.396 51.178 H 32.604 c -3.401 0 -6.167 -2.767 -6.167 -6.167 V 27.182 c 0 -3.401 2.767 -6.167 6.167 -6.167 h 24.791 c 3.401 0 6.168 2.767 6.168 6.167 v 17.829 C 63.563 48.411 60.797 51.178 57.396 51.178 z M 32.604 23.014 c -2.298 0 -4.167 1.87 -4.167 4.167 v 17.829 c 0 2.298 1.87 4.167 4.167 4.167 h 24.791 c 2.298 0 4.168 -1.869 4.168 -4.167 V 27.182 c 0 -2.298 -1.87 -4.167 -4.168 -4.167 H 32.604 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 1,
-          strokeLinecap: "round",
-          fill: "rgb(0,0,0)",
-        }}
-      />
-      <path
-        d="M 22.093 41.409 c -0.552 0 -1 -0.448 -1 -1 v -9.81 c 0 -0.552 0.448 -1 1 -1 s 1 0.448 1 1 v 9.81 C 23.093 40.961 22.646 41.409 22.093 41.409 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 2,
-          strokeLinecap: "round",
-          fill: "rgb(0,0,0)",
-        }}
-      />
-      <path
-        d="M 67.907 41.409 c -0.553 0 -1 -0.448 -1 -1 v -9.81 c 0 -0.552 0.447 -1 1 -1 s 1 0.448 1 1 v 9.81 C 68.907 40.961 68.46 41.409 67.907 41.409 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 2,
-          strokeLinecap: "round",
-          fill: "rgb(0,0,0)",
-        }}
-      />
-      <path
-        d="M 39.021 34.813 c -0.552 0 -1 -0.448 -1 -1 v -3.59 c 0 -0.552 0.448 -1 1 -1 s 1 0.448 1 1 v 3.59 C 40.021 34.365 39.573 34.813 39.021 34.813 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 2,
-          strokeLinecap: "round",
-          fill: "rgb(0,0,0)",
-        }}
-      />
-      <path
-        d="M 50.979 34.813 c -0.553 0 -1 -0.448 -1 -1 v -3.59 c 0 -0.552 0.447 -1 1 -1 s 1 0.448 1 1 v 3.59 C 51.979 34.365 51.532 34.813 50.979 34.813 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 2,
-          strokeLinecap: "round",
-          fill: "rgb(0,0,0)",
-        }}
-      />
-      <path
-        d="M 45 43.67 c -2.199 0 -4.397 -0.82 -6.58 -2.461 c -0.442 -0.332 -0.531 -0.958 -0.199 -1.4 c 0.332 -0.441 0.959 -0.531 1.4 -0.199 c 3.62 2.719 7.138 2.72 10.758 0 c 0.442 -0.332 1.067 -0.243 1.4 0.199 c 0.331 0.441 0.242 1.068 -0.199 1.4 C 49.397 42.85 47.198 43.67 45 43.67 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 2,
-          strokeLinecap: "round",
-          fill: "rgb(0,0,0)",
-        }}
-      />
-      <path
-        d="M 45 23.014 c -0.552 0 -1 -0.448 -1 -1 v -7.078 c 0 -0.552 0.448 -1 1 -1 s 1 0.448 1 1 v 7.078 C 46 22.566 45.552 23.014 45 23.014 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 2,
-          strokeLinecap: "round",
-          fill: "rgb(0,0,0)",
-        }}
-      />
+    <g>
+      <g>
+        <path d="M387.478,340.255c-13.413,17.894-29.328,33.81-47.222,47.222L464.778,512L512,464.778L387.478,340.255z" />
+      </g>
+    </g>
+    <g>
+      <g>
+        <path
+          d="M200.348,0C89.876,0,0,89.876,0,200.348s89.876,200.348,200.348,200.348s200.348-89.876,200.348-200.348
+          S310.82,0,200.348,0z M200.348,350.609c-82.854,0-150.261-67.407-150.261-150.261S117.494,50.087,200.348,50.087
+          s150.261,67.407,150.261,150.261S283.202,350.609,200.348,350.609z"
+        />
+      </g>
+    </g>
+    <g>
+      <g>
+        <path
+          d="M200.348,83.478c-64.442,0-116.87,52.428-116.87,116.87s52.428,116.87,116.87,116.87s116.87-52.428,116.87-116.87
+          S264.79,83.478,200.348,83.478z"
+        />
+      </g>
     </g>
   </svg>
 );

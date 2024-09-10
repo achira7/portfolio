@@ -9,12 +9,17 @@ const Test = () => {
   return (
     <div className="bg-background">
       
-      <div className="bg-background">
-        <h1 className="text-3xl font-bold text-color-primary font-ibm top-0 mx-5 mt-5 flex flex-wrap">
+      <div className="">
+        <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap">
         Primary
       </h1>
-      <h1 className="text-3xl font-bold text-color-secondary font-ibm top-0 mx-5 mt-5 flex flex-wrapl">
+
+      <h1 className="text-3xl font-bold text-color-secondary font-inter top-0 mx-5 mt-5 flex flex-wrap">
         Secondary
+      </h1>
+
+      <h1 className="text-3xl font-bold text-color-tertiary font-inter top-0 mx-5 mt-5 flex flex-wrap">
+        Tertiary
       </h1>
 
       <h1 className="text-color-green font-inter font-bold text-3xl">Green</h1>
@@ -36,7 +41,7 @@ const Test = () => {
       <Button link={"https://devicon.dev/"} name="DANGER" color={"red"} />
 
 <div>
-      <div className="bg-card-primary w-80 h-30 m-10">
+      <div className="bg-gradient-to-t from-card-primary-bottom to-card-primary-top w-80 h-30 m-10">
         <span className="px-5 py-10 text-color-primary">Card Primary</span>
         <Button link={"https://devicon.dev/"} name="Okay!" color={"green"} />
       </div>

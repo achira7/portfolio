@@ -5,22 +5,30 @@ const Button = ({ name, link, color }) => {
 
   const colorClasses = {
     red: 'bg-color-red',
-    blue: 'bg-blue-500 hover:bg-blue-600',
+    blue: 'bg-color-primary',
     green: 'bg-color-green',
     yellow: 'bg-color-yellow',
   };
 
-  const selectedColorClass = colorClasses[color] || 'bg-gray-500 hover:bg-gray-600'; // Fallback color
+  const borderClasses = {
+    red: 'border-border-red',
+    blue: 'border-border-primary',
+    green: 'border-border-green',
+    yellow: 'border-border-yellow',
+  }
+
+  const selectedColorClass = colorClasses[color] || 'bg-default-button'; 
+  const selectedBorderClass = borderClasses[color] || 'border-0';
 
 
   return (
     <a href={isLinkProvided ? link : '#'} target={isLinkProvided ? "_blank" : "_self"}>
       <button
         type="button"
-        className={`${selectedColorClass} y border-2 border-slate-700 font-inter px-4 py-2 m-5 z-10 ${!isLinkProvided && 'opacity-50 cursor-not-allowed'}`}
+        className={`${selectedColorClass} ${selectedBorderClass} rounded-lg font-inter px-4 py-2 m-5 z-10 shadow-md ${!isLinkProvided && 'opacity-50 cursor-not-allowed'}`}
         disabled={!isLinkProvided} 
       >
-        {name}
+        <span className='text-white'>{name}</span>
       </button>
     </a>
   );

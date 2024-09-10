@@ -9,8 +9,7 @@ import 'react-chatbot-kit/build/main.css'
 
 const ChatBot = () => {
   return (
-    <div className="bg-background z-10  ">
-      This is the chatbot
+    <div className="bg-background z-10  m-5">
       <Chatbot
         config={config} 
         actionProvider={ActionProvider} 
