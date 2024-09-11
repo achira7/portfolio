@@ -26,6 +26,8 @@ const libraries = {
     webflow: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webflow/webflow-original.svg",
     'material-ui': "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg",
     docker: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    syncfusion: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsu9DT1XLVF5b0A-LgCJr0RdXhHJL6CXuhbw&s",
+    chartjs: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/1024px-Chart.js_logo.svg.png",
 };
 
 export { languages, libraries };

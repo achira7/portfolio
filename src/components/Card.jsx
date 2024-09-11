@@ -18,13 +18,12 @@ const Card = ({
       {type === "project" ? (
         <div className="m-5 bg-card-primary border border-card-primary-border z-10 rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
           <div className="flex px-6 py-6">
-            {/* Image Section */}
             {imgLink && (
               <div className="w-1/3 pr-4">
                 <img
                   src={imgLink}
                   alt={`${projectName} Preview`}
-                  className="w-full object-cover rounded-xl"
+                  className="w-full object-cover rounded-xl border border-card-primary-border"
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}
