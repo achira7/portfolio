@@ -1,9 +1,15 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+
 import DarkMode from "./DarkMode/DarkMode";
+
+import ChatBot from "../components/ChatBot";
+import { ChatIcon, UpArrow, CloseIcon } from "../assets/icons/icons";
 
 const NavBar = () => {
   const navigate = useNavigate();
+
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const links = [
     { id: 1, title: "Home", url: "/" },
@@ -34,6 +40,33 @@ const NavBar = () => {
           ))}
         </ul>
       </div>
+
+      <div className="flex">
+      <button
+        onClick={() => setIsChatOpen(true)}
+        className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full"
+      >
+        <ChatIcon />
+      </button>
+      <button className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full mx-8">
+        <UpArrow />
+      </button>
+      </div>
+
+      {/* ChatBot Overlay */}
+      {isChatOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-50 z-30">
+          <div className="relative w-96 h-auto p-4 bg-white rounded-lg">
+            <button
+              onClick={() => setIsChatOpen(false)}
+              className="absolute top-2 right-2 text-red-500"
+            >
+              <CloseIcon className="w-7 h-7 text-color-red z-20" />
+            </button>
+            <ChatBot />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

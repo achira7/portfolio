@@ -69,8 +69,6 @@ const Projects = () => {
     return nameMatch || descriptionMatch || languagesMatch || librariesMatch;
   });
 
-  
-
   return (
     <div className="bg-background">
       <button

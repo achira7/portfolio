@@ -59,7 +59,7 @@ const Card = ({
                         {libraries.map((lib) => (
                           <div
                             key={lib}
-                            className="my-1 flex items-center text-color-secondary mr-3 z-10"
+                            className="my-1 flex items-center text-color-secondary mr-3"
                             onClick={() => onTechClick(lib)}
                             id="clickable" 
                           >

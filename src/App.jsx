@@ -65,7 +65,7 @@ function App() {
     links.forEach((link) => {
       link.addEventListener("mouseenter", handleMouseEnter);
       link.addEventListener("mouseleave", handleMouseLeave);
-    }, 100);
+    }, 1500);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
