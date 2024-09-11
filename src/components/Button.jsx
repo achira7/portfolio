@@ -22,11 +22,10 @@ const Button = ({ name, link, color }) => {
 
 
   return (
-    <a id="clickable" href={isLinkProvided ? link : '#'} target={isLinkProvided ? "_blank" : "_self"}>
+    <a id="clickable" href={isLinkProvided ? link : '#'} target={isLinkProvided ? "_blank" : "_self"} className="z-20">
       <button
-        id="clickable"
         type="button"
-        className={`${selectedColorClass} ${selectedBorderClass} rounded-lg font-inter px-4 py-2 m-5 z-10 shadow-md ${!isLinkProvided && 'opacity-50 cursor-not-allowed'}`}
+        className={`${selectedColorClass} ${selectedBorderClass} rounded-lg font-inter px-4 py-2 m-5 z-20 shadow-md ${!isLinkProvided && 'opacity-50 cursor-not-allowed'}`}
         disabled={!isLinkProvided} 
       >
         <span className='text-white' id="clickable">{name}</span>

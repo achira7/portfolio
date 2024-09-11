@@ -12,13 +12,13 @@ const Card = ({
   languages,
   libraries,
   imgLink,
-  onTechClick, // <-- Pass this prop from the parent component
+  onTechClick, 
 }) => {
   return (
     <>
       {type === "project" ? (
-        <div className="m-5 bg-card-primary border border-card-primary-border z-10 rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
-          <div id="clickable" className="flex px-6 py-6">
+        <div className="m-5 bg-card-primary border border-card-primary-border z-20 rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
+          <div className="flex px-6 py-6">
             {imgLink && (
               <div className="w-1/3 pr-4">
                 <img
@@ -29,15 +29,16 @@ const Card = ({
                     e.target.style.display = "none";
                   }}
                 />
-                <div className="flex mt-4" id="clickable">
+                <div className="flex mt-4" >
                   {Array.isArray(languages) && languages.length > 0 && (
-                    <div className="w-1/2" id="clickable">
-                      <div className="flex flex-wrap" id="clickable">
+                    <div className="w-1/2" >
+                      <div className="flex flex-wrap" >
                         {languages.map((lang) => (
                           <div
                             key={lang}
                             className="my-1 flex items-center text-color-secondary mr-3"
                             onClick={() => onTechClick(lang)}
+                            id="clickable" 
                           >
                             <div className="bg-white rounded-md p-1 mr-2">
                               <img
@@ -58,14 +59,16 @@ const Card = ({
                         {libraries.map((lib) => (
                           <div
                             key={lib}
-                            className="my-1 flex items-center text-color-secondary mr-3"
+                            className="my-1 flex items-center text-color-secondary mr-3 z-10"
                             onClick={() => onTechClick(lib)}
+                            id="clickable" 
                           >
                             <div className="bg-white rounded-md p-1 mr-2">
                               <img
                                 src={libLogos[lib]}
                                 alt={lib}
                                 className="w-6 h-6"
+                                id="clickable"
                               />
                             </div>
                             <span className="capitalize">{lib}</span>
@@ -89,12 +92,13 @@ const Card = ({
 
               {/* Buttons */}
               <div className="flex mt-6">
-                <Button link={gitLink} name={"Git Repo"} color={`stone-500`} />
+                <Button link={gitLink} name={"Git Repo"} color={`stone-500`} id="clickable" />
                 <Button
                   link={demoLink}
                   name={"Live Demo"}
                   color={`card-secondary`}
                   className="ml-3"
+                  id="clickable"
                 />
               </div>
             </div>

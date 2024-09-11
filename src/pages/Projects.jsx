@@ -52,14 +52,6 @@ const Projects = () => {
     setSearchQuery(tech.toLowerCase()); // Update search query when a tech is clicked
   };
 
-  // const filteredRepos = repos.filter(
-  //   (repo) =>
-  //     repo.name.toLowerCase().includes(searchQuery) ||
-  //     (repo.description &&
-  //       repo.description.toLowerCase().includes(searchQuery)) ||
-  //     repo.languages.join(", ").toLowerCase().includes(searchQuery)
-  // );
-
   const filteredRepos = repos.filter((repo) => {
     const query = searchQuery.toLowerCase();
   
@@ -76,6 +68,8 @@ const Projects = () => {
   
     return nameMatch || descriptionMatch || languagesMatch || librariesMatch;
   });
+
+  
 
   return (
     <div className="bg-background">

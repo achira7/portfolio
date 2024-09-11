@@ -60,11 +60,12 @@ function App() {
 
     window.addEventListener("mousemove", handleMouseMove);
     
-    const links = document.querySelectorAll("li, a, button, input, clickable");
+    const links = document.querySelectorAll("li, a, button, input, #clickable");
+    console.log(links);
     links.forEach((link) => {
       link.addEventListener("mouseenter", handleMouseEnter);
       link.addEventListener("mouseleave", handleMouseLeave);
-    });
+    }, 100);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
