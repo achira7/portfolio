@@ -215,16 +215,16 @@ export const UpArrow = () => (
     <desc>Arrow Up Sharp Streamline Icon: https://streamlinehq.com</desc>
     <path
       stroke="#ffffff"
-      stroke-linecap="square"
-      stroke-miterlimit="12"
-      stroke-width="6"
+      strokeLinecap="square"
+      strokeMiterlimit="12"
+      strokeWidth="6"
       d="M5.184 22.432 24 3.616l18.816 18.816"
     ></path>
     <path
       stroke="#ffffff"
-      stroke-linecap="square"
-      stroke-miterlimit="12"
-      stroke-width="6"
+      strokeLinecap="square"
+      strokeMiterlimit="12"
+      strokeWidth="6"
       d="M24 6.2293V44.384"
     ></path>
   </svg>

@@ -16,7 +16,6 @@ const Projects = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
-    
     const fetchRepos = async () => {
       try {
         const response = await fetch(
@@ -28,18 +27,15 @@ const Projects = () => {
           data.map(async (repo) => {
             const languagesResponse = await fetch(repo.languages_url);
             const languagesData = await languagesResponse.json();
-
-            const imageUrl = `https://raw.githubusercontent.com/achira7/${repo.name}/main/image.jpg`
-            
+            const imageUrl = `https://raw.githubusercontent.com/achira7/${repo.name}/main/image.jpg`;
             return {
               ...repo,
               languages: Object.keys(languagesData),
-              imageUrl, 
+              imageUrl,
             };
           })
         );
         setRepos(reposWithLanguages);
-        console.log(repos);
       } catch (error) {
         console.error("Error fetching data from GitHub:", error);
       }
@@ -52,15 +48,34 @@ const Projects = () => {
     setSearchQuery(e.target.value.toLowerCase());
   };
 
-  
+  const handleTechnologyClick = (tech) => {
+    setSearchQuery(tech.toLowerCase()); // Update search query when a tech is clicked
+  };
 
-  const filteredRepos = repos.filter(
-    (repo) =>
-      repo.name.toLowerCase().includes(searchQuery) ||
-      (repo.description &&
-        repo.description.toLowerCase().includes(searchQuery)) ||
-      repo.languages.join(", ").toLowerCase().includes(searchQuery)
-  );
+  // const filteredRepos = repos.filter(
+  //   (repo) =>
+  //     repo.name.toLowerCase().includes(searchQuery) ||
+  //     (repo.description &&
+  //       repo.description.toLowerCase().includes(searchQuery)) ||
+  //     repo.languages.join(", ").toLowerCase().includes(searchQuery)
+  // );
+
+  const filteredRepos = repos.filter((repo) => {
+    const query = searchQuery.toLowerCase();
+  
+    const nameMatch = repo.name.toLowerCase().includes(query);
+    const descriptionMatch = repo.description?.toLowerCase().includes(query);
+  
+    const languagesMatch = repo.languages.some((lang) =>
+      lang.toLowerCase().includes(query)
+    );
+  
+    const librariesMatch = repo.topics?.some((topic) =>
+      topic.toLowerCase().includes(query)
+    );
+  
+    return nameMatch || descriptionMatch || languagesMatch || librariesMatch;
+  });
 
   return (
     <div className="bg-background">
@@ -70,11 +85,9 @@ const Projects = () => {
       >
         <ChatIcon />
       </button>
-
       <button className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full mx-8">
         <UpArrow />
       </button>
-
       <div>
         <h1
           id="achira"
@@ -83,10 +96,8 @@ const Projects = () => {
           Projects
         </h1>
       </div>
-
-      <div className="flex text-3xl p-5 align-middle items-center">
+      <div className="flex text-3xl pt-7 px-5 align-middle items-center">
         <SearchIcon className="w-10 h-10 text-color-primary" />
-
         <input
           className="outline-none ml-3 block font-space bg-inherit text-color-secondary"
           type="text"
@@ -95,7 +106,6 @@ const Projects = () => {
           onChange={handleSearchChange}
         />
       </div>
-
       <div className="h-screen flex flex-col flex-wrap top-0 left-0 ">
         {filteredRepos
           .filter((repo) => repo.stargazers_count !== 0)
@@ -110,28 +120,12 @@ const Projects = () => {
                 demoLink={repo.homepage}
                 languages={repo.languages}
                 libraries={repo.topics}
-                imgLink={repo.imageUrl} 
+                imgLink={repo.imageUrl}
+                onTechClick={handleTechnologyClick} // <-- Pass the click handler to the Card
               />
             </div>
           ))}
       </div>
-
-      <DownloadCV />
-
-      {/* ChatBot Overlay */}
-      {isChatOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-50 z-30">
-          <div className="relative w-96 h-auto p-4 bg-white rounded-lg">
-            <button
-              onClick={() => setIsChatOpen(false)}
-              className="absolute top-2 right-2 text-red-500"
-            >
-              <CloseIcon className="w-7 h-7 text-color-red z-20" />
-            </button>
-            <ChatBot />
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -60,7 +60,7 @@ function App() {
 
     window.addEventListener("mousemove", handleMouseMove);
     
-    const links = document.querySelectorAll("li, a, button, input");
+    const links = document.querySelectorAll("li, a, button, input, clickable");
     links.forEach((link) => {
       link.addEventListener("mouseenter", handleMouseEnter);
       link.addEventListener("mouseleave", handleMouseLeave);
