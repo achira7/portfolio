@@ -17,8 +17,8 @@ const Card = ({
   return (
     <>
       {type === "project" ? (
-        <div className="m-5 bg-card-primary border border-card-primary-border z-20 rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
-          <div className="flex px-6 py-6">
+        <div className="bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
+          <div className="w-full flex px-6 py-6">
             {imgLink && (
               <div className="w-1/3 pr-4">
                 <img
@@ -71,7 +71,7 @@ const Card = ({
                                 id="clickable"
                               />
                             </div>
-                            <span className="capitalize">{lib}</span>
+                            <span className="capitalize ">{lib}</span>
                           </div>
                         ))}
                       </div>
@@ -83,7 +83,7 @@ const Card = ({
 
             {/* Text and Button Section */}
             <div className="w-2/3">
-              <h5 className="mb-2 text-3xl font-inter font-bold text-color-primary">
+              <h5 className="mb-2 text-3xl font-inter font-bold text-color-primary capitalize">
                 {projectName}
               </h5>
               <p className="font-inter text-lg text-color-secondary">

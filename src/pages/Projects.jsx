@@ -98,11 +98,11 @@ const Projects = () => {
           onChange={handleSearchChange}
         />
       </div>
-      <div className="h-screen flex flex-col flex-wrap top-0 left-0 ">
+      <div className="h-screen flex flex-wrap gap-2 justify-center top-0 left-0">
         {filteredRepos
           .filter((repo) => repo.stargazers_count !== 0)
           .map((repo) => (
-            <div key={repo.id} className="w-full md:w-1/4 lg:w-1/2 p-2">
+            <div key={repo.id} className="w-full md:w-3/4 lg:w-2/5 p-4">
               <Card
                 type={"project"}
                 key={repo.id}
@@ -113,7 +113,7 @@ const Projects = () => {
                 languages={repo.languages}
                 libraries={repo.topics}
                 imgLink={repo.imageUrl}
-                onTechClick={handleTechnologyClick} // <-- Pass the click handler to the Card
+                onTechClick={handleTechnologyClick} 
               />
             </div>
           ))}
