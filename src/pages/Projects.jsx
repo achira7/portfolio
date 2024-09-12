@@ -98,26 +98,27 @@ const Projects = () => {
           onChange={handleSearchChange}
         />
       </div>
-      <div className=" flex flex-wrap justify-center top-0 left-0">
-        {filteredRepos
-          .filter((repo) => repo.stargazers_count !== 0)
-          .map((repo) => (
-            <div key={repo.id} className="w-full md:w-[350px] lg:w-[750px] ">
-              <Card
-                type={"project"}
-                key={repo.id}
-                projectName={repo.name}
-                description={repo.description || "No description provided."}
-                gitLink={repo.html_url}
-                demoLink={repo.homepage}
-                languages={repo.languages}
-                libraries={repo.topics}
-                imgLink={repo.imageUrl}
-                onTechClick={handleTechnologyClick} 
-              />
-            </div>
-          ))}
+      <div className="flex flex-wrap justify-center space-y-5">
+  {filteredRepos
+    .filter((repo) => repo.stargazers_count !== 0)
+    .map((repo) => (
+      <div key={repo.id} className="w-full md:w-1/2 lg:w-[40%] p-4"> {/* Adjusted width */}
+        <Card
+          type={"project"}
+          key={repo.id}
+          projectName={repo.name}
+          description={repo.description || "No description provided."}
+          gitLink={repo.html_url}
+          demoLink={repo.homepage}
+          languages={repo.languages}
+          libraries={repo.topics}
+          imgLink={repo.imageUrl}
+          onTechClick={handleTechnologyClick} 
+        />
       </div>
+    ))}
+</div>
+
     </div>
   );
 };
