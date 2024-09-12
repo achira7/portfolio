@@ -102,7 +102,7 @@ const Projects = () => {
         {filteredRepos
           .filter((repo) => repo.stargazers_count !== 0)
           .map((repo) => (
-            <div key={repo.id} className="w-full md:w-3/4 lg:w-2/5 p-4">
+            <div key={repo.id} className="w-full md:w-[350px] lg:w-[750px] p-4">
               <Card
                 type={"project"}
                 key={repo.id}
