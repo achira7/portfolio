@@ -73,7 +73,7 @@ const Card = ({
                               id="clickable"
                             />
                           </div>
-                          <span className="capitalize">{lib}</span>
+                          <span className="capitalize text-color-secondary">{lib}</span>
                         </div>
                       ))}
                     </div>
