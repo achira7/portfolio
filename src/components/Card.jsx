@@ -17,7 +17,7 @@ const Card = ({
   return (
     <>
       {type === "project" ? (
-        <div className="bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
+        <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
           <div className="w-full flex px-6 py-6">
             {imgLink && (
               <div className="w-2/5 pr-4">
@@ -83,16 +83,16 @@ const Card = ({
             )}
 
             {/* Text and Button Section */}
-            <div className="w-2/3 relative">
+            <div className="w-2/3 flex flex-col justify-between h-full">
               <h5 className="mb-1 text-3xl font-inter font-bold text-color-primary capitalize">
                 {projectName}
               </h5>
-              <p className="font-inter text-base text-color-secondary">
+              <p className="font-inter text-base text-color-secondary mt-1">
                 {description}
               </p>
 
               {/* Buttons */}
-              <div className="absolute right-0 bottom-0">
+              <div className="flex justify-end mt-4">
                 <Button link={gitLink} name={"Git Repo"} color={`stone-500`} id="clickable" />
                 <Button
                   link={demoLink}

@@ -73,11 +73,11 @@ const Projects = () => {
     <div className="bg-background">
       <button
         onClick={() => setIsChatOpen(true)}
-        className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full"
+        className="fixed bottom-5 right-5 bg-color-primary text-white p-3 rounded-full"
       >
         <ChatIcon />
       </button>
-      <button className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full mx-8">
+      <button className="fixed bottom-5 right-5 bg-color-primary text-white p-3 rounded-full mx-8">
         <UpArrow />
       </button>
       <div>
@@ -98,11 +98,11 @@ const Projects = () => {
           onChange={handleSearchChange}
         />
       </div>
-      <div className="h-screen flex flex-wrap gap-2 justify-center top-0 left-0">
+      <div className=" flex flex-wrap justify-center top-0 left-0">
         {filteredRepos
           .filter((repo) => repo.stargazers_count !== 0)
           .map((repo) => (
-            <div key={repo.id} className="w-full md:w-[350px] lg:w-[750px] p-4">
+            <div key={repo.id} className="w-full md:w-[350px] lg:w-[750px] ">
               <Card
                 type={"project"}
                 key={repo.id}
