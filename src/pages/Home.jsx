@@ -251,6 +251,21 @@ const Home = () => {
             />
           </div>
         </div>
+
+        <div className="flex">
+          <h1>About Me</h1>
+          <p>I am achira silev etc etc i make apps</p>
+        </div>
+
+        <div className="flex">
+          <h1>About Me</h1>
+          <p>I am achira silev etc etc i make apps</p>
+        </div>
+
+        <div className="flex">
+          <h1>About Me</h1>
+          <p>I am achira silev etc etc i make apps</p>
+        </div>
       </div>
 
       <Button name="Test"/>
