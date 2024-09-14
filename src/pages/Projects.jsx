@@ -24,7 +24,7 @@ const Projects = () => {
           "https://api.github.com/users/achira7/repos",{
             headers: {
               Authorization: `token ${git}`, 
-                  Accept: "application/vnd.github.inertia-preview+json", 
+              Accept: "application/vnd.github.inertia-preview+json"
             }
           }
         );
