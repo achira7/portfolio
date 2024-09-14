@@ -21,8 +21,7 @@ const Projects = () => {
         const response = await fetch(
           "https://api.github.com/users/achira7/repos",{
             headers: {
-              Authorization: `token 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`, 
-                  Accept: "application/vnd.github.inertia-preview+json", 
+
             }
           }
         );
