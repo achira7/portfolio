@@ -45,13 +45,6 @@ const Home = () => {
       t1.from(
         [
           "#welcome-1",
-          // "#welcome-2",
-          // "#welcome-3",
-          // "#welcome-4",
-          // "#welcome-5",
-          // "#welcome-6",
-          // "#welcome-7",
-          // "#welcome-8",
         ],
         {
           opacity: 0,
@@ -132,30 +125,9 @@ const Home = () => {
 
 
         <div className="flex flex-row z-30">
-          <p id="welcome-1" className="text-9xl font-bold text-slate-500 font-ibm">
-            WELCOME.
+          <p id="welcome-1" className="text-9xl text-white font-inter font-light">
+            Welcome.
           </p>
-          {/* <p id="welcome-2" className="text-9xl font-bold text-white font-ibm">
-            E
-          </p>
-          <p id="welcome-3" className="text-9xl font-bold text-white font-ibm">
-            L
-          </p>
-          <p id="welcome-4" className="text-9xl font-bold text-white font-ibm">
-            C
-          </p>
-          <p id="welcome-5" className="text-9xl font-bold text-white font-ibm">
-            O
-          </p>
-          <p id="welcome-6" className="text-9xl font-bold text-white font-ibm">
-            M
-          </p>
-          <p id="welcome-7" className="text-9xl font-bold text-white font-ibm">
-            E
-          </p>
-          <p id="welcome-8" className="text-9xl font-bold text-white font-ibm">
-            .
-          </p> */}
         </div>
 
         <div className="flex">
