@@ -2,14 +2,13 @@
 import axios from 'axios';
 
 const hug = process.env.REACT_APP_HUGGINGFACE_API;
+//sample
 
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
   }
-
-  
 
   sendMessageToAPI = async (message) => {
     try {
