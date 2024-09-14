@@ -1,12 +1,15 @@
 //src/ActionProvider.jsx
 import axios from 'axios';
 
+const hug = process.env.REACT_APP_HUGGINGFACE_API;
+
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
-    // this.api_key = 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;
   }
+
+  
 
   sendMessageToAPI = async (message) => {
     try {
@@ -15,7 +18,7 @@ class ActionProvider {
         { inputs: message },
         {
           headers: {
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer ${hug}`,
             "Content-Type": "application/json",
           },
         }
