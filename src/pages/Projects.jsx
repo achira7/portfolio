@@ -19,7 +19,12 @@ const Projects = () => {
     const fetchRepos = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/users/achira7/repos"
+          "https://api.github.com/users/achira7/repos",{
+            headers: {
+              Authorization: `token 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`, 
+                  Accept: "application/vnd.github.inertia-preview+json", 
+            }
+          }
         );
         const data = await response.json();
 
@@ -36,6 +41,7 @@ const Projects = () => {
           })
         );
         setRepos(reposWithLanguages);
+        console.log(repos)
       } catch (error) {
         console.error("Error fetching data from GitHub:", error);
       }
@@ -91,7 +97,7 @@ const Projects = () => {
       <div className="flex text-3xl pt-7 px-5 align-middle items-center">
         <SearchIcon className="w-10 h-10 text-color-primary" />
         <input
-          className="outline-none ml-3 block font-space bg-inherit text-color-secondary"
+          className="outline-none ml-3 block font-inter bg-inherit text-color-secondary"
           type="text"
           placeholder="Search"
           value={searchQuery}

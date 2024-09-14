@@ -125,7 +125,7 @@ const Home = () => {
 
 
         <div className="flex flex-row z-30">
-          <p id="welcome-1" className="text-9xl text-white font-inter font-light">
+          <p id="welcome-1" className="text-9xl text-white font-inter font-thin">
             Welcome.
           </p>
         </div>
@@ -158,7 +158,7 @@ const Home = () => {
       </div>
       <div
         id="intro-slider"
-        className="h-screen  p-10 bg-sky-500 absolute top-0 left-0 font-ibm w-full flex flex-col gap-10 tracking-tight z-10"
+        className="h-screen  p-10 bg-sky-500 absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-10"
       >
         <h1 id="title-1" className="text-9xl">
           Software Engineer
@@ -197,17 +197,6 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="flex bg-color-green">
-          To Projects
-        </div>
-
-        <div className="flex bg-color-yellow">
-          To Music
-        </div>
-
-        <div className="flex bg-color-red">
-          To Games
-        </div>
 
         <div className="flex items-center justify-center w-[100]">
         <GradientComponent colorA={'#341abc'} colorB={'#341abc'} colorC={'#341abc'} />
@@ -226,7 +215,7 @@ const Home = () => {
 
         <div className="flex">
           <h1>About Me</h1>
-          <p>I am achira silev etc etc i make apps</p>
+          <p>I am aAchira Silva etc etc i make apps</p>
         </div>
 
         <div className="flex">
