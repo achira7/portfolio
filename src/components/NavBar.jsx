@@ -14,7 +14,7 @@ const NavBar = () => {
   const links = [
     { id: 1, title: "Home", url: "/" },
     { id: 2, title: "Projects", url: "/projects" },
-    { id: 3, title: "Interests", url: "/graphic" },
+    { id: 3, title: "Experience", url: "/graphic" },
     { id: 4, title: "About Me", url: "/music" },
   ];
 
@@ -43,11 +43,11 @@ const NavBar = () => {
       <div className="flex">
       <button
         onClick={() => setIsChatOpen(true)}
-        className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full"
+        className="fixed bottom-5 right-5 bg-color-primary text-white p-3 rounded-full"
       >
-        <ChatIcon />
+        <ChatIcon className="overflow-hidden"/>
       </button>
-      <button className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full mx-8">
+      <button className="fixed bottom-5 right-5 bg-color-primary text-white p-3 rounded-full mx-8">
         <UpArrow />
       </button>
       </div>
@@ -55,7 +55,7 @@ const NavBar = () => {
       {/* ChatBot Overlay */}
       {isChatOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-50 z-30">
-          <div className="relative w-96 h-auto p-4 bg-white rounded-lg">
+          <div className="relative w-auto h-auto p-4 bg-card-primary-top rounded-lg">
             <button
               onClick={() => setIsChatOpen(false)}
               className="absolute top-2 right-2 text-red-500"

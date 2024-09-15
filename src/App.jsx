@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import ChatBot from "./components/ChatBot";
-import Test from "./pages/test";
+import Test from "./pages/Test";
 
 function App() {
   const flairRef = useRef(null);
@@ -65,7 +65,7 @@ function App() {
     links.forEach((link) => {
       link.addEventListener("mouseenter", handleMouseEnter);
       link.addEventListener("mouseleave", handleMouseLeave);
-    }, 1500);
+    }, 5000);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);

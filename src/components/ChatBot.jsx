@@ -9,7 +9,7 @@ import 'react-chatbot-kit/build/main.css'
 
 const ChatBot = () => {
   return (
-    <div className="bg-background z-10  m-5">
+    <div className="flex items-center bg-card-primary-top z-10 m-10">
       <Chatbot
         config={config} 
         actionProvider={ActionProvider} 

@@ -18,9 +18,9 @@ const Card = ({
     <>
       {type === "project" ? (
         <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
-          <div className="w-full flex px-6 py-6">
+          <div className="w-full flex flex-row px-6 py-6">
             {imgLink && (
-              <div className="w-2/5 pr-4">
+              <div className="w-2/5 pr-5">
                 <img
                   src={imgLink}
                   alt={`${projectName} Preview`}
@@ -29,7 +29,7 @@ const Card = ({
                     e.target.style.display = "none";
                   }}
                 />
-                <div className="grid grid-cols-2 mt-4" > {/* Using grid with 2 columns */}
+                <div className="grid grid-cols-2 gap-4 mt-5">
                   {Array.isArray(languages) && languages.length > 0 && (
                     <div className="space-y-2">
                       {languages.map((lang) => (
@@ -39,7 +39,7 @@ const Card = ({
                           onClick={() => onTechClick(lang)}
                           id="clickable"
                         >
-                          <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+                          <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center ">
                             <img
                               src={langLogos[lang]}
                               alt={lang}
@@ -49,7 +49,7 @@ const Card = ({
                           </div>
 
                           <div>
-                            <span className="capitalize text-color-primary text-sm font-semibold">{lang}</span>
+                            <span className="capitalize text-color-primary text-sm font-semibold ml-2">{lang}</span>
                           </div>
                           
                         </div>
@@ -76,7 +76,7 @@ const Card = ({
                               }}
                             />
                           </div>
-                          <span className="capitalize text-color-primary text-sm font-semibold">{lib}</span>
+                          <span className="capitalize text-color-primary text-sm font-semibold ml-2">{lib}</span>
                         </div>
                       ))}
                     </div>
@@ -86,8 +86,8 @@ const Card = ({
             )}
 
             {/* Text and Button Section */}
-            <div className="w-2/3 flex flex-col justify-between h-full">
-              <h5 className="mb-1 text-3xl font-inter font-bold text-color-primary capitalize">
+            <div className="w-2/3 flex flex-col h-full">
+              <h5 className="text-3xl font-inter font-bold text-color-primary capitalize">
                 {projectName}
               </h5>
               <p className="font-inter text-base text-color-secondary mt-1">
@@ -96,8 +96,9 @@ const Card = ({
 
               {/* Buttons */}
               <div className="flex justify-end mt-4">
-                <Button link={gitLink} name={"Git Repo"} color={`stone-500`} id="clickable" />
+                <Button link={gitLink} name={"Git Repo"} color={`stone-500`} icon={'git'} id="clickable" />
                 <Button
+                icon={'play'}
                   link={demoLink}
                   name={"Live Demo"}
                   color={`card-secondary`}

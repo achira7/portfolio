@@ -41,16 +41,16 @@ const Chat = () => {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen bg-gray-100 p-4">
-      <div className="w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="flex flex-col items-center h-screen bg-card-primary-bottom p-4">
+      <div className="w-full max-w-md bg-card-primary-bottom shadow-lg rounded-lg overflow-hidden">
         <div className="p-4 h-96 overflow-y-auto">
           {messages.map((msg, index) => (
             <div
               key={index}
               className={`my-2 p-2 max-w-xs rounded-lg ${
                 msg.sender === "user"
-                  ? "bg-blue-500 text-white self-end"
-                  : "bg-gray-200 text-black self-start"
+                  ? "bg-color-primary text-white self-end"
+                  : "bg-gray-500 text-black self-start"
               }`}
             >
               {msg.text}

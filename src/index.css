@@ -162,5 +162,38 @@ button, a{
 }
 
 
+/* Chat Bot */
+.react-chatbot-kit-chat-container {
+  @apply bg-card-primary-top text-black font-inter w-[700px];
+}
+.react-chatbot-kit-chat-header {
+  @apply bg-transparent text-lg text-color-primary;
+}
 
+.react-chatbot-kit-chat-inner-container {
+  @apply p-4 bg-card-primary-bottom; 
+}
 
+.react-chatbot-kit-chat-btn-send {
+  @apply bg-color-primary; 
+}
+
+.react-chatbot-kit-chat-input {
+  @apply font-inter rounded-lg;
+}
+
+.react-chatbot-kit-chat-input-container {
+  @apply bg-color-primary rounded-lg;
+}
+
+.react-chatbot-kit-error-container {
+  @apply text-red-500 bg-red-100; 
+}
+
+.react-chatbot-kit-chat-message-container {
+  @apply w-full;
+}
+
+.react-chatbot-kit-chat-bot-message {
+  @apply w-full;
+}

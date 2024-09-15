@@ -22,10 +22,9 @@ const Projects = () => {
       try {
         const response = await fetch(
           "https://api.github.com/users/achira7/repos",{
-            headers: {
-              Authorization: `token ${git}`, 
-              Accept: "application/vnd.github.inertia-preview+json"
-            }
+            // headers: {
+            // Authorization: `Bearer ${git}`
+            //  }
           }
         );
         const data = await response.json();
@@ -57,7 +56,7 @@ const Projects = () => {
   };
 
   const handleTechnologyClick = (tech) => {
-    setSearchQuery(tech.toLowerCase()); // Update search query when a tech is clicked
+    setSearchQuery(tech.toLowerCase()); 
   };
 
   const filteredRepos = repos.filter((repo) => {
@@ -79,15 +78,6 @@ const Projects = () => {
 
   return (
     <div className="bg-background">
-      <button
-        onClick={() => setIsChatOpen(true)}
-        className="fixed bottom-5 right-5 bg-color-primary text-white p-3 rounded-full"
-      >
-        <ChatIcon />
-      </button>
-      <button className="fixed bottom-5 right-5 bg-color-primary text-white p-3 rounded-full mx-8">
-        <UpArrow />
-      </button>
       <div>
         <h1
           id="achira"
@@ -96,21 +86,21 @@ const Projects = () => {
           Projects
         </h1>
       </div>
-      <div className="flex text-3xl pt-7 px-5 align-middle items-center">
+      <div className="flex text-3xl pt-7 px-5 align-middle items-center mb-7">
         <SearchIcon className="w-10 h-10 text-color-primary" />
         <input
           className="outline-none ml-3 block font-inter bg-inherit text-color-secondary"
-          type="text"
+          type="search"
           placeholder="Search"
           value={searchQuery}
           onChange={handleSearchChange}
         />
       </div>
-      <div className="flex flex-wrap justify-center space-y-5">
+      <div className="flex flex-wrap justify-center">
   {filteredRepos
     .filter((repo) => repo.stargazers_count !== 0)
     .map((repo) => (
-      <div key={repo.id} className="w-full md:w-1/2 lg:w-[40%] p-4"> {/* Adjusted width */}
+      <div key={repo.id} className="w-[850px] "> 
         <Card
           type={"project"}
           key={repo.id}
