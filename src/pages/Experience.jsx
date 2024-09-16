@@ -19,7 +19,7 @@ const Experience = () => {
             key={experience.id}
             className="vertical-timeline-element--work"
             contentStyle={{ background: experience.color, color: '#fff' }}
-            contentArrowStyle={{ borderRight: `7px solid ${experience.color}` }}
+            contentArrowStyle={{ borderRight: `10px solid ${experience.color}` }}
             date={experience.time}
             iconStyle={{ background: experience.color, color: '#fff' }}
             icon={<i className="fas fa-briefcase"></i>} // Example icon, replace or customize as needed

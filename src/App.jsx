@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import ChatBot from "./components/ChatBot";
 import Test from "./pages/Test";
 import Experience from "./pages/Experience";
+import AboutMe from "./pages/AboutMe";
 
 function App() {
   const flairRef = useRef(null);
@@ -108,6 +109,7 @@ function App() {
         <Route className={`flex flex-wrap z-10 ${mode}`} path="/contact" element={<ChatBot />} />
         <Route className={`flex flex-wrap z-10 ${mode}`} path="/test" element={<Test />} />
         <Route className={`flex flex-wrap z-10 ${mode}`} path="/experience" element={<Experience />} />
+        <Route className={`flex flex-wrap z-10 ${mode}`} path="/about" element={<AboutMe />} />
       </Routes>
     </Router>
   );
