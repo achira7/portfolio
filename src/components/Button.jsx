@@ -20,8 +20,8 @@ const Button = ({ name, link, color, icon }) => {
   }
 
   const iconClass = {
-    play: <Play className="w-4 h-4 text-color-secondary mr-2"/>,
-    git: <GitHub className="w-6 h-6 text-color-secondary mr-2"/>
+    play: <Play className="w-4 h-4 text-white mr-2"/>,
+    git: <GitHub className="w-6 h-6 text-white mr-2"/>
   }
 
   const selectedColorClass = colorClasses[color] || 'bg-default-button'; 
