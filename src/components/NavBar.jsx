@@ -43,11 +43,12 @@ const NavBar = () => {
       <div className="flex">
       <button
         onClick={() => setIsChatOpen(true)}
-        className="fixed bottom-5 right-5 bg-color-primary text-white p-3 rounded-full"
+        className="fixed bottom-10 left-10 bg-color-primary text-white p-3 rounded-full"
       >
         <ChatIcon className="overflow-hidden"/>
       </button>
-      <button className="fixed bottom-5 right-5 bg-color-primary text-white p-3 rounded-full mx-8">
+      <button className="fixed bottom-10 right-10 bg-color-primary text-white p-3 rounded-full">
+
         <UpArrow />
       </button>
       </div>

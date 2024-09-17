@@ -37,7 +37,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen p-10">
+    <div className="bg-background">
       <h1 className="text-5xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap">
         Projects
       </h1>

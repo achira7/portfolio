@@ -158,8 +158,8 @@ export const ChatIcon = () => (
     viewBox="-0.5 -0.5 16 16"
     fill="currentColor"
     id="Messenger-Logo-Light--Streamline-Phosphor"
-    height="16"
-    width="16"
+    height="30"
+    width="30"
   >
     <desc>Messenger Logo Light Streamline Icon</desc>
     <path
