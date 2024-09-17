@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  cursor: none; 
+}
 :root{
   scroll-behavior: smooth;
+  cursor: none; 
+}
+
+#clickable{
   cursor: none; 
 }
 
@@ -204,20 +211,31 @@ button, a{
 
 /* Custom Timeline Styles */
 .vertical-timeline::before {
-  background: rgba(var(--color-primary)); 
+  background: rgba(var(--color-primary));
 }
 
 .vertical-timeline .vertical-timeline-element-icon {
-  border: none; 
-  box-shadow: none; 
+  border: none;
+  box-shadow: none;
   outline: none;
-  border-radius: 50%; 
-  border: 4px solid rgba(var(--color-primary)); 
+  border-radius: 50%;
+  border: 4px solid rgba(var(--color-primary));
 }
 
-/* Glow effect on hover */
 .vertical-timeline .vertical-timeline-element-icon:hover {
-  box-shadow: 0 0 15px 5px rgba(var(--color-primary), 0.6); /* Apply glow effect */
-  transition: box-shadow 0.3s ease-in-out; /* Smooth animation for glow effect */
+  box-shadow: 0 0 25px 15px rgba(var(--color-primary), 0.6);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
+.vertical-timeline-element-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 500px; 
+}
+
+.timeline-date {
+  font-weight: bold;
+  font-size: 16px; 
+}

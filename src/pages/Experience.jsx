@@ -5,6 +5,8 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
+import Button from "../components/Button";
+
 const Experience = () => {
   const exp = [
     {
@@ -39,51 +41,81 @@ const Experience = () => {
   return (
     <div className="bg-background">
       <h1 className="text-5xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap">
-        Projects
+        Experience
       </h1>
-      <VerticalTimeline>
-        {exp.reverse().map((experience) => (
-          <VerticalTimelineElement
-            key={experience.id}
-            className="vertical-timeline-element--work"
-            contentStyle={{
-              background: "rgba(var(--color-blue))",
-            }}
-            contentArrowStyle={{
-              borderRight: `10px solid rgba(var(--color-blue))`,
-            }}
-            date={experience.time}
-            iconStyle={{
-              background: "#fff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-            }}
-            icon={
-              <a
-                href={experience.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={`../src/assets/logos/${experience.id}.jpg`}
-                  alt={`${experience.title} logo`}
-                  className="object-contain w-full h-full"
-                />
-              </a>
-            }
-          >
-            <h3 className="vertical-timeline-element-title font-bold font-inter text-color-primary">
-              {experience.title}
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle text-color-primary">
-              {experience.job}
-            </h4>
-            <p className="text-color-primary">{experience.description}</p>
-          </VerticalTimelineElement>
-        ))}
-      </VerticalTimeline>
+      <div className="flex items-center justify-center w-full py-6">
+        <h2 className="font-inter text-4xl font-bold text-color-primary items-center">
+          Timeline
+        </h2>
+      </div>
+
+      <div className="w-full">
+        <VerticalTimeline>
+          {exp.reverse().map((experience) => (
+            <VerticalTimelineElement
+              key={experience.id}
+              dateClassName="timeline-date"
+              className="vertical-timeline-element--work text-color-secondary font-inter text-lg"
+              contentStyle={{
+                background: "rgba(var(--color-blue))",
+                padding: "20px",
+                borderRadius: "8px", 
+              }}
+              contentArrowStyle={{
+                borderRight: `10px solid rgba(var(--color-blue))`,
+              }}
+              date={experience.time}
+              iconStyle={{
+                background: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+                borderRadius: "50%",
+                border: `4px solid rgba(var(--color-primary))`,
+              }}
+              icon={
+                <a
+                  href={experience.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={`../src/assets/logos/${experience.id}.jpg`}
+                    alt={`${experience.title} logo`}
+                    className="object-contain w-full h-full"
+                  />
+                </a>
+              }
+            >
+              <h3 className="vertical-timeline-element-title text-2xl font-bold font-inter text-color-primary">
+                {experience.title}
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle text-color-primary">
+                {experience.job}
+              </h4>
+              <p className="text-color-secondary font-inter">{experience.description}</p>
+
+              <Button name={"Read More"} link={"google.com"} />
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
+
+      <div className="mx-5 mt-2 mb-5">
+        <h1 className="flex font-inter text-3xl text-color-primary font-bold">Pitch Perfect</h1>
+        <p className="text-xl font-inter">At Pitch Perfect I did this and I did that etc....</p>
+      </div>
+
+      <div className="mx-5 mt-2 mb-5">
+        <h1 className="flex font-inter text-3xl text-color-primary font-bold">Pitch Perfect</h1>
+        <p className="text-xl font-inter">At Pitch Perfect I did this and I did that etc....</p>
+      </div>
+
+      <div className="mx-5 mt-2 mb-5">
+        <h1 className="flex font-inter text-3xl text-color-primary font-bold">Pitch Perfect</h1>
+        <p className="text-xl font-inter">At Pitch Perfect I did this and I did that etc....</p>
+      </div>
     </div>
   );
 };
