@@ -30,6 +30,7 @@ export default {
         "color-green": "rgba(var(--color-green))",
         "color-red": "rgba(var(--color-red))",
         "color-yellow": "rgba(var(--color-yellow))",
+        "color-blue": "rgba(var(--color-blue))",
 
         "border-primary": "rgba(var(--border-primary))",
         "border-red": "rgba(var(--border-red))",

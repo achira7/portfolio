@@ -32,6 +32,7 @@ button, a{
   --color-green: 53,199,90, 1;
   --color-red: 255,59,47, 1;
   --color-yellow: 255,204,0, 1;
+  --color-blue:162,222,246;
   
   --border-primary:41, 126, 255, 1;
   --border-green: 111, 204, 37, 1;
@@ -62,6 +63,7 @@ button, a{
   --color-green: 47,209,88, 1;
   --color-red: 255,60,68, 1;
   --color-yellow: 255,214,10, 1;
+  --color-blue: 15, 137, 187;
 
   --border-primary:41, 126, 255, 1;
   --border-green: 111, 204, 37, 1;
@@ -162,7 +164,7 @@ button, a{
 }
 
 
-/* Chat Bot */
+/* Custom Chat Bot Styles */
 .react-chatbot-kit-chat-container {
   @apply bg-card-primary-top text-black font-inter w-[700px];
 }
@@ -197,3 +199,25 @@ button, a{
 .react-chatbot-kit-chat-bot-message {
   @apply w-full;
 }
+
+
+
+/* Custom Timeline Styles */
+.vertical-timeline::before {
+  background: rgba(var(--color-primary)); 
+}
+
+.vertical-timeline .vertical-timeline-element-icon {
+  border: none; 
+  box-shadow: none; 
+  outline: none;
+  border-radius: 50%; 
+  border: 4px solid rgba(var(--color-primary)); 
+}
+
+/* Glow effect on hover */
+.vertical-timeline .vertical-timeline-element-icon:hover {
+  box-shadow: 0 0 15px 5px rgba(var(--color-primary), 0.6); /* Apply glow effect */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth animation for glow effect */
+}
+
