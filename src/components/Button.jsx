@@ -39,7 +39,7 @@ const Button = ({ name, link, color, icon }) => {
         <div className="flex xs:hidden">
           {selectedIconClass}
         </div>
-        <span className='text-white' id="clickable">{name}</span>
+        <span className='text-white text-base' id="clickable">{name}</span>
       </button>
     </a>
   );
