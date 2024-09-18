@@ -49,7 +49,7 @@ const Experience = () => {
         </h2>
       </div>
 
-      <div className="w-full">
+      <div className="w-full mb-10">
         <VerticalTimeline>
           {exp.reverse().map((experience) => (
             <VerticalTimelineElement
@@ -59,7 +59,7 @@ const Experience = () => {
               contentStyle={{
                 background: "rgba(var(--color-blue))",
                 padding: "20px",
-                borderRadius: "8px", 
+                borderRadius: "8px",
               }}
               contentArrowStyle={{
                 borderRight: `10px solid rgba(var(--color-blue))`,
@@ -94,7 +94,9 @@ const Experience = () => {
               <h4 className="vertical-timeline-element-subtitle text-color-primary">
                 {experience.job}
               </h4>
-              <p className="text-color-secondary font-inter">{experience.description}</p>
+              <p className="text-color-secondary font-inter">
+                {experience.description}
+              </p>
 
               <Button name={"Read More"} link={"google.com"} />
             </VerticalTimelineElement>
@@ -102,20 +104,39 @@ const Experience = () => {
         </VerticalTimeline>
       </div>
 
-      <div className="mx-5 mt-2 mb-5">
-        <h1 className="flex font-inter text-3xl text-color-primary font-bold">Pitch Perfect</h1>
-        <p className="text-xl font-inter">At Pitch Perfect I did this and I did that etc....</p>
+      <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
+        <div className="p-5">
+          <h1 className="flex font-inter text-3xl text-color-primary font-bold">
+            Pitch Perfect
+          </h1>
+          <p className="text-xl font-inter text-color-secondary mt-1">
+            At Pitch Perfect I did this and I did that etc....
+          </p>
+        </div>
       </div>
 
-      <div className="mx-5 mt-2 mb-5">
-        <h1 className="flex font-inter text-3xl text-color-primary font-bold">Pitch Perfect</h1>
-        <p className="text-xl font-inter">At Pitch Perfect I did this and I did that etc....</p>
+      <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
+        <div className="p-5">
+          <h1 className="flex font-inter text-3xl text-color-primary font-bold">
+          Pintanna Plantations
+          </h1>
+          <p className="text-xl font-inter text-color-secondary mt-1">
+            At Pintanna Plantations I did this and I did that etc....
+          </p>
+        </div>
       </div>
 
-      <div className="mx-5 mt-2 mb-5">
-        <h1 className="flex font-inter text-3xl text-color-primary font-bold">Pitch Perfect</h1>
-        <p className="text-xl font-inter">At Pitch Perfect I did this and I did that etc....</p>
+      <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
+        <div className="p-5">
+          <h1 className="flex font-inter text-3xl text-color-primary font-bold">
+            AIESEC
+          </h1>
+          <p className="text-xl font-inter text-color-secondary mt-1">
+            At AIESEC I did this and I did that etc....
+          </p>
+        </div>
       </div>
+
     </div>
   );
 };
