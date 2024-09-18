@@ -37,136 +37,8 @@ const Home = () => {
     });
   }, []);
 
-  // useLayoutEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     const t1 = gsap.timeline();
-
-  //     t1.from(
-  //       [
-  //         "#welcome-1",
-  //       ],
-  //       {
-  //         opacity: 0,
-  //         y: "+=50",
-  //         delay: 0.5,
-  //         stagger: 0.1,
-  //         ease: "power1.in",
-  //       }
-  //     )
-  //       .to(
-  //         [
-  //           "#welcome-1",
-  //          ],
-  //         {
-  //           opacity: 0,
-  //           y: "-=50",
-  //           delay: 0.3,
-  //           stagger: 0.1,
-  //           ease: "power1.in",
-  //         }
-  //       )
-  //       .to("#cover", {
-  //         yPercent: "-200",
-  //         duration: 1,
-  //         delay: 0.4,
-  //         ease: "power1.in",
-  //       })
-  //       .from(["#title-1", "#title-2", "#title-3", "#title-4"], {
-  //         opacity: 0,
-  //         y: "+=30",
-  //         delay: 0.1,
-  //         stagger: 0.4,
-  //         ease: "power1.in",
-  //       })
-  //       .to(["#title-1", "#title-2", "#title-3", "#title-4"], {
-  //         opacity: 0,
-  //         y: "-=30",
-  //         delay: 0.2,
-  //         stagger: 0.4,
-  //         ease: "power1.in",
-  //       })
-  //       .to("#intro-slider", {
-  //         opacity: 0,
-  //         duration: 2,
-  //         delay: 0.1,
-  //         ease: "power1.in",
-  //       })
-  //       .to("#intro-slider", {
-  //         yPercent: "-200",
-  //         duration: 0.1,
-  //       })
-  //       .from(["#achira", "#silva"], {
-  //         opacity: 0,
-  //         y: "+=30",
-  //         stagger: 0.4,
-  //         ease: "power1.in",
-  //       });
-  //   }, container);
-
-  //   return () => ctx.revert();
-  // }, []);
-
-  // className="h-full bg-[radial-gradient(169.40%_189.55%_at_94.76%_6.29%,rgba(10,10,10,10.00)_100%,rgba(255,255,255,0.00)_100%)] w-full absolute top-0 left-0 flex justify-center items-center"
-
   return (
     <div className="bg-background" ref={container}>
-      {/* <div className="bg-indigo-700 w-full z-30"> </div>
-      <div
-        id="cover"
-        className="h-full bg-sky-950  w-full absolute top-0 left-0 flex justify-center items-center"
-      >
-
-
-        <div className="flex flex-row z-30">
-          <p id="welcome-1" className="text-9xl text-white font-inter font-thin">
-            Welcome.
-          </p>
-        </div>
-
-        <div className="flex">
-          <div
-            id="intro-circle"
-            className="w-56 h-56 bg-[radial-gradient(169.40%_189.40%_at_94.76%_6.29%,rgba(10,10,10,10.40)_0%,rgba(255,255,255,0.00)_100%)] rounded-full absolute "
-          ></div>
-          <div
-            id="intro-circle"
-            className="w-10 h-10 bg-[radial-gradient(169.40%_189.40%_at_94.76%_6.29%,rgba(10,10,10,10.40)_0%,rgba(255,255,255,0.00)_100%)] rounded-full absolute "
-          ></div>
-          <div
-            id="intro-circle"
-            className="w-56 h-56 bg-[radial-gradient(169.40%_189.40%_at_94.76%_6.29%,rgba(10,10,10,10.40)_0%,rgba(255,255,255,0.00)_100%)] rounded-full absolute "
-          ></div>
-          <div
-            id="intro-circle"
-            className="w-56 h-56 bg-[radial-gradient(169.40%_189.40%_at_94.76%_6.29%,rgba(10,10,10,10.40)_0%,rgba(255,255,255,0.00)_100%)] rounded-full absolute "
-          ></div>
-          <div
-            id="intro-circle"
-            className="w-56 h-56 bg-[radial-gradient(169.40%_189.40%_at_94.76%_6.29%,rgba(10,10,10,10.40)_0%,rgba(255,255,255,0.00)_100%)] rounded-full absolute "
-          ></div>
-        </div>
-
-        
-
-      </div> */}
-      {/* <div
-        id="intro-slider"
-        className="h-screen  p-10 bg-sky-500 absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-10"
-      >
-        <h1 id="title-1" className="text-9xl">
-          Software Engineer
-        </h1>
-        <h1 id="title-2" className="text-9xl">
-          Desinger
-        </h1>
-        <h1 id="title-3" className="text-9xl">
-          Musician
-        </h1>
-        <h1 id="title-4" className="text-9xl">
-          Game Developer
-        </h1>
-      </div> */}
-
       <div className="h-screen flex flex-col flex-wrap top-0 left-0 z-20">
         <div>
           <h1
@@ -192,8 +64,8 @@ const Home = () => {
 
         <div className="flex items-center justify-center w-[100]">
           <GradientComponent
-            colorA={"#341abc"}
-            colorB={"#341abc"}
+            colorA={"#0e2d74"}
+            colorB={"#40c6df"}
             colorC={"#341abc"}
           />
           <div className="w-1/4">
@@ -235,10 +107,8 @@ const Home = () => {
           <p>I am aAchira Silva etc etc i make apps</p>
           <Button name={"All Projects"} link={"/projects"} color={"green"} />
         </div>
-        
       </div>
 
-      <Button name="Test" />
     </div>
   );
 };

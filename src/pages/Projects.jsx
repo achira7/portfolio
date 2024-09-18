@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import DownloadCV from "../components/DownloadCV";
 import ChatBot from "../components/ChatBot";
+import GradientComponent from "../components/GradientComponent";
 
 import {
   CloseIcon,
@@ -116,6 +117,15 @@ const Projects = () => {
       </div>
     ))}
 </div>
+ 
+ <div className="w-[1000px] h-[1000px] z-40 p-10">
+  <GradientComponent
+              colorA={"#0e2d74"}
+              colorB={"#40c6df"}
+              colorC={"#341abc"}
+            />
+ </div>
+
 
     </div>
   );
