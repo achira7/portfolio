@@ -88,51 +88,38 @@ function App() {
         },
       });
 
-      // t1.from("#welcome-1", {
-      //   opacity: 0,
-      //   y: "+=50",
-      //   delay: 0.5,
-      //   ease: "power1.in",
-      // })
-      //   .to("#welcome-1", {
-      //     opacity: 0,
-      //     y: "-=50",
-      //     delay: 0.3,
-      //     ease: "power1.in",
-      //   })
-      //   .to("#cover", {
-      //     yPercent: "-200",
-      //     duration: 1,
-      //     delay: 0.4,
-      //     ease: "power1.in",
-      //   })
-      //   .from("#title-1, #title-2, #title-3, #title-4", {
-      //     opacity: 0,
-      //     y: "+=30",
-      //     delay: 0.1,
-      //     stagger: 0.4,
-      //     ease: "power1.in",
-      //   })
-      //   .to("#title-1, #title-2, #title-3, #title-4", {
-      //     opacity: 0,
-      //     y: "-=30",
-      //     delay: 0.2,
-      //     stagger: 0.4,
-      //     ease: "power1.in",
-      //   })
-      //   .to("#intro-slider", {
-      //     opacity: 0,
-      //     duration: 2,
-      //     delay: 0.1,
-      //     ease: "power1.in",
-      //   })
-      //   .to("#intro-slider", { yPercent: "-200", duration: 0.1 })
-      //   .from("#achira, #silva", {
-      //     opacity: 0,
-      //     y: "+=30",
-      //     stagger: 0.4,
-      //     ease: "power1.in",
-      //   });
+      t1.from("#welcome-1", {
+        opacity: 0,
+        y: "+=50",
+        delay: 0.5,
+        ease: "power1.in",
+      })
+        .to("#welcome-1", {
+          opacity: 0,
+          y: "-=50",
+          delay: 0.3,
+          ease: "power1.in",
+        })
+        .from("#title-1, #title-2, #title-3, #title-4", {
+          opacity: 0,
+          y: "+=30",
+          delay: 0.1,
+          stagger: 0.4,
+          ease: "power1.in",
+        })
+        .to("#title-1, #title-2, #title-3, #title-4", {
+          opacity: 0,
+          y: "-=30",
+          delay: 0.2,
+          stagger: 0.4,
+          ease: "power1.in",
+        })
+        .to("#cover", {
+              yPercent: "-200",
+              duration: 1,
+              delay: 0.4,
+              ease: "power1.in",
+            })
     }, container);
 
     return () => {
@@ -166,10 +153,8 @@ function App() {
                 Welcome.
               </p>
             </div>
-          </div>
 
-          {/* Intro slider */}
-          <div
+            <div
             id="intro-slider"
             className="h-screen p-10  absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-40"
           >
@@ -186,6 +171,11 @@ function App() {
               Game Developer
             </h1>
           </div>
+          
+          </div>
+
+          {/* Intro slider */}
+          
         </div>
 
         {/* Cursor */}

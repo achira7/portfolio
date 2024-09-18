@@ -1,14 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"; // Import the ScrollToPlugin
 
 import DarkMode from "./DarkMode/DarkMode";
-
 import ChatBot from "../components/ChatBot";
 import { ChatIcon, UpArrow, CloseIcon } from "../assets/icons/icons";
 
+// Register the ScrollToPlugin with GSAP
+gsap.registerPlugin(ScrollToPlugin);
+
 const NavBar = () => {
   const navigate = useNavigate();
-
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   const links = [
@@ -17,6 +20,10 @@ const NavBar = () => {
     { id: 3, title: "Experience", url: "/experience" },
     { id: 4, title: "About Me", url: "/about" },
   ];
+
+  const scrollToTop = () => {
+    gsap.to(window, { scrollTo: { y: 0 }, delay:"0", duration: 1, ease: "power1.in" });
+  };
 
   return (
     <div className="fixed top-0 right-0 z-10 flex flex-wrap bg-trans">
@@ -41,16 +48,18 @@ const NavBar = () => {
       </div>
 
       <div className="flex">
-      <button
-        onClick={() => setIsChatOpen(true)}
-        className="fixed bottom-10 left-10 bg-color-primary text-white p-3 rounded-full"
-      >
-        <ChatIcon className="overflow-hidden"/>
-      </button>
-      <button className="fixed bottom-10 right-10 bg-color-primary text-white p-3 rounded-full">
-
-        <UpArrow />
-      </button>
+        <button
+          onClick={() => setIsChatOpen(true)}
+          className="fixed bottom-10 left-10 bg-color-primary text-white p-3 rounded-full"
+        >
+          <ChatIcon className="overflow-hidden" />
+        </button>
+        <button
+          onClick={scrollToTop} // Call the scrollToTop function
+          className="fixed bottom-10 right-10 bg-color-primary text-white p-3 rounded-full"
+        >
+          <UpArrow />
+        </button>
       </div>
 
       {/* ChatBot Overlay */}
