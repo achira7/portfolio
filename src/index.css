@@ -40,6 +40,8 @@ button, a{
   --color-red: 255,59,47, 1;
   --color-yellow: 255,204,0, 1;
   --color-blue:162,222,246;
+
+  --color-polaroid: 255,255,255;
   
   --border-primary:41, 126, 255, 1;
   --border-green: 111, 204, 37, 1;
@@ -71,6 +73,8 @@ button, a{
   --color-red: 255,60,68, 1;
   --color-yellow: 255,214,10, 1;
   --color-blue: 15, 137, 187;
+
+  --color-polaroid: 255,255,242;
 
   --border-primary:41, 126, 255, 1;
   --border-green: 111, 204, 37, 1;
