@@ -187,7 +187,7 @@ function App() {
           ></div>
         </div>
 
-        <NavBar className={`flex flex-wrap z-20 ${mode}`} />
+        <NavBar className={` z-20 ${mode}`} />
         <Routes>
           <Route
             className={`flex flex-wrap z-10 ${mode}`}
