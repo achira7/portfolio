@@ -57,8 +57,19 @@ const Home = () => {
         </div>
 
         <div className="m-7 flex items-start">
-          <p className="font-space text-color-primary text-3xl">
-            Hi! I'm Achira Silva. I am a creative indiviual and etc....
+          <p className="font-inter text-color-primary text-3xl tracking-wide">
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
+            Hi! I'm Achira Silva. I am a creative indiviual and etc.
           </p>
         </div>
 
@@ -68,10 +79,10 @@ const Home = () => {
             colorB={"#40c6df"}
             colorC={"#341abc"}
           />
-          <div className="w-1/4">
+          <div className="w-1/6">
             <img
               src={achiraImage}
-              className="absolute w-[200] top-0 grayscale"
+              className="absolute top-0 grayscale"
             />
             <img
               src={overlayImage}
@@ -107,6 +118,10 @@ const Home = () => {
           <p>I am aAchira Silva etc etc i make apps</p>
           <Button name={"All Projects"} link={"/projects"} color={"green"} />
         </div>
+
+        <p>
+
+        </p>
       </div>
 
     </div>

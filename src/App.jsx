@@ -16,6 +16,7 @@ function App() {
   const flairRef = useRef(null);
   const container = useRef(null);
   const [mode, setMode] = useState("light-mode");
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
     const storedMode = localStorage.getItem("mode") || "light-mode";
@@ -30,6 +31,51 @@ function App() {
     document.body.classList.add(newMode);
     localStorage.setItem("mode", newMode);
   };
+
+  // .from("#title-1, #title-2, #title-3, #title-4", {
+  //   opacity: 0,
+  //   y: "+=30",
+  //   delay: 0.1,
+  //   stagger: 0.4,
+  //   ease: "slow",
+  // })
+
+  useLayoutEffect(() => {
+    const loaderElement = document.getElementById("loader");
+
+    gsap.from(loaderElement, {
+      scale: 0.5,
+      duration: 0.5,
+      ease: "power1.out",
+    });
+
+    let progressAnimation = gsap.to(
+      {},
+      {
+        y: "+=30",
+        delay: 0.2,
+        duration: 2,
+        ease: "slow",
+        onUpdate: () => {
+          const progress = Math.round(progressAnimation.progress() * 100);
+          setLoadingProgress(progress);
+        },
+        onComplete: () => {
+          gsap.to(loaderElement, {
+            opacity: 0,
+            scale: 0.5,
+            duration: 0.5,
+            ease: "power1.in",
+            onComplete: () => {
+              loaderElement.style.display = "none";
+            },
+          });
+        },
+      }
+    );
+
+    return () => progressAnimation.kill();
+  }, []);
 
   // Cursor animation
   useLayoutEffect(() => {
@@ -47,7 +93,7 @@ function App() {
       gsap.to(flairRef.current, {
         clipPath: "polygon(40% 40%, 60% 100%, 100% 60%)",
         scale: 1.4,
-        duration: 0.3,
+        duration: 0.5,
         ease: "power2.inOut",
       });
     };
@@ -56,7 +102,7 @@ function App() {
       gsap.to(flairRef.current, {
         clipPath: "circle(45% at 50% 50%)",
         scale: 1,
-        duration: 0.3,
+        duration: 0.5,
         ease: "power2.inOut",
       });
     };
@@ -91,13 +137,13 @@ function App() {
       t1.from("#welcome-1", {
         opacity: 0,
         y: "+=50",
-        delay: 0.5,
+        delay: 2.3,
         ease: "power1.in",
       })
         .to("#welcome-1", {
           opacity: 0,
           y: "-=50",
-          delay: 0.3,
+          delay: 0.5,
           ease: "power1.in",
         })
         .from("#title-1, #title-2, #title-3, #title-4", {
@@ -115,11 +161,11 @@ function App() {
           ease: "power1.in",
         })
         .to("#cover", {
-              yPercent: "-200",
-              duration: 1,
-              delay: 0.4,
-              ease: "power1.in",
-            })
+          yPercent: "-200",
+          duration: 1,
+          delay: 0.4,
+          ease: "power1.in",
+        });
     }, container);
 
     return () => {
@@ -131,13 +177,21 @@ function App() {
   return (
     <Router>
       <div className="bg-background">
-        <div className="z-50" ref={container}>
-          <div className=" w-full"></div>
+        <div className="relative z-50" ref={container}>
+          <div
+            id="loader"
+            className="fixed inset-0 z-50 flex items-center justify-center text-white"
+          >
+            <p className="text-7xl font-inter font-black tracking-wide">
+              {" "}
+              LOADING: {loadingProgress}%
+            </p>
+          </div>
 
-          {/* Welcome animation */}
+          <div className="w-full h-full"></div>
           <div
             id="cover"
-            className="h-screen w-screen relative top-0 left-0 flex justify-center items-center z-10"
+            className="h-screen w-screen absolute top-0 left-0 flex justify-center items-center z-10"
           >
             <GradientComponent
               colorA={"#0e2d74"}
@@ -155,27 +209,25 @@ function App() {
             </div>
 
             <div
-            id="intro-slider"
-            className="h-screen p-10  absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-40"
-          >
-            <h1 id="title-1" className="text-9xl">
-              Software Engineer
-            </h1>
-            <h1 id="title-2" className="text-9xl">
-              Designer
-            </h1>
-            <h1 id="title-3" className="text-9xl">
-              Musician
-            </h1>
-            <h1 id="title-4" className="text-9xl">
-              Game Developer
-            </h1>
-          </div>
-          
+              id="intro-slider"
+              className="h-screen text-white p-10 absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-40"
+            >
+              <h1 id="title-1" className="text-9xl">
+                Software Engineer
+              </h1>
+              <h1 id="title-2" className="text-9xl">
+                Designer
+              </h1>
+              <h1 id="title-3" className="text-9xl">
+                Musician
+              </h1>
+              <h1 id="title-4" className="text-9xl">
+                Game Developer
+              </h1>
+            </div>
           </div>
 
           {/* Intro slider */}
-          
         </div>
 
         {/* Cursor */}
@@ -187,10 +239,10 @@ function App() {
           ></div>
         </div>
 
-        <NavBar className={` z-20 ${mode}`} />
-        <Routes>
+        <NavBar className={`flex relative z-20 ${mode}`} />
+        <Routes className="">
           <Route
-            className={`flex flex-wrap z-10 ${mode}`}
+            className={`flex flex-wrap z-10 mt-10 ${mode}`}
             path="/"
             element={<Home />}
           />
@@ -210,7 +262,7 @@ function App() {
             element={<Test />}
           />
           <Route
-            className={`flex flex-wrap z-10 ${mode}`}
+            className={`flex flex-wrap z-10 mt-10 ${mode}`}
             path="/experience"
             element={<Experience />}
           />
