@@ -9,36 +9,17 @@ import Button from "../components/Button";
 import GradientComponent from "../components/GradientComponent";
 
 //Assets
-import achiraImage from "../assets/achira.png";
-import overlayImage from "../assets/halftone_overlay.jpg";
+import heroLight from "../assets/hero/hero-light.png"
+import heroDark from "../assets/hero/hero-dark.png"
 
-const Home = () => {
+const Home = ({ mode }) => {
   const container = useRef(null);
 
   gsap.registerPlugin(useGSAP);
 
-  const [randomNumbers, setRandomNumbers] = useState({ randX: 0, randY: 0 });
-
-  const [circlePositions, setCirclePositions] = useState([]);
-
-  useEffect(() => {
-    const generateRandomNumber = () => {
-      const isNegative = Math.random() < 0.5;
-      if (isNegative) {
-        return Math.floor(Math.random() * 121) - 200;
-      } else {
-        return Math.floor(Math.random() * 121) + 80;
-      }
-    };
-
-    setRandomNumbers({
-      randX: generateRandomNumber(),
-      randY: generateRandomNumber(),
-    });
-  }, []);
 
   return (
-    <div className="bg-background" ref={container}>
+    <div className="bg-background " ref={container}>
       <div className="h-screen flex flex-col flex-wrap top-0 left-0 z-20">
         <div>
           <h1
@@ -57,7 +38,7 @@ const Home = () => {
         </div>
 
         <div className="m-7 flex items-start">
-          <p className="font-inter text-color-primary text-3xl tracking-wide">
+          <p className="font-inter text-color-secondary text-3xl tracking-wide w-full">
             Hi! I'm Achira Silva. I am a creative indiviual and etc.
             Hi! I'm Achira Silva. I am a creative indiviual and etc.
             Hi! I'm Achira Silva. I am a creative indiviual and etc.
@@ -80,17 +61,10 @@ const Home = () => {
             colorC={"#341abc"}
           />
           <div className="w-1/6">
-            <img
-              src={achiraImage}
-              className="absolute top-0 grayscale"
-            />
-            <img
-              src={overlayImage}
-              className="absolute top-0 mix-blend-screen"
-              style={{
-                maskImage: `url(${achiraImage})`,
-                WebkitMaskImage: `url(${achiraImage})`,
-              }}
+          <img
+              src={mode === "light-mode" ? heroLight : heroDark}
+              className="absolute top-0 w-full max-w-[800px]"
+              alt="Hero"
             />
           </div>
         </div>
@@ -119,9 +93,7 @@ const Home = () => {
           <Button name={"All Projects"} link={"/projects"} color={"green"} />
         </div>
 
-        <p>
-
-        </p>
+        <hr class="border-color-primary border-2 shadow-lg" />
       </div>
 
     </div>

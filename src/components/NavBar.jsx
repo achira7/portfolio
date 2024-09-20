@@ -45,7 +45,7 @@ const NavBar = () => {
               <li
                 key={id}
                 onClick={() => navigate(url)}
-                className="text-color-primary text-5xl font-inter font-bold mx-5 my-7 z-10"
+                className="text-color-primary text-5xl font-inter font-bold mx-5 my-7 z-10 hover:text-cyan-500 hover:tracking-wider"
                 style={{
                   backgroundColor: "transparent",
                   position: "relative",
@@ -67,7 +67,7 @@ const NavBar = () => {
               <li
                 key={id}
                 onClick={() => navigate(url)}
-                className="text-color-primary text-4xl font-inter font-bold py-3 px-5 z-10 mx-10"
+                className="text-color-primary text-4xl font-inter font-bold py-3 px-5 z-10 mx-10 hover:text-cyan-500 hover:tracking-wider"
                 style={{
                   position: "relative",
                   zIndex: 1,

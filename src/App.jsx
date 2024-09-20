@@ -24,22 +24,6 @@ function App() {
     document.body.classList.add(storedMode);
   }, []);
 
-  const toggleMode = () => {
-    const newMode = mode === "light-mode" ? "dark-mode" : "light-mode";
-    setMode(newMode);
-    document.body.classList.remove(mode);
-    document.body.classList.add(newMode);
-    localStorage.setItem("mode", newMode);
-  };
-
-  // .from("#title-1, #title-2, #title-3, #title-4", {
-  //   opacity: 0,
-  //   y: "+=30",
-  //   delay: 0.1,
-  //   stagger: 0.4,
-  //   ease: "slow",
-  // })
-
   useLayoutEffect(() => {
     const loaderElement = document.getElementById("loader");
 
@@ -242,10 +226,11 @@ function App() {
         <NavBar className={`flex relative z-20 ${mode}`} />
         <Routes className="">
           <Route
-            className={`flex flex-wrap z-10 mt-10 ${mode}`}
+            className={`flex z-10 mt-10 ${mode}`}
             path="/"
-            element={<Home />}
+            element={<Home mode={mode} />}
           />
+
           <Route
             className={`flex flex-wrap z-10 ${mode}`}
             path="/projects"
