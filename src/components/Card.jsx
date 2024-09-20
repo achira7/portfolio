@@ -13,6 +13,7 @@ const Card = ({
   libraries,
   imgLink,
   onTechClick,
+  icon
 }) => {
   return (
     <>
@@ -111,7 +112,13 @@ const Card = ({
         </div>
       ) : (
         <div className="m-5 bg-card-primary border border-card-primary-border z-10 rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
-          <div className="px-6 py-6"></div>
+          <div className="px-6 py-6">
+            <img src={icon} alt="" />
+            <h1 className="text-3xl font-inter font-bold text-color-primary capitalize">{name}</h1>
+            <p className="font-inter text-base text-color-secondary mt-1">
+              {description}
+            </p>
+          </div>
         </div>
       )}
     </>

@@ -108,60 +108,60 @@ function App() {
     };
   }, []);
 
-  useLayoutEffect(() => {
-    document.body.style.overflow = "hidden";
+  // useLayoutEffect(() => {
+  //   document.body.style.overflow = "hidden";
 
-    let ctx = gsap.context(() => {
-      const t1 = gsap.timeline({
-        onComplete: () => {
-          document.body.style.overflow = "auto";
-        },
-      });
+  //   let ctx = gsap.context(() => {
+  //     const t1 = gsap.timeline({
+  //       onComplete: () => {
+  //         document.body.style.overflow = "auto";
+  //       },
+  //     });
 
-      t1.from("#welcome-1", {
-        opacity: 0,
-        y: "+=50",
-        delay: 2.3,
-        ease: "power1.in",
-      })
-        .to("#welcome-1", {
-          opacity: 0,
-          y: "-=50",
-          delay: 0.5,
-          ease: "power1.in",
-        })
-        .from("#title-1, #title-2, #title-3, #title-4", {
-          opacity: 0,
-          y: "+=30",
-          delay: 0.1,
-          stagger: 0.4,
-          ease: "power1.in",
-        })
-        .to("#title-1, #title-2, #title-3, #title-4", {
-          opacity: 0,
-          y: "-=30",
-          delay: 0.2,
-          stagger: 0.4,
-          ease: "power1.in",
-        })
-        .to("#cover", {
-          yPercent: "-200",
-          duration: 1,
-          delay: 0.4,
-          ease: "power1.in",
-        });
-    }, container);
+  //     t1.from("#welcome-1", {
+  //       opacity: 0,
+  //       y: "+=50",
+  //       delay: 2.3,
+  //       ease: "power1.in",
+  //     })
+  //       .to("#welcome-1", {
+  //         opacity: 0,
+  //         y: "-=50",
+  //         delay: 0.5,
+  //         ease: "power1.in",
+  //       })
+  //       .from("#title-1, #title-2, #title-3, #title-4", {
+  //         opacity: 0,
+  //         y: "+=30",
+  //         delay: 0.1,
+  //         stagger: 0.4,
+  //         ease: "power1.in",
+  //       })
+  //       .to("#title-1, #title-2, #title-3, #title-4", {
+  //         opacity: 0,
+  //         y: "-=30",
+  //         delay: 0.2,
+  //         stagger: 0.4,
+  //         ease: "power1.in",
+  //       })
+  //       .to("#cover", {
+  //         yPercent: "-200",
+  //         duration: 1,
+  //         delay: 0.4,
+  //         ease: "power1.in",
+  //       });
+  //   }, container);
 
-    return () => {
-      ctx.revert();
-      document.body.style.overflow = "auto";
-    };
-  }, []);
+  //   return () => {
+  //     ctx.revert();
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, []);
 
   return (
     <Router>
       <div className="bg-background">
-        <div className="relative z-50" ref={container}>
+        {/* <div className="relative z-50" ref={container}>
           <div
             id="loader"
             className="fixed inset-0 z-50 flex items-center justify-center text-white"
@@ -211,8 +211,7 @@ function App() {
             </div>
           </div>
 
-          {/* Intro slider */}
-        </div>
+        </div> */}
 
         {/* Cursor */}
         <div ref={cursorContainer}>

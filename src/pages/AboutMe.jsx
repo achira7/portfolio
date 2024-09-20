@@ -4,7 +4,7 @@ import Polaroid from "../components/Polaroid";
 
 const AboutMe = () => {
   return (
-    <div className="flex flex-col bg-background m-5 w-full max-w-screen-2xl mx-auto space-y-10">
+    <div className="flex flex-col bg-background m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36">
       <h1 className="text-5xl font-bold text-color-primary font-inter">
         About Me
       </h1>

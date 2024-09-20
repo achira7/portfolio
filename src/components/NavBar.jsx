@@ -1,9 +1,9 @@
+// src/components/NavBar.js
 import { useNavigate, useLocation } from "react-router-dom";
 import React, { useState } from "react";
-
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
+import { useTextScramble } from "../hooks/useTextScramble";
 import DarkMode from "./DarkMode/DarkMode";
 import ChatBot from "../components/ChatBot";
 import { ChatIcon, UpArrow, CloseIcon } from "../assets/icons/icons";
@@ -22,7 +22,7 @@ const NavBar = () => {
     { id: 3, title: "Experience", url: "/experience" },
     { id: 4, title: "About Me", url: "/about" },
   ];
-
+  
   const scrollToTop = () => {
     gsap.to(window, {
       scrollTo: { y: 0 },
@@ -33,49 +33,54 @@ const NavBar = () => {
   };
 
   return (
-    <div className="fixed top-0 right-0 z-10 w-full">
-      {" "}
+    <div className="top-0 right-0 z-10 w-full">
       {location.pathname === "/" ? (
         <div
           id="horizontal-navbar"
-          className="flex justify-end flex-wrap bg-transparent"
+          className="flex justify-end flex-wrap bg-transparent "
         >
           <ul className="flex flex-col items-end bg-transparent">
-            {links.map(({ id, title, url }) => (
-              <li
-                key={id}
-                onClick={() => navigate(url)}
-                className="text-color-primary text-5xl font-inter font-bold mx-5 my-7 z-10 hover:text-cyan-500 hover:tracking-wider"
-                style={{
-                  backgroundColor: "transparent",
-                  position: "relative",
-                  zIndex: 1,
-                }}
-              >
-                {title}
-              </li>
-            ))}
+            {links.map(({ id, title, url }) => {
+              const scrambledTitle = useTextScramble(title); 
+              return (
+                <li
+                  key={id}
+                  onClick={() => navigate(url)}
+                  className="text-color-primary text-5xl font-inter font-bold mx-5 my-7 z-10 hover:text-cyan-500 hover:tracking-wider"
+                  style={{
+                    backgroundColor: "transparent",
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  {scrambledTitle}
+                </li>
+              );
+            })}
           </ul>
         </div>
       ) : (
         <div
           id="vertical-navbar"
-          className="flex justify-end bg-background w-full"
+          className="flex justify-end bg-background w-full fixed "
         >
           <ul className="flex justify-between bg-background w-full px-40">
-            {links.map(({ id, title, url }) => (
-              <li
-                key={id}
-                onClick={() => navigate(url)}
-                className="text-color-primary text-4xl font-inter font-bold py-3 px-5 z-10 mx-10 hover:text-cyan-500 hover:tracking-wider"
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                }}
-              >
-                {title}
-              </li>
-            ))}
+            {links.map(({ id, title, url }) => {
+              const scrambledTitle = useTextScramble(title); 
+              return (
+                <li
+                  key={id}
+                  onClick={() => navigate(url)}
+                  className="text-color-primary text-4xl font-inter font-bold py-3 px-5 z-10 mx-10 hover:text-cyan-500 hover:tracking-wider"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  {scrambledTitle}
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}

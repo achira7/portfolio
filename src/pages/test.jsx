@@ -7,7 +7,7 @@ import GradientComponent from "../components/GradientComponent";
 
 const Test = () => {
   return (
-    <div className="bg-background">
+    <div className="bg-background  mb-36 ">
       
       <div className="">
         <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap">

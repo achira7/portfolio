@@ -78,7 +78,7 @@ const Projects = () => {
   });
 
   return (
-    <div className="bg-background">
+    <div className="bg-background  mb-36 ">
       <div>
         <h1
           id="achira"
