@@ -34,12 +34,13 @@ const NavBar = () => {
 
   return (
     <div className="top-0 right-0 z-10 w-full">
+      {/* VERTICAL NAV BAR */}
       {location.pathname === "/" ? (
         <div
           id="horizontal-navbar"
-          className="flex justify-end flex-wrap bg-transparent "
+          className="flex fixed justify-end flex-wrap bg-transparent right-10"
         >
-          <ul className="flex flex-col items-end bg-transparent">
+          <ul className="flex flex-col items-end flex-wrap bg-transparent">
             {links.map(({ id, title, url }) => {
               const scrambledTitle = useTextScramble(title); 
               return (

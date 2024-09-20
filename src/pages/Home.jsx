@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 //componenets
 import Button from "../components/Button";
 import GradientComponent from "../components/GradientComponent";
+import Marquee from "../components/Marquee";
 
 //Assets
 import heroLight from "../assets/hero/hero-light.png";
@@ -26,43 +27,12 @@ const Home = ({ mode }) => {
 
   gsap.registerPlugin(useGSAP);
 
-  const achiraRef = useRef(null);
-  const silvaRef = useRef(null);
-
-  useLayoutEffect(() => {
-    // Scramble text animation for ACHIRA
-    gsap.to(achiraRef.current, {
-      scrambleText: {
-        delay: 5,
-        text: "ACHIRA",
-        chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-        speed: 0.3,
-        delimiter: "",
-      },
-      duration: 2,
-      ease: "power2.inOut",
-    });
-
-    // Scramble text animation for SILVA
-    gsap.to(silvaRef.current, {
-      scrambleText: {
-        text: "SILVA",
-        chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-        speed: 0.5,
-        delimiter: "",
-      },
-      duration: 2.5,
-      ease: "power2.inOut",
-    });
-  }, []);
-
   return (
-    <div className="bg-background " ref={container}>
-      <div className="h-screen flex flex-col flex-wrap top-0 left-0 z-20">
+    <div className="bg-background mb-36" ref={container}>
+      <div className="flex flex-col top-0 left-0 z-20">
         <div>
           <h1
             id="achira"
-            ref={achiraRef}
             className="text-9xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap"
           >
             ACHIRA
@@ -70,7 +40,7 @@ const Home = ({ mode }) => {
 
           <h1
             id="silva"
-            ref={silvaRef}
+
             className="text-9xl font-bold text-color-secondary font-inter mx-5"
           >
             SILVA
@@ -78,7 +48,7 @@ const Home = ({ mode }) => {
         </div>
 
         <div className="m-7 flex items-start">
-          <p className="font-inter text-color-secondary text-3xl tracking-wide w-full">
+          <p className="font-inter text-color-secondary text-3xl tracking-wide w-full max-w-screen-md">
             Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
             Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
             Silva. I am a creative indiviual and etc. Hi! I'm Achira Silva. I am
@@ -93,19 +63,21 @@ const Home = ({ mode }) => {
           </p>
         </div>
 
+        <Marquee />
+
         <div className="flex items-center justify-center w-[100]">
           <GradientComponent
             colorA={"#0e2d74"}
             colorB={"#40c6df"}
             colorC={"#341abc"}
           />
-          <div className="w-1/6">
+          {/* <div className="w-1/6">
             <img
               src={mode === "light-mode" ? heroLight : heroDark}
               className="absolute bottom-0 w-full max-w-[700px] md:max-w-[550px]"
               alt="Hero"
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="flex">
