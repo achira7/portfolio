@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
-import DownloadCV from "../components/DownloadCV";
-import ChatBot from "../components/ChatBot";
-import GradientComponent from "../components/GradientComponent";
+import { useLocation } from "react-router-dom"; // Hook to get the query param
 
-import {
-  CloseIcon,
-  ChatIcon,
-  UpArrow,
-  SearchIcon,
-} from "../assets/icons/icons";
+import { SearchIcon } from "../assets/icons/icons";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isChatOpen, setIsChatOpen] = useState(false);
 
-  const git = process.env.REACT_APP_GITHUB_API_KEY
+  const location = useLocation();
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const query = queryParams.get("query");
+    if (query) {
+      setSearchQuery(query);
+    }
+  }, [location.search]);
 
   useEffect(() => {
     const fetchRepos = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/users/achira7/repos",{
+          "https://api.github.com/users/achira7/repos",
+          {
             // headers: {
-            // Authorization: `Bearer ${git}`
+            // Authorization: `Bearer ${git}`  // Uncomment if using a GitHub token
             //  }
           }
         );
@@ -43,7 +44,6 @@ const Projects = () => {
           })
         );
         setRepos(reposWithLanguages);
-        console.log(repos)
       } catch (error) {
         console.error("Error fetching data from GitHub:", error);
       }
@@ -56,24 +56,20 @@ const Projects = () => {
     setSearchQuery(e.target.value.toLowerCase());
   };
 
-  const handleTechnologyClick = (tech) => {
-    setSearchQuery(tech.toLowerCase()); 
-  };
-
   const filteredRepos = repos.filter((repo) => {
     const query = searchQuery.toLowerCase();
-  
+
     const nameMatch = repo.name.toLowerCase().includes(query);
     const descriptionMatch = repo.description?.toLowerCase().includes(query);
-  
+
     const languagesMatch = repo.languages.some((lang) =>
       lang.toLowerCase().includes(query)
     );
-  
+
     const librariesMatch = repo.topics?.some((topic) =>
       topic.toLowerCase().includes(query)
     );
-  
+
     return nameMatch || descriptionMatch || languagesMatch || librariesMatch;
   });
 
@@ -98,35 +94,24 @@ const Projects = () => {
         />
       </div>
       <div className="flex flex-wrap justify-center">
-  {filteredRepos
-    .filter((repo) => repo.stargazers_count !== 0)
-    .map((repo) => (
-      <div key={repo.id} className="w-[850px] "> 
-        <Card
-          type={"project"}
-          key={repo.id}
-          projectName={repo.name}
-          description={repo.description || "No description provided."}
-          gitLink={repo.html_url}
-          demoLink={repo.homepage}
-          languages={repo.languages}
-          libraries={repo.topics}
-          imgLink={repo.imageUrl}
-          onTechClick={handleTechnologyClick} 
-        />
+        {filteredRepos
+          .filter((repo) => repo.stargazers_count !== 0)
+          .map((repo) => (
+            <div key={repo.id} className="w-[850px] ">
+              <Card
+                type={"project"}
+                key={repo.id}
+                projectName={repo.name}
+                description={repo.description || "No description provided."}
+                gitLink={repo.html_url}
+                demoLink={repo.homepage}
+                languages={repo.languages}
+                libraries={repo.topics}
+                imgLink={repo.imageUrl}
+              />
+            </div>
+          ))}
       </div>
-    ))}
-</div>
- 
- <div className="w-[1000px] h-[1000px] z-40 p-10">
-  <GradientComponent
-              colorA={"#0e2d74"}
-              colorB={"#40c6df"}
-              colorC={"#341abc"}
-            />
- </div>
-
-
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import Button from "../components/Button";
 import GradientComponent from "../components/GradientComponent";
 import Marquee from "../components/Marquee";
+import { useTextScramble } from "../hooks/useTextScramble";
 
 //Assets
 import heroLight from "../assets/hero/hero-light.png";
@@ -27,25 +28,27 @@ const Home = ({ mode }) => {
 
   gsap.registerPlugin(useGSAP);
 
+  const scrambledAchira = useTextScramble("ACHIRA"); // Scrambled "ACHIRA"
+  const scrambledSilva = useTextScramble("SILVA");
+
   return (
     <div className="bg-background mb-36" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20">
         <div>
-          <h1
-            id="achira"
-            className="text-9xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap"
-          >
-            ACHIRA
-          </h1>
+      <h1
+        id="achira"
+        className="text-9xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap"
+      >
+        {scrambledAchira} {/* Display scrambled "ACHIRA" */}
+      </h1>
 
-          <h1
-            id="silva"
-
-            className="text-9xl font-bold text-color-secondary font-inter mx-5"
-          >
-            SILVA
-          </h1>
-        </div>
+      <h1
+        id="silva"
+        className="text-9xl font-bold text-color-secondary font-inter mx-5"
+      >
+        {scrambledSilva} {/* Display scrambled "SILVA" */}
+      </h1>
+    </div>
 
         <div className="m-7 flex items-start">
           <p className="font-inter text-color-secondary text-3xl tracking-wide w-full max-w-screen-md">
@@ -63,45 +66,40 @@ const Home = ({ mode }) => {
           </p>
         </div>
 
-        <Marquee />
+        <div className="w-full  my-5 ml-5 mt-5 ">
+          <h1 className="text-5xl font-bold font-inter text-color-primary mb-2">
+            Technologies
+          </h1>
+          <h2 className="font-inter text-2xl text-color-secondary">Click to see Projects</h2>
+          <Marquee />
+        </div>
 
         <div className="flex items-center justify-center w-[100]">
-          <GradientComponent
+          {/* <GradientComponent
             colorA={"#0e2d74"}
             colorB={"#40c6df"}
             colorC={"#341abc"}
-          />
-          {/* <div className="w-1/6">
+          /> */}
+          <div className="w-1/6">
             <img
               src={mode === "light-mode" ? heroLight : heroDark}
               className="absolute bottom-0 w-full max-w-[700px] md:max-w-[550px]"
               alt="Hero"
             />
-          </div> */}
+          </div>
         </div>
 
         <div className="flex">
           <h1 className="ml-5 mt-5 text-5xl font-bold font-inter text-color-primary">
             Projects
           </h1>
-          <p>I am aAchira Silva etc etc i make apps</p>
-          <Button name={"All Projects"} link={"/projects"} color={"green"} />
         </div>
 
         <div className="flex">
           <h1 className="ml-5 mt-5 text-5xl font-bold font-inter text-color-primary">
-            Education
+          Experience
           </h1>
-          <p>I am aAchira Silva etc etc i make apps</p>
-          <Button name={"All Projects"} link={"/projects"} color={"green"} />
-        </div>
 
-        <div className="flex">
-          <h1 className="ml-5 mt-5 text-5xl font-bold font-inter text-color-primary">
-            Work Experienc
-          </h1>
-          <p>I am aAchira Silva etc etc i make apps</p>
-          <Button name={"All Projects"} link={"/projects"} color={"green"} />
         </div>
 
         <div>
@@ -195,7 +193,7 @@ const Home = ({ mode }) => {
                 </a>
                 <div className="r">
                   <h1 className="text-color-primary text-3xl font-bold">
-                  BSc (Hons) Software Engineering
+                    BSc (Hons) Software Engineering
                   </h1>
                   <h1 className="text-color-primary text-2xl font-semibold">
                     from University of Plymouth, Uk
