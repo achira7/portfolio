@@ -63,9 +63,11 @@ const NavBar = () => {
       ) : (
         <div
           id="vertical-navbar"
-          className="flex justify-end bg-background w-full fixed "
+          className="flex justify-end bg-background w-full fixed top-0 drop-shadow-[0_35px_35px_rgba(var(--tw-background)),0.8)]"
+
+
         >
-          <ul className="flex justify-between bg-background w-full px-40">
+          <ul className="flex justify-between bg-background w-full px-40 py-2">
             {links.map(({ id, title, url }) => {
               const scrambledTitle = useTextScramble(title); 
               return (

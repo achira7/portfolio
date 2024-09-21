@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
-import { useLocation } from "react-router-dom"; // Hook to get the query param
+import { useLocation } from "react-router-dom";
 
 import { SearchIcon } from "../assets/icons/icons";
+import Marquee from "../components/Marquee";
+import Footer from "../components/Footer";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
@@ -74,7 +76,16 @@ const Projects = () => {
   });
 
   return (
-    <div className="bg-background  mb-36 ">
+    <div className="bg-background">
+      <div className="w-full  my-5 ml-5 mt-5 z-10">
+        <h1 className="text-5xl font-bold font-inter text-color-primary mb-2">
+          Technologies
+        </h1>
+        <h2 className="font-inter text-2xl text-color-secondary">
+          Click to see Projects
+        </h2>
+        <Marquee />
+      </div>
       <div>
         <h1
           id="achira"
@@ -83,6 +94,7 @@ const Projects = () => {
           Projects
         </h1>
       </div>
+
       <div className="flex text-3xl pt-7 px-5 align-middle items-center mb-7">
         <SearchIcon className="w-10 h-10 text-color-primary" />
         <input
@@ -112,6 +124,7 @@ const Projects = () => {
             </div>
           ))}
       </div>
+      <Footer />
     </div>
   );
 };

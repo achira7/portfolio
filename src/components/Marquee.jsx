@@ -1,23 +1,53 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { useNavigate } from "react-router-dom";  // Assuming you're using React Router
+import { useNavigate } from "react-router-dom";
 
-// Importing logos
 import { languages as langLogos, libraries as libLogos } from "../logos";
 
-// List of tech items with names matching keys in logos
-const techItems = [
-  { name: "react", searchUrl: "/projects?query=React" },  // We will update these URLs dynamically
-  { name: "tailwind", searchUrl: "/projects?query=Tailwind" },
-  { name: "HTML", searchUrl: "/projects?query=HTML" },
-  { name: "django", searchUrl: "/projects?query=Django" },
-  { name: "Python", searchUrl: "/projects?query=Python" },
-  { name: "C#", searchUrl: "/projects?query=C%23" },
-];
-
 const Marquee = () => {
+  const [techItems, setTechItems] = useState([]); 
   const marqueeRef = useRef(null);
-  const navigate = useNavigate();  // React Router hook for navigation
+  const navigate = useNavigate();  
+
+  useEffect(() => {
+    const fetchRepos = async () => {
+      try {
+        const response = await fetch("https://api.github.com/users/achira7/repos");
+        const data = await response.json();
+
+        const techSet = new Set();
+
+        await Promise.all(
+          data.map(async (repo) => {
+            const languagesResponse = await fetch(repo.languages_url);
+            const languagesData = await languagesResponse.json();
+
+            Object.keys(languagesData).forEach((language) => {
+              techSet.add(language);
+            });
+
+            if (repo.topics) {
+              repo.topics.forEach((topic) => {
+                techSet.add(topic);
+              });
+            }
+          })
+        );
+
+        const techArray = Array.from(techSet).map((tech) => ({
+          name: tech,
+          searchUrl: `/projects?query=${encodeURIComponent(tech)}`, 
+        }));
+
+        setTechItems(techArray); 
+
+      } catch (error) {
+        console.error("Error fetching data from GitHub:", error);
+      }
+    };
+
+    fetchRepos();
+  }, []);
 
   useEffect(() => {
     const marqueeElement = marqueeRef.current;
@@ -41,13 +71,13 @@ const Marquee = () => {
     marqueeElement.addEventListener("mouseenter", () => marqueeAnimation.pause());
     marqueeElement.addEventListener("mouseleave", () => marqueeAnimation.resume());
 
-    marqueeAnimation.resume();
+    marqueeAnimation.resume(); 
 
     return () => {
       marqueeElement.removeEventListener("mouseenter", () => marqueeAnimation.pause());
       marqueeElement.removeEventListener("mouseleave", () => marqueeAnimation.resume());
     };
-  }, []);
+  }, [techItems]); 
 
   const handleTechClick = (searchUrl) => {
     navigate(searchUrl, { target: "_blank" });  
@@ -57,14 +87,13 @@ const Marquee = () => {
     <div className="relative overflow-hidden bg-background-primary w-full my-6 z-10">
       <div className="flex items-center justify-between whitespace-nowrap" ref={marqueeRef}>
         {techItems.map((tech, index) => {
-          const logoSrc = langLogos[tech.name] || libLogos[tech.name]; 
+          const logoSrc = langLogos[tech.name] || libLogos[tech.name];
 
           return (
             <div key={index} className="flex flex-col items-center mx-5 justify-center ">
               <a
-              
                 id="clickable"
-                onClick={() => handleTechClick(tech.searchUrl)}  
+                onClick={() => handleTechClick(tech.searchUrl)}
                 className="flex flex-col items-center justify-center cursor-pointer"
               >
                 <div className="flex items-center justify-center w-24 h-24 bg-white border border-card-primary-border rounded-lg shadow-lg">

@@ -3,9 +3,6 @@ import { createChatBotMessage } from "react-chatbot-kit";
 const config = {
   initialMessages: [createChatBotMessage("Hey! I am the Guardian AI of this Website. Ask me anything about Achira.")],
   botName: "AchiraBot",
-  customStyles: {
-
-  },
   customComponents: {
     userMessage: (props) => (
       <div className="bg-green-500 text-white p-2 rounded-lg">

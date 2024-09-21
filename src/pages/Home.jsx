@@ -9,6 +9,7 @@ import Button from "../components/Button";
 import GradientComponent from "../components/GradientComponent";
 import Marquee from "../components/Marquee";
 import { useTextScramble } from "../hooks/useTextScramble";
+import Footer from "../components/Footer";
 
 //Assets
 import heroLight from "../assets/hero/hero-light.png";
@@ -32,7 +33,7 @@ const Home = ({ mode }) => {
   const scrambledSilva = useTextScramble("SILVA");
 
   return (
-    <div className="bg-background mb-36" ref={container}>
+    <div className="bg-background" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20">
         <div>
       <h1
@@ -66,7 +67,7 @@ const Home = ({ mode }) => {
           </p>
         </div>
 
-        <div className="w-full  my-5 ml-5 mt-5 ">
+        <div className="w-full  my-5 ml-5 mt-5 z-10">
           <h1 className="text-5xl font-bold font-inter text-color-primary mb-2">
             Technologies
           </h1>
@@ -218,6 +219,7 @@ const Home = ({ mode }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

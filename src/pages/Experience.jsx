@@ -6,6 +6,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 import Button from "../components/Button";
+import Footer from "../components/Footer";
 
 const Experience = () => {
   const exp = [
@@ -39,7 +40,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="bg-background mt-24  mb-36 ">
+    <div className="bg-background mt-24 ">
       <h1 className="text-5xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap">
         Experience
       </h1>
@@ -136,7 +137,7 @@ const Experience = () => {
           </p>
         </div>
       </div>
-
+<Footer />
     </div>
   );
 };
