@@ -1,6 +1,5 @@
-// src/components/NavBar.js
 import { useNavigate, useLocation } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useTextScramble } from "../hooks/useTextScramble";
@@ -13,8 +12,11 @@ gsap.registerPlugin(ScrollToPlugin);
 const NavBar = () => {
   const navigate = useNavigate();
   const [isChatOpen, setIsChatOpen] = useState(false);
-
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("up");
   const location = useLocation();
+  const scrollThreshold = 250;
+  let lastScrollY = window.scrollY;
 
   const links = [
     { id: 1, title: "Home", url: "/" },
@@ -22,27 +24,80 @@ const NavBar = () => {
     { id: 3, title: "Experience", url: "/experience" },
     { id: 4, title: "About Me", url: "/about" },
   ];
-  
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      return; 
+    }
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      lastScrollY = currentScrollY;
+
+      if (currentScrollY > scrollThreshold) {
+        setIsScrolled(true);
+
+        gsap.to("#horizontal-navbar", {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+
+        gsap.to("#vertical-navbar", {
+          y: -100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      } else if (scrollDirection === "up" && currentScrollY <= scrollThreshold) {
+        setIsScrolled(false);
+        gsap.to("#horizontal-navbar", {
+          y: -100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+
+        gsap.to("#vertical-navbar", {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollDirection, location.pathname]);
+
   const scrollToTop = () => {
     gsap.to(window, {
       scrollTo: { y: 0 },
-      delay: "0",
       duration: 1,
       ease: "power1.in",
     });
   };
 
   return (
-    <div className="top-0 right-0 z-10 w-full">
-      {/* VERTICAL NAV BAR */}
-      {location.pathname === "/" ? (
+    <div className="top-0 right-0 z-20 w-full">
+      {location.pathname === "/" && !isScrolled ? (
         <div
-          id="horizontal-navbar"
+          id="vertical-navbar"
           className="flex fixed justify-end flex-wrap bg-transparent right-10"
         >
           <ul className="flex flex-col items-end flex-wrap bg-transparent">
             {links.map(({ id, title, url }) => {
-              const scrambledTitle = useTextScramble(title); 
+              const scrambledTitle = useTextScramble(title);
               return (
                 <li
                   key={id}
@@ -62,14 +117,12 @@ const NavBar = () => {
         </div>
       ) : (
         <div
-          id="vertical-navbar"
+          id="horizontal-navbar"
           className="flex justify-end bg-background w-full fixed top-0 drop-shadow-[0_35px_35px_rgba(var(--tw-background)),0.8)]"
-
-
         >
           <ul className="flex justify-between bg-background w-full px-40 py-2">
             {links.map(({ id, title, url }) => {
-              const scrambledTitle = useTextScramble(title); 
+              const scrambledTitle = useTextScramble(title);
               return (
                 <li
                   key={id}
@@ -87,6 +140,7 @@ const NavBar = () => {
           </ul>
         </div>
       )}
+
       <div className="flex justify-between items-center fixed bottom-10 left-0 right-0 px-10">
         <div className="flex items-center space-x-4">
           <button
@@ -106,6 +160,7 @@ const NavBar = () => {
           <UpArrow className="cursor-none" />
         </button>
       </div>
+
       {isChatOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-50 z-30">
           <div className="relative w-auto h-auto p-4 bg-card-primary-top rounded-lg">

@@ -26,9 +26,9 @@ const Projects = () => {
         const response = await fetch(
           "https://api.github.com/users/achira7/repos",
           {
-            // headers: {
-            // Authorization: `Bearer ${git}`  // Uncomment if using a GitHub token
-            //  }
+            headers: {
+            Authorization: `Bearer ${git}`  
+              }
           }
         );
         const data = await response.json();
