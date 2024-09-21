@@ -11,6 +11,7 @@ const Projects = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const location = useLocation();
+  const git = process.env.REACT_APP_GITHUB_API_KEY
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -27,15 +28,19 @@ const Projects = () => {
           "https://api.github.com/users/achira7/repos",
           {
             headers: {
-            Authorization: `Bearer ${git}`  
-              }
+              Authorization: `Bearer ${git}`,
+            },
           }
         );
         const data = await response.json();
 
         const reposWithLanguages = await Promise.all(
           data.map(async (repo) => {
-            const languagesResponse = await fetch(repo.languages_url);
+            const languagesResponse = await fetch(repo.languages_url, {
+              headers: {
+                Authorization: `Bearer ${git}`,
+              },
+            });
             const languagesData = await languagesResponse.json();
             const imageUrl = `https://raw.githubusercontent.com/achira7/${repo.name}/main/image.jpg`;
             return {
