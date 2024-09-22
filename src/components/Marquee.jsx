@@ -13,9 +13,9 @@ const Marquee = () => {
     const fetchRepos = async () => {
       try {
         const response = await fetch("https://api.github.com/users/achira7/repos", {
-          headers: {
-            Authorization: `Bearer ${git}`,
-          },
+          // headers: {
+          //   Authorization: `Bearer ${git}`,
+          // },
         });
         const data = await response.json();
 
@@ -88,7 +88,7 @@ const Marquee = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-background-primary w-full my-6 z-10">
+    <div className="relative overflow-hidden bg-background-primary w-full my-6 py-5 z-10 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
       <div className="flex items-center justify-between whitespace-nowrap" ref={marqueeRef}>
         {techItems.map((tech, index) => {
           const logoSrc = langLogos[tech.name] || libLogos[tech.name];

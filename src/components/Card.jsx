@@ -13,7 +13,7 @@ const Card = ({
   libraries,
   imgLink,
   onTechClick,
-  icon
+  icon,
 }) => {
   return (
     <>
@@ -21,16 +21,16 @@ const Card = ({
         <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
           <div className="w-full flex flex-row px-6 py-6">
             {imgLink && (
-              <div className="w-2/5 pr-5">
+              <div className="w-2/5 md:pr-5">
                 <img
                   src={imgLink}
                   alt={`${projectName} Preview`}
-                  className="w-full object-cover rounded-xl border border-card-primary-border"
+                  className="w-full object-cover rounded-xl border border-card-primary-border hidden md:flex"
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}
                 />
-                <div className="grid grid-cols-2 gap-4 mt-5">
+                <div className="grid grid-cols-2 mt-5 md:gap-4">
                   {Array.isArray(languages) && languages.length > 0 && (
                     <div className="space-y-2">
                       {languages.map((lang) => (
@@ -50,9 +50,10 @@ const Card = ({
                           </div>
 
                           <div>
-                            <span className="capitalize text-color-primary text-sm font-semibold ml-2">{lang}</span>
+                            <span className="capitalize text-color-primary text-base hidden font-semibold ml-2 md:flex">
+                              {lang}
+                            </span>
                           </div>
-                          
                         </div>
                       ))}
                     </div>
@@ -77,7 +78,9 @@ const Card = ({
                               }}
                             />
                           </div>
-                          <span className="capitalize text-color-primary text-sm font-semibold ml-2">{lib}</span>
+                          <span className="capitalize text-color-primary text-base hidden font-semibold ml-2 md:flex">
+                            {lib}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -88,23 +91,31 @@ const Card = ({
 
             {/* Text and Button Section */}
             <div className="w-2/3 flex flex-col h-full">
-              <h5 className="text-3xl font-inter font-bold text-color-primary capitalize">
+              <h5 className="text-xl font-inter font-bold text-color-primary capitalize md:text-3xl">
                 {projectName}
               </h5>
-              <p className="font-inter text-base text-color-secondary mt-1">
+              <p className="font-inter text-sm text-color-secondary mt-1 md:text-base">
                 {description}
               </p>
 
               {/* Buttons */}
               <div className="flex justify-end mt-4">
-                <Button link={gitLink} name={"Git Repo"} color={`stone-500`} icon={'git'} id="clickable" />
                 <Button
-                icon={'play'}
+                  link={gitLink}
+                  name={"Git Repo"}
+                  color={`stone-500`}
+                  icon={"git"}
+                  id="clickable"
+                  iconClass="hidden sm:inline"
+                />
+                <Button
+                  icon={"play"}
                   link={demoLink}
                   name={"Live Demo"}
                   color={`card-secondary`}
                   className="ml-3"
                   id="clickable"
+                  iconClass="hidden sm:inline"
                 />
               </div>
             </div>
@@ -114,7 +125,9 @@ const Card = ({
         <div className="m-5 bg-card-primary border border-card-primary-border z-10 rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
           <div className="px-6 py-6">
             <img src={icon} alt="" />
-            <h1 className="text-3xl font-inter font-bold text-color-primary capitalize">{name}</h1>
+            <h1 className="text-3xl font-inter font-bold text-color-primary capitalize">
+              {name}
+            </h1>
             <p className="font-inter text-base text-color-secondary mt-1">
               {description}
             </p>

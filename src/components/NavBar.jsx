@@ -102,7 +102,7 @@ const NavBar = () => {
                 <li
                   key={id}
                   onClick={() => navigate(url)}
-                  className="text-color-primary text-5xl font-inter font-bold mx-5 my-7 z-10 hover:text-cyan-500 hover:tracking-wider"
+                  className="text-color-primary text-3xl font-inter font-bold mx-5 my-7 z-10 hover:text-cyan-500 hover:tracking-wider md:text-5xl"
                   style={{
                     backgroundColor: "transparent",
                     position: "relative",
@@ -118,7 +118,7 @@ const NavBar = () => {
       ) : (
         <div
           id="horizontal-navbar"
-          className="flex justify-end bg-background w-full fixed top-0 drop-shadow-[0_35px_35px_rgba(var(--tw-background)),0.8)]"
+          className="flex w-full justify-end bg-background  fixed top-0 drop-shadow-[0_35px_35px_rgba(var(--tw-background)),0.8)]"
         >
           <ul className="flex justify-between bg-background w-full px-40 py-2">
             {links.map(({ id, title, url }) => {
@@ -127,7 +127,7 @@ const NavBar = () => {
                 <li
                   key={id}
                   onClick={() => navigate(url)}
-                  className="text-color-primary text-4xl font-inter font-bold py-3 px-5 z-10 mx-10 hover:text-cyan-500 hover:tracking-wider"
+                  className="text-color-primary text-2xl font-inter font-bold py-3 px-5 z-10 mx-10 hover:text-cyan-500 hover:tracking-wider md:text-4xl"
                   style={{
                     position: "relative",
                     zIndex: 1,

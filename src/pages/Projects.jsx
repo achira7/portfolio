@@ -94,16 +94,16 @@ const Projects = () => {
       <div>
         <h1
           id="achira"
-          className="text-5xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap"
+          className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5xl"
         >
           Projects
         </h1>
       </div>
 
-      <div className="flex text-3xl pt-7 px-5 align-middle items-center mb-7">
+      <div className="flex  pt-7 px-5 align-middle items-center mb-7">
         <SearchIcon className="w-10 h-10 text-color-primary" />
         <input
-          className="outline-none ml-3 block font-inter bg-inherit text-color-secondary"
+          className="text-xl outline-none ml-3 block font-inter bg-inherit text-color-secondary md:text-3xl"
           type="search"
           placeholder="Search"
           value={searchQuery}

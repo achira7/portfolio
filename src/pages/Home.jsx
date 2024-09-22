@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useLayoutEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { useState, useEffect } from "react";
+import { TypeAnimation } from "react-type-animation";
 
 //componenets
 import Button from "../components/Button";
@@ -10,6 +11,8 @@ import GradientComponent from "../components/GradientComponent";
 import Marquee from "../components/Marquee";
 import { useTextScramble } from "../hooks/useTextScramble";
 import Footer from "../components/Footer";
+import DownloadCV from "../components/DownloadCV";
+import GsapTypewriter from "../components/GsapTypewriter";
 
 //Assets
 import heroLight from "../assets/hero/hero-light.png";
@@ -36,20 +39,38 @@ const Home = ({ mode }) => {
     <div className="bg-background" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20">
         <div>
-      <h1
-        id="achira"
-        className="text-9xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap"
-      >
-        {scrambledAchira} {/* Display scrambled "ACHIRA" */}
-      </h1>
+          <h1
+            id="achira"
+            className="text-9xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap"
+          >
+            {scrambledAchira} {/* Display scrambled "ACHIRA" */}
+          </h1>
 
-      <h1
-        id="silva"
-        className="text-9xl font-bold text-color-secondary font-inter mx-5"
-      >
-        {scrambledSilva} {/* Display scrambled "SILVA" */}
-      </h1>
-    </div>
+          <h1
+            id="silva"
+            className="text-9xl font-bold text-color-secondary font-inter mx-5"
+          >
+            {scrambledSilva} {/* Display scrambled "SILVA" */}
+          </h1>
+
+          <TypeAnimation
+            className="font-caveat text-2xl text-color-primary"
+            sequence={[
+              "Frontend Developer",
+              1000,
+              "Backend Developer",
+              1000,
+              "Designer",
+              1000,
+              "Creative Thinker",
+              1000,
+            ]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: "2em", display: "inline-block" }}
+            repeat={Infinity}
+          />
+        </div>
 
         <div className="m-7 flex items-start">
           <p className="font-inter text-color-secondary text-3xl tracking-wide w-full max-w-screen-md">
@@ -71,22 +92,35 @@ const Home = ({ mode }) => {
           <h1 className="text-5xl font-bold font-inter text-color-primary mb-2">
             Technologies
           </h1>
-          <h2 className="font-inter text-2xl text-color-secondary">Click to see Projects</h2>
+          <h2 className="font-inter text-2xl text-color-secondary">
+            Click to see Projects
+          </h2>
           <Marquee />
         </div>
 
-        <div className="flex items-center justify-center w-[100]">
-          {/* <GradientComponent
-            colorA={"#0e2d74"}
-            colorB={"#40c6df"}
-            colorC={"#341abc"}
-          /> */}
-          <div className="w-1/6">
-            <img
-              src={mode === "light-mode" ? heroLight : heroDark}
-              className="absolute bottom-0 w-full max-w-[700px] md:max-w-[550px]"
-              alt="Hero"
-            />
+        <div className="flex items-center justify-center w-[100] ">
+          <div className="w-1/6 flex flex-col">
+            <div className="flex flex-col absolute top-5 right-5">
+              <h1 className="text-4xl text-color-primary relative inline-block transform rotate-[-2deg] font-caveat drop-shadow-md">
+                Check Out my Projects
+              </h1>
+              <br />
+              <h1 className="text-4xl text-color-primary relative inline-block transform rotate-[2deg] font-caveat drop-shadow-md">
+                These are my Experiences
+              </h1>
+              <br />
+              <h1 className="text-4xl text-color-primary relative inline-block transform rotate-[4deg] font-caveat drop-shadow-md">
+                Contact Me
+              </h1>
+            </div>
+
+            <div>
+              <img
+                src={mode === "light-mode" ? heroLight : heroDark}
+                className="absolute bottom-0 w-full max-w-[700px] md:max-w-[500px]"
+                alt="Hero"
+              />
+            </div>
           </div>
         </div>
 
@@ -98,9 +132,8 @@ const Home = ({ mode }) => {
 
         <div className="flex">
           <h1 className="ml-5 mt-5 text-5xl font-bold font-inter text-color-primary">
-          Experience
+            Experience
           </h1>
-
         </div>
 
         <div>
@@ -217,6 +250,9 @@ const Home = ({ mode }) => {
               </p>
             </div>
           </div>
+        </div>
+        <div className="flex w-1/3">
+          <DownloadCV />
         </div>
       </div>
       <Footer />

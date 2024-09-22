@@ -17,29 +17,33 @@ const Button = ({ name, link, color, icon }) => {
     blue: 'border-border-primary',
     green: 'border-border-green',
     yellow: 'border-border-yellow',
-  }
+  };
 
   const iconClass = {
     play: <Play className="w-4 h-4 text-white mr-2"/>,
     git: <GitHub className="w-6 h-6 text-white mr-2"/>
-  }
+  };
 
   const selectedColorClass = colorClasses[color] || 'bg-default-button'; 
   const selectedBorderClass = borderClasses[color] || 'border-0';
-  const selectedIconClass = iconClass[icon] || ''
-
+  const selectedIconClass = iconClass[icon] || '';
 
   return (
-    <a className="flex flex-row " id="clickable" href={isLinkProvided ? link : '#'} target={isLinkProvided ? "_blank" : "_self"}>
+    <a 
+      className="flex flex-row" 
+      id="clickable" 
+      href={isLinkProvided ? link : '#'} 
+      target={isLinkProvided ? "_blank" : "_self"}
+    >
       <button
         type="button"
         className={`flex items-center justify-center ${selectedColorClass} ${selectedBorderClass} rounded-lg font-inter px-4 py-2 m-5 shadow-md ${!isLinkProvided && 'opacity-50 cursor-not-allowed'}`}
         disabled={!isLinkProvided} 
       >
-        <div className="flex xs:hidden">
+        <div className="hidden md:flex">
           {selectedIconClass}
         </div>
-        <span className='text-white text-base' id="clickable">{name}</span>
+        <span className='text-white text-sm md:text-base' id="clickable">{name}</span>
       </button>
     </a>
   );

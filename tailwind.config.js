@@ -9,7 +9,8 @@ export default {
       fontFamily: {
         ibm: ["IBM Plex Sans", "sans-serif"],
         space: ["Space Mono", "monospace"],
-        inter: ["Inter", "sans-serif"]
+        inter: ["Inter", "sans-serif"],
+        caveat: ["Caveat", "cursive"],
       },
 
       colors: {

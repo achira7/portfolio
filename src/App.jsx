@@ -170,7 +170,7 @@ function App() {
           >
             <p className="text-3xl font-inter tracking-wide">
               {" "}
-              LOADING: {loadingProgress}%
+              CONTENT LOADING: {loadingProgress}%
             </p>
           </div>
 
