@@ -249,3 +249,8 @@ button, a{
   --tw-shadow-colored: 0 25px 50px -12px var(--background);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(var(--background))), var(--tw-ring-shadow, 0 0 rgba(var(--background))), var(--tw-shadow);
 }
+
+/* Hero Image Shadow */
+.shadow-image {
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.7));
+}

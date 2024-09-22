@@ -88,7 +88,7 @@ const Marquee = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-background-primary w-full my-6 py-5 z-10 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
+    <div className="relative overflow-hidden bg-background-primary w-full my-6 py-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
       <div className="flex items-center justify-between whitespace-nowrap" ref={marqueeRef}>
         {techItems.map((tech, index) => {
           const logoSrc = langLogos[tech.name] || libLogos[tech.name];
@@ -100,18 +100,18 @@ const Marquee = () => {
                 onClick={() => handleTechClick(tech.searchUrl)}
                 className="flex flex-col items-center justify-center cursor-pointer"
               >
-                <div className="flex items-center justify-center w-24 h-24 bg-white border border-card-primary-border rounded-lg shadow-lg">
+                <div className="flex items-center justify-center w-12 h-12  bg-white border border-card-primary-border rounded-lg shadow-lg md:w-24 md:h-24">
                   <img
                     src={logoSrc}
                     onError={(e) => {
                       e.target.src = "https://via.placeholder.com/80";
                     }}
                     alt={`${tech.name} logo`}
-                    className="w-16 h-16"
+                    className="w-8 h-8 md:w-16 md:h-16 "
                   />
                 </div>
 
-                <span className="text-color-primary font-inter font-semibold mt-2 text-lg capitalize text-center">
+                <span className="text-color-primary font-inter font-semibold mt-2 text-sm capitalize text-center md:text-lg">
                   {tech.name}
                 </span>
               </a>

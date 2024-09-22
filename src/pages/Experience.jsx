@@ -41,16 +41,16 @@ const Experience = () => {
 
   return (
     <div className="bg-background mt-24 ">
-      <h1 className="text-5xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap">
+      <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5x">
         Experience
       </h1>
       <div className="flex items-center justify-center w-full py-6">
-        <h2 className="font-inter text-4xl font-bold text-color-primary items-center">
+        <h2 className="font-inter text-2xl font-bold text-color-primary items-center md:text-4xl">
           Timeline
         </h2>
       </div>
 
-      <div className="w-full mb-10">
+      <div className="w-full mb-10 md:">
         <VerticalTimeline>
           {exp.reverse().map((experience) => (
             <VerticalTimelineElement

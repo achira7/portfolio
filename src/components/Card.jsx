@@ -20,6 +20,39 @@ const Card = ({
       {type === "project" ? (
         <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
           <div className="w-full flex flex-row px-6 py-6">
+            {/* Text and Button Section */}
+            <div className="w-2/3 flex flex-col h-full pr-5">
+            <div>
+              <h5 className="text-xl font-inter font-bold text-color-primary capitalize md:text-3xl">
+                {projectName}
+              </h5>
+              <p className="font-inter text-sm text-color-secondary text-justify mt-1 md:text-base">
+                {description}
+              </p>
+            </div>
+              
+
+              {/* Buttons */}
+              <div className="flex mt-4 flex-nowrap">
+                <Button
+                  link={gitLink}
+                  name={"Git Repo"}
+                  color={`stone-500`}
+                  icon={"git"}
+                  id="clickable"
+                  iconClass="hidden sm:inline"
+                />
+                <Button
+                  icon={"play"}
+                  link={demoLink}
+                  name={"Live Demo"}
+                  color={`card-secondary`}
+                  className="ml-3"
+                  id="clickable"
+                  iconClass="hidden sm:inline"
+                />
+              </div>
+            </div>
             {imgLink && (
               <div className="w-2/5 md:pr-5">
                 <img
@@ -89,36 +122,7 @@ const Card = ({
               </div>
             )}
 
-            {/* Text and Button Section */}
-            <div className="w-2/3 flex flex-col h-full">
-              <h5 className="text-xl font-inter font-bold text-color-primary capitalize md:text-3xl">
-                {projectName}
-              </h5>
-              <p className="font-inter text-sm text-color-secondary mt-1 md:text-base">
-                {description}
-              </p>
-
-              {/* Buttons */}
-              <div className="flex justify-end mt-4">
-                <Button
-                  link={gitLink}
-                  name={"Git Repo"}
-                  color={`stone-500`}
-                  icon={"git"}
-                  id="clickable"
-                  iconClass="hidden sm:inline"
-                />
-                <Button
-                  icon={"play"}
-                  link={demoLink}
-                  name={"Live Demo"}
-                  color={`card-secondary`}
-                  className="ml-3"
-                  id="clickable"
-                  iconClass="hidden sm:inline"
-                />
-              </div>
-            </div>
+            
           </div>
         </div>
       ) : (

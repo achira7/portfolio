@@ -13,6 +13,7 @@ import { useTextScramble } from "../hooks/useTextScramble";
 import Footer from "../components/Footer";
 import DownloadCV from "../components/DownloadCV";
 import GsapTypewriter from "../components/GsapTypewriter";
+import SocialIcons from "../components/SocialIcons";
 
 //Assets
 import heroLight from "../assets/hero/hero-light.png";
@@ -32,25 +33,25 @@ const Home = ({ mode }) => {
 
   gsap.registerPlugin(useGSAP);
 
-  const scrambledAchira = useTextScramble("ACHIRA"); // Scrambled "ACHIRA"
+  const scrambledAchira = useTextScramble("ACHIRA");
   const scrambledSilva = useTextScramble("SILVA");
 
   return (
     <div className="bg-background" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20">
-        <div>
+        <div className="mx-5">
           <h1
             id="achira"
-            className="text-9xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap"
+            className="text-6xl font-bold text-color-primary font-inter top-0  mt-5 flex flex-wrap md:text-9xl"
           >
-            {scrambledAchira} {/* Display scrambled "ACHIRA" */}
+            {scrambledAchira} 
           </h1>
 
           <h1
             id="silva"
-            className="text-9xl font-bold text-color-secondary font-inter mx-5"
+            className="text-6xl font-bold text-color-primary font-inter top-0 mt-2 flex flex-wrap md:text-9xl md:mt-5"
           >
-            {scrambledSilva} {/* Display scrambled "SILVA" */}
+            {scrambledSilva} 
           </h1>
 
           <TypeAnimation
@@ -73,7 +74,7 @@ const Home = ({ mode }) => {
         </div>
 
         <div className="m-7 flex items-start">
-          <p className="font-inter text-color-secondary text-3xl tracking-wide w-full max-w-screen-md">
+          <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
             Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
             Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
             Silva. I am a creative indiviual and etc. Hi! I'm Achira Silva. I am
@@ -88,11 +89,11 @@ const Home = ({ mode }) => {
           </p>
         </div>
 
-        <div className="w-full  my-5 ml-5 mt-5 z-10">
-          <h1 className="text-5xl font-bold font-inter text-color-primary mb-2">
+        <div className="w-full my-5 ml-5 mt-5">
+          <h1 className="text-3xl font-bold text-color-primary font-inter flex flex-wrap md:text-5xl">
             Technologies
           </h1>
-          <h2 className="font-inter text-2xl text-color-secondary">
+          <h2 className="font-inter text-lg text-color-secondary md:text-2xl">
             Click to see Projects
           </h2>
           <Marquee />
@@ -100,7 +101,7 @@ const Home = ({ mode }) => {
 
         <div className="flex items-center justify-center w-[100] ">
           <div className="w-1/6 flex flex-col">
-            <div className="flex flex-col absolute top-5 right-5">
+            <div className="flex-col absolute top-5 right-5 hidden md:flex">
               <h1 className="text-4xl text-color-primary relative inline-block transform rotate-[-2deg] font-caveat drop-shadow-md">
                 Check Out my Projects
               </h1>
@@ -117,35 +118,42 @@ const Home = ({ mode }) => {
             <div>
               <img
                 src={mode === "light-mode" ? heroLight : heroDark}
-                className="absolute bottom-0 w-full max-w-[700px] md:max-w-[500px]"
+                className="absolute bottom-0 shadow-image w-[400px] md:w-1/3"
                 alt="Hero"
               />
             </div>
+
+<div className="flex w-full">
+<SocialIcons />
+</div>
+                
+
+            
           </div>
         </div>
 
         <div className="flex">
-          <h1 className="ml-5 mt-5 text-5xl font-bold font-inter text-color-primary">
+          <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5xl">
             Projects
           </h1>
         </div>
 
         <div className="flex">
-          <h1 className="ml-5 mt-5 text-5xl font-bold font-inter text-color-primary">
+          <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5xl">
             Experience
           </h1>
         </div>
 
         <div>
-          <h1 className="ml-5 my-5 text-5xl font-bold font-inter text-color-primary">
+          <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5xl">
             Education
           </h1>
           {/* IIT */}
           <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
             <div className="px-7 py-5">
-              <div className="flex items-center  space-x-5">
-                {" "}
+              <div className="flex items-center space-x-4">
                 {/* Flex container */}
+                <div className="space-x-3 hidden md:flex">
                 <a
                   id="clickable"
                   href="https://www.westminster.ac.uk/"
@@ -170,21 +178,22 @@ const Home = ({ mode }) => {
                     className="w-16 bg-white rounded-lg border border-card-primary-border"
                   />
                 </a>
+                </div>
                 <div className="r">
-                  <h1 className="text-color-primary text-3xl font-bold">
+                  <h1 className="text-color-primary text-xl md:text-3xl font-bold">
                     BSC (Hons) Business Information Systems
                   </h1>
-                  <h1 className="text-color-primary text-2xl font-semibold">
-                    from University of Westminster, Uk
+                  <h1 className="text-color-primary text-lg md:text-2xl font-semibold">
+                    University of Westminster, UK
                   </h1>
                 </div>
               </div>
 
-              <h1 className="flex text-color-primary text-xl font-semibold mt-2 ">
+              <h1 className="flex text-color-primary text-base font-semibold mt-2 md:text-xl">
                 Informatics Institute of Technology (IIT), Sri Lanka
               </h1>
 
-              <p className="font-inter text-base text-color-secondary mt-1 text-justify">
+              <p className="font-inter  text-sm text-color-secondary mt-1 text-justify md:text-base">
                 This course covers key areas such as IT strategy, data
                 management, business analysis, and software development.
                 Students gain practical skills in managing business IT systems,
@@ -201,6 +210,7 @@ const Home = ({ mode }) => {
               <div className="flex items-center  space-x-5">
                 {" "}
                 {/* Flex container */}
+                <div className="space-x-3 hidden md:flex">
                 <a
                   id="clickable"
                   href="https://www.plymouth.ac.uk/"
@@ -225,21 +235,22 @@ const Home = ({ mode }) => {
                     className="w-16 bg-white rounded-lg border border-card-primary-border"
                   />
                 </a>
+                </div>
                 <div className="r">
-                  <h1 className="text-color-primary text-3xl font-bold">
+                <h1 className="text-color-primary text-xl md:text-3xl font-bold">
                     BSc (Hons) Software Engineering
                   </h1>
-                  <h1 className="text-color-primary text-2xl font-semibold">
-                    from University of Plymouth, Uk
+                  <h1 className="text-color-primary text-lg md:text-2xl font-semibold">
+                    University of Plymouth, UK
                   </h1>
                 </div>
               </div>
 
-              <h1 className="flex text-color-primary text-xl font-semibold mt-2 ">
+              <h1 className="flex text-color-primary text-base font-semibold mt-2 md:text-xl">
                 NSBM Green University, Sri Lanka
               </h1>
 
-              <p className="font-inter text-base text-color-secondary mt-1 text-justify">
+              <p className="font-inter text-sm text-color-secondary mt-1 text-justify md:text-base">
                 This course focuses on software development, algorithms,
                 database management, and systems architecture. Students learn to
                 design, develop, and manage high-quality software solutions

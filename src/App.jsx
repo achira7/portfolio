@@ -110,11 +110,13 @@ function App() {
 //
   useLayoutEffect(() => {
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
     let ctx = gsap.context(() => {
       const t1 = gsap.timeline({
         onComplete: () => {
           document.body.style.overflow = "auto";
+          document.documentElement.style.overflow = "auto";
         },
       });
 
@@ -155,6 +157,7 @@ function App() {
     return () => {
       ctx.revert();
       document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     };
   }, []);
   //
@@ -168,7 +171,7 @@ function App() {
             id="loader"
             className="fixed inset-0 z-50 flex items-center justify-center bottom-8 text-white"
           >
-            <p className="text-3xl font-inter tracking-wide">
+            <p className="text-2xl font-inter tracking-wide md:text-3xl">
               {" "}
               CONTENT LOADING: {loadingProgress}%
             </p>
@@ -188,7 +191,7 @@ function App() {
             <div className="flex flex-row z-50">
               <p
                 id="welcome-1"
-                className="text-9xl text-white font-inter font-thin"
+                className="text-4xl font-semibold text-white font-inter md:text-9xl md:font-thin "
               >
                 Welcome.
               </p>
@@ -196,25 +199,23 @@ function App() {
 
             <div
               id="intro-slider"
-              className="h-screen text-white p-10 absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-40"
+              className="h-screen text-white p-5 mt-2 absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-40 md:p-10"
             >
-              <h1 id="title-1" className="text-9xl">
+              <h1 id="title-1" className="text-4xl md:text-9xl">
                 Software Engineer
               </h1>
-              <h1 id="title-2" className="text-9xl">
+              <h1 id="title-2" className="text-4xl md:text-9xl">
                 Designer
               </h1>
-              <h1 id="title-3" className="text-9xl">
+              <h1 id="title-3" className="text-4xl md:text-9xl">
                 Musician
               </h1>
-              <h1 id="title-4" className="text-9xl">
+              <h1 id="title-4" className="text-4xl md:text-9xl">
                 Game Developer
               </h1>
             </div>
           </div>
-
         </div>
-        {/*  */}
 
         {/* Cursor */}
         <div ref={cursorContainer}>
@@ -225,8 +226,8 @@ function App() {
           ></div>
         </div>
 
-        <NavBar className={`flex relative z-20 ${mode}`} />
-        <Routes className="">
+        <NavBar className={`z-20 w-full ${mode}`} />
+        <Routes>
           <Route
             className={`flex z-10 mt-10 ${mode}`}
             path="/"

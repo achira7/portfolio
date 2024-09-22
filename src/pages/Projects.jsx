@@ -86,7 +86,7 @@ const Projects = () => {
         <h1 className="text-5xl font-bold font-inter text-color-primary mb-2">
           Technologies
         </h1>
-        <h2 className="font-inter text-2xl text-color-secondary">
+        <h2 className="font-inter text-sm text-color-secondary md:text-2xl">
           Click to see Projects
         </h2>
         <Marquee />
@@ -100,8 +100,8 @@ const Projects = () => {
         </h1>
       </div>
 
-      <div className="flex  pt-7 px-5 align-middle items-center mb-7">
-        <SearchIcon className="w-10 h-10 text-color-primary" />
+      <div className="flex pt-3 px-5 align-middle items-center mb-7 md:pt-7">
+        <SearchIcon className="w-7 h-7 text-color-primary md:w-10 md:h-10 " />
         <input
           className="text-xl outline-none ml-3 block font-inter bg-inherit text-color-secondary md:text-3xl"
           type="search"

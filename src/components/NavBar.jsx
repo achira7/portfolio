@@ -89,11 +89,11 @@ const NavBar = () => {
   };
 
   return (
-    <div className="top-0 right-0 z-20 w-full">
+    <div className="top-0 z-20 w-full">
       {location.pathname === "/" && !isScrolled ? (
         <div
           id="vertical-navbar"
-          className="flex fixed justify-end flex-wrap bg-transparent right-10"
+          className="flex fixed justify-end flex-wrap bg-transparent right-10 mt-5"
         >
           <ul className="flex flex-col items-end flex-wrap bg-transparent">
             {links.map(({ id, title, url }) => {
@@ -102,7 +102,7 @@ const NavBar = () => {
                 <li
                   key={id}
                   onClick={() => navigate(url)}
-                  className="text-color-primary text-3xl font-inter font-bold mx-5 my-7 z-10 hover:text-cyan-500 hover:tracking-wider md:text-5xl"
+                  className="text-color-primary text-3xl font-inter font-bold mx-5 my-2 z-10 hover:text-cyan-500 hover:tracking-wider md:text-5xl md:my-7"
                   style={{
                     backgroundColor: "transparent",
                     position: "relative",
@@ -118,19 +118,19 @@ const NavBar = () => {
       ) : (
         <div
           id="horizontal-navbar"
-          className="flex w-full justify-end bg-background  fixed top-0 drop-shadow-[0_35px_35px_rgba(var(--tw-background)),0.8)]"
+          className="flex justify-end items-center align-middle bg-background w-full fixed top-0 md:pt-5 md:pb-7"
         >
-          <ul className="flex justify-between bg-background w-full px-40 py-2">
+          <ul className="flex justify-between bg-background w-full md:px-20 lg:px-40">
+
             {links.map(({ id, title, url }) => {
               const scrambledTitle = useTextScramble(title);
               return (
                 <li
                   key={id}
                   onClick={() => navigate(url)}
-                  className="text-color-primary text-2xl font-inter font-bold py-3 px-5 z-10 mx-10 hover:text-cyan-500 hover:tracking-wider md:text-4xl"
+                  className="text-color-primary text-2xl font-inter font-bold px-5 z-10 mx-10 hover:text-cyan-500 hover:tracking-wider md:text-4xl"
                   style={{
                     position: "relative",
-                    zIndex: 1,
                   }}
                 >
                   {scrambledTitle}
@@ -141,13 +141,13 @@ const NavBar = () => {
         </div>
       )}
 
-      <div className="flex justify-between items-center fixed bottom-10 left-0 right-0 px-10">
-        <div className="flex items-center space-x-4">
+      <div className="flex justify-between items-center fixed bottom-5 left-0 right-0 px-5 md:bottom-10 md:px-10">
+        <div className="flex items-center space-x-4 md:pl-5">
           <button
             onClick={() => setIsChatOpen(true)}
             className="bg-color-primary text-white p-3 rounded-full"
           >
-            <ChatIcon className="overflow-hidden cursor-none" />
+            <ChatIcon className="cursor-none w-5 md:w-8" />
           </button>
 
           <DarkMode className="flex" />
@@ -155,9 +155,9 @@ const NavBar = () => {
 
         <button
           onClick={scrollToTop}
-          className="bg-color-primary text-white p-3 rounded-full"
+          className="bg-color-primary fill-white p-3 rounded-full md:mr-5"
         >
-          <UpArrow className="cursor-none" />
+          <UpArrow className="cursor-none w-5 md:w-8" />
         </button>
       </div>
 

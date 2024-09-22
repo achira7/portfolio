@@ -4,7 +4,7 @@ const Polaroid = ({ image, name, align }) => {
   const rotation = align === 'left' ? '-rotate-3' : 'rotate-3';
 
   return (
-    <div className={`bg-color-polaroid p-5 border border-gray-300 shadow-xl ${rotation} w-fit ${align === 'left' ? 'ml-7' : 'mr-5'}`}>
+    <div className={`align-top flex-wrap bg-color-polaroid p-5 border border-gray-300 shadow-xl ${rotation} w-fit ${align === 'left' ? 'ml-7' : 'mr-5'}`}>
       <img
         src={image}
         alt={name}
