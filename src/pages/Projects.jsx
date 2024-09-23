@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { SearchIcon } from "../assets/icons/icons";
 import Marquee from "../components/Marquee";
 import Footer from "../components/Footer";
+import TopProjects from "../components/TopProjects";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
@@ -81,7 +82,7 @@ const Projects = () => {
   });
 
   return (
-    <div className="bg-background">
+    <div className="bg-background mt-20 md:mt-24">
       <div className="w-full  my-5 ml-5 mt-5 z-10">
         <h1 className="text-5xl font-bold font-inter text-color-primary mb-2">
           Technologies
@@ -110,6 +111,9 @@ const Projects = () => {
           onChange={handleSearchChange}
         />
       </div>
+
+      {/* <h1>Top Pojects</h1>
+      <TopProjects /> */}
       <div className="flex flex-wrap justify-center">
         {filteredRepos
           .filter((repo) => repo.stargazers_count !== 0)
@@ -123,7 +127,8 @@ const Projects = () => {
                 gitLink={repo.html_url}
                 demoLink={repo.homepage}
                 languages={repo.languages}
-                libraries={repo.topics}
+                libraries={repo.topics?.filter(topic => topic !== "best-projects") || []}
+                //libraries={repo.topics}
                 imgLink={repo.imageUrl}
               />
             </div>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Button from "./Button";
 
 const DownloadCV = () => {
@@ -9,12 +8,17 @@ const DownloadCV = () => {
     "https://docs.google.com/document/d/1eKwEBL9Xr84v6u5D0hchfnOq_chXJ_VXyeUHkQWE4fU/export?format=";
   const downloadLink = `${baseLink}${cvFormat}`;
 
+  const viewLink = "https://docs.google.com/document/d/1eKwEBL9Xr84v6u5D0hchfnOq_chXJ_VXyeUHkQWE4fU/preview";
+
   return (
     <div className="inline-block m-5 border-card-primary-border flex-wrap rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-lg">
-      <div className="items-center content-center pt-6 pb-5 px-7">
-        <span className="text-color-primary font-inter text-2xl font-semibold">
-          Get a Copy of my Resume
-        </span>
+      <div className="flex content-center pt-6 pb-5 px-7 items-center justify-center flex-col">
+        <div className="flex">
+          <span className="text-color-primary font-caveat text-2xl font-semibold md:text-3xl">
+            Get a Copy of my Resume
+          </span>
+        </div>
+
         <div className=" flex flex-row mt-2 items-center justify-center">
           <div className="flex mx-3">
             <input
@@ -43,10 +47,13 @@ const DownloadCV = () => {
             name={`Download as a ${cvFormat.toUpperCase()}`}
             link={downloadLink}
           />
-          <a href="https://docs.google.com/document/d/1eKwEBL9Xr84v6u5D0hchfnOq_chXJ_VXyeUHkQWE4fU/edit?usp=sharing"
-          target="_blank"
-          className="underline">
-            View isntead
+          <a
+            href={viewLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline ml-4"
+          >
+            View instead
           </a>
         </div>
       </div>

@@ -25,18 +25,20 @@ const Marquee = () => {
           data.map(async (repo) => {
             const languagesResponse = await fetch(repo.languages_url);
             const languagesData = await languagesResponse.json();
-
+        
             Object.keys(languagesData).forEach((language) => {
               techSet.add(language);
             });
-
+        
             if (repo.topics) {
               repo.topics.forEach((topic) => {
-                techSet.add(topic);
+                if (topic !== "best-projects") {
+                  techSet.add(topic);
+                }
               });
             }
           })
-        );
+        );        
 
         const techArray = Array.from(techSet).map((tech) => ({
           name: tech,
@@ -88,7 +90,7 @@ const Marquee = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-background-primary w-full my-6 py-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
+    <div className="relative overflow-hidden bg-background-primary min-w-full my-6 py-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
       <div className="flex items-center justify-between whitespace-nowrap" ref={marqueeRef}>
         {techItems.map((tech, index) => {
           const logoSrc = langLogos[tech.name] || libLogos[tech.name];

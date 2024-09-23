@@ -14,6 +14,7 @@ import Footer from "../components/Footer";
 import DownloadCV from "../components/DownloadCV";
 import GsapTypewriter from "../components/GsapTypewriter";
 import SocialIcons from "../components/SocialIcons";
+import TopProjects from "../components/TopProjects";
 
 //Assets
 import heroLight from "../assets/hero/hero-light.png";
@@ -22,6 +23,8 @@ import westminster from "../assets/university_logos/westminster.jpeg";
 import plymouth from "../assets/university_logos/plymouth.png";
 import iit from "../assets/university_logos/iit.png";
 import nsbm from "../assets/university_logos/nsbm.jpg";
+import pintanna from "../assets/logos/2.jpg";
+import pitch from "../assets/logos/3.jpg";
 
 const Home = ({ mode }) => {
   const [currentMode, setCurrentMode] = useState(mode);
@@ -38,20 +41,20 @@ const Home = ({ mode }) => {
 
   return (
     <div className="bg-background" ref={container}>
-      <div className="flex flex-col top-0 left-0 z-20">
-        <div className="mx-5">
+      <div className="flex flex-col top-0 left-0 z-20 m-5">
+        <div className="">
           <h1
             id="achira"
-            className="text-6xl font-bold text-color-primary font-inter top-0  mt-5 flex flex-wrap md:text-9xl"
+            className="text-6xl font-bold text-color-primary font-inter top-0 flex flex-wrap md:text-9xl"
           >
-            {scrambledAchira} 
+            {scrambledAchira}
           </h1>
 
           <h1
             id="silva"
-            className="text-6xl font-bold text-color-primary font-inter top-0 mt-2 flex flex-wrap md:text-9xl md:mt-5"
+            className="text-6xl font-bold text-color-primary font-inter  flex flex-wrap md:text-9xl md:mt-5"
           >
-            {scrambledSilva} 
+            {scrambledSilva}
           </h1>
 
           <TypeAnimation
@@ -123,142 +126,269 @@ const Home = ({ mode }) => {
               />
             </div>
 
-<div className="flex w-full">
-<SocialIcons />
-</div>
-                
-
-            
-          </div>
-        </div>
-
-        <div className="flex">
-          <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5xl">
-            Projects
-          </h1>
-        </div>
-
-        <div className="flex">
-          <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5xl">
-            Experience
-          </h1>
-        </div>
-
-        <div>
-          <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5xl">
-            Education
-          </h1>
-          {/* IIT */}
-          <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
-            <div className="px-7 py-5">
-              <div className="flex items-center space-x-4">
-                {/* Flex container */}
-                <div className="space-x-3 hidden md:flex">
-                <a
-                  id="clickable"
-                  href="https://www.westminster.ac.uk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={westminster}
-                    alt="University of Westminster"
-                    className="w-16 bg-white rounded-lg border border-card-primary-border"
-                  />
-                </a>
-                <a
-                  id="clickable"
-                  href="https://www.iit.ac.lk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={iit}
-                    alt="IIT"
-                    className="w-16 bg-white rounded-lg border border-card-primary-border"
-                  />
-                </a>
-                </div>
-                <div className="r">
-                  <h1 className="text-color-primary text-xl md:text-3xl font-bold">
-                    BSC (Hons) Business Information Systems
-                  </h1>
-                  <h1 className="text-color-primary text-lg md:text-2xl font-semibold">
-                    University of Westminster, UK
-                  </h1>
-                </div>
-              </div>
-
-              <h1 className="flex text-color-primary text-base font-semibold mt-2 md:text-xl">
-                Informatics Institute of Technology (IIT), Sri Lanka
-              </h1>
-
-              <p className="font-inter  text-sm text-color-secondary mt-1 text-justify md:text-base">
-                This course covers key areas such as IT strategy, data
-                management, business analysis, and software development.
-                Students gain practical skills in managing business IT systems,
-                understanding digital transformation, and aligning technology
-                with business goals, preparing them for roles in business
-                analysis, IT consultancy, and systems management.
-              </p>
+            <div className="flex w-full">
+              <SocialIcons />
             </div>
           </div>
+        </div>
 
-          {/* NSBM */}
-          <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
-            <div className="px-7 py-5">
-              <div className="flex items-center  space-x-5">
-                {" "}
-                {/* Flex container */}
-                <div className="space-x-3 hidden md:flex">
-                <a
-                  id="clickable"
-                  href="https://www.plymouth.ac.uk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={plymouth}
-                    alt="University of Plymouth"
-                    className="w-16 bg-white rounded-lg border border-card-primary-border"
-                  />
-                </a>
-                <a
-                  id="clickable"
-                  href="https://www.nsbm.ac.lk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={nsbm}
-                    alt="NSBM"
-                    className="w-16 bg-white rounded-lg border border-card-primary-border"
-                  />
-                </a>
+        <div className="flex flex-col">
+          <h1 className="text-3xl font-bold text-color-primary font-inter top-0  my-5 flex flex-wrap md:text-5xl">
+            Projects
+          </h1>
+
+          <div className="flex flex-row gap-5 items-center align-middle my-2">
+            <Button
+              name={"View All Projects"}
+              link={"/projects"}
+              color={"green"}
+              icon={""}
+            />
+
+            <a
+              href="https://github.com/achira7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center h-10 rounded-lg text-color-primary font-medium hover:bg-purple-400 transition-all duration-300 md:text-2xl"
+            >
+              My GitHub
+              <img
+                src="./src/assets/social_logos/github.svg"
+                alt="achira7"
+                className="w-6 h-6 ml-3"
+              />
+            </a>
+          </div>
+
+          <TopProjects />
+        </div>
+
+        <div id="expereince" className="flex flex-col">
+          <div className="flex flex-col my-5">
+            <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 flex flex-wrap md:text-5xl">
+              Experience
+            </h1>
+            <Button
+              name={"View All Experience"}
+              link={"/experience"}
+              color={"green"}
+              icon={""}
+            />
+          </div>
+
+          <div className="flex flex-row">
+            {/* Pintanna */}
+            <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+              <div className="px-7 py-5">
+                <div className="flex items-center space-x-4">
+                  {/* Flex container */}
+                  <div className="space-x-3 hidden md:flex">
+                    <a
+                      id="clickable"
+                      href="https://www.plymouth.ac.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={pintanna}
+                        alt="Pintanna Plantations"
+                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                      />
+                    </a>
+                  </div>
+                  <div className="r">
+                    <h1 className="text-color-primary text-xl font-bold md:text-2xl">
+                      Pintanna Plantations
+                    </h1>
+                    <div className="flex flex-row items-center">
+                      <h1 className="text-color-primary text-lg md:text-2xl">
+                        Graphic Designer
+                      </h1>
+                      <h1 className="text-color-tertiary text-lg ml-5 md:text-xl">
+                        2023 - 2024
+                      </h1>
+                    </div>
+                  </div>
                 </div>
-                <div className="r">
-                <h1 className="text-color-primary text-xl md:text-3xl font-bold">
-                    BSc (Hons) Software Engineering
-                  </h1>
-                  <h1 className="text-color-primary text-lg md:text-2xl font-semibold">
-                    University of Plymouth, UK
-                  </h1>
-                </div>
+
+                <p className="font-inter  text-sm text-color-secondary mt-1 text-justify md:text-base">
+                  This course covers key areas such as IT strategy, data
+                  management, business analysis, and software development.
+                  Students gain practical skills in managing business IT
+                  systems, understanding digital transformation, and aligning
+                  technology with business goals, preparing them for roles in
+                  business analysis, IT consultancy, and systems management.
+                </p>
               </div>
+            </div>
 
-              <h1 className="flex text-color-primary text-base font-semibold mt-2 md:text-xl">
-                NSBM Green University, Sri Lanka
-              </h1>
+            {/* Pitch Perfect */}
+            <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+              <div className="px-7 py-5">
+                <div className="flex items-center  space-x-5">
+                  {/* Flex container */}
+                  <div className="space-x-3 hidden md:flex">
+                    <a
+                      id="clickable"
+                      href="https://www.plymouth.ac.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={pitch}
+                        alt="Pintanna Plantations"
+                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                      />
+                    </a>
+                  </div>
+                  <div className="r">
+                    <h1 className="text-color-primary text-xl md:text-2xl font-bold">
+                      Picth Perfect
+                    </h1>
+                    <div className="flex flex-row items-center">
+                      <h1 className="text-color-primary text-lg md:text-2xl">
+                        Graphic Designer
+                      </h1>
+                      <h1 className="text-color-tertiary text-lg ml-5 md:text-xl">
+                        2023 - 2024
+                      </h1>
+                    </div>
+                  </div>
+                </div>
 
-              <p className="font-inter text-sm text-color-secondary mt-1 text-justify md:text-base">
-                This course focuses on software development, algorithms,
-                database management, and systems architecture. Students learn to
-                design, develop, and manage high-quality software solutions
-                while mastering programming languages, software project
-                management, and agile methodologies. Graduates are prepared for
-                roles in software development, quality assurance, and system
-                design.
-              </p>
+                <p className="font-inter text-sm text-color-secondary mt-1 text-justify md:text-base">
+                  This course covers key areas such as IT strategy, data
+                  management, business analysis, and software development.
+                  Students gain practical skills in managing business IT
+                  systems, understanding digital transformation, and aligning
+                  technology with business goals, preparing them for roles in
+                  business analysis, IT consultancy, and systems management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="education" className="flex flex-col">
+          <div className="flex flex-row">
+            <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 my-5 flex flex-wrap md:text-5xl">
+              Education
+            </h1>
+          </div>
+
+          <div className="flex flex-row">
+            {/* IIT */}
+            <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+              <div className="px-7 py-5">
+                <div className="flex items-center space-x-4">
+                  {/* Flex container */}
+                  <div className="space-x-3 hidden md:flex">
+                    <a
+                      id="clickable"
+                      href="https://www.westminster.ac.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={westminster}
+                        alt="University of Westminster"
+                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                      />
+                    </a>
+                    <a
+                      id="clickable"
+                      href="https://www.iit.ac.lk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={iit}
+                        alt="IIT"
+                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                      />
+                    </a>
+                  </div>
+                  <div className="r">
+                    <h1 className="text-color-primary text-xl font-bold md:text-2xl">
+                      BSc (Hons) Business Information Systems
+                    </h1>
+                    <h1 className="text-color-primary text-lg md:text-2xl ">
+                      University of Westminster, UK
+                    </h1>
+                  </div>
+                </div>
+
+                <h1 className="flex text-color-primary text-base font-semibold mt-2 md:text-xl">
+                  Informatics Institute of Technology (IIT), Sri Lanka
+                </h1>
+
+                <p className="font-inter  text-sm text-color-secondary mt-1 text-justify md:text-base">
+                  This course covers key areas such as IT strategy, data
+                  management, business analysis, and software development.
+                  Students gain practical skills in managing business IT
+                  systems, understanding digital transformation, and aligning
+                  technology with business goals, preparing them for roles in
+                  business analysis, IT consultancy, and systems management.
+                </p>
+              </div>
+            </div>
+
+            {/* NSBM */}
+            <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+              <div className="px-7 py-5">
+                <div className="flex items-center  space-x-5">
+                  {" "}
+                  {/* Flex container */}
+                  <div className="space-x-3 hidden md:flex">
+                    <a
+                      id="clickable"
+                      href="https://www.plymouth.ac.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={plymouth}
+                        alt="University of Plymouth"
+                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                      />
+                    </a>
+                    <a
+                      id="clickable"
+                      href="https://www.nsbm.ac.lk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={nsbm}
+                        alt="NSBM"
+                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                      />
+                    </a>
+                  </div>
+                  <div className="r">
+                    <h1 className="text-color-primary text-xl md:text-2xl font-bold">
+                      BSc (Hons) Software Engineering
+                    </h1>
+                    <h1 className="text-color-primary text-lg md:text-2xl font-semibold">
+                      University of Plymouth, UK
+                    </h1>
+                  </div>
+                </div>
+
+                <h1 className="flex text-color-primary text-base font-semibold mt-2 md:text-xl">
+                  NSBM Green University, Sri Lanka
+                </h1>
+
+                <p className="font-inter text-sm text-color-secondary mt-1 text-justify md:text-base">
+                  This course focuses on software development, algorithms,
+                  database management, and systems architecture. Students learn
+                  to design, develop, and manage high-quality software solutions
+                  while mastering programming languages, software project
+                  management, and agile methodologies. Graduates are prepared
+                  for roles in software development, quality assurance, and
+                  system design.
+                </p>
+              </div>
             </div>
           </div>
         </div>
