@@ -93,10 +93,10 @@ const Home = ({ mode }) => {
         </div>
 
         <div className="w-full my-5 ml-5 mt-5">
-          <h1 className="text-3xl font-bold text-color-primary font-inter flex flex-wrap md:text-5xl">
+          <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-5xl">
             Technologies
           </h1>
-          <h2 className="font-inter text-lg text-color-secondary md:text-2xl">
+          <h2 className="font-inter text-lg ml-2 mb-2 text-color-secondary md:text-2xl">
             Click to see Projects
           </h2>
           <Marquee />
@@ -136,136 +136,139 @@ const Home = ({ mode }) => {
           <h1 className="text-3xl font-bold text-color-primary font-inter top-0  my-5 flex flex-wrap md:text-5xl">
             Projects
           </h1>
+          <div className="flex flex-col">
+            <div className="flex flex-row flex-wrap">
+              <TopProjects />
+            </div>
+            
 
-          <div className="flex flex-row gap-5 items-center align-middle my-2">
-            <Button
-              name={"View All Projects"}
-              link={"/projects"}
-              color={"green"}
-              icon={""}
-            />
-
-            <a
-              href="https://github.com/achira7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center h-10 rounded-lg text-color-primary font-medium hover:bg-purple-400 transition-all duration-300 md:text-2xl"
-            >
-              My GitHub
-              <img
-                src="./src/assets/social_logos/github.svg"
-                alt="achira7"
-                className="w-6 h-6 ml-3"
+            <div className="flex flex-row gap-5 items-center justify-center align-middle my-2">
+              <Button
+                name={"View All Projects"}
+                link={"/projects"}
+                color={"green"}
+                icon={""}
               />
-            </a>
-          </div>
 
-          <TopProjects />
+              {/* <a
+                href="https://github.com/achira7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center h-10 rounded-lg text-color-primary font-medium hover:bg-purple-400 transition-all duration-300 md:text-2xl"
+              >
+                My GitHub
+                <img
+                  src="./src/assets/social_logos/github.svg"
+                  alt="achira7"
+                  className="w-6 h-6 ml-3"
+                />
+              </a> */}
+            </div>
+          </div>
         </div>
 
-        <div id="expereince" className="flex flex-col">
-          <div className="flex flex-col my-5">
-            <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 flex flex-wrap md:text-5xl">
-              Experience
-            </h1>
+        <div id="expereince" className="flex flex-col ">
+          <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 flex flex-wrap md:text-5xl">
+            Experience
+          </h1>
+          <div className="flex flex-col my-5 justify-center items-center">
+            <div className="flex flex-row">
+              {/* Pintanna */}
+              <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+                <div className="px-7 py-5">
+                  <div className="flex items-center space-x-4">
+                    {/* Flex container */}
+                    <div className="space-x-3 hidden md:flex">
+                      <a
+                        id="clickable"
+                        href="https://www.plymouth.ac.uk/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={pintanna}
+                          alt="Pintanna Plantations"
+                          className="w-16 bg-white rounded-lg border border-card-primary-border"
+                        />
+                      </a>
+                    </div>
+                    <div className="r">
+                      <h1 className="text-color-primary text-xl font-bold md:text-2xl">
+                        Pintanna Plantations
+                      </h1>
+                      <div className="flex flex-row items-center">
+                        <h1 className="text-color-primary text-lg md:text-2xl">
+                          Graphic Designer
+                        </h1>
+                        <h1 className="text-color-tertiary text-lg ml-5 md:text-xl">
+                          2023 - 2024
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="font-inter  text-sm text-color-secondary mt-1 text-justify md:text-base">
+                    This course covers key areas such as IT strategy, data
+                    management, business analysis, and software development.
+                    Students gain practical skills in managing business IT
+                    systems, understanding digital transformation, and aligning
+                    technology with business goals, preparing them for roles in
+                    business analysis, IT consultancy, and systems management.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pitch Perfect */}
+              <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+                <div className="px-7 py-5">
+                  <div className="flex items-center  space-x-5">
+                    {/* Flex container */}
+                    <div className="space-x-3 hidden md:flex">
+                      <a
+                        id="clickable"
+                        href="https://www.plymouth.ac.uk/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={pitch}
+                          alt="Pintanna Plantations"
+                          className="w-16 bg-white rounded-lg border border-card-primary-border"
+                        />
+                      </a>
+                    </div>
+                    <div className="r">
+                      <h1 className="text-color-primary text-xl md:text-2xl font-bold">
+                        Picth Perfect
+                      </h1>
+                      <div className="flex flex-row items-center">
+                        <h1 className="text-color-primary text-lg md:text-2xl">
+                          Graphic Designer
+                        </h1>
+                        <h1 className="text-color-tertiary text-lg ml-5 md:text-xl">
+                          2023 - 2024
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="font-inter text-sm text-color-secondary mt-1 text-justify md:text-base">
+                    This course covers key areas such as IT strategy, data
+                    management, business analysis, and software development.
+                    Students gain practical skills in managing business IT
+                    systems, understanding digital transformation, and aligning
+                    technology with business goals, preparing them for roles in
+                    business analysis, IT consultancy, and systems management.
+                  </p>
+                </div>
+              </div>
+            </div>
             <Button
               name={"View All Experience"}
               link={"/experience"}
               color={"green"}
               icon={""}
             />
-          </div>
-
-          <div className="flex flex-row">
-            {/* Pintanna */}
-            <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
-              <div className="px-7 py-5">
-                <div className="flex items-center space-x-4">
-                  {/* Flex container */}
-                  <div className="space-x-3 hidden md:flex">
-                    <a
-                      id="clickable"
-                      href="https://www.plymouth.ac.uk/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src={pintanna}
-                        alt="Pintanna Plantations"
-                        className="w-16 bg-white rounded-lg border border-card-primary-border"
-                      />
-                    </a>
-                  </div>
-                  <div className="r">
-                    <h1 className="text-color-primary text-xl font-bold md:text-2xl">
-                      Pintanna Plantations
-                    </h1>
-                    <div className="flex flex-row items-center">
-                      <h1 className="text-color-primary text-lg md:text-2xl">
-                        Graphic Designer
-                      </h1>
-                      <h1 className="text-color-tertiary text-lg ml-5 md:text-xl">
-                        2023 - 2024
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="font-inter  text-sm text-color-secondary mt-1 text-justify md:text-base">
-                  This course covers key areas such as IT strategy, data
-                  management, business analysis, and software development.
-                  Students gain practical skills in managing business IT
-                  systems, understanding digital transformation, and aligning
-                  technology with business goals, preparing them for roles in
-                  business analysis, IT consultancy, and systems management.
-                </p>
-              </div>
-            </div>
-
-            {/* Pitch Perfect */}
-            <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
-              <div className="px-7 py-5">
-                <div className="flex items-center  space-x-5">
-                  {/* Flex container */}
-                  <div className="space-x-3 hidden md:flex">
-                    <a
-                      id="clickable"
-                      href="https://www.plymouth.ac.uk/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src={pitch}
-                        alt="Pintanna Plantations"
-                        className="w-16 bg-white rounded-lg border border-card-primary-border"
-                      />
-                    </a>
-                  </div>
-                  <div className="r">
-                    <h1 className="text-color-primary text-xl md:text-2xl font-bold">
-                      Picth Perfect
-                    </h1>
-                    <div className="flex flex-row items-center">
-                      <h1 className="text-color-primary text-lg md:text-2xl">
-                        Graphic Designer
-                      </h1>
-                      <h1 className="text-color-tertiary text-lg ml-5 md:text-xl">
-                        2023 - 2024
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="font-inter text-sm text-color-secondary mt-1 text-justify md:text-base">
-                  This course covers key areas such as IT strategy, data
-                  management, business analysis, and software development.
-                  Students gain practical skills in managing business IT
-                  systems, understanding digital transformation, and aligning
-                  technology with business goals, preparing them for roles in
-                  business analysis, IT consultancy, and systems management.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 

@@ -112,8 +112,6 @@ const Projects = () => {
         />
       </div>
 
-      {/* <h1>Top Pojects</h1>
-      <TopProjects /> */}
       <div className="flex flex-wrap justify-center">
         {filteredRepos
           .filter((repo) => repo.stargazers_count !== 0)

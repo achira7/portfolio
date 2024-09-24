@@ -16,49 +16,11 @@ function App() {
   const flairRef = useRef(null);
   const container = useRef(null);
   const [mode, setMode] = useState("light-mode");
-  const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
     const storedMode = localStorage.getItem("mode") || "light-mode";
     setMode(storedMode);
     document.body.classList.add(storedMode);
-  }, []);
-
-  useLayoutEffect(() => {
-    const loaderElement = document.getElementById("loader");
-
-    gsap.from(loaderElement, {
-      scale: 0.5,
-      duration: 0.5,
-      ease: "power1.out",
-    });
-
-    let progressAnimation = gsap.to(
-      {},
-      {
-        y: "+=30",
-        delay: 0.2,
-        duration: 2,
-        ease: "slow",
-        onUpdate: () => {
-          const progress = Math.round(progressAnimation.progress() * 100);
-          setLoadingProgress(progress);
-        },
-        onComplete: () => {
-          gsap.to(loaderElement, {
-            opacity: 0,
-            scale: 0.5,
-            duration: 0.5,
-            ease: "power1.in",
-            onComplete: () => {
-              loaderElement.style.display = "none";
-            },
-          });
-        },
-      }
-    );
-
-    return () => progressAnimation.kill();
   }, []);
 
   // Cursor animation
@@ -123,7 +85,7 @@ function App() {
       t1.from("#welcome-1", {
         opacity: 0,
         y: "+=50",
-        delay: 2.3,
+        delay: 0.3,
         ease: "power1.in",
       })
         .to("#welcome-1", {
@@ -136,7 +98,7 @@ function App() {
           opacity: 0,
           y: "+=30",
           delay: 0.1,
-          stagger: 0.4,
+          stagger: 0.3,
           ease: "power1.in",
         })
         .to("#title-1, #title-2, #title-3, #title-4", {
@@ -167,15 +129,6 @@ function App() {
       <div className="bg-background">
         {/*  */}
         <div className="relative z-50" ref={container}>
-          <div
-            id="loader"
-            className="fixed inset-0 z-50 flex items-center justify-center bottom-8 text-white"
-          >
-            <p className="text-2xl font-inter tracking-wide md:text-3xl">
-              {" "}
-              CONTENT LOADING: {loadingProgress}%
-            </p>
-          </div>
 
           <div className="w-full h-full"></div>
           <div

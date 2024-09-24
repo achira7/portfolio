@@ -145,17 +145,17 @@ const NavBar = () => {
         <div className="flex items-center space-x-4 md:pl-5">
           <button
             onClick={() => setIsChatOpen(true)}
-            className="bg-color-primary text-white p-3 rounded-full  shadow-lg"
+            className="bg-color-primary text-white p-3 rounded-full shadow-xl border-2 border-white"
           >
             <ChatIcon className="cursor-none w-5 md:w-8" />
           </button>
 
-          <DarkMode className="flex shadow-lg" />
+          <DarkMode className="flex shadow-xl border-2 border-color-primary" />
         </div>
 
         <button
           onClick={scrollToTop}
-          className="bg-color-primary fill-white p-3 rounded-full md:mr-5  shadow-lg"
+          className="bg-color-primary fill-white p-3 rounded-full md:mr-5 shadow-xl border-2 border-white"
         >
           <UpArrow className="cursor-none w-5 md:w-8" />
         </button>
@@ -166,7 +166,7 @@ const NavBar = () => {
           <div className="relative w-auto h-auto p-4 bg-card-primary-top rounded-lg">
             <button
               onClick={() => setIsChatOpen(false)}
-              className="absolute top-2 right-2 text-red-500"
+              className="absolute top-2 right-2 text-red-500 "
             >
               <CloseIcon
                 id="clickable"

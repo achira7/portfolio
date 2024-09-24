@@ -31,18 +31,19 @@ const DarkMode = () => {
 
     return (
         <div className='dark_mode'>
-            <input
-                className='dark_mode_input'
-                type='checkbox'
-                id='darkmode-toggle'
-                checked={isDarkMode}
-                onChange={handleToggle}
-            />
-            <label className='dark_mode_label' htmlFor='darkmode-toggle'>
-                <Sun />
-                <Moon />
-            </label>
-        </div>
+    <input
+        className='dark_mode_input'
+        type='checkbox'
+        id='darkmode-toggle'
+        checked={isDarkMode}
+        onChange={handleToggle}
+    />
+    <label className='dark_mode_label' htmlFor='darkmode-toggle'>
+        <Sun />
+        <Moon />
+    </label>
+</div>
+
     );
 };
 

@@ -23,9 +23,9 @@ const TopProjects = () => {
         const reposWithLanguages = await Promise.all(
           data.items.map(async (repo) => {
             const languagesResponse = await fetch(repo.languages_url, {
-            //   headers: {
-            //     Authorization: `Bearer ${git}`,
-            //   },
+              //   headers: {
+              //     Authorization: `Bearer ${git}`,
+              //   },
             });
             const languagesData = await languagesResponse.json();
             const imageUrl = `https://raw.githubusercontent.com/achira7/${repo.name}/main/image.jpg`;
@@ -48,31 +48,34 @@ const TopProjects = () => {
 
   return (
     <div className="bg-background">
-
-      <div className="flex flex-wrap justify-center">
-        {repos.length > 0 ? (
-          repos.map((repo) => (
-            <div key={repo.id} className="w-[850px]">
-              <Card
-                type={"project"}
-                key={repo.id}
-                projectName={repo.name}
-                description={repo.description || "No description provided."}
-                gitLink={repo.html_url}
-                demoLink={repo.homepage}
-                languages={repo.languages}
-                libraries={repo.topics?.filter(topic => topic !== "best-projects") || []}
-                imgLink={repo.imageUrl}
-              />
-            </div>
-          ))
-        ) : (
-          <p className="text-2xl text-center text-color-secondary">
-            No top projects found
-          </p>
-        )}
+      <div className="flex flex-row">
+        <div className="flex flex-wrap justify-center flex-row">
+          {repos.length > 0 ? (
+            repos.map((repo) => (
+              <div key={repo.id} className="flex flex-col w-[850px]">
+                <Card
+                  type={"project"}
+                  key={repo.id}
+                  projectName={repo.name}
+                  description={repo.description || "No description provided."}
+                  gitLink={repo.html_url}
+                  demoLink={repo.homepage}
+                  languages={repo.languages}
+                  libraries={
+                    repo.topics?.filter((topic) => topic !== "best-projects") ||
+                    []
+                  }
+                  imgLink={repo.imageUrl}
+                />
+              </div>
+            ))
+          ) : (
+            <p className="text-2xl text-center text-color-secondary">
+              No top projects found
+            </p>
+          )}
+        </div>
       </div>
-
     </div>
   );
 };

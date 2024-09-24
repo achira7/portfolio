@@ -37,7 +37,7 @@ const Button = ({ name, link, color, icon }) => {
     >
       <button
         type="button"
-        className={`flex items-center justify-end  ${selectedColorClass} ${selectedBorderClass} rounded-lg font-inter px-4 py-2 m-5 shadow-md ${!isLinkProvided && 'opacity-50 cursor-not-allowed'}`}
+        className={`flex items-center justify-end ${selectedColorClass} ${selectedBorderClass} rounded-lg font-inter px-4 py-2 m-5 shadow-md ${!isLinkProvided && 'hidden'}`}
         disabled={!isLinkProvided} 
       >
         <div className="hidden md:flex">
