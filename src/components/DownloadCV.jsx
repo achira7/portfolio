@@ -11,7 +11,7 @@ const DownloadCV = () => {
   const viewLink = "https://docs.google.com/document/d/1eKwEBL9Xr84v6u5D0hchfnOq_chXJ_VXyeUHkQWE4fU/preview";
 
   return (
-    <div className="inline-block m-5 border-card-primary-border flex-wrap rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-lg">
+    <div className="w-full flex flex-col items-center pt-2 bg-white transform rotate-[3deg] shadow-md">
       <div className="flex content-center pt-6 pb-5 px-7 items-center justify-center flex-col">
         <div className="flex">
           <span className="text-color-primary font-caveat text-2xl font-semibold md:text-3xl">

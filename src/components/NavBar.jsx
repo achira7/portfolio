@@ -9,7 +9,7 @@ import { ChatIcon, UpArrow, CloseIcon } from "../assets/icons/icons";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const NavBar = () => {
+const NavBar = ( {startNavbarAnimation} ) => {
   const navigate = useNavigate();
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,6 +17,7 @@ const NavBar = () => {
   const location = useLocation();
   const scrollThreshold = 250;
   let lastScrollY = window.scrollY;
+  
 
   const links = [
     { id: 1, title: "Home", url: "/" },

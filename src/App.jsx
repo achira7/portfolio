@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
@@ -16,6 +15,8 @@ function App() {
   const flairRef = useRef(null);
   const container = useRef(null);
   const [mode, setMode] = useState("light-mode");
+  const [showNavBar, setShowNavBar] = useState(false); 
+  const [showHome, setShowHome] = useState(false); 
 
   useEffect(() => {
     const storedMode = localStorage.getItem("mode") || "light-mode";
@@ -23,10 +24,9 @@ function App() {
     document.body.classList.add(storedMode);
   }, []);
 
-  // Cursor animation
+  // Set up custom cursor and mouse hover effects
   useLayoutEffect(() => {
     gsap.set(flairRef.current, { xPercent: -50, yPercent: -50, scale: 1 });
-
     const xSetter = gsap.quickSetter(flairRef.current, "x", "px");
     const ySetter = gsap.quickSetter(flairRef.current, "y", "px");
 
@@ -54,7 +54,6 @@ function App() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-
     const links = document.querySelectorAll("li, a, button, input, #clickable");
     links.forEach((link) => {
       link.addEventListener("mouseenter", handleMouseEnter);
@@ -69,16 +68,19 @@ function App() {
       });
     };
   }, []);
-//
+
+  // App intro animation
   useLayoutEffect(() => {
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       const t1 = gsap.timeline({
         onComplete: () => {
           document.body.style.overflow = "auto";
           document.documentElement.style.overflow = "auto";
+          setShowNavBar(true); 
+          setShowHome(true)
         },
       });
 
@@ -122,55 +124,29 @@ function App() {
       document.documentElement.style.overflow = "auto";
     };
   }, []);
-  //
 
   return (
     <Router>
       <div className="bg-background">
-        {/*  */}
         <div className="relative z-50" ref={container}>
-
-          <div className="w-full h-full"></div>
-          <div
-            id="cover"
-            className="h-screen w-screen absolute top-0 left-0 flex justify-center items-center z-10"
-          >
-            <GradientComponent
-              colorA={"#0e2d74"}
-              colorB={"#40c6df"}
-              colorC={"#341abc"}
-            />
-
+          {/* App intro overlay */}
+          <div id="cover" className="h-screen w-screen absolute top-0 left-0 flex justify-center items-center z-10">
+            <GradientComponent colorA={"#0e2d74"} colorB={"#40c6df"} colorC={"#341abc"} />
             <div className="flex flex-row z-50">
-              <p
-                id="welcome-1"
-                className="text-4xl font-semibold text-white font-inter md:text-9xl md:font-thin "
-              >
+              <p id="welcome-1" className="text-4xl font-semibold text-white font-inter md:text-9xl md:font-thin">
                 Welcome.
               </p>
             </div>
-
-            <div
-              id="intro-slider"
-              className="h-screen text-white p-5 mt-2 absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-40 md:p-10"
-            >
-              <h1 id="title-1" className="text-4xl md:text-9xl">
-                Software Engineer
-              </h1>
-              <h1 id="title-2" className="text-4xl md:text-9xl">
-                Designer
-              </h1>
-              <h1 id="title-3" className="text-4xl md:text-9xl">
-                Musician
-              </h1>
-              <h1 id="title-4" className="text-4xl md:text-9xl">
-                Game Developer
-              </h1>
+            <div id="intro-slider" className="h-screen text-white p-5 mt-2 absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-40 md:p-10">
+              <h1 id="title-1" className="text-4xl md:text-9xl">Software Engineer</h1>
+              <h1 id="title-2" className="text-4xl md:text-9xl">Designer</h1>
+              <h1 id="title-3" className="text-4xl md:text-9xl">Musician</h1>
+              <h1 id="title-4" className="text-4xl md:text-9xl">Game Developer</h1>
             </div>
           </div>
         </div>
 
-        {/* Cursor */}
+        {/* Custom cursor flair */}
         <div ref={cursorContainer}>
           <div
             ref={flairRef}
@@ -179,39 +155,17 @@ function App() {
           ></div>
         </div>
 
-        <NavBar className={`z-20 w-full ${mode}`} />
-        <Routes>
-          <Route
-            className={`flex z-10 mt-10 ${mode}`}
-            path="/"
-            element={<Home mode={mode} />}
-          />
+        {/* Render NavBar only after intro animation completes */}
+        {showNavBar && <NavBar className={`z-20 w-full ${mode}`} />}
 
-          <Route
-            className={`flex flex-wrap z-10 ${mode}`}
-            path="/projects"
-            element={<Projects />}
-          />
-          <Route
-            className={`flex flex-wrap z-10 ${mode}`}
-            path="/contact"
-            element={<ChatBot />}
-          />
-          <Route
-            className={`flex flex-wrap z-10 ${mode}`}
-            path="/test"
-            element={<Test />}
-          />
-          <Route
-            className={`flex flex-wrap z-10 mt-10 ${mode}`}
-            path="/experience"
-            element={<Experience />}
-          />
-          <Route
-            className={`flex flex-wrap z-10 ${mode}`}
-            path="/about"
-            element={<AboutMe />}
-          />
+        {/* Application routes */}
+        <Routes>
+        <Route className={`flex z-10 mt-10 ${mode}`} path="/" element={<Home mode={mode} />} />
+          <Route className={`flex flex-wrap z-10 ${mode}`} path="/projects" element={<Projects />} />
+          <Route className={`flex flex-wrap z-10 ${mode}`} path="/contact" element={<ChatBot />} />
+          <Route className={`flex flex-wrap z-10 ${mode}`} path="/test" element={<Test />} />
+          <Route className={`flex flex-wrap z-10 mt-10 ${mode}`} path="/experience" element={<Experience />} />
+          <Route className={`flex flex-wrap z-10 ${mode}`} path="/about" element={<AboutMe />} />
         </Routes>
       </div>
     </Router>
