@@ -82,31 +82,33 @@ const Projects = () => {
   });
 
   return (
-    <div className="bg-background mt-20 md:mt-24">
-      <div className="w-full  my-5 ml-5 mt-5 z-10">
-        <h1 className="text-5xl font-bold font-inter text-color-primary mb-2">
-          Technologies
-        </h1>
-        <h2 className="font-inter text-sm text-color-secondary md:text-2xl">
-          Click to see Projects
-        </h2>
+    <div className="bg-background mt-20 md:mt-32">
+      <div className="w-full  my-5 ml-5 mt-24">
+      <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
+            Technologies
+          </h1>
+          <h2 className="font-inter text-lg ml-1 mb-2 text-color-secondary md:text-xl">
+            Click on the Tech icon to see all projects made with it
+          </h2>
         <Marquee />
       </div>
-      <div>
-        <h1
-          id="achira"
-          className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-5xl"
-        >
-          Projects
-        </h1>
+
+      <div className="my-5 ml-5 mt-20">
+      <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
+            Projects
+          </h1>
+          <h2 className="font-inter text-lg  mb-2 text-color-secondary md:text-xl">
+            Best of my personal / professional projects
+          </h2>
       </div>
 
-      <div className="flex pt-3 px-5 align-middle items-center mb-7 md:pt-7">
+      <div className="flex pt-3 px-5 align-middle items-center justify-center mb-7 md:pt-7">
         <SearchIcon className="w-7 h-7 text-color-primary md:w-10 md:h-10 " />
         <input
-          className="text-xl outline-none ml-3 block font-inter bg-inherit text-color-secondary md:text-3xl"
+        id="clickable"
+          className="text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 px-3 bg-inherit text-color-secondary md:text-3xl"
           type="search"
-          placeholder="Search"
+          placeholder="  Search"
           value={searchQuery}
           onChange={handleSearchChange}
         />

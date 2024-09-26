@@ -28,7 +28,7 @@ const DownloadCV = () => {
               checked={cvFormat === "pdf"}
               onChange={() => setCvFormat("pdf")}
             />
-            <span className="font-inter text-color-secondary ml-2">PDF</span>
+            <span className="font-inter ml-2">PDF</span>
           </div>
           <div className="flex mx-3">
             <input
@@ -38,7 +38,7 @@ const DownloadCV = () => {
               checked={cvFormat === "docx"}
               onChange={() => setCvFormat("docx")}
             />
-            <span className="font-inter text-color-secondary ml-2">Docs</span>
+            <span className="font-inter ml-2">Docs</span>
           </div>
         </div>
 

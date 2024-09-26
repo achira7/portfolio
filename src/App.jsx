@@ -67,7 +67,7 @@ function App() {
         link.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
-  }, []);
+  }, [5000]);
 
   // App intro animation
   useLayoutEffect(() => {
@@ -151,7 +151,7 @@ function App() {
           <div
             ref={flairRef}
             id="cursor"
-            className="flair w-[50px] h-[50px] rounded-full fixed top-0 left-0 pointer-events-none z-40 bg-gradient-to-r from-orange-500 to-orange-300 mix-blend-difference"
+            className="flair w-[30px] h-[30px] rounded-full fixed top-0 left-0 pointer-events-none z-40 bg-gradient-to-r from-orange-500 to-orange-300 mix-blend-difference"
           ></div>
         </div>
 

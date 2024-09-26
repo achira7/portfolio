@@ -26,9 +26,9 @@ const SocialIcons = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center pt-2 bg-white transform rotate-[-3deg] shadow-md">
+    <div className="w-full flex flex-col items-center pt-2 bg-white transform rotate-[-7deg] shadow-md">
       {/* Gmail Icon */}
-      <div className="p-5">
+      <div className="p-7">
         <div className="flex flex-row justify-center items-center mb-2">
           <div className="flex flex-col items-center justify-center px-5">
             <p className="font-caveat text-2xl font-semibold text-color-primary  mb-4 md:text-3xl">

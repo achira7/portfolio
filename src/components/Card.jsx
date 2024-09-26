@@ -18,7 +18,7 @@ const Card = ({
   return (
     <>
       {type === "project" ? (
-        <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
+        <div className="mb-10 z-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
           <div className="w-full flex pl-6 py-5">
             {/* Text and Button Section */}
             <div className="w-2/3 flex flex-col h-full pr-5">
@@ -39,7 +39,6 @@ const Card = ({
                   name={"Git Repo"}
                   color={`stone-500`}
                   icon={"git"}
-                  id="clickable"
                   iconClass="hidden sm:inline"
                 />
                 <Button
@@ -48,7 +47,6 @@ const Card = ({
                   name={"Live Demo"}
                   color={`card-secondary`}
                   className="ml-3"
-                  id="clickable"
                   iconClass="hidden sm:inline"
                 />
               </div>
@@ -65,7 +63,7 @@ const Card = ({
                 />
                 <div className="grid grid-cols-2 mt-5 md:gap-2 items-start">
                   {Array.isArray(languages) && languages.length > 0 && (
-                    <div className="space-y-2 items-start">
+                    <div className="space-y-2 items-start" id="clickable">
                       {languages.map((lang) => (
                         <div
                           key={lang}
@@ -92,7 +90,7 @@ const Card = ({
                     </div>
                   )}
                   {Array.isArray(libraries) && libraries.length > 0 && (
-                    <div className="space-y-2">
+                    <div className="space-y-2" id="clickable">
                       {libraries.map((lib) => (
                         <div
                           key={lib}

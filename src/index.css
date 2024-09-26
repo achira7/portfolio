@@ -254,3 +254,50 @@ button, a{
 .shadow-image {
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.7));
 }
+
+
+
+/* .btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-sizing: border-box;
+} */
+
+ /* ripple */
+ .ripple {
+   /*background: linear-gradient(90deg, #0162c8, #55e7fc);*/
+   overflow: hidden;
+   position: relative;
+ }
+
+ .ripple span {
+   position: absolute;
+   background: #fff;
+   transform: translate(-50%, -50%);
+   pointer-events: none;
+   border-radius: 50%;
+   animation: rippleAnimation 1s linear infinite;
+ }
+
+@keyframes rippleAnimation {
+  0% {
+      width: 0px;
+      height: 0px;
+      opacity: 0.5;
+  }
+  100% {
+      width: 500px;
+      height: 500px;
+      opacity: 0;
+  }
+}

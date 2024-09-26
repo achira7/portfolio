@@ -42,23 +42,22 @@ const Home = ({ mode }) => {
   return (
     <div className="bg-background" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20 m-5">
-        <div className="">
+        <div className="flex flex-col">
           <h1
             id="achira"
-            className="text-6xl font-bold text-color-primary font-inter top-0 flex flex-wrap md:text-9xl"
+            className="text-6xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-8xl"
           >
             {scrambledAchira}
           </h1>
 
           <h1
             id="silva"
-            className="text-6xl font-bold text-color-primary font-inter  flex flex-wrap md:text-9xl md:mt-5"
+            className="text-6xl font-bold text-color-primary font-inter flex flex-wrap md:text-8xl"
           >
             {scrambledSilva}
           </h1>
-
           <TypeAnimation
-            className="font-caveat text-2xl text-color-primary"
+            className="font-caveat text-2xl text-color-primary font-semibold mt-2 md:text-5xl"
             sequence={[
               "Frontend Developer",
               1000,
@@ -99,36 +98,39 @@ const Home = ({ mode }) => {
           <h2 className="font-inter text-lg ml-2 mb-2 text-color-secondary md:text-2xl">
             Click to see Projects
           </h2>
-          <Marquee />
+          <div className="flex z-10">
+            <Marquee />
+          </div>
+          
         </div>
 
-        <div className="flex items-center justify-center w-[100] ">
-          <div className="w-1/6 flex flex-col">
-            <div className="flex-col absolute top-5 right-5 hidden md:flex">
-              <h1 className="text-4xl text-color-primary relative inline-block transform rotate-[-2deg] font-caveat drop-shadow-md">
-                Check Out my Projects
-              </h1>
-              <br />
-              <h1 className="text-4xl text-color-primary relative inline-block transform rotate-[2deg] font-caveat drop-shadow-md">
-                These are my Experiences
-              </h1>
-              <br />
-              <h1 className="text-4xl text-color-primary relative inline-block transform rotate-[4deg] font-caveat drop-shadow-md">
-                Contact Me
-              </h1>
-            </div>
+        <div className="flex items-center justify-center w-[100]">
+          <div className="flex-col absolute top-5 right-80 hidden transform rotate-[-5deg] md:flex">
+            <h1 className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md">
+              Check Out my Projects
+            </h1>
+            <br />
+            <h1 className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md">
+              These are my Experiences
+            </h1>
+            <br />
+            <h1 className="text-4xl text-color-primary relative inline-block font-caveat drop-shadow-md">
+              Contact Me
+            </h1>
+          </div>
+        </div>
 
-            <div>
-              <img
-                src={mode === "light-mode" ? heroLight : heroDark}
-                className="absolute bottom-0 shadow-image w-[400px] md:w-1/3"
-                alt="Hero"
-              />
-            </div>
+        <div className="flex flex-wrap flex-row absolute right-80 bottom-16 z-0 bg-slate-400">
+          <div className="flex flex-wrap">
+            <img
+              src={mode === "light-mode" ? heroLight : heroDark}
+              className="bottom-0 shadow-image w-[400px] md:w-6/12"
+              alt="Hero"
+            />
+          </div>
 
-            <div className="flex w-full">
-              <SocialIcons />
-            </div>
+          <div className="flex items-center justify-center w-[300px] absolute right-0 bottom-8">
+            <SocialIcons />
           </div>
         </div>
 
@@ -140,29 +142,17 @@ const Home = ({ mode }) => {
             <div className="flex flex-row flex-wrap">
               <TopProjects />
             </div>
-            
 
-            <div className="flex flex-row gap-5 items-center justify-center align-middle my-2">
+            <div
+              id="clickable"
+              className="flex flex-row gap-5 items-center justify-center align-middle my-2"
+            >
               <Button
                 name={"View All Projects"}
                 link={"/projects"}
                 color={"green"}
                 icon={""}
               />
-
-              {/* <a
-                href="https://github.com/achira7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center h-10 rounded-lg text-color-primary font-medium hover:bg-purple-400 transition-all duration-300 md:text-2xl"
-              >
-                My GitHub
-                <img
-                  src="./src/assets/social_logos/github.svg"
-                  alt="achira7"
-                  className="w-6 h-6 ml-3"
-                />
-              </a> */}
             </div>
           </div>
         </div>
@@ -181,7 +171,7 @@ const Home = ({ mode }) => {
                     <div className="space-x-3 hidden md:flex">
                       <a
                         id="clickable"
-                        href="https://www.plymouth.ac.uk/"
+                        href="https://www.pintannaplantations.lk/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -226,7 +216,7 @@ const Home = ({ mode }) => {
                     <div className="space-x-3 hidden md:flex">
                       <a
                         id="clickable"
-                        href="https://www.plymouth.ac.uk/"
+                        href="https://pitchperfect.lk/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -263,12 +253,14 @@ const Home = ({ mode }) => {
                 </div>
               </div>
             </div>
-            <Button
-              name={"View All Experience"}
-              link={"/experience"}
-              color={"green"}
-              icon={""}
-            />
+            <div>
+              <Button
+                name={"View All Experience"}
+                link={"/experience"}
+                color={"green"}
+                icon={""}
+              />
+            </div>
           </div>
         </div>
 
