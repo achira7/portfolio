@@ -1,18 +1,16 @@
 import React from "react";
 import { gsap } from "gsap";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 //componenets
 import Button from "../components/Button";
-import GradientComponent from "../components/GradientComponent";
 import Marquee from "../components/Marquee";
 import { useTextScramble } from "../hooks/useTextScramble";
 import Footer from "../components/Footer";
 import DownloadCV from "../components/DownloadCV";
-import GsapTypewriter from "../components/GsapTypewriter";
 import SocialIcons from "../components/SocialIcons";
 import TopProjects from "../components/TopProjects";
 
@@ -70,7 +68,7 @@ const Home = ({ mode }) => {
             ]}
             wrapper="span"
             speed={50}
-            style={{ fontSize: "2em", display: "inline-block" }}
+            style={{ display: "inline-block" }}
             repeat={Infinity}
           />
         </div>

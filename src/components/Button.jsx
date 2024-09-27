@@ -18,14 +18,6 @@ const Button = ({ name, link, color, icon }) => {
     yellow: 'border-border-yellow',
   };
 
-  // Neon glow effect on hover
-  // const glowClasses = {
-  //   red: 'hover:shadow-[0_0_10px_5px_rgba(255,100,100,0.7)]',
-  //   blue: 'hover:shadow-[0_0_10px_5px_rgba(100,150,255,0.7)]',
-  //   green: 'hover:shadow-[0_0_10px_5px_rgba(100,255,100,0.7)]',
-  //   yellow: 'hover:shadow-[0_0_10px_5px_rgba(255,255,100,0.7)]',
-  // };
-
   const glowClasses = {
     red: 'hover:shadow-[0_0_5px_5px_rgba(var(--color-red-shadow))]',
     blue: 'hover:shadow-[0_0_5px_5px_rgba(var(--color-primary-shadow))]',

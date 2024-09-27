@@ -204,7 +204,7 @@ export const SearchIcon = ({ className }) => (
 export const UpArrow = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
+    fill="none"  // Set fill to none to avoid the black background issue
     viewBox="0 0 48 48"
     id="Arrow-Up-Sharp--Streamline-Ionic-Sharp"
     className={className}
@@ -225,6 +225,7 @@ export const UpArrow = ({ className }) => (
     ></path>
   </svg>
 );
+
 
 export const GitHub = ({ className }) => (
   <svg

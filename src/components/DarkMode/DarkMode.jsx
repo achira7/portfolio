@@ -4,47 +4,46 @@ import { Moon } from "../../assets/icons/icons";
 import "./DarkMode.css";
 
 const DarkMode = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-    useEffect(() => {
-        const savedMode = localStorage.getItem('mode');
-        if (savedMode === 'dark-mode') {
-            setIsDarkMode(true);
-            document.body.classList.add('dark-mode');
-        } else {
-            setIsDarkMode(false);
-            document.body.classList.remove('dark-mode');
-        }
-    }, []);
+  useEffect(() => {
+    const savedMode = localStorage.getItem("mode");
+    if (savedMode === "dark-mode") {
+      setIsDarkMode(true);
+      document.body.classList.add("dark-mode");
+    } else {
+      setIsDarkMode(false);
+      document.body.classList.remove("dark-mode");
+    }
+  }, []);
 
-    const handleToggle = () => {
-        if (isDarkMode) {
-            localStorage.setItem('mode', 'light-mode');
-            document.body.classList.remove('dark-mode');
-            setIsDarkMode(false);
-        } else {
-            localStorage.setItem('mode', 'dark-mode');
-            document.body.classList.add('dark-mode');
-            setIsDarkMode(true);
-        }
-    };
+  const handleToggle = () => {
+    if (isDarkMode) {
+      localStorage.setItem("mode", "light-mode");
+      document.body.classList.remove("dark-mode");
+      setIsDarkMode(false);
+    } else {
+      localStorage.setItem("mode", "dark-mode");
+      document.body.classList.add("dark-mode");
+      setIsDarkMode(true);
+    }
+  };
 
-    return (
-        <div className='dark_mode'>
-    <input
-        className='dark_mode_input'
-        type='checkbox'
-        id='darkmode-toggle'
+  return (
+    <div className="dark_mode hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300">
+      <input
+        className="dark_mode_input"
+        type="checkbox"
+        id="darkmode-toggle"
         checked={isDarkMode}
         onChange={handleToggle}
-    />
-    <label className='dark_mode_label' htmlFor='darkmode-toggle'>
+      />
+      <label className="dark_mode_label" htmlFor="darkmode-toggle">
         <Sun />
         <Moon />
-    </label>
-</div>
-
-    );
+      </label>
+    </div>
+  );
 };
 
 export default DarkMode;
