@@ -37,7 +37,7 @@ const Card = ({
                 <Button
                   link={gitLink}
                   name={"Git Repo"}
-                  color={`stone-500`}
+                  color={`blue`}
                   icon={"git"}
                   iconClass="hidden sm:inline"
                 />
@@ -45,7 +45,7 @@ const Card = ({
                   icon={"play"}
                   link={demoLink}
                   name={"Live Demo"}
-                  color={`card-secondary`}
+                  color={`blue`}
                   className="ml-3"
                   iconClass="hidden sm:inline"
                 />

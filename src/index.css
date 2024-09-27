@@ -41,6 +41,12 @@ button, a{
   --color-yellow: 255,204,0, 1;
   --color-blue:162,222,246;
 
+  --color-primary-shadow: 14, 42, 113, 0.5; 
+  --color-green-shadow: 53,199,90, 0.5;
+  --color-red-shadow: 255,59,47 0.5;
+  --color-yellow-shadow: 255,204,0, 0.5;
+  --color-blue-shadow: 162,222,246 0.5; 
+
   --color-polaroid: 255,255,255;
   
   --border-primary:41, 126, 255, 1;
@@ -69,10 +75,17 @@ button, a{
   --color-secondary: 247, 249, 255, 1;
   --color-tertiary: 177, 177, 177, 1;
 
+  --color-primary-shadow: 64,198,223, 0.5;
+
   --color-green: 47,209,88, 1;
   --color-red: 255,60,68, 1;
   --color-yellow: 255,214,10, 1;
-  --color-blue: 16, 86, 156; /*34, 108, 160;*/
+  --color-blue: 16, 86, 156; 
+
+  --color-green-shadow: 47,209,88, 0.5;
+  --color-red-shadow: 255,60,68, 0.5;
+  --color-yellow-shadow: 255,214,10, 0.5;
+  --color-blue-shadow: 16, 86, 156, 0.5; 
 
   --color-polaroid: 255,255,242;
 
@@ -256,48 +269,3 @@ button, a{
 }
 
 
-
-/* .btn {
-  position: relative;
-  display: inline-block;
-  padding: 12px 36px;
-  margin: 10px;
-  color: #fff;
-  font-size: 1.4rem;
-  letter-spacing: 2px;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-sizing: border-box;
-} */
-
- /* ripple */
- .ripple {
-   /*background: linear-gradient(90deg, #0162c8, #55e7fc);*/
-   overflow: hidden;
-   position: relative;
- }
-
- .ripple span {
-   position: absolute;
-   background: #fff;
-   transform: translate(-50%, -50%);
-   pointer-events: none;
-   border-radius: 50%;
-   animation: rippleAnimation 1s linear infinite;
- }
-
-@keyframes rippleAnimation {
-  0% {
-      width: 0px;
-      height: 0px;
-      opacity: 0.5;
-  }
-  100% {
-      width: 500px;
-      height: 500px;
-      opacity: 0;
-  }
-}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { GitHub, Play } from '../assets/icons/icons';
 
 const Button = ({ name, link, color, icon }) => {
@@ -18,6 +18,22 @@ const Button = ({ name, link, color, icon }) => {
     yellow: 'border-border-yellow',
   };
 
+  // Neon glow effect on hover
+  // const glowClasses = {
+  //   red: 'hover:shadow-[0_0_10px_5px_rgba(255,100,100,0.7)]',
+  //   blue: 'hover:shadow-[0_0_10px_5px_rgba(100,150,255,0.7)]',
+  //   green: 'hover:shadow-[0_0_10px_5px_rgba(100,255,100,0.7)]',
+  //   yellow: 'hover:shadow-[0_0_10px_5px_rgba(255,255,100,0.7)]',
+  // };
+
+  const glowClasses = {
+    red: 'hover:shadow-[0_0_5px_5px_rgba(var(--color-red-shadow))]',
+    blue: 'hover:shadow-[0_0_5px_5px_rgba(var(--color-primary-shadow))]',
+    green: 'hover:shadow-[0_0_5px_5px_rgba(var(--color-green-shadow))]',
+    yellow: 'hover:shadow-[0_0_5px_5px_rgba(var(--color-yellow-shadow))]',
+  };
+  
+
   const iconClass = {
     play: <Play className="w-4 h-4 text-white mr-2" />,
     git: <GitHub className="w-6 h-6 text-white mr-2" />
@@ -25,38 +41,8 @@ const Button = ({ name, link, color, icon }) => {
 
   const selectedColorClass = colorClasses[color] || 'bg-default-button';
   const selectedBorderClass = borderClasses[color] || 'border-0';
+  const selectedGlowClass = glowClasses[color] || 'color-primary';
   const selectedIconClass = iconClass[icon] || '';
-
-  useEffect(() => {
-    const rippleBtn = document.getElementById("clickable");
-    let ripples = document.createElement("span");
-    let cleartimeout;
-
-    const handleMouseOver = (e) => {
-      let x = e.clientX - e.target.offsetLeft;
-      let y = e.clientY - e.target.offsetTop;
-      ripples.style.left = x + "px";
-      ripples.style.top = y + "px";
-      rippleBtn.appendChild(ripples);
-
-      cleartimeout = setTimeout(() => {
-        ripples.remove();
-      }, 1000);
-    };
-
-    const handleMouseOut = () => {
-      ripples.remove(cleartimeout);
-    };
-
-    rippleBtn.addEventListener("mouseover", handleMouseOver);
-    rippleBtn.addEventListener("mouseout", handleMouseOut);
-
-    // Clean up event listeners
-    return () => {
-      rippleBtn.removeEventListener("mouseover", handleMouseOver);
-      rippleBtn.removeEventListener("mouseout", handleMouseOut);
-    };
-  }, []);
 
   return (
     <a
@@ -67,7 +53,7 @@ const Button = ({ name, link, color, icon }) => {
     >
       <button
         type="button"
-        className={`flex items-center cursor-none hover:ripple justify-end ${selectedColorClass} ${selectedBorderClass} rounded-lg font-inter px-4 py-2 m-5 shadow-md ${!isLinkProvided && 'hidden'}`}
+        className={`flex items-center cursor-none justify-end ${selectedColorClass} ${selectedBorderClass} ${selectedGlowClass} rounded-lg font-inter px-4 py-2 m-5 shadow-md transition-all duration-300 hover:scale-105 ${!isLinkProvided && 'hidden'}`}
         disabled={!isLinkProvided}
       >
         <div id="clickable" className="hidden md:flex cursor-none">

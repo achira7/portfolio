@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -33,6 +30,13 @@ export default {
         "color-yellow": "rgba(var(--color-yellow))",
         "color-blue": "rgba(var(--color-blue))",
 
+        "color-primary-shadow": "rgba(var(--color-primary-shadow))",
+
+        "color-green-shadow": "rgba(var(--color-green-shadow))",
+        "color-red-shadow": "rgba(var(--color-red-shadow))",
+        "color-yellow-shadow": "rgba(var(--color-yellow-shadow))",
+        "color-blue-shadow": "rgba(var(--color-blue-shadow))",
+
         "color-polaroid": "rgba(var(--color-polaroid))",
 
         "border-primary": "rgba(var(--border-primary))",
@@ -46,4 +50,4 @@ export default {
     },
   },
   plugins: [],
-}
+};

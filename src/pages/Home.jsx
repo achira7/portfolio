@@ -98,10 +98,9 @@ const Home = ({ mode }) => {
           <h2 className="font-inter text-lg ml-2 mb-2 text-color-secondary md:text-2xl">
             Click to see Projects
           </h2>
-          <div className="flex z-10">
+          <div className="flex">
             <Marquee />
           </div>
-          
         </div>
 
         <div className="flex items-center justify-center w-[100]">
@@ -134,8 +133,8 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div className="flex flex-col">
-          <h1 className="text-3xl font-bold text-color-primary font-inter top-0  my-5 flex flex-wrap md:text-5xl">
+        <div id="projects" className="flex flex-col">
+          <h1 className="text-3xl font-bold text-color-primary font-inter mx-5 mb-5 flex flex-wrap md:text-5xl">
             Projects
           </h1>
           <div className="flex flex-col">
