@@ -2,7 +2,6 @@
 import axios from 'axios';
 
 const hug = process.env.REACT_APP_HUGGINGFACE_API;
-//sample
 
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
@@ -13,7 +12,7 @@ class ActionProvider {
   sendMessageToAPI = async (message) => {
     try {
       const response = await axios.post(
-        "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill",
+        "https://api-inference.huggingface.co/models/facebook/bart-large",
         { inputs: message },
         {
           headers: {
@@ -23,9 +22,10 @@ class ActionProvider {
         }
       );
 
+      // BART's generated text should be accessed as follows:
       const botMessage = response.data[0]?.generated_text || "No response from the bot";
       console.log(response.data);
-  
+
       const botMessageObject = this.createChatBotMessage(botMessage);
       this.setState((prev) => ({
         ...prev,

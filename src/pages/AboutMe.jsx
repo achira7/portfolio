@@ -6,10 +6,10 @@ import Footer from "../components/Footer";
 const AboutMe = () => {
   return (
     <div className="bg-background">
-      <div className="flex flex-col m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36">
-        <h1 className="text-5xl font-bold text-color-primary font-inter md:text-5xl">
+      <div className="flex flex-col mt-28 m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36">
+        {/* <h1 className="text-5xl font-bold text-color-primary font-inter md:text-5xl">
           About Me
-        </h1>
+        </h1> */}
         <div className="flex flex-col">
           <h1 className="text-color-primary font-caveat font-bold text-2xl ml-5 md:text-4xl">
             Heading 1

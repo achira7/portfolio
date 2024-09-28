@@ -104,6 +104,7 @@ const Marquee = () => {
               >
                 <div className="z-10 flex items-center justify-center w-12 h-12  bg-white border border-card-primary-border rounded-lg shadow-lg md:w-24 md:h-24">
                   <img
+                  id="clickable"
                     src={logoSrc}
                     onError={(e) => {
                       e.target.src = "https://via.placeholder.com/80";
@@ -113,7 +114,7 @@ const Marquee = () => {
                   />
                 </div>
 
-                <span className="text-color-primary font-inter font-semibold mt-2 text-sm capitalize text-center md:text-lg">
+                <span id="clickable" className="text-color-primary font-inter font-semibold mt-2 text-sm capitalize text-center md:text-lg">
                   {tech.name}
                 </span>
               </a>

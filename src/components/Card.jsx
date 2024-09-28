@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import { languages as langLogos } from "../logos";
 import { libraries as libLogos } from "../logos";
+import { CloseIcon } from "../assets/icons/icons"; // Assuming you have a close icon here
 
 const Card = ({
   type,
@@ -15,6 +16,8 @@ const Card = ({
   onTechClick,
   icon,
 }) => {
+  const [isImageOpen, setIsImageOpen] = useState(false); // State for image overlay
+
   return (
     <>
       {type === "project" ? (
@@ -22,15 +25,14 @@ const Card = ({
           <div className="w-full flex pl-6 py-5">
             {/* Text and Button Section */}
             <div className="w-2/3 flex flex-col h-full pr-5">
-            <div>
-              <h5 className="text-xl font-inter font-bold text-color-primary capitalize md:text-3xl">
-                {projectName}
-              </h5>
-              <p className="font-inter text-sm text-color-secondary text-justify mt-1 md:text-base">
-                {description}
-              </p>
-            </div>
-              
+              <div>
+                <h5 className="text-xl font-inter font-bold text-color-primary capitalize md:text-3xl">
+                  {projectName}
+                </h5>
+                <p className="font-inter text-sm text-color-secondary text-justify mt-1 md:text-base">
+                  {description}
+                </p>
+              </div>
 
               {/* Buttons */}
               <div className="flex mt-4 flex-nowrap">
@@ -51,16 +53,47 @@ const Card = ({
                 />
               </div>
             </div>
+
+            {/* Image Section with Overlay Trigger */}
             {imgLink && (
               <div className="w-2/5 md:w-2/5">
                 <img
+                id="clickable"
                   src={imgLink}
                   alt={`${projectName} Preview`}
                   className="w-4/5 object-cover rounded-xl border border-card-primary-border hidden md:flex md:w-[250px]"
+                  onClick={() => setIsImageOpen(true)} 
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}
+                  style={{ cursor: "pointer" }}
                 />
+
+                {/* Image Overlay */}
+                {isImageOpen && (
+                  <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-65 z-30">
+                    
+                    <div className="relative w-auto h-auto p-4 bg-card-primary-top rounded-lg shadow-xl">
+                    <button
+                        id="clickable"
+                        onClick={() => setIsImageOpen(false)}
+                        className="absolute top-5 right-5"
+                      >
+                        <CloseIcon
+                          id="clickable"
+                          className="w-7 h-7 text-color-red z-20 cursor-none shadow-lg"
+                        />
+                      </button>
+
+                      <img
+                        src={imgLink}
+                        alt={`${projectName} Full View`}
+                        className="w-full h-full object-contain max-h-[90vh] max-w-[90vw] rounded-3xl p-10"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-2 mt-5 md:gap-2 items-start">
                   {Array.isArray(languages) && languages.length > 0 && (
                     <div className="space-y-2 items-start" id="clickable">
@@ -89,6 +122,7 @@ const Card = ({
                       ))}
                     </div>
                   )}
+
                   {Array.isArray(libraries) && libraries.length > 0 && (
                     <div className="space-y-2" id="clickable">
                       {libraries.map((lib) => (

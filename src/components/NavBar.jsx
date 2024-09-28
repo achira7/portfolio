@@ -56,7 +56,10 @@ const NavBar = ({ startNavbarAnimation }) => {
           duration: 0.5,
           ease: "power2.out",
         });
-      } else if (scrollDirection === "up" && currentScrollY <= scrollThreshold) {
+      } else if (
+        scrollDirection === "up" &&
+        currentScrollY <= scrollThreshold
+      ) {
         setIsScrolled(false);
         gsap.to("#horizontal-navbar", {
           y: -100,
@@ -93,7 +96,8 @@ const NavBar = ({ startNavbarAnimation }) => {
       {location.pathname === "/" && !isScrolled ? (
         <div
           id="vertical-navbar"
-          className="z-20 flex fixed justify-end flex-wrap bg-transparent right-10 mt-5">
+          className="z-20 flex fixed justify-end flex-wrap bg-transparent right-10 mt-5"
+        >
           <ul className="flex flex-col items-end flex-wrap bg-transparent">
             {links.map(({ id, title, url }) => {
               const scrambledTitle = useTextScramble(title);
@@ -115,9 +119,7 @@ const NavBar = ({ startNavbarAnimation }) => {
                 >
                   {scrambledTitle}
                   {isCurrentPage && (
-                    <div
-                      className="h-1 w-full bg-color-primary absolute bottom-[-10px] left-0 transition-all duration-300"
-                    />
+                    <div className="h-1 w-full bg-color-primary absolute bottom-[-10px] left-0 transition-all duration-300" />
                   )}
                 </li>
               );
@@ -138,22 +140,23 @@ const NavBar = ({ startNavbarAnimation }) => {
                 <li
                   key={id}
                   onClick={() => navigate(url)}
-                  id="clickable"
-                  className={`text-color-primary font-inter font-bold px-5 z-10 mx-10 hover:text-color-tertiary hover:tracking-widest transition-all duration-300 text-2xl md:text-3xl ${
+                  id={!isCurrentPage ? "clickable" : ""} 
+                  className={`text-color-primary font-inter font-bold px-5 z-10 mx-10 transition-all duration-300 text-2xl md:text-3xl ${
                     isCurrentPage
                       ? "text-3xl md:text-4xl uppercase font-caveat" 
-                      : "" 
+                      : "hover:text-color-tertiary hover:tracking-widest" 
                   }`}
                   style={{
                     position: "relative",
                     whiteSpace: "nowrap",
+                    textShadow: isCurrentPage
+                      ? "2px 2px 6px rgba(0, 0, 0, 0.7)"
+                      : "none", 
                   }}
                 >
                   {scrambledTitle}
                   {isCurrentPage && (
-                    <div
-                      className="h-1 w-full bg-color-primary absolute bottom-[-30px] left-0 transition-all duration-300"
-                    />
+                    <div className="h-1 w-full bg-color-primary absolute bottom-[-30px] left-0 transition-all duration-300" />
                   )}
                 </li>
               );
@@ -169,10 +172,13 @@ const NavBar = ({ startNavbarAnimation }) => {
             onClick={() => setIsChatOpen(true)}
             className="bg-color-primary text-white p-3 rounded-full shadow-xl border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300"
           >
-            <ChatIcon className="cursor-none w-5 md:w-8" />
+            <ChatIcon className="cursor-none w-5 md:w-8" id="clickable" />
           </button>
 
-          <DarkMode className="flex shadow-xl border-2 border-color-primary hover:shadow-color-primary-shadow transition-all duration-300" />
+          <DarkMode
+            id="clickable"
+            className="flex shadow-xl border-2 border-color-primary hover:shadow-color-primary-shadow transition-all duration-300"
+          />
         </div>
 
         <button
@@ -188,8 +194,9 @@ const NavBar = ({ startNavbarAnimation }) => {
         <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-65 z-30">
           <div className="relative w-auto h-auto p-4 bg-card-primary-top rounded-lg">
             <button
+              id="clickable"
               onClick={() => setIsChatOpen(false)}
-              className="absolute top-2 right-2 text-red-500"
+              className="absolute top-5 right-5 "
             >
               <CloseIcon
                 id="clickable"

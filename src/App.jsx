@@ -54,7 +54,7 @@ function App() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    const links = document.querySelectorAll("li, a, button, input, #clickable");
+    const links = document.querySelectorAll("#clickable");
     links.forEach((link) => {
       link.addEventListener("mouseenter", handleMouseEnter);
       link.addEventListener("mouseleave", handleMouseLeave);
@@ -156,16 +156,14 @@ function App() {
         </div>
 
         {/* Render NavBar only after intro animation completes */}
-        {showNavBar && <NavBar className={`z-20 w-full ${mode}`} />}
+        {showNavBar && <NavBar className={`z-30 w-full ${mode}`} />}
 
         {/* Application routes */}
         <Routes>
-        <Route className={`flex z-10 mt-10 ${mode}`} path="/" element={<Home mode={mode} />} />
+          <Route className={`flex z-10 mt-10 ${mode}`} path="/" element={<Home mode={mode} />} />
           <Route className={`flex flex-wrap z-10 ${mode}`} path="/projects" element={<Projects />} />
-          <Route className={`flex flex-wrap z-10 ${mode}`} path="/contact" element={<ChatBot />} />
-          <Route className={`flex flex-wrap z-10 ${mode}`} path="/test" element={<Test />} />
           <Route className={`flex flex-wrap z-10 mt-10 ${mode}`} path="/experience" element={<Experience />} />
-          <Route className={`flex flex-wrap z-10 ${mode}`} path="/about" element={<AboutMe />} />
+          <Route className={`flex flex-wrap z-10  ${mode}`} path="/about" element={<AboutMe />} />
         </Routes>
       </div>
     </Router>
