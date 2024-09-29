@@ -128,7 +128,6 @@ const Projects = () => {
                 demoLink={repo.homepage}
                 languages={repo.languages}
                 libraries={repo.topics?.filter(topic => topic !== "best-projects") || []}
-                //libraries={repo.topics}
                 imgLink={repo.imageUrl}
               />
             </div>

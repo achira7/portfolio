@@ -47,34 +47,37 @@ const TopProjects = () => {
   }, [git]);
 
   return (
-    <div className="bg-background">
-      <div className="flex flex-row">
-        <div className="flex flex-wrap justify-center flex-row">
-          {repos.length > 0 ? (
-            repos.map((repo) => (
-              <div key={repo.id} className="flex flex-col w-[850px]">
-                <Card
-                  type={"project"}
-                  key={repo.id}
-                  projectName={repo.name}
-                  description={repo.description || "No description provided."}
-                  gitLink={repo.html_url}
-                  demoLink={repo.homepage}
-                  languages={repo.languages}
-                  libraries={
-                    repo.topics?.filter((topic) => topic !== "best-projects") ||
-                    []
-                  }
-                  imgLink={repo.imageUrl}
-                />
-              </div>
-            ))
-          ) : (
-            <p className="text-2xl text-center text-color-secondary">
-              No top projects found
-            </p>
-          )}
-        </div>
+    <div className="bg-background w-full">
+      <div className=" ml-5">
+        <h2 className="font-inter text-lg ml-1 mb-2 text-color-secondary md:text-xl">
+          Best projects from my <a href="https://github.com/achira7" className="text-color-primary underline" id="clickable"> GitHub Repository. </a>
+        </h2>
+      </div>
+
+      <div className="flex flex-wrap justify-center mt-10 gap-2">
+        {repos.length > 0 ? (
+          repos.map((repo) => (
+            <div key={repo.id} className="w-[850px]">
+              <Card
+                type={"project"}
+                key={repo.id}
+                projectName={repo.name}
+                description={repo.description || "No description provided."}
+                gitLink={repo.html_url}
+                demoLink={repo.homepage}
+                languages={repo.languages}
+                libraries={
+                  repo.topics?.filter((topic) => topic !== "best-projects") || []
+                }
+                imgLink={repo.imageUrl}
+              />
+            </div>
+          ))
+        ) : (
+          <p className="text-2xl text-center text-color-secondary">
+            No top projects found
+          </p>
+        )}
       </div>
     </div>
   );

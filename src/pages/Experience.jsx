@@ -45,12 +45,12 @@ const Experience = () => {
         Experience
       </h1> */}
       <div className="flex items-center justify-center w-full py-6">
-        <h2 className="font-inter text-2xl font-bold text-color-primary items-center md:text-2xl">
+        <h2 className="font-inter text-2xl font-bold text-color-primary mt-7 items-center md:text-2xl">
           Timeline
         </h2>
       </div>
 
-      <div className="w-full mb-10 md:">
+      <div className="mb-10 md:w-full md:mb-10">
         <VerticalTimeline>
           {exp.reverse().map((experience) => (
             <VerticalTimelineElement
@@ -107,10 +107,10 @@ const Experience = () => {
 
       <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
         <div className="p-5">
-          <h1 className="flex font-inter text-3xl text-color-primary font-bold">
+          <h1 className="flex font-inter text-2xl md:text-3xl text-color-primary font-bold">
             Pitch Perfect
           </h1>
-          <p className="text-xl font-inter text-color-secondary mt-1">
+          <p className=" text-base md:text-xl font-inter text-color-secondary mt-1">
             At Pitch Perfect I did this and I did that etc....
           </p>
         </div>
@@ -118,10 +118,10 @@ const Experience = () => {
 
       <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
         <div className="p-5">
-          <h1 className="flex font-inter text-3xl text-color-primary font-bold">
+          <h1 className="flex font-inter text-2xl md:text-3xl text-color-primary font-bold">
           Pintanna Plantations
           </h1>
-          <p className="text-xl font-inter text-color-secondary mt-1">
+          <p className="text-base md:text-xl font-inter text-color-secondary mt-1">
             At Pintanna Plantations I did this and I did that etc....
           </p>
         </div>
@@ -129,10 +129,10 @@ const Experience = () => {
 
       <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
         <div className="p-5">
-          <h1 className="flex font-inter text-3xl text-color-primary font-bold">
+          <h1 className="flex font-inter text-2xl md:text-3xl text-color-primary font-bold">
             AIESEC
           </h1>
-          <p className="text-xl font-inter text-color-secondary mt-1">
+          <p className="text-base md:text-xl font-inter text-color-secondary mt-1">
             At AIESEC I did this and I did that etc....
           </p>
         </div>

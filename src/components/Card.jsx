@@ -17,102 +17,111 @@ const Card = ({
   icon,
 }) => {
   const [isImageOpen, setIsImageOpen] = useState(false); // State for image overlay
+  const [isExpanded, setIsExpanded] = useState(false); // State for description expansion
+
+  const BUTTON_THRESHOLD = 20; // Adjust the number of words that triggers Read More/Read Less
+
+  const Buttons = () => (
+    <div>
+      <Button
+        link={gitLink}
+        name={"Git Repo"}
+        color={"blue"}
+        icon={"git"}
+        iconClass="hidden sm:inline"
+      />
+      <Button
+        icon={"play"}
+        link={demoLink}
+        name={"Live Demo"}
+        color={"blue"}
+        className="ml-3"
+        iconClass="hidden sm:inline"
+      />
+    </div>
+  );
+
+  // Function to get the truncated description
+  const getTruncatedDescription = () => {
+    const words = description.split(' ');
+    return words.length > BUTTON_THRESHOLD ? words.slice(0, BUTTON_THRESHOLD).join(' ') + '...' : description; // Show only first BUTTON_THRESHOLD words
+  };
+
+  // Check if the description is long enough to show Read More/Read Less
+  const isDescriptionLongEnough = description.split(' ').length > BUTTON_THRESHOLD;
 
   return (
     <>
       {type === "project" ? (
-        <div className="mb-10 z-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
-          <div className="w-full flex pl-6 py-5">
-            {/* Text and Button Section */}
-            <div className="w-2/3 flex flex-col h-full pr-5">
-              <div>
-                <h5 className="text-xl font-inter font-bold text-color-primary capitalize md:text-3xl">
-                  {projectName}
-                </h5>
-                <p className="font-inter text-sm text-color-secondary text-justify mt-1 md:text-base">
-                  {description}
-                </p>
-              </div>
-
-              {/* Buttons */}
-              <div className="flex mt-4 flex-nowrap">
-                <Button
-                  link={gitLink}
-                  name={"Git Repo"}
-                  color={`blue`}
-                  icon={"git"}
-                  iconClass="hidden sm:inline"
-                />
-                <Button
-                  icon={"play"}
-                  link={demoLink}
-                  name={"Live Demo"}
-                  color={`blue`}
-                  className="ml-3"
-                  iconClass="hidden sm:inline"
-                />
-              </div>
+        <div>
+          <div className="p-8 mb-10 z-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
+            <div className="pb-3 text-2xl font-inter font-bold text-color-primary capitalize md:text-3xl">
+              {projectName}
             </div>
-
-            {/* Image Section with Overlay Trigger */}
-            {imgLink && (
-              <div className="w-2/5 md:w-2/5">
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-7/12 font-inter text-base md:text-lg text-color-secondary text-justify mt-1 flex flex-col justify-between">
+                <div>
+                  {/* Render truncated or full description based on state */}
+                  <p>
+                    {isExpanded ? description : getTruncatedDescription()}
+                    {isDescriptionLongEnough && !isExpanded && (
+                      <span
+                        className="text-color-primary underline px-3"
+                        id="clickable"
+                        onClick={() => setIsExpanded(true)}
+                      >
+                        {" "}Read More
+                      </span>
+                    )}
+                    {isDescriptionLongEnough && isExpanded && (
+                      <span
+                        className="text-color-primary underline  px-3"
+                        id="clickable"
+                        onClick={() => setIsExpanded(false)}
+                      >
+                        {" "}Read Less
+                      </span>
+                    )}
+                  </p>
+                </div>
+                <div className="hidden md:block mt-4">
+                  <Buttons />
+                </div>
+              </div>
+              <div className="md:w-5/12 flex flex-col justify-center items-center">
                 <img
-                id="clickable"
+                  id="clickable"
                   src={imgLink}
                   alt={`${projectName} Preview`}
-                  className="w-4/5 object-cover rounded-xl border border-card-primary-border hidden md:flex md:w-[250px]"
-                  onClick={() => setIsImageOpen(true)} 
+                  className="object-cover rounded-xl border border-card-primary-border hidden md:flex"
+                  onClick={() => setIsImageOpen(true)}
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}
                   style={{ cursor: "pointer" }}
                 />
 
-                {/* Image Overlay */}
-                {isImageOpen && (
-                  <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-65 z-30">
-                    
-                    <div className="relative w-auto h-auto p-4 bg-card-primary-top rounded-lg shadow-xl">
-                    <button
-                        id="clickable"
-                        onClick={() => setIsImageOpen(false)}
-                        className="absolute top-5 right-5"
-                      >
-                        <CloseIcon
-                          id="clickable"
-                          className="w-7 h-7 text-color-red z-20 cursor-none shadow-lg"
-                        />
-                      </button>
-
-                      <img
-                        src={imgLink}
-                        alt={`${projectName} Full View`}
-                        className="w-full h-full object-contain max-h-[90vh] max-w-[90vw] rounded-3xl p-10"
-                      />
-                    </div>
-                  </div>
-                )}
-
-                <div className="grid grid-cols-2 mt-5 md:gap-2 items-start">
+                <div className="flex flex-col sm:flex-row md:gap-10 items-start mt-4">
                   {Array.isArray(languages) && languages.length > 0 && (
-                    <div className="space-y-2 items-start" id="clickable">
+                    <div
+                      className="flex flex-row sm:flex-row md:flex-col gap-4 mr-4 mb-4"
+                      id="clickable"
+                    >
                       {languages.map((lang) => (
                         <div
                           key={lang}
-                          className="items-center grid grid-cols-3"
+                          className="flex md:gap-4"
                           onClick={() => onTechClick(lang)}
                           id="clickable"
                         >
-                          <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center flex-wrap">
+                          <div className="md:w-7 md:h-7 h-10 w-10 bg-white rounded-md flex items-center justify-center flex-wrap">
                             <img
                               src={langLogos[lang]}
                               alt={lang}
-                              className="w-5 h-5"
+                              className="md:w-5 md:h-5 w-7 h-7"
                               id="clickable"
                             />
                           </div>
-
                           <div>
                             <span className="capitalize text-color-primary text-base hidden font-semibold md:flex">
                               {lang}
@@ -124,19 +133,22 @@ const Card = ({
                   )}
 
                   {Array.isArray(libraries) && libraries.length > 0 && (
-                    <div className="space-y-2" id="clickable">
+                    <div
+                      className="flex flex-row sm:flex-row md:flex-col gap-4 mb-4"
+                      id="clickable"
+                    >
                       {libraries.map((lib) => (
                         <div
                           key={lib}
-                          className="items-center grid grid-cols-3"
                           onClick={() => onTechClick(lib)}
+                          className="flex gap-4"
                           id="clickable"
                         >
-                          <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
+                          <div className="md:w-7 md:h-7 h-10 w-10 bg-white rounded-md flex items-center justify-center">
                             <img
                               src={libLogos[lib]}
                               alt={lib}
-                              className="w-5 h-5"
+                              className="md:w-5 md:h-5 w-7 h-7"
                               id="clickable"
                               onError={(e) => {
                                 e.target.style.display = "none";
@@ -151,20 +163,19 @@ const Card = ({
                     </div>
                   )}
                 </div>
+                <div className="block md:hidden mt-4">
+                  <Buttons />
+                </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
       ) : (
         <div className="m-5 bg-card-primary border border-card-primary-border z-10 rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
           <div className="px-6 py-6">
             <img src={icon} alt="" />
-            <h1 className="text-3xl font-inter font-bold text-color-primary capitalize">
-              {name}
-            </h1>
-            <p className="font-inter text-base text-color-secondary mt-1">
-              {description}
-            </p>
+            <h1 className="text-3xl font-inter font-bold text-color-primary capitalize"></h1>
+            <p className="font-inter text-base text-color-secondary mt-1"></p>
           </div>
         </div>
       )}

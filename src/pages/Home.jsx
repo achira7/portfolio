@@ -38,7 +38,7 @@ const Home = ({ mode }) => {
   const scrambledSilva = useTextScramble("SILVA");
 
   return (
-    <div className="bg-background" ref={container}>
+    <div className="bg-background mt-24 md:mt-5" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20 m-5">
         <div className="flex flex-col">
           <h1
@@ -89,15 +89,15 @@ const Home = ({ mode }) => {
           </p>
         </div>
 
-        <div className="w-full my-5 ml-5 mt-5">
+        <div className="w-full my-5 ml-5 mt-5 z-0 items-center justify-center md:justify-start md:items-start">
           <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-5xl">
             Technologies
           </h1>
           <h2 className="font-inter text-lg ml-2 mb-2 text-color-secondary md:text-2xl">
             Click to see Projects
           </h2>
-          <div className="flex">
-            <Marquee />
+          <div className="flex z-0">
+            <Marquee className="z-0"/>
           </div>
         </div>
 
@@ -117,7 +117,7 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div className="flex flex-wrap flex-row absolute right-80 bottom-16 z-0 bg-slate-400">
+        <div className="flex flex-wrap flex-row absolute right-80 bottom-16 z-0">
           <div className="flex flex-wrap">
             <img
               src={mode === "light-mode" ? heroLight : heroDark}
@@ -131,8 +131,8 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div id="projects" className="flex flex-col">
-          <h1 className="text-3xl font-bold text-color-primary font-inter mx-5 mb-5 flex flex-wrap md:text-5xl">
+        <div id="projects" className="flex flex-col ">
+          <h1 className="text-3xl font-bold text-color-primary font-inter mx-5 mb-5 flex flex-wrap md:text-5xl items-center justify-center md:justify-start md:items-start">
             Projects
           </h1>
           <div className="flex flex-col">
@@ -154,18 +154,18 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div id="expereince" className="flex flex-col ">
+        <div id="expereince" className="flex flex-col items-center justify-center md:justify-start md:items-start">
           <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 flex flex-wrap md:text-5xl">
             Experience
           </h1>
           <div className="flex flex-col my-5 justify-center items-center">
-            <div className="flex flex-row">
+            <div className="flex flex-col md:flex-row">
               {/* Pintanna */}
               <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
                 <div className="px-7 py-5">
                   <div className="flex items-center space-x-4">
                     {/* Flex container */}
-                    <div className="space-x-3 hidden md:flex">
+                    <div className="space-x-3 flex md:mb-3 mb-2">
                       <a
                         id="clickable"
                         href="https://www.pintannaplantations.lk/"
@@ -175,22 +175,22 @@ const Home = ({ mode }) => {
                         <img
                           src={pintanna}
                           alt="Pintanna Plantations"
-                          className="w-16 bg-white rounded-lg border border-card-primary-border"
+                          className="md:w-16 w-12 bg-white rounded-lg border border-card-primary-border"
                         />
                       </a>
-                    </div>
-                    <div className="r">
-                      <h1 className="text-color-primary text-xl font-bold md:text-2xl">
+                    
+                    <div className="">
+                      <h1 className="text-color-primary text-lg font-bold md:text-2xl">
                         Pintanna Plantations
                       </h1>
                       <div className="flex flex-row items-center">
-                        <h1 className="text-color-primary text-lg md:text-2xl">
+                        <h1 className="text-color-primary text-base md:text-2xl">
                           Graphic Designer
                         </h1>
-                        <h1 className="text-color-tertiary text-lg ml-5 md:text-xl">
+                        <h1 className="text-color-tertiary text-sm ml-5 md:text-xl">
                           2023 - 2024
                         </h1>
-                      </div>
+                      </div></div>
                     </div>
                   </div>
 
@@ -208,9 +208,9 @@ const Home = ({ mode }) => {
               {/* Pitch Perfect */}
               <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
                 <div className="px-7 py-5">
-                  <div className="flex items-center  space-x-5">
+                  <div className="flex items-center  space-x-4">
                     {/* Flex container */}
-                    <div className="space-x-3 hidden md:flex">
+                    <div className="space-x-3 flex md:mb-3 mb-2">
                       <a
                         id="clickable"
                         href="https://pitchperfect.lk/"
@@ -219,22 +219,23 @@ const Home = ({ mode }) => {
                       >
                         <img
                           src={pitch}
-                          alt="Pintanna Plantations"
-                          className="w-16 bg-white rounded-lg border border-card-primary-border"
+                          alt="Pitch Perfect"
+                          className="md:w-16 w-12 bg-white rounded-lg border border-card-primary-border"
                         />
                       </a>
-                    </div>
-                    <div className="r">
-                      <h1 className="text-color-primary text-xl md:text-2xl font-bold">
+                    
+                    <div className="">
+                      <h1 className="text-color-primary text-lg font-bold md:text-2xl">
                         Picth Perfect
                       </h1>
                       <div className="flex flex-row items-center">
-                        <h1 className="text-color-primary text-lg md:text-2xl">
+                        <h1 className="text-color-primary text-base md:text-2xl">
                           Graphic Designer
                         </h1>
-                        <h1 className="text-color-tertiary text-lg ml-5 md:text-xl">
+                        <h1 className="text-color-tertiary text-sm ml-5 md:text-xl">
                           2023 - 2024
                         </h1>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -261,30 +262,31 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div id="education" className="flex flex-col">
-          <div className="flex flex-row">
-            <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 my-5 flex flex-wrap md:text-5xl">
+        <div id="education" className="flex flex-col items-center justify-center md:justify-start md:items-start">
+          <div className="flex flex-row ">
+            <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 my-5 flex flex-wrap md:text-5xl ">
               Education
             </h1>
           </div>
 
-          <div className="flex flex-row">
+          <div className="flex  flex-col md:flex-row">
             {/* IIT */}
             <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
               <div className="px-7 py-5">
                 <div className="flex items-center space-x-4">
                   {/* Flex container */}
-                  <div className="space-x-3 hidden md:flex">
+                  <div className="space-x-1 flex">
                     <a
                       id="clickable"
                       href="https://www.westminster.ac.uk/"
                       target="_blank"
                       rel="noopener noreferrer"
+                  
                     >
                       <img
                         src={westminster}
                         alt="University of Westminster"
-                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                        className="md:w-16 w-16 bg-white rounded-lg border border-card-primary-border"
                       />
                     </a>
                     <a
@@ -296,15 +298,15 @@ const Home = ({ mode }) => {
                       <img
                         src={iit}
                         alt="IIT"
-                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                        className="md:w-16 hidden bg-white rounded-lg border border-card-primary-border"
                       />
                     </a>
                   </div>
-                  <div className="r">
-                    <h1 className="text-color-primary text-xl font-bold md:text-2xl">
+                  <div className="">
+                    <h1 className="text-color-primary text-lg font-bold md:text-2xl">
                       BSc (Hons) Business Information Systems
                     </h1>
-                    <h1 className="text-color-primary text-lg md:text-2xl ">
+                    <h1 className="text-color-primary text-base md:text-2xl ">
                       University of Westminster, UK
                     </h1>
                   </div>
@@ -331,7 +333,7 @@ const Home = ({ mode }) => {
                 <div className="flex items-center  space-x-5">
                   {" "}
                   {/* Flex container */}
-                  <div className="space-x-3 hidden md:flex">
+                  <div className="space-x-1 flex">
                     <a
                       id="clickable"
                       href="https://www.plymouth.ac.uk/"
@@ -353,15 +355,15 @@ const Home = ({ mode }) => {
                       <img
                         src={nsbm}
                         alt="NSBM"
-                        className="w-16 bg-white rounded-lg border border-card-primary-border"
+                        className="md:w-16 hidden bg-white rounded-lg border border-card-primary-border"
                       />
                     </a>
                   </div>
                   <div className="r">
-                    <h1 className="text-color-primary text-xl md:text-2xl font-bold">
+                    <h1 className="text-color-primary text-lg md:text-2xl font-bold">
                       BSc (Hons) Software Engineering
                     </h1>
-                    <h1 className="text-color-primary text-lg md:text-2xl font-semibold">
+                    <h1 className="text-color-primary text-base md:text-2xl font-semibold">
                       University of Plymouth, UK
                     </h1>
                   </div>
@@ -384,8 +386,11 @@ const Home = ({ mode }) => {
             </div>
           </div>
         </div>
-        <div className="flex w-1/3">
-          <DownloadCV />
+        <div className="flex w-full justify-center items-center a">
+        <div className="w-1/3">4
+        <DownloadCV />
+        </div>
+          
         </div>
       </div>
       <Footer />

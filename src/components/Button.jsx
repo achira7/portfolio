@@ -45,7 +45,7 @@ const Button = ({ name, link, color, icon }) => {
     >
       <button
         type="button"
-        className={`flex items-center cursor-none justify-end ${selectedColorClass} ${selectedBorderClass} ${selectedGlowClass} rounded-lg font-inter px-4 py-2 m-5 shadow-md transition-all duration-300 hover:scale-105 ${!isLinkProvided && 'hidden'}`}
+        className={`flex items-center cursor-none justify-end ${selectedColorClass} ${selectedBorderClass} ${selectedGlowClass} rounded-lg font-inter px-4 py-2 shadow-md transition-all duration-300 hover:scale-105 ${!isLinkProvided && 'hidden'}`}
         disabled={!isLinkProvided}
       >
         <div id="clickable" className="hidden md:flex cursor-none">

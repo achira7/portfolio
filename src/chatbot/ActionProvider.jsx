@@ -1,4 +1,3 @@
-//src/ActionProvider.jsx
 import axios from 'axios';
 
 const hug = process.env.REACT_APP_HUGGINGFACE_API;
