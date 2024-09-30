@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "./Button";
 import { languages as langLogos } from "../logos";
 import { libraries as libLogos } from "../logos";
-import { CloseIcon } from "../assets/icons/icons"; // Assuming you have a close icon here
 
 const Card = ({
   type,
@@ -16,10 +15,10 @@ const Card = ({
   onTechClick,
   icon,
 }) => {
-  const [isImageOpen, setIsImageOpen] = useState(false); // State for image overlay
-  const [isExpanded, setIsExpanded] = useState(false); // State for description expansion
+  const [isImageOpen, setIsImageOpen] = useState(false); 
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const BUTTON_THRESHOLD = 20; // Adjust the number of words that triggers Read More/Read Less
+  const BUTTON_THRESHOLD = 20; // See More threshold
 
   const Buttons = () => (
     <div>
@@ -41,47 +40,47 @@ const Card = ({
     </div>
   );
 
-  // Function to get the truncated description
   const getTruncatedDescription = () => {
     const words = description.split(' ');
-    return words.length > BUTTON_THRESHOLD ? words.slice(0, BUTTON_THRESHOLD).join(' ') + '...' : description; // Show only first BUTTON_THRESHOLD words
+    return words.length > BUTTON_THRESHOLD ? words.slice(0, BUTTON_THRESHOLD).join(' ') + '...' : description;
   };
 
-  // Check if the description is long enough to show Read More/Read Less
   const isDescriptionLongEnough = description.split(' ').length > BUTTON_THRESHOLD;
 
   return (
     <>
       {type === "project" ? (
         <div>
-          <div className="p-8 mb-10 z-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
+          <div className="p-8 md:mb-10 mb-5 z-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
             <div className="pb-3 text-2xl font-inter font-bold text-color-primary capitalize md:text-3xl">
               {projectName}
             </div>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-7/12 font-inter text-base md:text-lg text-color-secondary text-justify mt-1 flex flex-col justify-between">
                 <div>
-                  {/* Render truncated or full description based on state */}
-                  <p>
+                  <p className="block md:hidden">
                     {isExpanded ? description : getTruncatedDescription()}
                     {isDescriptionLongEnough && !isExpanded && (
                       <span
-                        className="text-color-primary underline px-3"
+                        className="text-color-primary underline px-3 py-1"
                         id="clickable"
                         onClick={() => setIsExpanded(true)}
                       >
-                        {" "}Read More
+                        Read More
                       </span>
                     )}
                     {isDescriptionLongEnough && isExpanded && (
                       <span
-                        className="text-color-primary underline  px-3"
+                        className="text-color-primary underline px-3"
                         id="clickable"
                         onClick={() => setIsExpanded(false)}
                       >
-                        {" "}Read Less
+                        Read Less
                       </span>
                     )}
+                  </p>
+                  <p className="hidden md:block">
+                    {description}
                   </p>
                 </div>
                 <div className="hidden md:block mt-4">
@@ -100,7 +99,6 @@ const Card = ({
                   }}
                   style={{ cursor: "pointer" }}
                 />
-
                 <div className="flex flex-col sm:flex-row md:gap-10 items-start mt-4">
                   {Array.isArray(languages) && languages.length > 0 && (
                     <div

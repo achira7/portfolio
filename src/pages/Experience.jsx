@@ -41,17 +41,16 @@ const Experience = () => {
 
   return (
     <div className="bg-background mt-20 md:mt-32">
-      {/* <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 mt-5 flex flex-wrap md:text-4xl">
-        Experience
-      </h1> */}
       <div className="flex items-center justify-center w-full py-6">
-        <h2 className="font-inter text-2xl font-bold text-color-primary mt-7 items-center md:text-2xl">
+        <h2 className="font-inter text-2xl font-bold text-color-primary md:mt-7 mt-5 items-center md:text-2xl">
           Timeline
         </h2>
       </div>
 
-      <div className="mb-10 md:w-full md:mb-10">
-        <VerticalTimeline>
+      {/* Desktop Version */}
+      <div className="mb-10 md:w-full md:mb-10 hidden md:flex">
+      <VerticalTimeline>
+
           {exp.reverse().map((experience) => (
             <VerticalTimelineElement
               key={experience.id}
@@ -103,6 +102,70 @@ const Experience = () => {
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
+      </div>
+
+      {/* Mobile Version */}
+      <div className="mb-10 md:mb-10 md:hidden items-center justify-center">
+        <VerticalTimeline layout={"1-column-left"} className="justify-end items-end" dateClassName={{ position: top } }>
+          {exp.reverse().map((experience) => (
+            <VerticalTimelineElement
+            position={'right'}
+              key={experience.id}
+              className="vertical-timeline-element--work text-color-secondary font-inter text-base "
+              contentStyle={{
+                background: "rgba(var(--color-blue))",
+                padding: "20px",
+                borderRadius: "8px",
+                minWidth: "30%",
+                maxHeight: "250px",
+                marginLeft:"50px"
+              }}
+              contentArrowStyle={{
+                borderRight: `10px solid rgba(var(--color-blue))`,
+              }}
+              date={experience.time}
+              
+              iconStyle={{
+                background: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+                borderRadius: "50%",
+                border: `4px solid rgba(var(--color-primary))`,
+              }}
+              icon={
+                <a
+                  href={experience.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={`../src/assets/logos/${experience.id}.jpg`}
+                    alt={`${experience.title} logo`}
+                    className="object-contain w-full h-full"
+                  />
+                </a>
+              }
+            >
+              <h3 className="vertical-timeline-element-title text-lg font-bold font-inter text-color-primary">
+                {experience.title}
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle text-color-primary">
+                {experience.job}
+              </h4>
+              <p className="text-color-secondary font-inter text-base">
+                {experience.description}
+              </p>
+              <div className="flex mt-5">
+                  <Button name={"Read More"} link={"google.com"}  />
+              </div>
+              
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      
+      
       </div>
 
       <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">

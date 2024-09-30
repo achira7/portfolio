@@ -24,7 +24,6 @@ function App() {
     document.body.classList.add(storedMode);
   }, []);
 
-  // Set up custom cursor and mouse hover effects
   useLayoutEffect(() => {
     gsap.set(flairRef.current, { xPercent: -50, yPercent: -50, scale: 1 });
     const xSetter = gsap.quickSetter(flairRef.current, "x", "px");
@@ -67,7 +66,7 @@ function App() {
         link.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
-  }, [5000]);
+  }, []);
 
   // App intro animation
   useLayoutEffect(() => {
@@ -129,6 +128,7 @@ function App() {
     <Router>
       <div className="bg-background">
         <div className="relative z-50" ref={container}>
+
           {/* App intro overlay */}
           <div id="cover" className="h-screen w-screen absolute top-0 left-0 flex justify-center items-center z-10">
             <GradientComponent colorA={"#0e2d74"} colorB={"#40c6df"} colorC={"#341abc"} />
@@ -146,8 +146,7 @@ function App() {
           </div>
         </div>
 
-        {/* Custom cursor flair */}
-        <div ref={cursorContainer}>
+        <div ref={cursorContainer} className="hidden md:flex">
           <div
             ref={flairRef}
             id="cursor"
@@ -155,10 +154,8 @@ function App() {
           ></div>
         </div>
 
-        {/* Render NavBar only after intro animation completes */}
         {showNavBar && <NavBar className={`z-30 w-full ${mode}`} />}
 
-        {/* Application routes */}
         <Routes>
           <Route className={`flex z-10 mt-10 ${mode}`} path="/" element={<Home mode={mode} />} />
           <Route className={`flex flex-wrap z-10 ${mode}`} path="/projects" element={<Projects />} />

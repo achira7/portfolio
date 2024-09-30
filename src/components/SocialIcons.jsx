@@ -26,62 +26,78 @@ const SocialIcons = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center pt-2 bg-white transform rotate-[-7deg] shadow-md">
+    <div className="flex flex-col md:w-[300px] md:h-[300px] w-[200px] h-[200px] items-center pt-2 bg-white transform rotate-[-7deg] shadow-xl rounded-xl border-2 border-slate-300">
       {/* Gmail Icon */}
       <div className="p-7">
-        <div className="flex flex-row justify-center items-center mb-2">
-          <div className="flex flex-col items-center justify-center px-5">
-            <p className="font-caveat text-2xl font-semibold text-color-primary  mb-4 md:text-3xl">
-              Email
-            </p>
-            <a href="mailto:achira.sanjana@gmail.com"
-            className="hover:scale-110 transform transition-transform"
-            >
-              <img
-                src={gmail}
-                alt="Achira's Email"
-                className="mb-4 w-12 h-12"
-              />
-            </a>
+        <div className="flex flex-row justify-center items-center mb-2 ">
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex">
+              <p className="font-caveat text-xl font-semibold text-color-primary md:text-3xl">
+                Email
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-center items-center">
+              <a
+                href="mailto:achira.sanjana@gmail.com"
+                className="hover:scale-110 transform transition-transform flex justify-center items-center"
+              >
+                <img
+                  src={gmail}
+                  alt="Achira's Email"
+                  // className="mb-4 w-12 h-12"
+                  className="w-3/5 h-3/5"
+                />
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center px-5">
-            <p className="font-caveat text-2xl font-semibold text-color-primary  w-full   mb-4 md:text-3xl">
-              GitHub
-            </p>
-            <a href="https://github.com/achira7"
-            className="hover:scale-110 transform transition-transform">
-              <img
-                src={github}
-                alt="Achira's GitHub"
-                className="mb-4 w-12 h-12"
-              />
-            </a>
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex">
+              <p className="font-caveat text-xl font-semibold text-color-primary md:text-3xl">
+                GitHub
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-center items-center">
+              <a
+                href="mailto:achira.sanjana@gmail.com"
+                className="hover:scale-110 transform transition-transform flex justify-center items-center"
+              >
+                <img
+                  src={github}
+                  alt="Achira's GitHub"
+                  // className="mb-4 w-12 h-12"
+                  className="w-2/5 h-2/5 py-2"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="text-center mb-4">
-          <p className="font-caveat font-semibold text-2xl text-color-primary md:text-3xl">
+        <div className="grid grid-flow-row justify-center items-center mb-2 mt-3">
+          <div className="flex w-full  justify-center items-center">
+            <p className="font-caveat font-semibold text-2xl text-color-primary md:text-3xl">
             Follow me on Socials
           </p>
-          <div className="flex justify-center space-x-6 mt-4">
+          </div>
+
+          <div className="grid grid-cols-3 justify-end items-end w-full mt-1">
             {socials.map(({ id, title, img, link }) => (
               <a
                 href={link}
                 key={id}
                 aria-label={title}
-                className="hover:scale-110 transform transition-transform"
+                className="hover:scale-110 transform transition-transform flex"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  src={img}
-                  alt={title}
-                  className="w-12 h-12 rounded-lg"
-                />
+                <img src={img} alt={title} className="w-3/5 h-3/5 py-2 mx-3 rounded-lg" />
               </a>
             ))}
           </div>
+          
+          
         </div>
       </div>
     </div>

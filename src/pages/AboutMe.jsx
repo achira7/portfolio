@@ -71,7 +71,7 @@ const AboutMe = () => {
             </div>
 
             <div className="flex justify-center items-center mx-10">
-              <p className=" flex text-center md:text-left text-sm  text-color-secondary font-inter md:text-xl">
+              <p className=" flex text-center md:text-right text-sm  text-color-secondary font-inter md:text-xl">
                 I am Achira Silva. Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit. Fusce interdum varius purus, vitae pharetra
                 arcu auctor sit amet.Contrary to popular belief, Lorem Ipsum is

@@ -38,9 +38,9 @@ const Home = ({ mode }) => {
   const scrambledSilva = useTextScramble("SILVA");
 
   return (
-    <div className="bg-background mt-24 md:mt-5" ref={container}>
-      <div className="flex flex-col top-0 left-0 z-20 m-5">
-        <div className="flex flex-col">
+    <div className="bg-background  md:mt-5" ref={container}>
+      <div className="flex flex-col top-0 left-0 z-20 m-8">
+        <div className="flex flex-col ">
           <h1
             id="achira"
             className="text-6xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-8xl"
@@ -72,32 +72,56 @@ const Home = ({ mode }) => {
             repeat={Infinity}
           />
         </div>
-
-        <div className="m-7 flex items-start">
-          <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
-            Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
-            Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
-            Silva. I am a creative indiviual and etc. Hi! I'm Achira Silva. I am
-            a creative indiviual and etc. Hi! I'm Achira Silva. I am a creative
-            indiviual and etc. Hi! I'm Achira Silva. I am a creative indiviual
-            and etc. Hi! I'm Achira Silva. I am a creative indiviual and etc.
-            Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
-            Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
-            Silva. I am a creative indiviual and etc. Hi! I'm Achira Silva. I am
-            a creative indiviual and etc. Hi! I'm Achira Silva. I am a creative
-            indiviual and etc.
-          </p>
+        <div className="grid grid-cols-3">
+          <div className="mt-7 flex items-start">
+            <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
+              Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
+              Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
+              Silva. I am a creative indiviual and etc. Hi! I'm Achira Silva. I
+              am a creative indiviual and etc. Hi! I'm Achira Silva. I am a
+              creative indiviual and etc. Hi! I'm Achira Silva. I am a creative
+              indiviual and etc. Hi! I'm Achira Silva. I am a creative indiviual
+              and etc. Hi! I'm Achira Silva. I am a creative indiviual and etc.
+              Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
+              Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
+              Silva. I am a creative indiviual and etc. Hi! I'm Achira Silva. I
+              am a creative indiviual and etc.
+            </p>
+          </div>
+          <div>
+            <img
+              src={mode === "light-mode" ? heroLight : heroDark}
+              // className="bottom-0 shadow-image lg:w-[600px] w-[400px] md:w-[300px]"
+              className="bottom-0 shadow-image w-full md:w-5/6 lg:w-full"
+              alt="Hero"
+            />
+          </div>
+          <div className="flex w-full items-center justify-center">
+            <SocialIcons />
+          </div>
         </div>
 
-        <div className="w-full my-5 ml-5 mt-5 z-0 items-center justify-center md:justify-start md:items-start">
-          <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-5xl">
-            Technologies
-          </h1>
-          <h2 className="font-inter text-lg ml-2 mb-2 text-color-secondary md:text-2xl">
-            Click to see Projects
-          </h2>
+        <div className="flex flex-wrap flex-row right-[500px] absolute bottom-16 z-0 bg-emerald-300">
+          <div className="flex flex-wrap"></div>
+        </div>
+
+        <div className="w-full my-5 ml-5 mt-5 mb-10 z-0 items-center justify-center md:justify-start md:items-start">
+          <div className="flex items-center justify-center flex-col md:justify-start md:items-start">
+            <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-5xl">
+              Technologies
+            </h1>
+            <h2 className="font-inter md:ml-1 text-color-secondary">
+              <span className="hidden md:flex text-2xl">
+                Click to see Projects
+              </span>
+              <span className="flex md:hidden text-lg">
+                Tap to see Projects
+              </span>
+            </h2>
+          </div>
+
           <div className="flex z-0">
-            <Marquee className="z-0"/>
+            <Marquee className="z-0" />
           </div>
         </div>
 
@@ -117,24 +141,26 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div className="flex flex-wrap flex-row absolute right-80 bottom-16 z-0">
-          <div className="flex flex-wrap">
-            <img
-              src={mode === "light-mode" ? heroLight : heroDark}
-              className="bottom-0 shadow-image w-[400px] md:w-6/12"
-              alt="Hero"
-            />
-          </div>
-
-          <div className="flex items-center justify-center w-[300px] absolute right-0 bottom-8">
-            <SocialIcons />
-          </div>
-        </div>
-
         <div id="projects" className="flex flex-col ">
-          <h1 className="text-3xl font-bold text-color-primary font-inter mx-5 mb-5 flex flex-wrap md:text-5xl items-center justify-center md:justify-start md:items-start">
-            Projects
-          </h1>
+          <div className="flex flex-col items-center justify-center md:justify-start md:items-start ml-5">
+            <h1 className="text-3xl font-bold text-color-primary font-inter mb-5 flex flex-wrap md:text-5xl items-center justify-center md:justify-start md:items-start">
+              Projects
+            </h1>
+
+            <h2 className="font-inter text-lg ml-1 mb-2 text-color-secondary md:text-2xl text-center md:text-start">
+              Best personal/professional projects from my{" "}
+              <br className="flex md:hidden" />{" "}
+              <a
+                href="https://github.com/achira7"
+                className="text-color-primary underline"
+                id="clickable"
+              >
+                {" "}
+                GitHub Repository.{" "}
+              </a>
+            </h2>
+          </div>
+
           <div className="flex flex-col">
             <div className="flex flex-row flex-wrap">
               <TopProjects />
@@ -142,7 +168,7 @@ const Home = ({ mode }) => {
 
             <div
               id="clickable"
-              className="flex flex-row gap-5 items-center justify-center align-middle my-2"
+              className="flex flex-row gap-5 items-center justify-center align-middle mt-2 mb-10"
             >
               <Button
                 name={"View All Projects"}
@@ -154,14 +180,22 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div id="expereince" className="flex flex-col items-center justify-center md:justify-start md:items-start">
-          <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 flex flex-wrap md:text-5xl">
-            Experience
-          </h1>
-          <div className="flex flex-col my-5 justify-center items-center">
+        <div
+          id="expereince"
+          className="flex flex-col items-center justify-center md:justify-center md:items-center"
+        >
+          <div className="flex justify-center items-center md:justify-start md:items-start w-full mb-5">
+            <div className="flex">
+              <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 flex flex-wrap md:text-5xl">
+                Experience
+              </h1>
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-center items-center mb-5">
             <div className="flex flex-col md:flex-row">
               {/* Pintanna */}
-              <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+              <div className="mb-7 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
                 <div className="px-7 py-5">
                   <div className="flex items-center space-x-4">
                     {/* Flex container */}
@@ -178,19 +212,20 @@ const Home = ({ mode }) => {
                           className="md:w-16 w-12 bg-white rounded-lg border border-card-primary-border"
                         />
                       </a>
-                    
-                    <div className="">
-                      <h1 className="text-color-primary text-lg font-bold md:text-2xl">
-                        Pintanna Plantations
-                      </h1>
-                      <div className="flex flex-row items-center">
-                        <h1 className="text-color-primary text-base md:text-2xl">
-                          Graphic Designer
+
+                      <div className="">
+                        <h1 className="text-color-primary text-lg font-bold md:text-2xl">
+                          Pintanna Plantations
                         </h1>
-                        <h1 className="text-color-tertiary text-sm ml-5 md:text-xl">
-                          2023 - 2024
-                        </h1>
-                      </div></div>
+                        <div className="flex flex-row items-center">
+                          <h1 className="text-color-primary text-base md:text-2xl">
+                            Graphic Designer
+                          </h1>
+                          <h1 className="text-color-tertiary text-sm ml-5 md:text-xl">
+                            2023 - 2024
+                          </h1>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -206,7 +241,7 @@ const Home = ({ mode }) => {
               </div>
 
               {/* Pitch Perfect */}
-              <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+              <div className="mb-7 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
                 <div className="px-7 py-5">
                   <div className="flex items-center  space-x-4">
                     {/* Flex container */}
@@ -223,19 +258,19 @@ const Home = ({ mode }) => {
                           className="md:w-16 w-12 bg-white rounded-lg border border-card-primary-border"
                         />
                       </a>
-                    
-                    <div className="">
-                      <h1 className="text-color-primary text-lg font-bold md:text-2xl">
-                        Picth Perfect
-                      </h1>
-                      <div className="flex flex-row items-center">
-                        <h1 className="text-color-primary text-base md:text-2xl">
-                          Graphic Designer
+
+                      <div className="">
+                        <h1 className="text-color-primary text-lg font-bold md:text-2xl">
+                          Picth Perfect
                         </h1>
-                        <h1 className="text-color-tertiary text-sm ml-5 md:text-xl">
-                          2023 - 2024
-                        </h1>
-                      </div>
+                        <div className="flex flex-row items-center">
+                          <h1 className="text-color-primary text-base md:text-2xl">
+                            Graphic Designer
+                          </h1>
+                          <h1 className="text-color-tertiary text-sm ml-5 md:text-xl">
+                            2023 - 2024
+                          </h1>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -262,7 +297,10 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div id="education" className="flex flex-col items-center justify-center md:justify-start md:items-start">
+        <div
+          id="education"
+          className="flex flex-col items-center justify-center md:justify-start md:items-start"
+        >
           <div className="flex flex-row ">
             <h1 className="text-3xl font-bold text-color-primary font-inter top-0 mx-5 my-5 flex flex-wrap md:text-5xl ">
               Education
@@ -275,13 +313,12 @@ const Home = ({ mode }) => {
               <div className="px-7 py-5">
                 <div className="flex items-center space-x-4">
                   {/* Flex container */}
-                  <div className="space-x-1 flex">
+                  <div className="space-x-1 md:space-x-4 flex">
                     <a
                       id="clickable"
                       href="https://www.westminster.ac.uk/"
                       target="_blank"
                       rel="noopener noreferrer"
-                  
                     >
                       <img
                         src={westminster}
@@ -298,7 +335,7 @@ const Home = ({ mode }) => {
                       <img
                         src={iit}
                         alt="IIT"
-                        className="md:w-16 hidden bg-white rounded-lg border border-card-primary-border"
+                        className="hidden md:flex w-16 bg-white rounded-lg border border-card-primary-border"
                       />
                     </a>
                   </div>
@@ -333,7 +370,7 @@ const Home = ({ mode }) => {
                 <div className="flex items-center  space-x-5">
                   {" "}
                   {/* Flex container */}
-                  <div className="space-x-1 flex">
+                  <div className="space-x-1 md:space-x-4 flex">
                     <a
                       id="clickable"
                       href="https://www.plymouth.ac.uk/"
@@ -355,7 +392,7 @@ const Home = ({ mode }) => {
                       <img
                         src={nsbm}
                         alt="NSBM"
-                        className="md:w-16 hidden bg-white rounded-lg border border-card-primary-border"
+                        className="hidden md:flex w-16 bg-white rounded-lg border border-card-primary-border"
                       />
                     </a>
                   </div>
@@ -387,10 +424,9 @@ const Home = ({ mode }) => {
           </div>
         </div>
         <div className="flex w-full justify-center items-center a">
-        <div className="w-1/3">4
-        <DownloadCV />
-        </div>
-          
+          <div className="w-1/3">
+            <DownloadCV />
+          </div>
         </div>
       </div>
       <Footer />

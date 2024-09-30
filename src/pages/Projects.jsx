@@ -83,7 +83,7 @@ const Projects = () => {
 
   return (
     <div className="bg-background mt-20 md:mt-32">
-      <div className="w-full  my-5 ml-5 mt-24">
+      <div className="w-full  my-5 ml-5 mt-32">
       <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
             Technologies
           </h1>
@@ -93,7 +93,7 @@ const Projects = () => {
         <Marquee />
       </div>
 
-      <div className="my-5 ml-5 mt-20">
+      <div className="mb-5 ml-5 mt-10">
       <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
             Projects
           </h1>
