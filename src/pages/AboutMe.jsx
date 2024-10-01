@@ -6,8 +6,8 @@ import Footer from "../components/Footer";
 const AboutMe = () => {
   return (
     <div className="bg-background">
-      <div className="flex flex-col mt-28 m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36">
-        <div className="flex flex-col p-5">
+      <div className="flex flex-col mt-28 m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36 items-center justify-center">
+        <div className="flex flex-col pt-3 items-center justify-center">
           <h1 className="text-color-primary font-caveat font-bold text-3xl ml-5 mb-7 md:text-5xl">
             Heading 1
           </h1>
@@ -21,7 +21,7 @@ const AboutMe = () => {
             </div>
 
             <div className="flex justify-center items-center mx-10">
-              <p className=" flex text-center md:text-left text-sm  text-color-secondary font-inter md:text-xl">
+              <p className=" flex text-center md:text-left text-base  text-color-secondary font-inter md:text-xl">
                 I am Achira Silva. Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit. Fusce interdum varius purus, vitae pharetra
                 arcu auctor sit amet.Contrary to popular belief, Lorem Ipsum is
@@ -57,7 +57,7 @@ const AboutMe = () => {
 
 
 
-        <div className="flex flex-col p-5">
+        <div className="flex flex-col pt-3 items-center justify-center">
           <h1 className="text-color-primary font-caveat font-bold text-3xl ml-5 mb-7 md:text-5xl">
             Heading 2
           </h1>
@@ -71,7 +71,7 @@ const AboutMe = () => {
             </div>
 
             <div className="flex justify-center items-center mx-10">
-              <p className=" flex text-center md:text-right text-sm  text-color-secondary font-inter md:text-xl">
+              <p className=" flex text-center md:text-right text-base  text-color-secondary font-inter md:text-xl">
                 I am Achira Silva. Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit. Fusce interdum varius purus, vitae pharetra
                 arcu auctor sit amet.Contrary to popular belief, Lorem Ipsum is

@@ -39,23 +39,23 @@ const Home = ({ mode }) => {
 
   return (
     <div className="bg-background  md:mt-5" ref={container}>
-      <div className="flex flex-col top-0 left-0 z-20 m-8">
-        <div className="flex flex-col ">
+      <div className="flex flex-col top-0 left-0 z-20 m-5 md:m-8">
+        <div className="flex flex-col mt-20 md:mt-0 bg-yellow-300">
           <h1
             id="achira"
-            className="text-6xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-8xl"
+            className="text-5xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-8xl"
           >
             {scrambledAchira}
           </h1>
 
           <h1
             id="silva"
-            className="text-6xl font-bold text-color-primary font-inter flex flex-wrap md:text-8xl"
+            className="text-5xl font-bold text-color-primary font-inter flex flex-wrap md:text-8xl"
           >
             {scrambledSilva}
           </h1>
           <TypeAnimation
-            className="font-caveat text-2xl text-color-primary font-semibold mt-2 md:text-5xl"
+            className="font-caveat text-2xl text-color-primary font-semibold md:mt-2 md:text-5xl"
             sequence={[
               "Frontend Developer",
               1000,
@@ -72,8 +72,8 @@ const Home = ({ mode }) => {
             repeat={Infinity}
           />
         </div>
-        <div className="grid grid-cols-3">
-          <div className="mt-7 flex items-start">
+        <div className="grid grid-row-3 md:grid-cols-3 justify-center items-center">
+          <div className="mt-1  flex items-start align-top">
             <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
               Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
               Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
@@ -88,24 +88,26 @@ const Home = ({ mode }) => {
               am a creative indiviual and etc.
             </p>
           </div>
-          <div>
+          <div className="flex bg-red-300">
+            {/* HERO IMAGE */}
             <img
+            id="floating"
               src={mode === "light-mode" ? heroLight : heroDark}
               // className="bottom-0 shadow-image lg:w-[600px] w-[400px] md:w-[300px]"
               className="bottom-0 shadow-image w-full md:w-5/6 lg:w-full"
               alt="Hero"
             />
           </div>
-          <div className="flex w-full items-center justify-center">
+          <div  id="floating" className="flex w-full items-center justify-center bg-yellow-400">
             <SocialIcons />
           </div>
         </div>
 
-        <div className="flex flex-wrap flex-row right-[500px] absolute bottom-16 z-0 bg-emerald-300">
+        <div className="flex flex-wrap flex-row right-[500px] absolute bottom-16 z-0">
           <div className="flex flex-wrap"></div>
         </div>
 
-        <div className="w-full my-5 ml-5 mt-5 mb-10 z-0 items-center justify-center md:justify-start md:items-start">
+        <div className="w-full my-5  mt-5 mb-10 z-0 items-center justify-center md:justify-start md:items-start ">
           <div className="flex items-center justify-center flex-col md:justify-start md:items-start">
             <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-5xl">
               Technologies
@@ -125,8 +127,8 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center w-[100]">
-          <div className="flex-col absolute top-5 right-80 hidden transform rotate-[-5deg] md:flex">
+     
+          <div className="flex-col absolute top-80 right-[25%] hidden transform rotate-[-5deg] md:flex bg-red-300">
             <h1 className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md">
               Check Out my Projects
             </h1>
@@ -139,10 +141,10 @@ const Home = ({ mode }) => {
               Contact Me
             </h1>
           </div>
-        </div>
+        
 
-        <div id="projects" className="flex flex-col ">
-          <div className="flex flex-col items-center justify-center md:justify-start md:items-start ml-5">
+        <div id="projects" className="flex flex-col  ">
+          <div className="flex flex-col items-center justify-center md:justify-start md:items-start md:ml-5 ">
             <h1 className="text-3xl font-bold text-color-primary font-inter mb-5 flex flex-wrap md:text-5xl items-center justify-center md:justify-start md:items-start">
               Projects
             </h1>
@@ -309,7 +311,7 @@ const Home = ({ mode }) => {
 
           <div className="flex  flex-col md:flex-row">
             {/* IIT */}
-            <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
+            <div className=" mb-5 md:mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl max-w-[1000px]">
               <div className="px-7 py-5">
                 <div className="flex items-center space-x-4">
                   {/* Flex container */}
@@ -423,8 +425,8 @@ const Home = ({ mode }) => {
             </div>
           </div>
         </div>
-        <div className="flex w-full justify-center items-center a">
-          <div className="w-1/3">
+        <div className="flex w-full justify-center items-center mb-5 ">
+          <div className="flex justify-center items-center">
             <DownloadCV />
           </div>
         </div>

@@ -90,19 +90,19 @@ const Marquee = () => {
   };
 
   return (
-    <div className="z-10 overflow-hidden bg-background-primary min-w-full my-6 py-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
+    <div className="overflow-hidden bg-background-primary min-w-full my-6 py-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
       <div className="flex items-center justify-between whitespace-nowrap" ref={marqueeRef}>
         {techItems.map((tech, index) => {
           const logoSrc = langLogos[tech.name] || libLogos[tech.name];
 
           return (
-            <div key={index} className="z-10 flex flex-col items-center mx-5 justify-center ">
+            <div key={index} className="flex flex-col items-center mx-5 justify-center ">
               <a
                 id="clickable"
                 onClick={() => handleTechClick(tech.searchUrl)}
                 className="flex flex-col items-center justify-center cursor-pointer "
               >
-                <div className="z-10 flex items-center justify-center w-12 h-12  bg-white border border-card-primary-border rounded-lg shadow-lg md:w-24 md:h-24">
+                <div className="flex items-center justify-center w-12 h-12  bg-white border border-card-primary-border rounded-lg shadow-lg md:w-24 md:h-24">
                   <img
                   id="clickable"
                     src={logoSrc}
