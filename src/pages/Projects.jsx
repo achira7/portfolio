@@ -12,7 +12,7 @@ const Projects = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const location = useLocation();
-  const git = process.env.REACT_APP_GITHUB_API_KEY
+  const git = process.env.REACT_APP_GITHUB_API_KEY;
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -82,33 +82,36 @@ const Projects = () => {
   });
 
   return (
-    <div className="bg-background mt-20 md:mt-32">
-      <div className="w-full  my-5 ml-5 mt-32">
-      <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
-            Technologies
-          </h1>
-          <h2 className="font-inter text-lg ml-1 mb-2 text-color-secondary md:text-xl">
-            Click on the Tech icon to see all projects made with it
-          </h2>
-        <Marquee />
+    <div className="bg-background mt-20 md:mt-32 items-center justify-center 0 ">
+      <div className="flex flex-col m-5 md:m-8">
+      <div className="w-full">
+        <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl ">
+          Technologies
+        </h1>
+        <h2 className="font-inter text-lg ml-1 mb-2 text-color-secondary md:text-xl">
+          Click on the Tech icon to see all projects made with it
+        </h2>
+        <div className="flex items-center justify-center">
+          <Marquee />
+        </div>
       </div>
 
-      <div className="mb-5 ml-5 mt-10">
-      <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
-            Projects
-          </h1>
-          <h2 className="font-inter text-lg  mb-2 text-color-secondary md:text-xl">
-            Best of my personal / professional projects
-          </h2>
+      <div className="my-5">
+        <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
+          Projects
+        </h1>
+        <h2 className="font-inter text-lg  mb-2 text-color-secondary md:text-xl">
+          Best of my Personal / Professional / University projects
+        </h2>
       </div>
 
-      <div className="flex pt-3 px-5 align-middle items-center justify-center mb-7 md:pt-7">
-        <SearchIcon className="w-7 h-7 text-color-primary md:w-10 md:h-10 " />
+      <div className="flex px-5 items-center justify-center mb-10">
+        <SearchIcon className="text-color-primary md:w-10 md:h-10 " />
         <input
-        id="clickable"
-          className="text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 px-3 bg-inherit text-color-secondary md:text-3xl"
+          id="clickable"
+          className="bg-card-primary-top px-8 text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 text-color-secondary md:text-3xl"
           type="search"
-          placeholder="  Search"
+          placeholder="Search"
           value={searchQuery}
           onChange={handleSearchChange}
         />
@@ -127,11 +130,15 @@ const Projects = () => {
                 gitLink={repo.html_url}
                 demoLink={repo.homepage}
                 languages={repo.languages}
-                libraries={repo.topics?.filter(topic => topic !== "best-projects") || []}
+                libraries={
+                  repo.topics?.filter((topic) => topic !== "best-projects") ||
+                  []
+                }
                 imgLink={repo.imageUrl}
               />
             </div>
           ))}
+      </div>
       </div>
       <Footer />
     </div>

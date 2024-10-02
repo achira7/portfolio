@@ -1,5 +1,4 @@
 import React from "react";
-
 import Polaroid from "../components/Polaroid";
 import Footer from "../components/Footer";
 
@@ -8,7 +7,7 @@ const AboutMe = () => {
     <div className="bg-background">
       <div className="flex flex-col mt-28 m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36 items-center justify-center">
         <div className="flex flex-col pt-3 items-center justify-center">
-          <h1 className="text-color-primary font-caveat font-bold text-3xl ml-5 mb-7 md:text-5xl">
+          <h1 className="flex text-color-primary font-caveat font-bold text-3xl md:ml-5 mb-7 md:text-5xl">
             Heading 1
           </h1>
           <div className="flex flex-col md:flex-row">
@@ -54,11 +53,8 @@ const AboutMe = () => {
           </div>
         </div>
 
-
-
-
         <div className="flex flex-col pt-3 items-center justify-center">
-          <h1 className="text-color-primary font-caveat font-bold text-3xl ml-5 mb-7 md:text-5xl">
+          <h1 className="text-color-primary font-caveat font-bold text-3xl md:ml-5 mb-7 md:text-5xl">
             Heading 2
           </h1>
           <div className="flex flex-col md:flex-row-reverse items-center justify-center">

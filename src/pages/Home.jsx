@@ -40,7 +40,7 @@ const Home = ({ mode }) => {
   return (
     <div className="bg-background  md:mt-5" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20 m-5 md:m-8">
-        <div className="flex flex-col mt-20 md:mt-0 bg-yellow-300">
+        <div className="flex flex-col mt-16 md:mt-0">
           <h1
             id="achira"
             className="text-5xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-8xl"
@@ -72,8 +72,8 @@ const Home = ({ mode }) => {
             repeat={Infinity}
           />
         </div>
-        <div className="grid grid-row-3 md:grid-cols-3 justify-center items-center">
-          <div className="mt-1  flex items-start align-top">
+        <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start">
+          <div className="mt-5  flex items-start align-top ">
             <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
               Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
               Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
@@ -88,7 +88,7 @@ const Home = ({ mode }) => {
               am a creative indiviual and etc.
             </p>
           </div>
-          <div className="flex bg-red-300">
+          <div className="flex">
             {/* HERO IMAGE */}
             <img
             id="floating"
@@ -98,7 +98,7 @@ const Home = ({ mode }) => {
               alt="Hero"
             />
           </div>
-          <div  id="floating" className="flex w-full items-center justify-center bg-yellow-400">
+          <div  id="floating" className="flex  h-full w-full items-center justify-center">
             <SocialIcons />
           </div>
         </div>
@@ -108,7 +108,7 @@ const Home = ({ mode }) => {
         </div>
 
         <div className="w-full my-5  mt-5 mb-10 z-0 items-center justify-center md:justify-start md:items-start ">
-          <div className="flex items-center justify-center flex-col md:justify-start md:items-start">
+          <div className="flex items-center justify-center flex-col mt-5 md:justify-start md:items-start">
             <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-5xl">
               Technologies
             </h1>
@@ -128,7 +128,7 @@ const Home = ({ mode }) => {
         </div>
 
      
-          <div className="flex-col absolute top-80 right-[25%] hidden transform rotate-[-5deg] md:flex bg-red-300">
+          <div className="flex-col absolute top-60 right-[25%] hidden transform rotate-[-5deg] md:flex ">
             <h1 className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md">
               Check Out my Projects
             </h1>

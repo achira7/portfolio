@@ -86,7 +86,11 @@ const Marquee = () => {
   }, [techItems]); 
 
   const handleTechClick = (searchUrl) => {
-    navigate(searchUrl, { target: "_blank" });  
+    try{
+      navigate(searchUrl);  
+    }catch{
+      navigate(`/projects?query=${encodeURIComponent(tech)}`)
+    }
   };
 
   return (
