@@ -25,7 +25,9 @@ import pintanna from "../assets/logos/2.jpg";
 import pitch from "../assets/logos/3.jpg";
 
 const Home = ({ mode }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const [currentMode, setCurrentMode] = useState(mode);
+
   useEffect(() => {
     setCurrentMode(mode);
   }, [mode]);
@@ -37,74 +39,105 @@ const Home = ({ mode }) => {
   const scrambledAchira = useTextScramble("ACHIRA");
   const scrambledSilva = useTextScramble("SILVA");
 
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        // Tailwind's `sm` breakpoint (640px)
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Listen for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="bg-background  md:mt-5" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20 m-5 md:m-8">
-        <div className="flex flex-col mt-16 md:mt-0">
-          <h1
-            id="achira"
-            className="text-5xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-8xl"
-          >
-            {scrambledAchira}
-          </h1>
+        <div className=" md:border-color-primary md:border-b-8 ">
+          <div className="flex flex-col mt-16 md:mt-0">
+            <h1
+              id="achira"
+              className="text-5xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-8xl"
+            >
+              {scrambledAchira}
+            </h1>
 
-          <h1
-            id="silva"
-            className="text-5xl font-bold text-color-primary font-inter flex flex-wrap md:text-8xl"
-          >
-            {scrambledSilva}
-          </h1>
-          <TypeAnimation
-            className="font-caveat text-2xl text-color-primary font-semibold md:mt-2 md:text-5xl"
-            sequence={[
-              "Frontend Developer",
-              1000,
-              "Backend Developer",
-              1000,
-              "Designer",
-              1000,
-              "Creative Thinker",
-              1000,
-            ]}
-            wrapper="span"
-            speed={50}
-            style={{ display: "inline-block" }}
-            repeat={Infinity}
-          />
-        </div>
-        <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start">
-          <div className="mt-5  flex items-start align-top ">
-            <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
-              Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
-              Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
-              Silva. I am a creative indiviual and etc. Hi! I'm Achira Silva. I
-              am a creative indiviual and etc. Hi! I'm Achira Silva. I am a
-              creative indiviual and etc. Hi! I'm Achira Silva. I am a creative
-              indiviual and etc. Hi! I'm Achira Silva. I am a creative indiviual
-              and etc. Hi! I'm Achira Silva. I am a creative indiviual and etc.
-              Hi! I'm Achira Silva. I am a creative indiviual and etc. Hi! I'm
-              Achira Silva. I am a creative indiviual and etc. Hi! I'm Achira
-              Silva. I am a creative indiviual and etc. Hi! I'm Achira Silva. I
-              am a creative indiviual and etc.
-            </p>
-          </div>
-          <div className="flex">
-            {/* HERO IMAGE */}
-            <img
-            id="floating"
-              src={mode === "light-mode" ? heroLight : heroDark}
-              // className="bottom-0 shadow-image lg:w-[600px] w-[400px] md:w-[300px]"
-              className="bottom-0 shadow-image w-full md:w-5/6 lg:w-full"
-              alt="Hero"
+            <h1
+              id="silva"
+              className="text-5xl font-bold text-color-primary font-inter flex flex-wrap md:text-8xl"
+            >
+              {scrambledSilva}
+            </h1>
+            <TypeAnimation
+              className="font-caveat text-2xl text-color-primary font-semibold md:mt-2 md:text-5xl"
+              sequence={[
+                "Frontend Developer",
+                1000,
+                "Backend Developer",
+                1000,
+                "Designer",
+                1000,
+                "Creative Thinker",
+                1000,
+              ]}
+              wrapper="span"
+              speed={50}
+              style={{ display: "inline-block" }}
+              repeat={Infinity}
             />
           </div>
-          <div  id="floating" className="flex  h-full w-full items-center justify-center">
-            <SocialIcons />
-          </div>
-        </div>
+          <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start">
+            <div className="mt-5 flex-col flex items-start align-top ">
+              <p className="mb-4 font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
+                Hey, I am Achira Silva, a Creative individual with a passion for
+                creating things from Web Apps to Video Games to Music to Stories
+                and everything in between. <br />
+              </p>
 
-        <div className="flex flex-wrap flex-row right-[500px] absolute bottom-16 z-0">
-          <div className="flex flex-wrap"></div>
+              <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
+                As an IT graduate, I am interested in Full Stack Web Development
+                and Mobile Application Development. I always look for new things
+                to learn and explore. Whether it’s a new language, Pixel Art, or
+                Playing Flute I’m in for learning that as long as it interests
+                me.
+              </p>
+            </div>
+            <div className="relative flex" id="floating">
+              {/* HERO IMAGE */}
+              <img
+                src={mode === "light-mode" ? heroLight : heroDark}
+                className="bottom-0 shadow-image w-full md:w-5/6 lg:w-full"
+                alt="Hero"
+              />
+
+              {/* Gradient Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent"></div>
+            </div>
+
+            <div
+              id={!isMobile ? "floating" : undefined}
+              className="flex  h-full w-full items-center justify-center"
+            >
+              <SocialIcons />
+            </div>
+          </div>
+
+          <div className="flex flex-wrap flex-row right-[500px] absolute bottom-16 z-0">
+            <div className="flex flex-wrap"></div>
+          </div>
         </div>
 
         <div className="w-full my-5  mt-5 mb-10 z-0 items-center justify-center md:justify-start md:items-start ">
@@ -127,21 +160,39 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-     
-          <div className="flex-col absolute top-60 right-[25%] hidden transform rotate-[-5deg] md:flex ">
-            <h1 className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md">
-              Check Out my Projects
-            </h1>
-            <br />
-            <h1 className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md">
-              These are my Experiences
-            </h1>
-            <br />
-            <h1 className="text-4xl text-color-primary relative inline-block font-caveat drop-shadow-md">
-              Contact Me
-            </h1>
-          </div>
-        
+        <div className="flex-col absolute top-52 right-[25%] hidden transform rotate-[-5deg] md:flex gap-y-8">
+          <h1
+            id="clickable"
+            onClick={() => scrollToSection("projects")}
+            className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md hover:scale-110 duration-300"
+          >
+            Check Out my Projects
+          </h1>
+
+          <h1
+            id="clickable"
+            className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md  hover:scale-110 duration-300"
+            onClick={() => scrollToSection("expereince")}
+          >
+            My Experiences
+          </h1>
+
+          <h1
+            id="clickable"
+            className="text-4xl text-color-primary relative inline-block font-caveat drop-shadow-md hover:scale-110 duration-300"
+            onClick={() => scrollToSection("education")}
+          >
+            Education & Qualifications
+          </h1>
+
+          <h1
+            id="clickable"
+            className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md hover:scale-110 duration-300"
+            onClick={() => scrollToSection("cv")}
+          >
+            Download my CV
+          </h1>
+        </div>
 
         <div id="projects" className="flex flex-col  ">
           <div className="flex flex-col items-center justify-center md:justify-start md:items-start md:ml-5 ">
@@ -425,7 +476,10 @@ const Home = ({ mode }) => {
             </div>
           </div>
         </div>
-        <div className="flex w-full justify-center items-center mb-5 ">
+        <div
+          id="cv"
+          className="flex w-full justify-center items-center mb-5 md:mt-12 md:mb-12"
+        >
           <div className="flex justify-center items-center">
             <DownloadCV />
           </div>

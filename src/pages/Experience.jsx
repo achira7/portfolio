@@ -45,11 +45,11 @@ const Experience = () => {
   const exp = [
     {
       id: 1,
-      title: "AIESEC",
+      title: "AIESEC Sri Lanka",
       time: "2021 – 2023",
       position: "Volunteer",
       description:
-        "I volunteered with AIESEC Sri Lanka, actively contributing to the organization's mission of developing young leaders in Sri Lanka. As part of the world’s largest youth-led non-profit, I had the opportunity to support the organization while also gaining valuable experiences myself.",
+        "I volunteered with AIESEC Sri Lanka, actively contributing to the organization's mission of developing young leaders in Sri Lanka. I had the opportunity to support the organization while also gaining valuable experiences myself.",
       points: [
         "As a full member, held many creative and leadership positions at the university and national level.",
         "Held multiple creative and leadership roles at both university and national levels.",
@@ -79,7 +79,7 @@ const Experience = () => {
         "ClickUp",
       ],
       website: "https://aiesec.org/",
-      image: "https://www.behance.net/moodboard/215289677/AIESEC",
+      image: "../src/assets/game.jpg",
       link: "https://www.behance.net/moodboard/215289677/AIESEC",
     },
     {
@@ -94,7 +94,12 @@ const Experience = () => {
         "Collaborated with the marketing team members to create visuals aligned with the company’s goals in the agriculture and investment sectors.",
         "Collaborated closely with the marketing team to create designs aligned with the company’s strategic goals in the agriculture and investment sectors to attract more customers.",
       ],
-      skills: ["Creative Thinking", "Meeting Deadlines", "Communication", "Teamwork"],
+      skills: [
+        "Creative Thinking",
+        "Meeting Deadlines",
+        "Communication",
+        "Teamwork",
+      ],
       hard_skills: ["Photoshop", "Illustrator", "Lightroom", "Trello"],
       website: "https://www.pintannaplantations.lk/",
       image: "https://www.behance.net/moodboard/215289653/Pintanna-Plantations",
@@ -115,11 +120,10 @@ const Experience = () => {
       skills: ["Handling Clients", "Adaptability"],
       hard_skills: ["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"],
       website: "https://pitchperfect.lk/",
-      image: "", 
+      image: "",
       link: "",
     },
   ];
-  
 
   return (
     <div className="bg-background mt-[25%] md:mt-[5%]">
@@ -283,53 +287,19 @@ const Experience = () => {
             link={'google.com'}
           /> */}
 
-{exp.map((experience) => (
-  <ExperienceCard
-    key={experience.id}
-    title={experience.title}
-    position={experience.position}
-    description={experience.description}
-    points={experience.points}
-    skills={experience.skills}
-    hard_skills={experience.hard_skills}
-    image={experience.image}
-    link={experience.link}
-  />
-))}
-
-        </div>
-
-        <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
-          <div className="p-5">
-            <h1 className="flex font-inter text-2xl md:text-3xl text-color-primary font-bold">
-              Pitch Perfect
-            </h1>
-            <p className=" text-base md:text-xl font-inter text-color-secondary mt-1">
-              At Pitch Perfect I did this and I did that etc....
-            </p>
-          </div>
-        </div>
-
-        <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
-          <div className="p-5">
-            <h1 className="flex font-inter text-2xl md:text-3xl text-color-primary font-bold">
-              Pintanna Plantations
-            </h1>
-            <p className="text-base md:text-xl font-inter text-color-secondary mt-1">
-              At Pintanna Plantations I did this and I did that etc....
-            </p>
-          </div>
-        </div>
-
-        <div className="mb-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20">
-          <div className="p-5">
-            <h1 className="flex font-inter text-2xl md:text-3xl text-color-primary font-bold">
-              AIESEC
-            </h1>
-            <p className="text-base md:text-xl font-inter text-color-secondary mt-1">
-              At AIESEC I did this and I did that etc....
-            </p>
-          </div>
+          {exp.map((experience) => (
+            <ExperienceCard
+              key={experience.id}
+              title={experience.title}
+              position={experience.position}
+              description={experience.description}
+              points={experience.points}
+              skills={experience.skills}
+              hard_skills={experience.hard_skills}
+              image={experience.image}
+              link={experience.link}
+            />
+          ))}
         </div>
       </div>
 
