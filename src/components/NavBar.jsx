@@ -77,12 +77,12 @@ const NavBar = ({ startNavbarAnimation }) => {
     <div className="top-0 w-full">
       {/* Hamburger Menu for Mobile Devices */}
       <div className=" md:hidden z-20 justify-end items-center align-middle shadow-xl bg-background w-full bg-gradient-to-t from-card-primary-bottom to-card-primary-top fixed top-0 ">
-        <div className="flex justify-between items-center transition-all duration-300 rounded-xl my-4 mx-5">
+        <div className="flex justify-between items-center  duration-300 rounded-xl my-4 mx-5">
           <button
             className="text-color-primary text-3xl font-bold transition-transform duration-300"
             onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
           >
-            {isHamburgerOpen ? "✕" : "☰"}
+             <span className="duration-300">{isHamburgerOpen ? "✕" : "☰"}</span>
           </button>
           <div className="text-color-primary font-inter text-2xl font-bold">
             {" "}

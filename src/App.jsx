@@ -154,7 +154,7 @@ function App() {
           ></div>
         </div>
 
-        {showNavBar && <NavBar className={`z-30 w-full ${mode}`} />}
+        {showNavBar && <NavBar className={`z-40 w-full ${mode}`} />}
 
         <Routes>
           <Route className={`flex z-10 mt-10 ${mode}`} path="/" element={<Home mode={mode} />} />

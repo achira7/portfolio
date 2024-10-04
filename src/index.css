@@ -287,4 +287,44 @@ button, a{
 
 
 
+/* DarkMode.css or a dedicated CSS file */
+.hamburger-menu {
+  transition: all 0.3s ease; /* Smooth transition for the menu */
+}
+
+.hamburger-icon {
+  transition: transform 0.3s ease; /* Smooth transform for the hamburger icon */
+}
+
+.hamburger-icon.open {
+  transform: rotate(45deg); /* Rotate to X when open */
+}
+
+.hamburger-icon.close {
+  transform: rotate(0); /* Reset to normal when closed */
+}
+
+.menu-links {
+  opacity: 0; /* Hidden initially */
+  transform: translateY(-20px); /* Start above */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.menu-links.open {
+  opacity: 1; /* Show when open */
+  transform: translateY(0); /* Move to original position */
+}
+
+.scroll-to-top {
+  transition: transform 0.3s ease; /* Smooth transition for the scroll button */
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1); /* Scale on hover */
+}
+
+
+
+
+
 

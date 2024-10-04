@@ -140,7 +140,7 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div className="w-full my-5  mt-5 mb-10 z-0 items-center justify-center md:justify-start md:items-start ">
+        <div className="w-full my-5 mt-5 mb-10 items-center justify-center md:justify-start md:items-start ">
           <div className="flex items-center justify-center flex-col mt-5 md:justify-start md:items-start">
             <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-5xl">
               Technologies
@@ -155,8 +155,8 @@ const Home = ({ mode }) => {
             </h2>
           </div>
 
-          <div className="flex z-0">
-            <Marquee className="z-0" />
+          <div className="flex">
+            <Marquee className="" />
           </div>
         </div>
 
