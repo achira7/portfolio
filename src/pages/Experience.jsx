@@ -163,8 +163,17 @@ const Experience = () => {
                 </p>
                 <div className="flex flex-row gap-5">
                   <div className="mt-5">
-                    <Button name={"Read More"} link={"google.com"} />
+                  <button
+                      id="clickable"
+                      className="flex items-center cursor-none justify-center bg-color-green hover:scale-110  rounded-lg font-inter px-4 py-2 shadow-md transition-all duration-300"
+                      onClick={() => scrollToSection(experience.title.replace(/\s+/g, '-').toLowerCase())}
+
+                    >
+                      <span className='text-white text-xs md:text-base cursor-none' id="clickable">Read More</span>
+                    </button>
                   </div>
+
+                  
 
                   <div className="mt-5">
                     <Button

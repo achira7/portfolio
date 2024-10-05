@@ -330,5 +330,45 @@ button, a{
 
 
 
+.homepage, .navBarThing {
+  zoom: 1; /* Default zoom */
+}
+
+
+@media (max-width: 1700px) {
+  .homepage, .navBarThing {
+    zoom: 0.9; 
+  }
+}
+
+/* For screens up to 1600px */
+@media (max-width: 1600px) {
+  .homepage, .navBarThing {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 1400px) {
+  .homepage, .navBarThing {
+    zoom: 0.7; 
+  }
+}
+
+@media (max-width: 1200px) {
+  .homepage, .navBarThing {
+    zoom: 0.6; 
+  }
+}
+
+
+/* Reset zoom for mobile devices */
+@media (max-width: 768px) {
+  .homepage, .navBarThing {
+    zoom: 1; /* Reset to normal */
+  }
+}
+
+
+
 
 

@@ -68,7 +68,7 @@ const Home = ({ mode }) => {
   }, []);
 
   return (
-    <div className="bg-background  md:mt-5" ref={container}>
+    <div className="bg-background  md:mt-5 homepage" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20 m-5 md:m-8">
         <div className=" md:border-color-primary md:border-b-8 ">
           <div className="flex flex-col mt-16 md:mt-0">
@@ -104,7 +104,7 @@ const Home = ({ mode }) => {
             />
           </div>
 
-           <p className=" text-6xl text-red-400 md:text-purple-400 lg:text-emerald-400 xl:text-sky-500">TEST</p> 
+           {/* <p className=" text-6xl text-red-400 md:text-purple-400 lg:text-emerald-400 xl:text-sky-500">TEST</p>  */}
 
           <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start">
             <div className="mt-5 flex-col flex items-start align-top ">

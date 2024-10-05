@@ -74,7 +74,7 @@ const NavBar = ({ startNavbarAnimation }) => {
   };
 
   return (
-    <div className="top-0 w-full">
+    <div className="top-0 w-full navBarThing">
       {/* Hamburger Menu for Mobile Devices */}
       <div
         className={`z-20 md:hidden justify-end bg-card-primary-bottom items-center align-middle w-full ${
@@ -200,7 +200,7 @@ const NavBar = ({ startNavbarAnimation }) => {
       )}
 
       {/* Bottom Chat Icon and Scroll to Top Button */}
-      <div className="flex justify-between items-center fixed bottom-5 left-0 right-0 px-5 md:bottom-10 md:px-10">
+      <div className="flex justify-between items-center fixed z-50 bottom-5 left-0 right-0 px-5 md:bottom-10 md:px-10">
         <div className="flex items-center space-x-4 md:pl-5">
           <button
             onClick={() => setIsChatOpen(true)}
