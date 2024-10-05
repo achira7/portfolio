@@ -9,12 +9,20 @@ import Button from "../components/Button";
 import Footer from "../components/Footer";
 import ExperienceCard from "../components/ExperienceCard";
 
+// images
+import AIESEC from "../assets/logos/1.jpg"
+import Pintanna from "../assets/logos/2.jpg"
+import PicthPerfect from "../assets/logos/3.jpg"
+
+import AIESEC_img from "../assets/images/aiesec-1.png"
+
 const Experience = () => {
   const images = "../src/assets/images/";
   const exp = [
     {
       id: 1,
       title: "AIESEC Sri Lanka",
+      icon: AIESEC,
       time: "2021 – 2023",
       position: "Volunteer",
       description:
@@ -32,7 +40,6 @@ const Experience = () => {
         "Event Organizing",
         "Leadership",
         "Creative Design",
-        "Social Media Management",
         "Negotiation",
         "Time Management",
         "Creative Thinking",
@@ -48,12 +55,13 @@ const Experience = () => {
         "ClickUp",
       ],
       website: "https://aiesec.org/",
-      image: `${images}aiesec-1.png`,
+      image: AIESEC_img,
       link: "https://www.behance.net/moodboard/215289677/AIESEC",
     },
     {
       id: 2,
       title: "Pintanna Plantations",
+      icon: Pintanna,
       time: "December 2022 - May 2023",
       position: "Junior Graphic Designer",
       description:
@@ -77,6 +85,7 @@ const Experience = () => {
     {
       id: 3,
       title: "Pitch Perfect",
+      icon: PicthPerfect,
       time: "May 2023 - December 2023",
       position: "Graphic Designer",
       description:
@@ -145,7 +154,7 @@ const Experience = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={`../src/assets/logos/${experience.id}.jpg`}
+                      src={experience.icon}
                       alt={`${experience.title} logo`}
                       className="object-contain w-full h-full"
                     />

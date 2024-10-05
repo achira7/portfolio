@@ -66,12 +66,12 @@ const NavBar = ({ startNavbarAnimation }) => {
   }, []);
 
   const scrollToTop = () => {
-    gsap.to(window, {
-      scrollTo: { y: 0 },
-      duration: 1,
-      ease: "power1.in",
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
     });
   };
+  
 
   return (
     <div className="top-0 w-full navBarThing">

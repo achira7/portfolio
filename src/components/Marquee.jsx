@@ -58,29 +58,41 @@ const Marquee = () => {
   useEffect(() => {
     const marqueeElement = marqueeRef.current;
     const marqueeItems = marqueeElement.children;
-
+  
     const totalItems = marqueeItems.length;
+  
+    // Clone items to create an infinite effect
     for (let i = 0; i < totalItems; i++) {
       marqueeElement.appendChild(marqueeItems[i].cloneNode(true));
     }
-
-    const totalWidth = Array.from(marqueeItems).reduce((acc, item) => acc + item.offsetWidth, 0);
-
+  
+    const totalWidth = Array.from(marqueeItems).reduce(
+      (acc, item) => acc + item.offsetWidth,
+      0
+    );
+  
+    // Start the marquee animation
     const marqueeAnimation = gsap.to(marqueeElement, {
       x: `-${totalWidth}px`,
-      duration: 20,
+      duration: 20,  // Adjust this duration as needed
       ease: "linear",
       repeat: -1,
-      paused: true,
     });
-
-    
-
+  
+    // Pause animation on hover
+    const handleMouseEnter = () => marqueeAnimation.pause();
+    const handleMouseLeave = () => marqueeAnimation.resume();
+  
+    marqueeElement.addEventListener("mouseenter", handleMouseEnter);
+    marqueeElement.addEventListener("mouseleave", handleMouseLeave);
+  
+    // Clean up event listeners
     return () => {
-      marqueeElement.removeEventListener("mouseenter", () => marqueeAnimation.pause());
-      marqueeElement.removeEventListener("mouseleave", () => marqueeAnimation.resume());
+      marqueeElement.removeEventListener("mouseenter", handleMouseEnter);
+      marqueeElement.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [techItems]); 
+  }, [techItems]); // Dependencies include `techItems`
+   
 
   const handleTechClick = (searchUrl) => {
     try{

@@ -11,7 +11,7 @@ const AboutMe = () => {
       <div className="flex flex-col mt-28 m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36 items-center justify-center">
         <div className="flex flex-col pt-3 items-center justify-center">
           <h1 className="flex text-color-primary font-caveat font-bold text-3xl md:ml-5 mb-7 md:text-5xl">
-            Heading 1
+          Early Life
           </h1>
           <div className="flex flex-col md:flex-row">
             <div className="flex w-4/6 items-center mx-10 mb-5">

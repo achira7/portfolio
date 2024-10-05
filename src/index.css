@@ -329,7 +329,6 @@ button, a{
 
 
 
-
 .homepage, .navBarThing {
   zoom: 1; /* Default zoom */
 }
@@ -359,7 +358,6 @@ button, a{
     zoom: 0.6; 
   }
 }
-
 
 /* Reset zoom for mobile devices */
 @media (max-width: 768px) {

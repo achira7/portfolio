@@ -1,26 +1,31 @@
 import React from "react";
 
+import  Instagram  from "../assets/social_logos/instagram.svg";
+import  Linkedin  from "../assets/social_logos/linkedin.svg";
+import  Behance  from "../assets/social_logos/behance.svg";
+
+import  Gmail  from "../assets/social_logos/gmail.svg";
+import GitHub from "../assets/social_logos/github.svg";
+
 const SocialIcons = () => {
-  const gmail = "./src/assets/social_logos/gmail.svg";
-  const github = "./src/assets/social_logos/github.svg";
 
   const socials = [
     {
       id: 1,
       title: "LinkedIn",
-      img: "./src/assets/social_logos/linkedin.svg",
+      img: Linkedin,
       link: "https://www.linkedin.com/in/achira-silva/",
     },
     {
       id: 2,
       title: "Behance",
-      img: "./src/assets/social_logos/behance.svg",
+      img: Behance,
       link: "https://www.behance.net/achira_silva",
     },
     {
       id: 3,
       title: "Instagram",
-      img: "./src/assets/social_logos/instagram.svg",
+      img: Instagram,
       link: "https://www.instagram.com/axhira/",
     },
   ];
@@ -43,7 +48,7 @@ const SocialIcons = () => {
                 className="hover:scale-110 transform transition-transform flex justify-center items-center"
               >
                 <img
-                  src={gmail}
+                  src={Gmail}
                   alt="Achira's Email"
                   // className="mb-4 w-12 h-12"
                   className="w-3/5 h-3/5"
@@ -65,7 +70,7 @@ const SocialIcons = () => {
                 className="hover:scale-110 transform transition-transform flex justify-center items-center"
               >
                 <img
-                  src={github}
+                  src={GitHub}
                   alt="Achira's GitHub"
                   // className="mb-4 w-12 h-12"
                   className="w-2/5 h-2/5 py-2"
