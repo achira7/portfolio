@@ -40,7 +40,11 @@ const Home = ({ mode }) => {
   const scrambledSilva = useTextScramble("SILVA");
 
   const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(id);
+    const yOffset = window.innerHeight * 0.07; 
+    const yPosition = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+  
+    window.scrollTo({ top: yPosition, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -99,6 +103,9 @@ const Home = ({ mode }) => {
               repeat={Infinity}
             />
           </div>
+
+           <p className=" text-6xl text-red-400 md:text-purple-400 lg:text-emerald-400 xl:text-sky-500">TEST</p> 
+
           <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start">
             <div className="mt-5 flex-col flex items-start align-top ">
               <p className="mb-4 font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
@@ -106,6 +113,8 @@ const Home = ({ mode }) => {
                 creating things from Web Apps to Video Games to Music to Stories
                 and everything in between. <br />
               </p>
+
+              
 
               <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
                 As an IT graduate, I am interested in Full Stack Web Development

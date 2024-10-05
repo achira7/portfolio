@@ -21,18 +21,22 @@ const DarkMode = () => {
     if (isDarkMode) {
       localStorage.setItem("mode", "light-mode");
       document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
       setIsDarkMode(false);
     } else {
       localStorage.setItem("mode", "dark-mode");
+      document.body.classList.remove("light-mode");
       document.body.classList.add("dark-mode");
+      
       setIsDarkMode(true);
     }
   };
 
   return (
-    <div className="dark_mode hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300">
+    <div className="dark_mode hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300 ">
+      {/* shadow-[0_0_8px_8px_rgba(var(--normal-shadow))] */}
       <input
-        className="dark_mode_input"
+        className="dark_mode_input "
         type="checkbox"
         id="darkmode-toggle"
         checked={isDarkMode}

@@ -16,12 +16,12 @@ const ExperienceCard = ({
 
   return (
     <div
-      id={title}
+      id={title.replace(/\s+/g, '-').toLowerCase()} 
       className="mb-8 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl z-20"
     >
-      <div className="p-5 md:p-7">
+      <div className="pt-1 md:p-7">
         <div className="grid grid-rows-[auto_auto_auto] ">
-          <div className="flex flex-col h-fit ">
+          <div className="flex flex-col h-fit ml-8 mt-5">
             <h1 className="flex font-inter text-xl md:text-3xl text-color-primary font-bold">
               {title}
             </h1>
@@ -32,7 +32,7 @@ const ExperienceCard = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-[60%_40%] justify-items-center items-center">
-            <div className="flex p-10 justify-center items-center ">
+            <div className="flex px-5 py-3 md:p-10 justify-center items-center ">
               <div className="">
                 <p className="text-sm md:text-base font-inter text-color-secondary">
                   {description}
@@ -42,7 +42,7 @@ const ExperienceCard = ({
 
             {/* Image */}
             {isImageVisible && (
-            <div className="hidden md:flex w-[65%] ">
+            <div className="md:flex w-[65%] mb-5 mt-3 justify-center items-center">
               <div className="flex justify-center items-center">
                 {isImageVisible && (
                   <img
@@ -58,7 +58,7 @@ const ExperienceCard = ({
           </div>
 
           <div className="px-8">
-            <ul className="list-disc ml-6 mt-2">
+            <ul className="list-disc ml-3 md:ml-6 md:mt-2">
               {points.map((point, index) => (
                 <li
                   key={index}
@@ -82,7 +82,7 @@ const ExperienceCard = ({
               </div>
             </div>
 
-            <div className="mt-7 flex justify-center items-center">
+            <div className="my-7 flex justify-center items-center">
               <Button
                 className="flex"
                 color={"blue"}

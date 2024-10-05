@@ -2,7 +2,7 @@ import React from 'react';
 import { GitHub, Play } from '../assets/icons/icons';
 
 const Button = ({ name, link, color, icon }) => {
-  const isLinkProvided = !!link;
+  const isLinkProvided = !!link && "dummy";
 
   const colorClasses = {
     red: 'bg-color-red',

@@ -46,6 +46,8 @@ export default {
 
         "default-button": "rgba(var(--default-button))",
         "button-text": "rgba(var(--button-text))",
+
+        "normal-shadow": "rgba(var(--normal-shadow));"
       },
     },
   },

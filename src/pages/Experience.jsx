@@ -10,38 +10,6 @@ import Footer from "../components/Footer";
 import ExperienceCard from "../components/ExperienceCard";
 
 const Experience = () => {
-  const Qexp = [
-    {
-      id: 1,
-      title: "AIESEC",
-      job: "Full Member",
-      time: "2021 – 2023",
-      description: "Held many positions",
-      website: "https://aiesec.org/",
-      link: "https://www.behance.net/moodboard/215289677/AIESEC",
-    },
-    {
-      id: 2,
-      title: "Pintanna Plantations",
-      job: "Junior Graphic Designer",
-      time: "December 2022 - May 2023",
-      description:
-        "Mainly responsible for creating social media posts for pintanna plantat",
-      website: "https://www.pintannaplantations.lk/",
-      link: "https://www.behance.net/moodboard/215289653/Pintanna-Plantations",
-    },
-    {
-      id: 3,
-      title: "Pitch Perfect",
-      job: "Graphic Designer",
-      time: "May 2023 - December 2023",
-      description:
-        "Engaged in business consulting to improve sales pitches and close deals effectively.",
-      website: "https://pitchperfect.lk/",
-      link: "",
-    },
-  ];
-
   const exp = [
     {
       id: 1,
@@ -49,7 +17,7 @@ const Experience = () => {
       time: "2021 – 2023",
       position: "Volunteer",
       description:
-        "I volunteered with AIESEC Sri Lanka, actively contributing to the organization's mission of developing young leaders in Sri Lanka. I had the opportunity to support the organization while also gaining valuable experiences myself.",
+        "I volunteered with AIESEC Sri Lanka, contributing to the mission of developing young leaders in Sri Lanka while also gaining valuable experiences for myself.",
       points: [
         "As a full member, held many creative and leadership positions at the university and national level.",
         "Held multiple creative and leadership roles at both university and national levels.",
@@ -124,6 +92,16 @@ const Experience = () => {
       link: "",
     },
   ];
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    const yOffset = window.innerHeight * 0.07; 
+    const yPosition = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+  
+    window.scrollTo({ top: yPosition, behavior: "smooth" });
+  };
+  
+  
 
   return (
     <div className="bg-background mt-[25%] md:mt-[5%]">
@@ -248,23 +226,33 @@ const Experience = () => {
                   </a>
                 }
               >
-                <h3 className="vertical-timeline-element-title text-lg font-bold font-inter text-color-primary">
-                  {experience.title}
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle text-color-primary">
-                  {experience.job}
-                </h4>
-                <div className="flex">
-                  <p className="text-color-secondary font-inter text-base">
-                    {experience.description}
-                  </p>
-                </div>
-                <div className="flex mt-10">
-                  <Button
-                    className="flex"
-                    name={"Read More"}
-                    link={"google.com"}
-                  />
+                <div className="flex flex-col">
+                  <div className="">
+                    <h3 className="vertical-timeline-element-title text-lg font-bold font-inter text-color-primary">
+                      {experience.title}
+                    </h3>
+                  </div>
+                  <div className="">
+                    <h4 className="vertical-timeline-element-subtitle text-color-primary">
+                      {experience.job}
+                    </h4>
+                  </div>
+
+                  <div className="flex">
+                    <p className="text-color-secondary font-inter text-base">
+                      {experience.description}
+                    </p>
+                  </div>
+                  <div className="flex md:mt-10 mt-5">
+                    <button
+                      id="clickable"
+                      className="flex items-center cursor-none justify-center bg-color-green hover: scale-110  rounded-lg font-inter px-4 py-2 shadow-md transition-all duration-300"
+                      onClick={() => scrollToSection(experience.title.replace(/\s+/g, '-').toLowerCase())}
+
+                    >
+                      <span className='text-white text-xs md:text-base cursor-none' id="clickable">Read More</span>
+                    </button>
+                  </div>
                 </div>
               </VerticalTimelineElement>
             ))}
@@ -272,21 +260,6 @@ const Experience = () => {
         </div>
 
         <div className="w-[90%] md:w-[60%]">
-          {/* <ExperienceCard
-            heading="Software Engineer Intern"
-            position="Graphic Designer"
-            description="Developed various features for the company's web application."
-            points={[
-              "Implemented user authentication.",
-              "Optimized database queries, reducing load time by 30%.",
-              "Collaborated with cross-functional teams.",
-            ]}
-            skills={["Teamwork", "Creativty"]}
-            hard_skills={["React", "Node.js", "PostgreSQL"]}
-            image={'../src/assets/game.jpg'}
-            link={'google.com'}
-          /> */}
-
           {exp.map((experience) => (
             <ExperienceCard
               key={experience.id}
