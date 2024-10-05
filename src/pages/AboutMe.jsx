@@ -3,6 +3,9 @@ import Polaroid from "../components/Polaroid";
 import Footer from "../components/Footer";
 
 const AboutMe = () => {
+
+  const images = "../assets/images/"
+
   return (
     <div className="bg-background">
       <div className="flex flex-col mt-28 m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36 items-center justify-center">

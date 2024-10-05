@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import ChatBot from "./components/ChatBot";
-import Test from "./pages/Test";
 import Experience from "./pages/Experience";
 import AboutMe from "./pages/AboutMe";
 import GradientComponent from "./components/GradientComponent";

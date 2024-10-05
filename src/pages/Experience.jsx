@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import ExperienceCard from "../components/ExperienceCard";
 
 const Experience = () => {
+  const images = "../src/assets/images/";
   const exp = [
     {
       id: 1,
@@ -47,7 +48,7 @@ const Experience = () => {
         "ClickUp",
       ],
       website: "https://aiesec.org/",
-      image: "../src/assets/game.jpg",
+      image: `${images}aiesec-1.png`,
       link: "https://www.behance.net/moodboard/215289677/AIESEC",
     },
     {
@@ -95,13 +96,12 @@ const Experience = () => {
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
-    const yOffset = window.innerHeight * 0.07; 
-    const yPosition = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
-  
+    const yOffset = window.innerHeight * 0.07;
+    const yPosition =
+      element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+
     window.scrollTo({ top: yPosition, behavior: "smooth" });
   };
-  
-  
 
   return (
     <div className="bg-background mt-[25%] md:mt-[5%]">
@@ -163,17 +163,23 @@ const Experience = () => {
                 </p>
                 <div className="flex flex-row gap-5">
                   <div className="mt-5">
-                  <button
+                    <button
                       id="clickable"
                       className="flex items-center cursor-none justify-center bg-color-green hover:scale-110  rounded-lg font-inter px-4 py-2 shadow-md transition-all duration-300"
-                      onClick={() => scrollToSection(experience.title.replace(/\s+/g, '-').toLowerCase())}
-
+                      onClick={() =>
+                        scrollToSection(
+                          experience.title.replace(/\s+/g, "-").toLowerCase()
+                        )
+                      }
                     >
-                      <span className='text-white text-xs md:text-base cursor-none' id="clickable">Read More</span>
+                      <span
+                        className="text-white text-xs md:text-base cursor-none"
+                        id="clickable"
+                      >
+                        Read More
+                      </span>
                     </button>
                   </div>
-
-                  
 
                   <div className="mt-5">
                     <Button
@@ -256,10 +262,18 @@ const Experience = () => {
                     <button
                       id="clickable"
                       className="flex items-center cursor-none justify-center bg-color-green hover: scale-110  rounded-lg font-inter px-4 py-2 shadow-md transition-all duration-300"
-                      onClick={() => scrollToSection(experience.title.replace(/\s+/g, '-').toLowerCase())}
-
+                      onClick={() =>
+                        scrollToSection(
+                          experience.title.replace(/\s+/g, "-").toLowerCase()
+                        )
+                      }
                     >
-                      <span className='text-white text-xs md:text-base cursor-none' id="clickable">Read More</span>
+                      <span
+                        className="text-white text-xs md:text-base cursor-none"
+                        id="clickable"
+                      >
+                        Read More
+                      </span>
                     </button>
                   </div>
                 </div>
