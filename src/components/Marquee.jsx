@@ -77,6 +77,7 @@ const Marquee = () => {
       duration: 20,  // Adjust this duration as needed
       ease: "linear",
       repeat: -1,
+      paused: true
     });
   
     // Pause animation on hover
@@ -103,8 +104,8 @@ const Marquee = () => {
   };
 
   return (
-    <div className="overflow-hidden bg-background-primary min-w-full my-6 py-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">
-      <div className="flex items-center justify-between" ref={marqueeRef}>
+    <div className="overflow-hidden bg-background-primary min-w-full my-6 py-5 bg-card-primary-top border border-card-primary-border rounded-xl ">
+      <div className="flex items-center justify-between  whitespace-nowrap" ref={marqueeRef}>
         {techItems.map((tech, index) => {
           const logoSrc = langLogos[tech.name] || libLogos[tech.name];
 

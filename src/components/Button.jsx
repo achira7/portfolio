@@ -2,7 +2,17 @@ import React from 'react';
 import { GitHub, Play } from '../assets/icons/icons';
 
 const Button = ({ name, link, color, icon }) => {
-  const isLinkProvided = !!link && "dummy";
+  const isLinkProvided = !!link;
+
+  // Function to check if the link is external
+  const isExternalLink = (url) => {
+    try {
+      const linkUrl = new URL(url);
+      return linkUrl.hostname !== window.location.hostname; // compare with current hostname
+    } catch (error) {
+      return false; // in case URL is invalid
+    }
+  };
 
   const colorClasses = {
     red: 'bg-color-red',
@@ -24,7 +34,6 @@ const Button = ({ name, link, color, icon }) => {
     green: 'hover:shadow-[0_0_5px_5px_rgba(var(--color-green-shadow))]',
     yellow: 'hover:shadow-[0_0_5px_5px_rgba(var(--color-yellow-shadow))]',
   };
-  
 
   const iconClass = {
     play: <Play className="w-4 h-4 text-white mr-2" />,
@@ -41,7 +50,8 @@ const Button = ({ name, link, color, icon }) => {
       className="flex flex-row cursor-none"
       id="clickable"
       href={isLinkProvided ? link : '#'}
-      target={isLinkProvided ? "_blank" : "_self"}
+      target={isLinkProvided && isExternalLink(link) ? "_blank" : "_self"} // Open in new tab if external
+      rel={isLinkProvided && isExternalLink(link) ? "noopener noreferrer" : undefined} // Add security for external links
     >
       <button
         type="button"
