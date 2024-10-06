@@ -138,7 +138,7 @@ function App() {
             <div id="intro-slider" className="h-screen text-white p-5 mt-2 absolute top-0 left-0 font-inter w-full flex flex-col gap-10 tracking-tight z-40 md:p-10">
               <h1 id="title-1" className="text-4xl md:text-9xl">Software Engineer</h1>
               <h1 id="title-2" className="text-4xl md:text-9xl">Designer</h1>
-              <h1 id="title-3" className="text-4xl md:text-9xl">Musician</h1>
+              <h1 id="title-3" className="text-4xl md:text-9xl">Creative Thinker</h1>
               <h1 id="title-4" className="text-4xl md:text-9xl">Game Developer</h1>
             </div>
           </div>
