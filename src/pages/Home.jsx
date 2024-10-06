@@ -109,8 +109,8 @@ const Home = ({ mode }) => {
           <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start">
             <div className="mt-5 flex-col flex items-start align-top ">
               <p className="mb-4 font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
-                Hey, I am Achira Silva, a Creative individual with a passion for
-                creating things from Web Apps to Video Games to Music to Stories
+                Hey there, I am Achira Silva, a Creative individual with a passion for
+                creating things from Web Apps to Video Games to Music to Novels
                 and everything in between. <br />
               </p>
 
@@ -120,9 +120,13 @@ const Home = ({ mode }) => {
                 As an IT graduate, I am interested in Full Stack Web Development
                 and Mobile Application Development. I always look for new things
                 to learn and explore. Whether it’s a new language, Pixel Art, or
-                Playing Flute I’m in for learning that as long as it interests
+                Playing the Keyboards, I’m in for learning that as long as it interests
                 me.
               </p>
+              <a id="clickable" href="/about" className="font-inter text-color-primary text-base tracking-wide underline w-full md:mt-5 max-w-screen-md md:text-3xl"> 
+              Read More
+              </a>
+              
             </div>
             <div className="relative flex" id="floating">
               {/* HERO IMAGE */}

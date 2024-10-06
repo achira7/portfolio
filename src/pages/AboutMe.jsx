@@ -11,8 +11,40 @@ const AboutMe = () => {
   return (
     <div className="bg-background">
       <div className="flex flex-col mt-28 m-5 w-full max-w-screen-2xl mx-auto space-y-10 mb-36 items-center justify-center">
+        <div className="flex flex-col md:pt-3 items-center justify-center">
+          <div className="flex  md:mb-14">
+            <div className="flex justify-center flex-col md:flex-row items-center mx-10 ">
+
+              <div className="flex">
+                <h1 className="flex text-center text-color-primary font-caveat font-bold text-3xl md:ml-5 mb-7 md:text-5xl">
+                  Hey there, I am <br/>Achira Silva,
+                </h1>
+              </div>
+
+              <div
+                id="floating"
+                className=" justify-center items-center bg-card-primary-top rounded-xl md:mx-36 p-8 mb-5"
+              >
+                <p className="flex text-center md:text-center text-base  text-color-secondary font-inter md:text-xl leading-[1.75] pb-3">
+                  A Creative individual with a passion for creating things from
+                  Web Apps to Video Games to Music to Novels and everything in
+                  between. As an IT graduate, I am interested in Full Stack Web
+                  Development and Mobile Application Development. I always look
+                  for new things to learn and explore. Whether it’s a new
+                  language, Pixel Art, or Playing the Keyboards, I’m in for
+                  learning that as long as it interests me.
+                </p>
+              </div>
+
+              <div className="flex w-full items-center justify-center mx-10  mb-5">
+                <Polaroid image={Self} name={"Me in 2021"} align={"none"} />
+              </div>
+
+            </div>
+          </div>
+        </div>
         <div className="flex flex-col pt-3 items-center justify-center">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row items-center justify-center">
             <div className="flex w-4/6 items-center justify-center mx-10  mb-5">
               <Polaroid image={Baby} name={"Me as a baby"} align={"left"} />
             </div>
@@ -38,7 +70,7 @@ const AboutMe = () => {
         <div className="flex flex-col pt-3 items-center justify-center">
           <div className="flex flex-col md:flex-row-reverse items-center justify-center">
             <div className="flex w-4/6 items-center mx-10 mb-5">
-              <Polaroid image={NLDS} name={"NLDS 2021 OC"} align={"right"} />
+              <Polaroid image={NLDS} name={"NLDS 2022 OC"} align={"right"} />
             </div>
 
             <div className="flex flex-col justify-center items-center mx-10">
@@ -76,7 +108,7 @@ const AboutMe = () => {
                 Hobbies & Interests
               </h1>
 
-              <p className=" flex text-center md:text-center text-base  text-color-secondary font-inter md:text-xl">
+              <p className=" flex text-center md:text-center text-base md:mx-20 text-color-secondary font-inter md:text-xl">
                 I've always been into creating things and problem-solving. My
                 love for creativity started way back in primary school when I
                 spent a lot of time in the school library, diving into Sinhala
