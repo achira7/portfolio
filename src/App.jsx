@@ -51,7 +51,7 @@ function App() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    const links = document.querySelectorAll("#clickable");
+    const links = document.querySelectorAll("#clickable, .clickable");
     links.forEach((link) => {
       link.addEventListener("mouseenter", handleMouseEnter);
       link.addEventListener("mouseleave", handleMouseLeave);

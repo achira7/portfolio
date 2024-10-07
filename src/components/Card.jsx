@@ -3,6 +3,7 @@ import Button from "./Button";
 import { languages as langLogos } from "../logos";
 import { libraries as libLogos } from "../logos";
 import { CloseIcon } from "../assets/icons/icons";
+import ImageOverlay from "./ImageOverlay";
 
 const Card = ({
   type,
@@ -52,7 +53,7 @@ const Card = ({
     <>
       {type === "project" ? (
         <div>
-          <div className="p-8 md:mb-10 mb-5 z-10 mx-5 bg-card-primary border border-card-primary-border rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top shadow-xl">
+          <div className="p-8 md:mb-10 mb-5 z-10 mx-5 bg-card-primary-bottom border border-card-primary-border rounded-xl shadow-xl">
             <div className="pb-3 text-2xl font-inter font-bold text-color-primary capitalize md:text-3xl">
               {projectName}
             </div>
@@ -169,28 +170,12 @@ const Card = ({
           </div>
           {/* Image Overlay */}
           {isImageOpen && (
-                  <div className="fixed inset-0 flex items-center justify-center bg-sky-950 bg-opacity-65 z-30">
-                    
-                    <div className="relative w-auto h-auto p-4 bg-card-primary-top rounded-lg shadow-xl">
-                    <button
-                        id="clickable"
-                        onClick={() => setIsImageOpen(false)}
-                        className="absolute top-5 right-5"
-                      >
-                        <CloseIcon
-                          id="clickable"
-                          className="w-7 h-7 text-color-red z-20 cursor-none shadow-lg"
-                        />
-                      </button>
-
-                      <img
-                        src={imgLink}
-                        alt={`${projectName} Full View`}
-                        className="w-full h-full object-contain max-h-[90vh] max-w-[90vw] rounded-lg p-10"
-                      />
-                    </div>
-                  </div>
-                )}
+            <ImageOverlay
+              imgLink={imgLink}
+              projectName={projectName}
+              setIsImageOpen={setIsImageOpen}
+            />
+          )}
         </div>
       ) : (
         <div className="m-5 bg-card-primary border border-card-primary-border z-10 rounded-xl bg-gradient-to-t from-card-primary-bottom to-card-primary-top">

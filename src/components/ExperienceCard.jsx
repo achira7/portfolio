@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Button from "./Button";
+import ImageOverlay from "./ImageOverlay"; 
 
 const ExperienceCard = ({
   title,
@@ -13,6 +14,7 @@ const ExperienceCard = ({
   link,
 }) => {
   const [isImageVisible, setIsImageVisible] = useState(true);
+  const [isImageOpen, setIsImageOpen] = useState(false); 
 
   return (
     <div
@@ -42,19 +44,21 @@ const ExperienceCard = ({
 
             {/* Image */}
             {isImageVisible && (
-            <div className="md:flex w-[65%] mb-5 mt-3 justify-center items-center">
-              <div className="flex justify-center items-center">
-                {isImageVisible && (
-                  <img
-                    id="clickable"
-                    src={image}
-                    alt={title}
-                    className="object-cover rounded-xl border border-card-primary-border"
-                    onError={() => setIsImageVisible(false)}
-                  />
-                )}
+              <div className="md:flex w-[65%] mb-5 mt-3 justify-center items-center">
+                <div className="flex justify-center items-center">
+                  {isImageVisible && (
+                    <img
+                      id="clickable"
+                      src={image}
+                      alt={title}
+                      className="object-cover rounded-xl border border-card-primary-border hover:scale-105 hover:shadow-md hover:shadow-color-primary cursor-pointer"
+                      onError={() => setIsImageVisible(false)}
+                      onClick={() => setIsImageOpen(true)}
+                    />
+                  )}
+                </div>
               </div>
-            </div>)}
+            )}
           </div>
 
           <div className="px-8">
@@ -93,6 +97,14 @@ const ExperienceCard = ({
           </div>
         </div>
       </div>
+
+      {/* Image Overlay Component */}
+      <ImageOverlay 
+        imgLink={image} 
+        projectName={title} 
+        isImageOpen={isImageOpen} 
+        setIsImageOpen={setIsImageOpen} 
+      />
     </div>
   );
 };
