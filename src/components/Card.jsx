@@ -23,7 +23,7 @@ const Card = ({
   const BUTTON_THRESHOLD = 20; // See More threshold
 
   const Buttons = () => (
-    <div>
+    <div className="flex gap-4">
       <Button
         link={gitLink}
         name={"Git Repo"}
@@ -162,7 +162,8 @@ const Card = ({
                     </div>
                   )}
                 </div>
-                <div className="block md:hidden mt-4">
+                {/* <div className="block md:hidden mt-4"> */}
+                <div className="flex flex-row md:hidden mt-4">
                   <Buttons />
                 </div>
               </div>
