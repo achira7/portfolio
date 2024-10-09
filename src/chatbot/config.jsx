@@ -1,7 +1,7 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 
 const config = {
-  initialMessages: [createChatBotMessage("Hey! I am the Guardian AI of this Website. Ask me anything about Achira.")],
+  initialMessages: [createChatBotMessage("This feature is currently under construction. Results might be inaccurate.")],
   botName: "AchiraBot",
   customComponents: {
     userMessage: (props) => (
