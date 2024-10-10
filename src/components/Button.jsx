@@ -51,7 +51,7 @@ const Button = ({ name, link, color, icon }) => {
       id="clickable"
       href={isLinkProvided ? link : '#'}
       target={isLinkProvided && isExternalLink(link) ? "_blank" : "_self"} // Open in new tab if external
-      rel={isLinkProvided && isExternalLink(link) ? "noopener noreferrer" : undefined} // Add security for external links
+      rel={isLinkProvided && isExternalLink(link) ? "noopener noreferrer" : undefined} //internal links
     >
       <button
         type="button"
