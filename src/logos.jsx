@@ -9,7 +9,7 @@ const languages = {
     CSS: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg',
     Go: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
     Ruby: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg",
-    PHP:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+    PHP: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
     //Add the link of the <img> variant from DevIcons [https://devicon.dev/]
 };
 
@@ -29,7 +29,9 @@ const libraries = {
     docker: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
     syncfusion: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsu9DT1XLVF5b0A-LgCJr0RdXhHJL6CXuhbw&s",
     chartjs: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/1024px-Chart.js_logo.svg.png",
-    unity: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg"
+    unity: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg",
+    express: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+    
     //Add the link of the <img> variant from DevIcons [https://devicon.dev/]
 };
 
