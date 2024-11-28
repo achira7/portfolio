@@ -7,8 +7,12 @@ import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import AboutMe from "./pages/AboutMe";
 import GradientComponent from "./components/GradientComponent";
+import useHotjar from "./hooks/hotjar";
 
 function App() {
+
+  // useHotjar(YOUR_HOTJAR_ID, 6);
+
   const cursorContainer = useRef(null);
   const flairRef = useRef(null);
   const container = useRef(null);
