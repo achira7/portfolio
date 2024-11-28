@@ -11,7 +11,7 @@ import useHotjar from "./hooks/hotjar";
 
 function App() {
 
-  // useHotjar(YOUR_HOTJAR_ID, 6);
+useHotjar( 5223858, 6);
 
   const cursorContainer = useRef(null);
   const flairRef = useRef(null);
