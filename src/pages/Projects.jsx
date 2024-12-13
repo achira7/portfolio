@@ -12,7 +12,7 @@ const Projects = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const location = useLocation();
-  const git = process.env.REACT_APP_GITHUB_API_KEY;
+  const git = process.env.GITHUB_API_KEY;
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -109,7 +109,7 @@ const Projects = () => {
         <SearchIcon className="text-color-primary md:w-10 md:h-10 " />
         <input
           id="clickable"
-          className="bg-card-primary-top px-8 text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 text-color-secondary md:text-3xl"
+          className="clickable bg-card-primary-top px-8 text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 text-color-secondary md:text-3xl"
           type="search"
           placeholder="Search"
           value={searchQuery}

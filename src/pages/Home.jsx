@@ -74,7 +74,7 @@ const Home = ({ mode }) => {
           <div className="flex flex-col mt-16 md:mt-0">
             <h1
               id="achira"
-              className="text-5xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-8xl"
+              className="text-5xl font-black text-color-primary font-inter top-0 flex flex-wrap md:text-9xl"
             >
               {scrambledAchira}
             </h1>
@@ -86,7 +86,7 @@ const Home = ({ mode }) => {
               {scrambledSilva}
             </h1>
             <TypeAnimation
-              className="font-caveat text-2xl text-color-primary font-semibold md:mt-2 md:text-5xl"
+              className="font-caveat text-2xl text-color-primary font-semibold md:mt-2 md:text-6xl"
               sequence={[
                 "Frontend Developer",
                 1000,
@@ -128,11 +128,11 @@ const Home = ({ mode }) => {
               </a>
               
             </div>
-            <div className="relative flex" id="floating">
+            <div className="relative flex bottom-10 items-center justify-center" id="floating">
               {/* HERO IMAGE */}
               <img
                 src={mode === "light-mode" ? heroLight : heroDark}
-                className="bottom-0 shadow-image w-full md:w-5/6 lg:w-full"
+                className="bottom-0 shadow-image w-4/5 md:w-5/6 lg:w-full"
                 alt="Hero"
               />
 
@@ -141,8 +141,8 @@ const Home = ({ mode }) => {
             </div>
 
             <div
-              id={!isMobile ? "floating" : undefined}
-              className="flex  h-full w-full items-center justify-center"
+              id={!isMobile ? "floatingAlt" : undefined}
+              className="flex h-full w-full items-center justify-center md:justify-left md:items-center md:right-36"
             >
               <SocialIcons />
             </div>
@@ -154,7 +154,7 @@ const Home = ({ mode }) => {
         </div>
 
         <div className="w-full my-5 mt-5 mb-10 items-center justify-center md:justify-start md:items-start ">
-          <div className="flex items-center justify-center flex-col mt-5 md:justify-start md:items-start">
+          <div className="flex items-center justify-center flex-col mt-5 md:justify-start md:items-start ">
             <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-5xl">
               Technologies
             </h1>
@@ -173,7 +173,7 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div className="flex-col absolute top-52 right-[25%] hidden transform rotate-[-5deg] md:flex gap-y-8">
+        <div className="flex-col absolute top-40 right-[25%] hidden transform rotate-[-5deg] md:flex gap-y-8">
           <h1
             id="clickable"
             onClick={() => scrollToSection("projects")}

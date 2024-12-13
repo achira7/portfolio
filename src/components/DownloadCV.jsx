@@ -11,7 +11,7 @@ const DownloadCV = () => {
   const viewLink = "https://docs.google.com/document/d/1eKwEBL9Xr84v6u5D0hchfnOq_chXJ_VXyeUHkQWE4fU/preview";
 
   return (
-    <div className="rounded-xl md:w-[500px] md:h-[200px] w-[85%] h-[30%] flex flex-col items-center pt-2 bg-white transform rotate-[3deg] shadow-xl border-2 border-slate-300">
+    <div className="rounded-xl md:w-[500px] md:h-[200px] w-[85%] h-[30%] flex flex-col items-center pt-2  transform rotate-[3deg] shadow-2xl border-2 border-card-primary-border   bg-card-primary-top">
       <div className="flex content-center pt-6 pb-5 px-7 items-center justify-center flex-col ">
         <div className="flex ">
           <span className="text-color-primary font-caveat text-2xl font-semibold md:text-3xl">
@@ -30,7 +30,7 @@ const DownloadCV = () => {
               onChange={() => setCvFormat("pdf")}
               style={{ transform: "scale(1.5)" }}
             />
-            <span className="font-inter ml-2 text-lg font-semibold">PDF</span>
+            <span className="font-inter ml-2 text-lg font-semibold text-color-secondary">PDF</span>
           </div>
           <div className="flex mx-3">
             <input
@@ -41,7 +41,7 @@ const DownloadCV = () => {
               onChange={() => setCvFormat("docx")}
               style={{ transform: "scale(1.5)" }}
             />
-            <span className="font-inter ml-2 text-lg font-semibold">Docs</span>
+            <span className="font-inter ml-2 text-lg font-semibold text-color-secondary">Docs</span>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ const DownloadCV = () => {
             href={viewLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline ml-4 text-center md:text-right"
+            className="underline ml-4 text-center md:text-right text-color-secondary"
           >
             View instead
           </a>

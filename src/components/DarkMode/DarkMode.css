@@ -14,7 +14,7 @@
     background: #ebebeb;
     border-radius: 200px;
     border: 2px solid rgba(var(--color-primary));
-    box-shadow: 0 0 8px 8px rgba(var(--normal-shadow)); /* Apply pill-shaped shadow */
+    box-shadow: 0 0 5px 5px rgba(var(--normal-shadow)); /* Apply pill-shaped shadow */
     cursor: pointer;
     transition: 0.3s;
 }

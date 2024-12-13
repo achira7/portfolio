@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  cursor: none; 
+*,
+*::before,
+*::after {
+  cursor: none !important; 
 }
+
 :root{
   scroll-behavior: smooth;
   cursor: none; 
@@ -277,6 +280,12 @@ button, a{
   position: relative;
   animation: float 6s ease-in-out infinite;
   transition: transform 0.3s ease-in-out;
+}
+
+#floatingAlt {
+  position: relative;
+  animation: float 7s ease-in-out infinite;
+  transition: transform 0.4s ease-in-out;
 }
 
 @keyframes float {

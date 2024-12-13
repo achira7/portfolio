@@ -21,8 +21,9 @@ const NavBar = ({ startNavbarAnimation }) => {
   const links = [
     { id: 1, title: "Home", url: "/" },
     { id: 2, title: "Projects", url: "/projects" },
-    { id: 3, title: "Experience", url: "/experience" },
-    { id: 4, title: "About Me", url: "/about" },
+    { id: 3, title: "Designs", url: "/designs" },
+    { id: 4, title: "Experience", url: "/experience" },
+    { id: 5, title: "About Me", url: "/about" },
   ];
 
   const getPageTitle = (pathname) => {
@@ -31,6 +32,8 @@ const NavBar = ({ startNavbarAnimation }) => {
         return "Home";
       case "/projects":
         return "Projects";
+      case "/designs":
+          return "Designs";
       case "/experience":
         return "Experience";
       case "/about":
@@ -63,7 +66,7 @@ const NavBar = ({ startNavbarAnimation }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrollThreshold]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -138,6 +141,11 @@ const NavBar = ({ startNavbarAnimation }) => {
 
               return (
                 <li
+                id={`${
+                  isCurrentPage
+                    ? ""
+                    : "clickable"
+                }`}
                   key={id}
                   onClick={() => navigate(url)}
                   className={`text-color-primary font-inter font-bold mx-5 my-2 z-10 md:my-7 hover:text-cyan-500 hover:tracking-widest transition-all duration-300 ${
@@ -173,18 +181,23 @@ const NavBar = ({ startNavbarAnimation }) => {
 
               return (
                 <li
+                id={`${
+                  isCurrentPage
+                    ? ""
+                    : "clickable"
+                }`}
                   key={id}
                   onClick={() => navigate(url)}
-                  className={`text-color-primary font-inter font-bold px-5 z-10 mx-10 transition-all duration-300 text-2xl md:text-3xl ${
+                  className={`text-color-primary font-inter font-bold px-5 mx-10 transition-all duration-300 text-2xl md:text-3xl ${
                     isCurrentPage
                       ? "text-3xl md:text-4xl uppercase font-caveat"
-                      : "hover:text-color-tertiary hover:tracking-widest"
+                      : "hover:text-blue-500 hover:tracking-widest"
                   }`}
                   style={{
                     position: "relative",
                     whiteSpace: "nowrap",
                     textShadow: isCurrentPage
-                      ? "2px 2px 6px rgba(0, 0, 0, 0.7)"
+                      ? "2px 2px 5px rgba(64,198,223, 0.6)"
                       : "none",
                   }}
                 >
@@ -200,24 +213,29 @@ const NavBar = ({ startNavbarAnimation }) => {
       )}
 
       {/* Bottom Chat Icon and Scroll to Top Button */}
-      <div className="flex justify-between items-center fixed z-50 bottom-5 left-0 right-0 px-5 md:bottom-10 md:px-10">
+      <div className="flex justify-between items-center fixed z-40 bottom-5 left-0 right-0 px-5 md:bottom-10 md:px-10">
         <div className="flex items-center space-x-4 md:pl-5">
+
           <button
+          id="clickable"
             onClick={() => setIsChatOpen(true)}
-            className="bg-color-primary text-white p-3 rounded-full shadow-[0_0_8px_8px_rgba(var(--normal-shadow))] border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300"
+            className="bg-color-primary text-white p-3 rounded-full shadow-[0_0_5px_5px_rgba(var(--normal-shadow))] border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300"
           >
             <ChatIcon className="cursor-none w-5 md:w-8" />
           </button>
-          <div className="hidden md:flex">
-            <DarkMode className="shadow-xl border-2 border-color-primary hover:shadow-color-primary-shadow transition-all duration-300" />
+
+          
+          <div className="hidden md:flex ">
+            <DarkMode id="clickable" className="shadow-xl border-2 border-color-primary hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300" />
           </div>
         </div>
 
         <button
+        id="clickable"
           onClick={scrollToTop}
-          className="bg-color-primary fill-white p-3 rounded-full md:mr-5 border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300 shadow-[0_0_8px_8px_rgba(var(--normal-shadow))]"
+          className="bg-color-primary fill-white p-3 rounded-full md:mr-5 border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300 shadow-[0_0_5px_5px_rgba(var(--normal-shadow))]"
         >
-          <UpArrow className="cursor-none w-5 md:w-8" />
+          <UpArrow id="clickable" className="cursor-none w-5 md:w-8" />
         </button>
       </div>
 

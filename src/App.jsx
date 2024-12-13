@@ -18,6 +18,7 @@ useHotjar( 5223858, 6);
   const container = useRef(null);
   const [mode, setMode] = useState("light-mode");
   const [showNavBar, setShowNavBar] = useState(false); 
+  const [showName, setShowName] = useState(false); 
   const [showHome, setShowHome] = useState(false); 
 
   useEffect(() => {
@@ -27,48 +28,75 @@ useHotjar( 5223858, 6);
   }, []);
 
   useLayoutEffect(() => {
+    // Initialize GSAP settings for the flair
     gsap.set(flairRef.current, { xPercent: -50, yPercent: -50, scale: 1 });
     const xSetter = gsap.quickSetter(flairRef.current, "x", "px");
     const ySetter = gsap.quickSetter(flairRef.current, "y", "px");
-
+  
+    // Mouse movement handler to move the flair
     const handleMouseMove = (e) => {
       xSetter(e.clientX);
       ySetter(e.clientY);
     };
-
+  
+    // Handlers for mouse enter and leave animations
     const handleMouseEnter = () => {
       gsap.to(flairRef.current, {
         clipPath: "polygon(40% 40%, 60% 100%, 100% 60%)",
         scale: 1.4,
-        duration: 0.5,
+        duration: 0.25,
         ease: "power2.inOut",
       });
     };
-
+  
     const handleMouseLeave = () => {
       gsap.to(flairRef.current, {
         clipPath: "circle(45% at 50% 50%)",
         scale: 1,
-        duration: 0.5,
+        duration: 0.25,
         ease: "power2.inOut",
       });
     };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    const links = document.querySelectorAll("#clickable, .clickable");
-    links.forEach((link) => {
-      link.addEventListener("mouseenter", handleMouseEnter);
-      link.addEventListener("mouseleave", handleMouseLeave);
+  
+    // Function to add event listeners to dynamic elements
+    const attachListeners = () => {
+      const links = document.querySelectorAll("#clickable, .clickable");
+      links.forEach((link) => {
+        if (!link.dataset.listenerAdded) {
+          link.addEventListener("mouseenter", handleMouseEnter);
+          link.addEventListener("mouseleave", handleMouseLeave);
+          link.dataset.listenerAdded = true; // Prevent duplicate listeners
+        }
+      });
+    };
+  
+    // Observe the DOM for dynamic changes
+    const observer = new MutationObserver(() => {
+      attachListeners();
     });
-
+  
+    // Start observing the DOM for changes
+    observer.observe(document.body, { childList: true, subtree: true });
+  
+    // Initial listener attachment
+    attachListeners();
+  
+    // Add the mousemove event listener
+    window.addEventListener("mousemove", handleMouseMove);
+  
     return () => {
+      // Cleanup: Remove mousemove listener and disconnect the observer
       window.removeEventListener("mousemove", handleMouseMove);
+      observer.disconnect();
+      // Remove all previously added event listeners
+      const links = document.querySelectorAll("#clickable, .clickable");
       links.forEach((link) => {
         link.removeEventListener("mouseenter", handleMouseEnter);
         link.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
   }, []);
+  
 
   // App intro animation
   useLayoutEffect(() => {
@@ -81,6 +109,7 @@ useHotjar( 5223858, 6);
           document.body.style.overflow = "auto";
           document.documentElement.style.overflow = "auto";
           setShowNavBar(true); 
+          setShowName(true);
           setShowHome(true)
         },
       });
@@ -113,8 +142,7 @@ useHotjar( 5223858, 6);
         })
         .to("#cover", {
           yPercent: "-200",
-          duration: 1,
-          delay: 0.4,
+          duration: 0.5,
           ease: "power1.in",
         });
     }, container);
@@ -152,7 +180,7 @@ useHotjar( 5223858, 6);
           <div
             ref={flairRef}
             id="cursor"
-            className="flair w-[30px] h-[30px] rounded-full fixed top-0 left-0 pointer-events-none z-40 bg-gradient-to-r from-orange-500 to-orange-300 mix-blend-difference"
+            className="flair w-[25px] h-[25px] rounded-full fixed top-0 left-0 pointer-events-none z-50 bg-gradient-to-r from-orange-500 to-orange-300 mix-blend-difference"
           ></div>
         </div>
 
@@ -161,6 +189,7 @@ useHotjar( 5223858, 6);
         <Routes>
           <Route className={`flex z-10 mt-10 ${mode}`} path="/" element={<Home mode={mode} />} />
           <Route className={`flex flex-wrap z-10 ${mode}`} path="/projects" element={<Projects />} />
+          {/* <Route className={`flex flex-wrap z-10 ${mode}`} path="/designs" element={<Designs />} /> */}
           <Route className={`flex flex-wrap z-10 mt-10 ${mode}`} path="/experience" element={<Experience />} />
           <Route className={`flex flex-wrap z-10  ${mode}`} path="/about" element={<AboutMe />} />
         </Routes>
