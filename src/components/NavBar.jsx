@@ -190,8 +190,8 @@ const NavBar = ({ startNavbarAnimation }) => {
                   onClick={() => navigate(url)}
                   className={`text-color-primary font-inter font-bold px-5 mx-10 transition-all duration-300 text-2xl md:text-3xl ${
                     isCurrentPage
-                      ? "text-3xl md:text-4xl uppercase font-caveat"
-                      : "hover:text-blue-500 hover:tracking-widest"
+                      ? "text-2xl md:text-3xl font-caveat scale-110"
+                      : "hover:text-blue-500 hover:tracking-widest hover:scale-110"
                   }`}
                   style={{
                     position: "relative",

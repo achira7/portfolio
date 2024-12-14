@@ -37,7 +37,7 @@ const AboutMe = () => {
               </div>
 
               <div className="flex w-full items-center justify-center mx-10  mb-5">
-                <Polaroid image={Self} name={"Me in 2021"} align={"none"} />
+                <Polaroid image={Self} name={"      "} align={"none"} />
               </div>
 
             </div>
@@ -45,9 +45,9 @@ const AboutMe = () => {
         </div>
         <div className="flex flex-col pt-3 items-center justify-center">
           <div className="flex flex-col md:flex-row items-center justify-center">
-            <div className="flex w-4/6 items-center justify-center mx-10  mb-5">
+            {/* <div className="flex w-4/6 items-center justify-center mx-10  mb-5">
               <Polaroid image={Baby} name={"Me as a baby"} align={"left"} />
-            </div>
+            </div> */}
 
             <div className="flex flex-col justify-center items-center mx-10">
               <h1 className="flex text-color-primary font-caveat font-bold text-3xl md:ml-5 mb-7 md:text-5xl">
@@ -69,9 +69,9 @@ const AboutMe = () => {
 
         <div className="flex flex-col pt-3 items-center justify-center">
           <div className="flex flex-col md:flex-row-reverse items-center justify-center">
-            <div className="flex w-4/6 items-center mx-10 mb-5">
+            {/* <div className="flex w-4/6 items-center mx-10 mb-5">
               <Polaroid image={NLDS} name={"NLDS 2022 OC"} align={"right"} />
-            </div>
+            </div> */}
 
             <div className="flex flex-col justify-center items-center mx-10">
               <h1 className="text-color-primary font-caveat font-bold text-3xl md:ml-5 mb-7 md:text-5xl">

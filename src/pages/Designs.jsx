@@ -5,12 +5,12 @@ const Designs = () => {
     <div>
       <div className="flex flex-col items-center justify-center p-10">
         <img
-        className="p-5 pt-16 "
+        className="m-5 mt-32 rounded-xl border border-color-primary"
           src="https://img.freepik.com/premium-photo/workers-building-house-building-sri-lanka_568973-257.jpg"
           width={350}
           alt="Heheh"
         />
-        <p className="text-3xl text-red-600 p-10">
+        <p className="text-3xl text-color-red p-10">
           Sorry,  <b>The Designs Page </b>is Still Under Construction.
         </p>
       </div>
