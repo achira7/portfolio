@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import Designs from "./pages/Designs";
 import Experience from "./pages/Experience";
 import AboutMe from "./pages/AboutMe";
 import GradientComponent from "./components/GradientComponent";
@@ -189,7 +190,7 @@ useHotjar( 5223858, 6);
         <Routes>
           <Route className={`flex z-10 mt-10 ${mode}`} path="/" element={<Home mode={mode} />} />
           <Route className={`flex flex-wrap z-10 ${mode}`} path="/projects" element={<Projects />} />
-          {/* <Route className={`flex flex-wrap z-10 ${mode}`} path="/designs" element={<Designs />} /> */}
+          <Route className={`flex flex-wrap z-10 ${mode}`} path="/designs" element={<Designs />} />
           <Route className={`flex flex-wrap z-10 mt-10 ${mode}`} path="/experience" element={<Experience />} />
           <Route className={`flex flex-wrap z-10  ${mode}`} path="/about" element={<AboutMe />} />
         </Routes>
