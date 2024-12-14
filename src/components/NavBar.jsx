@@ -247,7 +247,7 @@ const NavBar = ({ startNavbarAnimation }) => {
               className="absolute top-0 right-0 p-2"
               onClick={() => setIsChatOpen(false)}
             >
-              <CloseIcon className="w-7 fill-black cursor-pointer hover:fill-red-500 transition-all duration-300" />
+              <CloseIcon className="w-7 fill-black cursor-pointer hover:fill-color-red transition-all duration-300" />
             </button>
             <ChatBot />
           </div>

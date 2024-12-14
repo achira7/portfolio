@@ -123,7 +123,7 @@ const Home = ({ mode }) => {
                 Playing the Keyboards, I’m in for learning that as long as it interests
                 me.
               </p>
-              <a id="clickable" href="./about" className="font-inter text-color-primary text-base tracking-wide underline w-full md:mt-5 max-w-screen-md md:text-3xl"> 
+              <a id="clickable" href="./about" className="font-inter text-color-primary text-base tracking-wide underline w-full md:mt-3 max-w-screen-md md:text-2xl"> 
               Read More
               </a>
               
