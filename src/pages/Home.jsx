@@ -327,7 +327,7 @@ const Home = ({ mode }) => {
 
                       <div className="">
                         <h1 className="text-color-primary text-lg font-bold md:text-2xl">
-                          Picth Perfect
+                        Pitch Perfect
                         </h1>
                         <div className="flex flex-row items-center">
                           <h1 className="text-color-primary text-base md:text-2xl">
