@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "../components/Card";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { SearchIcon } from "../assets/icons/icons";
 import Marquee from "../components/Marquee";
@@ -12,7 +12,9 @@ const Projects = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const location = useLocation();
-  const git = process.env.REACT_APP_GITHUB_API_KEY;
+  const navigate = useNavigate();
+  //const git = process.env.REACT_APP_GITHUB_API_KEY;
+  const git = import.meta.env.VITE_GITHUB_API_KEY;
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -64,6 +66,11 @@ const Projects = () => {
     setSearchQuery(e.target.value.toLowerCase());
   };
 
+  const handleTechOrLibraryClick = (query) => {
+    setSearchQuery(query);
+    navigate(`?query=${encodeURIComponent(query)}`); // Update the URL
+  };
+
   const filteredRepos = repos.filter((repo) => {
     const query = searchQuery.toLowerCase();
 
@@ -84,61 +91,61 @@ const Projects = () => {
   return (
     <div className="bg-background mt-20 md:mt-32 items-center justify-center 0 ">
       <div className="flex flex-col m-5 md:m-8">
-      <div className="w-full">
-        <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl ">
-          Technologies
-        </h1>
-        <h2 className="font-inter text-lg ml-1 mb-2 text-color-secondary md:text-xl">
-          Click on the Tech icon to see all projects made with it
-        </h2>
-        <div className="flex items-center justify-center">
-          <Marquee />
+        <div className="w-full">
+          <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl ">
+            Technologies
+          </h1>
+          <h2 className="font-inter text-lg ml-1 mb-2 text-color-secondary md:text-xl">
+            Click on the Tech icon to see all projects made with it
+          </h2>
+          <div className="flex items-center justify-center">
+            <Marquee onClick={(tech) => handleTechOrLibraryClick(tech)} />
+          </div>
         </div>
-      </div>
 
-      <div className="my-5">
-        <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
-          Projects
-        </h1>
-        <h2 className="font-inter text-lg  mb-2 text-color-secondary md:text-xl">
-          Best of my Personal / Professional / University projects
-        </h2>
-      </div>
+        <div className="my-5">
+          <h1 className="text-3xl font-bold text-color-primary mb-2 font-inter flex flex-wrap md:text-3xl">
+            Projects
+          </h1>
+          <h2 className="font-inter text-lg  mb-2 text-color-secondary md:text-xl">
+            Best of my Personal / Professional / University projects
+          </h2>
+        </div>
 
-      <div className="flex px-5 items-center justify-center mb-10">
-        <SearchIcon className="text-color-primary md:w-10 md:h-10 " />
-        <input
-          id="clickable"
-          className="clickable bg-card-primary-top px-8 text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 text-color-secondary md:text-3xl"
-          type="search"
-          placeholder="Search"
-          value={searchQuery}
-          onChange={handleSearchChange}
-        />
-      </div>
+        <div className="flex px-5 items-center justify-center mb-10">
+          <SearchIcon className="text-color-primary md:w-10 md:h-10 " />
+          <input
+            id="clickable"
+            className="clickable bg-card-primary-top px-8 text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 text-color-secondary md:text-3xl"
+            type="search"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+        </div>
 
-      <div className="flex flex-wrap justify-center">
-        {filteredRepos
-          .filter((repo) => repo.stargazers_count !== 0)
-          .map((repo) => (
-            <div key={repo.id} className="w-[850px] ">
-              <Card
-                type={"project"}
-                key={repo.id}
-                projectName={repo.name}
-                description={repo.description || "No description provided."}
-                gitLink={repo.html_url}
-                demoLink={repo.homepage}
-                languages={repo.languages}
-                libraries={
-                  repo.topics?.filter((topic) => topic !== "best-projects") ||
-                  []
-                }
-                imgLink={repo.imageUrl}
-              />
-            </div>
-          ))}
-      </div>
+        <div className="flex flex-wrap justify-center">
+          {filteredRepos
+            .filter((repo) => repo.stargazers_count !== 0)
+            .map((repo) => (
+              <div key={repo.id} className="w-[850px] ">
+                <Card
+                  type={"project"}
+                  key={repo.id}
+                  projectName={repo.name}
+                  description={repo.description || "No description provided."}
+                  gitLink={repo.html_url}
+                  demoLink={repo.homepage}
+                  languages={repo.languages}
+                  libraries={
+                    repo.topics?.filter((topic) => topic !== "best-projects") ||
+                    []
+                  }
+                  imgLink={repo.imageUrl}
+                />
+              </div>
+            ))}
+        </div>
       </div>
       <Footer />
     </div>

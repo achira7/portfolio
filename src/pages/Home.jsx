@@ -17,6 +17,7 @@ import TopProjects from "../components/TopProjects";
 //Assets
 import heroLight from "../assets/hero/hero-light.png";
 import heroDark from "../assets/hero/hero-dark.png";
+import hero from "../assets/hero/achira.png";
 import westminster from "../assets/university_logos/westminster.jpeg";
 import plymouth from "../assets/university_logos/plymouth.png";
 import iit from "../assets/university_logos/iit.png";
@@ -131,7 +132,7 @@ const Home = ({ mode }) => {
             <div className="relative flex bottom-10 items-center justify-center">
               {/* HERO IMAGE */}
               <img
-                src={mode === "light-mode" ? heroLight : heroDark}
+                src={hero}
                 className="bottom-0 shadow-image w-4/5 md:w-5/6 lg:w-full"
                 alt="Hero"
               />
