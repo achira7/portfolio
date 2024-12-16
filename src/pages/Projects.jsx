@@ -12,7 +12,7 @@ const Projects = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const location = useLocation();
-  const git = process.env.GITHUB_API_KEY;
+  const git = process.env.REACT_APP_GITHUB_API_KEY;
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
