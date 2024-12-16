@@ -15,6 +15,7 @@ const Projects = () => {
   const navigate = useNavigate();
     //const git = process.env.VITE_GITHUB_API_KEY;
   const git = import.meta.env.VITE_GITHUB_API_KEY;
+  console.log(git);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
