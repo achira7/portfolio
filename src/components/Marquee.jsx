@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
 
@@ -8,14 +8,15 @@ const Marquee = () => {
   const [techItems, setTechItems] = useState([]); 
   const marqueeRef = useRef(null);
   const navigate = useNavigate();  
-  const git = process.env.REACT_APP_GITHUB_API_KEY
+  const git = import.meta.env.VITE_GITHUB_API_KEY;
+
   useEffect(() => {
     const fetchRepos = async () => {
       try {
         const response = await fetch("https://api.github.com/users/achira7/repos", {
-          // headers: {
-          //   Authorization: `Bearer ${git}`,
-          // },
+          headers: {
+            Authorization: `Bearer ${git}`,
+          },
         });
         const data = await response.json();
 
