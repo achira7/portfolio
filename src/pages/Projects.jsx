@@ -13,7 +13,7 @@ const Projects = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-  //const git = process.env.REACT_APP_GITHUB_API_KEY;
+    //const git = process.env.VITE_GITHUB_API_KEY;
   const git = import.meta.env.VITE_GITHUB_API_KEY;
 
   useEffect(() => {
