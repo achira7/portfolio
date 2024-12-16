@@ -15,7 +15,6 @@ const Projects = () => {
   const navigate = useNavigate();
     //const git = process.env.VITE_GITHUB_API_KEY;
   const git = import.meta.env.VITE_GITHUB_API_KEY;
-  console.log(git);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -24,10 +23,22 @@ const Projects = () => {
       setSearchQuery(query);
     }
   }, [location.search]);
+  
 
   useEffect(() => {
     const fetchRepos = async () => {
       try {
+        const rateLimitResponse = await fetch("https://api.github.com/rate_limit", {
+          headers: {
+            Authorization: `Bearer ${git}`,
+          },
+        });
+        const rateLimitData = await rateLimitResponse.json();
+        console.log("Rate Limit Data:", rateLimitData);
+        console.log(`Remaining Requests: ${rateLimitData.resources.core.remaining}`);
+        console.log(`Rate Limit Reset Time (UNIX timestamp): ${rateLimitData.resources.core.reset}`);
+
+      
         const response = await fetch(
           "https://api.github.com/users/achira7/repos",
           {
@@ -36,6 +47,7 @@ const Projects = () => {
             },
           }
         );
+        
         const data = await response.json();
 
         const reposWithLanguages = await Promise.all(
