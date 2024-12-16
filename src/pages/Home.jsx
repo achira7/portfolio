@@ -70,7 +70,7 @@ const Home = ({ mode }) => {
   return (
     <div className="bg-background  md:mt-5 homepage" ref={container}>
       <div className="flex flex-col top-0 left-0 z-20 m-5 md:m-8">
-        <div className=" md:border-color-primary md:border-b-8 ">
+        <div className="  ">
           <div className="flex flex-col mt-16 md:mt-0">
             <h1
               id="achira"
@@ -128,7 +128,7 @@ const Home = ({ mode }) => {
               </a>
               
             </div>
-            <div className="relative flex bottom-10 items-center justify-center" id="floating">
+            <div className="relative flex bottom-10 items-center justify-center">
               {/* HERO IMAGE */}
               <img
                 src={mode === "light-mode" ? heroLight : heroDark}
