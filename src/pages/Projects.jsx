@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { SearchIcon } from "../assets/icons/icons";
 import Marquee from "../components/Marquee";
+import MarqueeTest from "../components/MarqueeTest";
 import Footer from "../components/Footer";
 import TopProjects from "../components/TopProjects";
 
@@ -58,7 +59,7 @@ const Projects = () => {
               },
             });
             const languagesData = await languagesResponse.json();
-            const imageUrl = `https://raw.githubusercontent.com/achira7/${repo.name}/main/image.jpg`;
+            const imageUrl = `https://raw.githubusercontent.com/achira7/${repo.name}/${repo.default_branch}/image.jpg`;
             return {
               ...repo,
               languages: Object.keys(languagesData),
@@ -113,6 +114,7 @@ const Projects = () => {
           </h2>
           <div className="flex items-center justify-center">
             <Marquee onClick={(tech) => handleTechOrLibraryClick(tech)} />
+            {/* <MarqueeTest /> */}
           </div>
         </div>
 

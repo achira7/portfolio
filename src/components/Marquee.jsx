@@ -75,10 +75,9 @@ const Marquee = () => {
     // Start the marquee animation
     const marqueeAnimation = gsap.to(marqueeElement, {
       x: `-${totalWidth}px`,
-      duration: 20,  // Adjust this duration as needed
+      duration: 50, // Adjust this duration as needed
       ease: "linear",
       repeat: -1,
-      paused: true
     });
   
     // Pause animation on hover
@@ -92,8 +91,10 @@ const Marquee = () => {
     return () => {
       marqueeElement.removeEventListener("mouseenter", handleMouseEnter);
       marqueeElement.removeEventListener("mouseleave", handleMouseLeave);
+      marqueeAnimation.kill(); // Clean up GSAP animation
     };
   }, [techItems]); // Dependencies include `techItems`
+  
    
 
   const handleTechClick = (searchUrl) => {

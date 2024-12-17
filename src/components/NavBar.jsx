@@ -190,14 +190,14 @@ const NavBar = ({ startNavbarAnimation }) => {
                   onClick={() => navigate(url)}
                   className={`text-color-primary font-inter font-bold px-5 mx-10 transition-all duration-300 text-2xl md:text-3xl ${
                     isCurrentPage
-                      ? "text-2xl md:text-3xl font-caveat scale-110"
+                      ? "text-2xl md:text-3xl font-caveat scale-110 "
                       : "hover:text-blue-500 hover:tracking-widest hover:scale-110"
                   }`}
                   style={{
                     position: "relative",
                     whiteSpace: "nowrap",
                     textShadow: isCurrentPage
-                      ? "2px 2px 5px rgba(64,198,223, 0.6)"
+                      ? "2px 2px 5px rgba(var(--color-primary-shadow))"
                       : "none",
                   }}
                 >
