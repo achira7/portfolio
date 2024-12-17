@@ -4,9 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { SearchIcon } from "../assets/icons/icons";
 import Marquee from "../components/Marquee";
-import MarqueeTest from "../components/MarqueeTest";
 import Footer from "../components/Footer";
-import TopProjects from "../components/TopProjects";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
@@ -14,7 +12,6 @@ const Projects = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-    //const git = process.env.VITE_GITHUB_API_KEY;
   const git = import.meta.env.VITE_GITHUB_API_KEY;
 
   useEffect(() => {
