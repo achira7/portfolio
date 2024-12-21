@@ -1,0 +1,69 @@
+{
+    "GraphicLinks": [
+      {
+        "id": 1,
+        "url": "https://www.behance.net/gallery/186159973/Sample-Logo-Collection-2023",
+        "title": "Sample Logos",
+        "description": "Sample logos I've created in my free time to showcase my logo design skills"
+      },
+      {
+        "id": 2,
+        "url": "https://www.behance.net/gallery/172879399/",
+        "title": "develop with aiesec.",
+        "description": "Campaign deployed by AIESEC Sri Lanka to raise awareness of AIESEC."
+      },
+      {
+        "id": 3,
+        "url": "https://www.behance.net/gallery/172874315/Pintanna-Plantations-part-1",
+        "title": "Pintanna Plantations - 1",
+        "description": "Part - 1 of my Graphic design work at Pintanna Planatations."
+      },
+      {
+        "id": 4,
+        "url": "https://www.behance.net/gallery/172877019/Pintanna-Plantations-part-2",
+        "title": "Pintanna Plantations - 2",
+        "description": "Part - 2 of my Graphic design work at Pintanna Planatations."
+      },
+      {
+        "id": 5,
+        "url": "https://www.behance.net/gallery/172878877/Pintanna-Plantations-part-3",
+        "title": "Pintanna Plantations - 3",
+        "description": "Part - 3 of my Graphic design work at Pintanna Planatations."
+      },
+      {
+        "id": 6,
+        "url": "https://www.behance.net/gallery/152312943/NLDS-2022-AIESEC-conference-flyer-serise-%28Ongoing%29",
+        "title": "NLDS 2022",
+        "description": "Material created for National Leadership Development Seminar organized by AIESEC Sri Lanka."
+      },
+      {
+        "id": 7,
+        "url": "https://www.behance.net/gallery/172878877/Pintanna-Plantations-part-3",
+        "title": "Y4SL Projects Awareness Post Series",
+        "description": "Social Media posts designed for Y4SL, an island wide voluenteering project organized by AIESEC Sri Lanka."
+      },
+      {
+        "id": 8,
+        "url": "https://www.behance.net/gallery/152312063/AIESEC-Recruitment-Grid-posts",
+        "title": "AIESEC in IIT Recruitment posts",
+        "description": "Recruitment posts created for AIESEC in IIT for the recruitment of new members."
+      }
+    ],
+
+
+    "UiuxLinks": [
+      {
+        "id": 1,
+        "url": "https://www.behance.net/gallery/172879399/UIUX-Case-Study",
+        "title": "UI/UX Case Study",
+        "description": "A detailed case study of a UI/UX project"
+      },
+      {
+        "id": 2,
+        "url": "https://www.behance.net/gallery/172870503/UX-Prototype-2023",
+        "title": "UX Prototype 2023",
+        "description": "Prototype designs for an app concept"
+      }
+    ]
+  }
+  

@@ -42,9 +42,10 @@ const Home = ({ mode }) => {
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
-    const yOffset = window.innerHeight * 0.07; 
-    const yPosition = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
-  
+    const yOffset = window.innerHeight * 0.07;
+    const yPosition =
+      element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+
     window.scrollTo({ top: yPosition, behavior: "smooth" });
   };
 
@@ -105,29 +106,30 @@ const Home = ({ mode }) => {
             />
           </div>
 
-           {/* <p className=" text-6xl text-red-400 md:text-purple-400 lg:text-emerald-400 xl:text-sky-500">TEST</p>  */}
+          {/* <p className=" text-6xl text-red-400 md:text-purple-400 lg:text-emerald-400 xl:text-sky-500">TEST</p>  */}
 
           <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start">
             <div className="mt-5 flex-col flex items-start align-top ">
               <p className="mb-4 font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
-                Hey there, I am Achira Silva, a Creative individual with a passion for
-                creating things from Web Apps to Video Games to Music to Novels
-                and everything in between. <br />
+                Hey there, I am Achira Silva, a Creative individual with a
+                passion for creating things from Web Apps to Video Games to
+                Music to Novels and everything in between. <br />
               </p>
-
-              
 
               <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
                 As an IT graduate, I am interested in Full Stack Web Development
                 and Mobile Application Development. I always look for new things
                 to learn and explore. Whether it’s a new language, Pixel Art, or
-                Playing the Keyboards, I’m in for learning that as long as it interests
-                me.
+                Playing the Keyboards, I’m in for learning that as long as it
+                interests me.
               </p>
-              <a id="clickable" href="./about" className="font-inter text-color-primary text-base tracking-wide underline w-full md:mt-3 max-w-screen-md md:text-2xl"> 
-              Read More
+              <a
+                id="clickable"
+                href="./about"
+                className="font-inter text-color-primary text-base tracking-wide underline w-full md:mt-3 max-w-screen-md md:text-2xl"
+              >
+                Read More
               </a>
-              
             </div>
             <div className="relative flex bottom-10 items-center justify-center">
               {/* HERO IMAGE */}
@@ -328,7 +330,7 @@ const Home = ({ mode }) => {
 
                       <div className="">
                         <h1 className="text-color-primary text-lg font-bold md:text-2xl">
-                        Pitch Perfect
+                          Pitch Perfect
                         </h1>
                         <div className="flex flex-row items-center">
                           <h1 className="text-color-primary text-base md:text-2xl">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GitHub, Play } from '../assets/icons/icons';
+import { GitHub, Play, Behance } from '../assets/icons/icons';
 
 const Button = ({ name, link, color, icon }) => {
   const isLinkProvided = !!link;
@@ -37,7 +37,8 @@ const Button = ({ name, link, color, icon }) => {
 
   const iconClass = {
     play: <Play className="w-4 h-4 text-white mr-2" />,
-    git: <GitHub className="w-6 h-6 text-white mr-2" />
+    git: <GitHub className="w-6 h-6 text-white mr-2" />,
+    behance: <Behance className="w-6 h-6 text-white mr-2" />
   };
 
   const selectedColorClass = colorClasses[color] || 'bg-default-button';
