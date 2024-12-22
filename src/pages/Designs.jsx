@@ -55,17 +55,17 @@ const Designs = () => {
 
   return (
     <div className="w-full">
-      <div className="flex flex-wrap justify-center items-center mt-32 mx-28">
+      <div className="flex flex-wrap justify-center items-center mt-24 md:mt-32 mx-28">
         <div className="flex flex-col w-full items-center justify-center ">
           {/* Tab Navigation */}
-          <div className="flex justify-center gap-5 mb-10">
+          <div className="flex justify-center gap-5 mb-10 ">
             <button
             id="clikcable"
               onClick={() => {
                 setActiveTab("Graphic");
-                setSearchQuery(""); // Clear search query when switching tabs
+                setSearchQuery(""); 
               }}
-              className={`px-6 py-2 text-lg font-semibold rounded-full transition-colors duration-200 ${
+              className={`px-9 md:px-6 py-2 text-base md:text-lg font-semibold rounded-full transition-colors duration-200 ${
                 activeTab === "Graphic"
                   ? "bg-color-primary text-white"
                   : "bg-gray-200 text-gray-700"
@@ -79,7 +79,7 @@ const Designs = () => {
                 setActiveTab("UIUX");
                 setSearchQuery(""); // Clear search query when switching tabs
               }}
-              className={`px-6 py-2 text-lg font-semibold rounded-full transition-colors duration-200 ${
+              className={`px-10 md:px-6 py-2 text-base md:text-lg font-semibold rounded-full transition-colors duration-200 ${
                 activeTab === "UIUX"
                   ? "bg-color-primary text-white"
                   : "bg-gray-200 text-gray-700"
@@ -90,12 +90,12 @@ const Designs = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="flex px-5 items-center justify-center mb-10">
+          <div className="flex px-5 items-center justify-center mb-10 md:mr-10">
             <SearchIcon className="text-color-primary md:w-10 md:h-10" />
             <input
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="clickable bg-card-primary-top px-8 text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 text-color-secondary md:text-3xl"
+              className=" clickable bg-card-primary-top px-8 text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 text-color-secondary md:text-3xl"
               type="search"
               placeholder={`Search ${activeTab} Designs`}
             />
@@ -103,11 +103,11 @@ const Designs = () => {
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-wrap justify-center items-center gap-5 mb-10 ">
+        <div className="flex flex-wrap justify-center items-center md:px-5 gap-5 md:mb-10">
           {filteredLinks.map((link) => (
             <div
               key={link.id}
-              className="m-5 max-w-sm p-4  shadow-lg rounded-lg bg-card-primary-top"
+              className="md:m-5 p-4 max-w-sm shadow-lg rounded-lg bg-card-primary-top"
             >
               <iframe
                 src={link.embed}
