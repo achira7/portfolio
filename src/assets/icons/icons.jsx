@@ -1,4 +1,19 @@
-import React from "react";
+export const Download = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    className="size-8 md:size-12 mx-4"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+    />
+  </svg>
+);
 
 export const Moon = () => (
   <svg
@@ -204,7 +219,7 @@ export const SearchIcon = ({ className }) => (
 export const UpArrow = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="none"  // Set fill to none to avoid the black background issue
+    fill="none" // Set fill to none to avoid the black background issue
     viewBox="0 0 48 48"
     id="Arrow-Up-Sharp--Streamline-Ionic-Sharp"
     className={className}
@@ -225,7 +240,6 @@ export const UpArrow = ({ className }) => (
     ></path>
   </svg>
 );
-
 
 export const GitHub = ({ className }) => (
   <svg
@@ -257,13 +271,7 @@ export const Play = ({ className }) => (
     <title>play [#1001]</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g
-      id="Page-1"
-      stroke="none"
-      strokeWidth="1"
-      fill="none"
-      fillRule="evenodd"
-    >
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         id="Dribbble-Light-Preview"
         transform="translate(-427.000000, -3765.000000)"
@@ -297,7 +305,7 @@ export const LinkedIn = ({ className }) => {
 
 export const Behance = ({ className }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48" >
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48">
       <path
         fill="currentColor"
         className={className}
@@ -321,9 +329,7 @@ export const Instagram = ({ className }) => {
       fill="currentColor"
       viewBox="0 0 256 256"
     >
-      <g
-
-      >
+      <g>
         <g transform="scale(5.33333,5.33333)">
           <path
             d="M34.017,41.99l-20,0.019c-4.4,0.004 -8.003,-3.592 -8.008,-7.992l-0.019,-20c-0.004,-4.4 3.592,-8.003 7.992,-8.008l20,-0.019c4.4,-0.004 8.003,3.592 8.008,7.992l0.019,20c0.005,4.401 -3.592,8.004 -7.992,8.008z"
@@ -343,4 +349,3 @@ export const Instagram = ({ className }) => {
     </svg>
   );
 };
-

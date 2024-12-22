@@ -1,7 +1,7 @@
 import React from 'react';
 import { GitHub, Play, Behance } from '../assets/icons/icons';
 
-const Button = ({ name, link, color, icon }) => {
+const Button = ({ name, link, color, icon}) => {
   const isLinkProvided = !!link;
 
   // Function to check if the link is external
@@ -36,9 +36,9 @@ const Button = ({ name, link, color, icon }) => {
   };
 
   const iconClass = {
-    play: <Play className="w-4 h-4 text-white mr-2" />,
-    git: <GitHub className="w-6 h-6 text-white mr-2" />,
-    behance: <Behance className="w-6 h-6 text-white mr-2" />
+    play: <Play className="w-4 h-4 text-button-text mr-2" />,
+    git: <GitHub className="w-6 h-6 text-button-text mr-2" />,
+    behance: <Behance className="w-6 h-6 text-button-text mr-2" />
   };
 
   const selectedColorClass = colorClasses[color] || 'bg-default-button';
@@ -62,7 +62,7 @@ const Button = ({ name, link, color, icon }) => {
         <div id="clickable" className="hidden md:flex cursor-none">
           {selectedIconClass}
         </div>
-        <span className='text-white text-sm md:text-base cursor-none' id="clickable">{name}</span>
+        <span className='text-button-text text-sm md:text-base cursor-none' id="clickable">{name}</span>
       </button>
     </a>
   );

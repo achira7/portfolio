@@ -25,6 +25,8 @@ import nsbm from "../assets/university_logos/nsbm.jpg";
 import pintanna from "../assets/logos/2.jpg";
 import pitch from "../assets/logos/3.jpg";
 
+import { Download } from "../assets/icons/icons";
+
 const Home = ({ mode }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [currentMode, setCurrentMode] = useState(mode);
@@ -108,30 +110,45 @@ const Home = ({ mode }) => {
 
           {/* <p className=" text-6xl text-red-400 md:text-purple-400 lg:text-emerald-400 xl:text-sky-500">TEST</p>  */}
 
-          <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start">
-            <div className="mt-5 flex-col flex items-start align-top ">
-              <p className="mb-4 font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
-                Hey there, I am Achira Silva, a Creative individual with a
-                passion for creating things from Web Apps to Video Games to
-                Music to Novels and everything in between. <br />
+          <div className="grid grid-row-3 md:grid-cols-3 justify-center items-start ">
+            <div className="mt-5 flex-col flex items-start align-top gap-3">
+              <p className="text-justify font-inter text-color-secondary text-base  w-full max-w-screen-md md:text-2xl">
+                Welcome aboard, I am Achira Silva, a Business Information
+                Systems undergraduate from the University of Westminster. <br />
               </p>
 
-              <p className="font-inter text-color-secondary text-base tracking-wide w-full max-w-screen-md md:text-3xl">
-                As an IT graduate, I am interested in Full Stack Web Development
-                and Mobile Application Development. I always look for new things
-                to learn and explore. Whether it’s a new language, Pixel Art, or
-                Playing the Keyboards, I’m in for learning that as long as it
-                interests me.
+              <p className="text-justify font-inter text-color-secondary text-base w-full max-w-screen-md md:text-2xl">
+                As a BIS graduate, I have a strong interest in Data & Software
+                Quality Assurance and Business Analysis roles. I enjoy diving
+                into the details to ensure the quality of products.
               </p>
+
+              <p className="text-justify font-inter text-color-secondary text-base w-full max-w-screen-md md:text-2xl">
+                As a Developer I am drawn to Full Stack Web Development,
+                specializing in MERN stack as my tech stack—though I'm always
+                open to exploring new tools and technologies. Additionally, I
+                enjoy diving into Game Development and experimenting with Mobile
+                App Development.
+              </p>
+
+              <p className="text-justify font-inter text-color-secondary text-base w-full max-w-screen-md md:text-2xl">
+                With a background in creative design and hands-on experience as
+                a Graphic Designer, I tend to delve into UI/UX Design and
+                Interaction Design as well.
+              </p>
+
               <a
                 id="clickable"
                 href="./about"
-                className="font-inter text-color-primary text-base tracking-wide underline w-full md:mt-3 max-w-screen-md md:text-2xl"
+                className="font-inter text-color-primary text-base tracking-wide underline w-full flex flex-row-reverse max-w-screen-md md:text-xl"
               >
                 Read More
               </a>
             </div>
-            <div className="relative flex bottom-10 items-center justify-center">
+            <div
+              id="floating"
+              className="relative flex bottom-10 items-center justify-center"
+            >
               {/* HERO IMAGE */}
               <img
                 src={hero}
@@ -176,37 +193,21 @@ const Home = ({ mode }) => {
           </div>
         </div>
 
-        <div className="flex-col absolute top-40 right-[25%] hidden transform rotate-[-5deg] md:flex gap-y-8">
+        <div className="flex-col absolute top-24 right-5 md:top-60 md:right-[25%] transform rotate-[-5deg] md:flex gap-y-16 md:gap-y-10">
           <h1
             id="clickable"
-            onClick={() => scrollToSection("projects")}
-            className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md hover:scale-110 duration-300"
+            className="text-2xl mb-4 md:mb-2 md:text-4xl font-bold text-color-primary relative flex flex-initial items-center  font-caveat drop-shadow-md hover:scale-110  rounded full duration-300"
+            onClick={() => scrollToSection("cv")}
           >
-            Check Out my Projects
+            <Download className="text-2xl" /> Download my CV
           </h1>
 
           <h1
             id="clickable"
-            className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md  hover:scale-110 duration-300"
-            onClick={() => scrollToSection("expereince")}
-          >
-            My Experiences
-          </h1>
-
-          <h1
-            id="clickable"
-            className="text-4xl text-color-primary relative inline-block font-caveat drop-shadow-md hover:scale-110 duration-300"
+            className="text-2xl md:text-4xl text-color-primary relative inline-block font-caveat drop-shadow-md hover:scale-110 duration-300"
             onClick={() => scrollToSection("education")}
           >
             Education & Qualifications
-          </h1>
-
-          <h1
-            id="clickable"
-            className="text-4xl text-color-primary relative inline-block  font-caveat drop-shadow-md hover:scale-110 duration-300"
-            onClick={() => scrollToSection("cv")}
-          >
-            Download my CV
           </h1>
         </div>
 
