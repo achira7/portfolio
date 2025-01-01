@@ -55,60 +55,63 @@ const Designs = () => {
 
   return (
     <div className="w-full">
-      <div className="flex flex-wrap justify-center items-center mt-24 md:mt-32 mx-28">
-        <div className="flex flex-col w-full items-center justify-center ">
+      <div className="flex flex-wrap justify-center items-center mt-24 md:mt-32 mx-5">
+        <div className="flex flex-col items-center justify-center ">
           {/* Tab Navigation */}
-          <div className="flex justify-center gap-5 mb-10 ">
-            <button
-            id="clikcable"
-              onClick={() => {
-                setActiveTab("Graphic");
-                setSearchQuery(""); 
-              }}
-              className={`px-9 md:px-6 py-2 text-base md:text-lg font-semibold rounded-full transition-colors duration-200 ${
-                activeTab === "Graphic"
-                  ? "bg-color-primary text-white"
-                  : "bg-gray-200 text-gray-700"
-              }`}
-            >
-              Graphic Design
-            </button>
-            <button
-            id="clikcable"
-              onClick={() => {
-                setActiveTab("UIUX");
-                setSearchQuery(""); // Clear search query when switching tabs
-              }}
-              className={`px-10 md:px-6 py-2 text-base md:text-lg font-semibold rounded-full transition-colors duration-200 ${
-                activeTab === "UIUX"
-                  ? "bg-color-primary text-white"
-                  : "bg-gray-200 text-gray-700"
-              }`}
-            >
-              UI/UX Design
-            </button>
-          </div>
 
           {/* Search Bar */}
-          <div className="flex px-5 items-center justify-center mb-10 md:mr-10">
-            <SearchIcon className="text-color-primary md:w-10 md:h-10" />
-            <input
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className=" clickable bg-card-primary-top px-8 text-xl outline-none ml-3 block font-inter border border-color-secondary rounded-full py-3 text-color-secondary md:text-3xl"
-              type="search"
-              placeholder={`Search ${activeTab} Designs`}
-            />
+          <div className="flex md:px-5 items-center justify-center mb-10 md:mr-10 flex-col md:flex-row">
+            <div className="flex flex-row items-center justify-center">
+              <SearchIcon className="text-color-primary md:w-10 md:h-10" />
+              <input
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="clickable bg-card-primary-top md:px-8 text-xl outline-none  md:ml-3 block font-inter border border-color-secondary rounded-full py-3 md:py-3 text-center md:text-left text-color-secondary md:text-3xl"
+                type="search"
+                placeholder={`Search ${activeTab} Designs`}
+              />
+            </div>
+
+            <div className="flex justify-center gap-5 mx-5 mt-5 md:mt-0">
+              <button
+                id="clikcable"
+                onClick={() => {
+                  setActiveTab("Graphic");
+                  setSearchQuery("");
+                }}
+                className={`px-5 md:px-6 py-1 md:py-2 text-base md:text-lg font-semibold rounded-xl md:rounded-full transition-colors duration-200 ${
+                  activeTab === "Graphic"
+                    ? "bg-color-primary text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+              >
+                Graphic Design
+              </button>
+              <button
+                id="clikcable"
+                onClick={() => {
+                  setActiveTab("UIUX");
+                  setSearchQuery(""); // Clear search query when switching tabs
+                }}
+                className={`px-5 md:px-6 py-1 md:py-2 text-base md:text-lg font-semibold rounded-xl md:rounded-full transition-colors duration-200 ${
+                  activeTab === "UIUX"
+                    ? "bg-color-primary text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+              >
+                UI/UX Design
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-wrap justify-center items-center md:px-5 gap-5 md:mb-10">
+        <div className="w-full flex flex-wrap justify-center items-center gap-5 px-2 md:mb-10 ">
           {filteredLinks.map((link) => (
             <div
               key={link.id}
-              className="md:m-5 p-4 max-w-sm shadow-lg rounded-lg bg-card-primary-top"
-            >
+              className="m-5 min-w-11/12 sm:w-4/5 md:w-72 lg:w-80 p-4 shadow-lg rounded-lg bg-card-primary-top"
+              >
               <iframe
                 src={link.embed}
                 height="250"
@@ -120,7 +123,9 @@ const Designs = () => {
                 className="rounded-t-lg"
               ></iframe>
               <div className="p-4">
-                <h3 className="text-xl font-bold mb-2 text-color-primary">{link.title}</h3>
+                <h3 className="text-xl font-bold mb-2 text-color-primary">
+                  {link.title}
+                </h3>
                 <p className=" mb-4 text-color-secondary">{link.description}</p>
                 <Button
                   link={link.url}

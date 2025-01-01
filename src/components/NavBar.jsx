@@ -173,7 +173,7 @@ const NavBar = ({ startNavbarAnimation }) => {
       {(location.pathname !== "/" || isScrolled) && (
         <div
           id="horizontal-navbar"
-          className="hidden md:flex z-20 justify-end items-center align-middle shadow-xl  w-full bg-gradient-to-t from-card-primary-bottom to-card-primary-top fixed top-0 md:pt-5 md:pb-7"
+          className="hidden md:flex z-20 justify-end items-center align-middle   w-full bg-gradient-to-t from-card-primary-bottom to-card-primary-top fixed top-0 md:pt-5 md:pb-7"
         >
           <ul className="flex justify-between w-full h-full md:px-20 lg:px-40">
             {scrambledLinks.map(({ id, scrambledTitle, url }) => {
