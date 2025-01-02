@@ -54,7 +54,6 @@ const Home = ({ mode }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        // Tailwind's `sm` breakpoint (640px)
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -196,15 +195,18 @@ const Home = ({ mode }) => {
         <div className="flex-col absolute top-24 right-5 md:top-60 md:right-[25%] transform rotate-[-5deg] md:flex gap-y-16 md:gap-y-10">
           <h1
             id="clickable"
-            className="text-2xl mb-4 md:mb-2 md:text-4xl font-bold text-color-primary relative flex flex-initial items-center  font-caveat drop-shadow-md hover:scale-110  rounded full duration-300"
+            className="text-xl mb-4 md:mb-2 md:text-4xl items-end justify-end md:justify-center font-bold text-color-primary relative flex flex-initial md:items-center  font-caveat drop-shadow-md hover:scale-110  rounded full duration-300"
             onClick={() => scrollToSection("cv")}
           >
-            <Download className="text-2xl" /> Download my CV
+            <div className="hidden md:flex">
+              <Download className="text-2xl hidden md:flex" />
+            </div>
+            Download my CV
           </h1>
 
           <h1
             id="clickable"
-            className="text-2xl md:text-4xl text-color-primary relative inline-block font-caveat drop-shadow-md hover:scale-110 duration-300"
+            className="text-xl md:text-4xl text-color-primary relative inline-block font-caveat drop-shadow-md hover:scale-110 duration-300"
             onClick={() => scrollToSection("education")}
           >
             Education & Qualifications

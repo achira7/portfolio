@@ -12,8 +12,8 @@ const DownloadCV = () => {
     "https://docs.google.com/document/d/1eKwEBL9Xr84v6u5D0hchfnOq_chXJ_VXyeUHkQWE4fU/preview";
 
   return (
-    <div className="rounded-xl md:w-[500px] md:h-[200px] w-[85%] h-[30%] flex flex-col items-center pt-2 shadow-2xl border-2 border-card-primary-border   bg-card-primary-top">
-      <div className="flex content-center pt-6  px-7 items-center justify-center flex-col ">
+    <div className="rounded-xl md:w-[500px] md:h-[200px] w-[85%] h-[30%] flex flex-col items-center shadow-2xl border-1 border-card-primary-border   bg-card-primary-top">
+      <div className="flex content-center py-5 mb-1 px-7 items-center justify-center flex-col ">
         <div className="flex ">
           <div className="flex text-color-primary">
 

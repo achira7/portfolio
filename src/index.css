@@ -8,6 +8,13 @@
   cursor: none !important; 
 }
 
+
+b, strong {
+  font-weight: bold !important;
+  display: inline !important;
+  line-height: inherit !important;
+}
+
 :root{
   scroll-behavior: smooth;
   cursor: none; 
@@ -24,6 +31,7 @@ button, a{
 .bg-trans{
   background-color: transparent;
 }
+
 
 .light-mode {
   --background: 236,236,236, 1;
