@@ -62,7 +62,7 @@ const Designs = () => {
           {/* Search Bar */}
           <div className="flex md:px-5 items-center justify-center mb-10 md:mr-10 flex-col md:flex-row">
             <div className="flex flex-row items-center justify-center">
-              <SearchIcon className="text-color-primary md:w-10 md:h-10" />
+              <SearchIcon className="text-color-primary md:w-10 md:h-10 mx-2" />
               <input
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}

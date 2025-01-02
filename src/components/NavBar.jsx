@@ -33,7 +33,7 @@ const NavBar = ({ startNavbarAnimation }) => {
       case "/projects":
         return "Projects";
       case "/designs":
-          return "Designs";
+        return "Designs";
       case "/experience":
         return "Experience";
       case "/about":
@@ -71,63 +71,92 @@ const NavBar = ({ startNavbarAnimation }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
   };
-  
+
+  useEffect(() => {
+    if (isHamburgerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isHamburgerOpen]);
 
   return (
-    <div className="top-0 w-full navBarThing">
+    <div className="top-0 w-full navBarThing ">
       {/* Hamburger Menu for Mobile Devices */}
       <div
-        className={`z-20 md:hidden justify-end bg-card-primary-bottom items-center align-middle w-full ${
+        className={`z-20    md:hidden justify-end bg-card-primary-bottom items-center align-middle w-full ${
           isHamburgerOpen ? "" : "shadow-xl"
         } fixed top-0 `}
       >
         <div className="flex justify-between items-center  duration-300 rounded-xl my-4 mx-5">
           <button
-            className={`text-color-primary text-2xl font-bold transition-transform duration-500 ease-in-out ${
+            className={`text-color-primary text-3xl font-bold transition-transform duration-500 ease-in-out ${
               isHamburgerOpen ? "rotate-90" : "rotate-0"
             }`}
             onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
           >
-            <span className="duration-300">{isHamburgerOpen ? "✕" : "☰"}</span>
+            <span className="duration-300 px-5">
+              {isHamburgerOpen ? "✕" : "☰"}
+            </span>
           </button>
-          <div className="text-color-primary font-inter text-2xl font-bold">
+          {!isHamburgerOpen && (
+            <div className="text-color-secondary font-inter text-2xl font-bold">
             {" "}
             {currentPage}{" "}
           </div>
+          )}
+          
           <DarkMode className="ml-auto" />
         </div>
 
         {/* Hamburger Menu Links */}
         <div
-          className={`transition-all duration-500  ease-in-out z-30 ${
+          className={`transition-all duration-500  ease-in-out z-40 ${
             isHamburgerOpen
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-[-100px]"
           }`}
         >
           {isHamburgerOpen && (
-            <div className=" flex flex-col w-full mt-4 bg-card-primary-bottom rounded-2xl">
-              <div className="flex flex-col space-y-24 p-10 pb-10">
-                {scrambledLinks.map(({ id, scrambledTitle, url }) => (
-                  <button
-                    key={id}
-                    className="text-color-primary font-inter font-bold text-2xl"
-                    onClick={() => {
-                      navigate(url);
-                      setIsHamburgerOpen(false);
-                    }}
-                  >
-                    {scrambledTitle}
-                  </button>
-                ))}
+            <div className="flex flex-col w-full mt-4 bg-card-primary-bottom rounded-2xl">
+              <div className="flex flex-col space-y-24 p-5 pb-12">
+                {scrambledLinks.map(({ id, scrambledTitle, url }) => {
+                  const isCurrentPage = location.pathname === url;
+
+                  return (
+                    <button
+                      key={id}
+                      className={`text-color-primary font-inter font-bold text-2xl ${
+                        isCurrentPage
+                          ? "opacity-50 cursor-default"
+                          : "opacity-100"
+                      }`}
+                      onClick={() => {
+                        if (!isCurrentPage) {
+                          navigate(url);
+                          setIsHamburgerOpen(false);
+                        }
+                      }}
+                      disabled={isCurrentPage}
+                    >
+                      {scrambledTitle}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
         </div>
       </div>
+
+
 
       {/* Vertical Navbar for Homepage */}
       {location.pathname === "/" && !isScrolled && (
@@ -141,11 +170,7 @@ const NavBar = ({ startNavbarAnimation }) => {
 
               return (
                 <li
-                id={`${
-                  isCurrentPage
-                    ? ""
-                    : "clickable"
-                }`}
+                  id={`${isCurrentPage ? "" : "clickable"}`}
                   key={id}
                   onClick={() => navigate(url)}
                   className={`text-color-primary font-inter font-bold mx-5 my-2 z-10 md:my-7 hover:text-cyan-500 hover:tracking-widest transition-all duration-300 ${
@@ -173,7 +198,7 @@ const NavBar = ({ startNavbarAnimation }) => {
       {(location.pathname !== "/" || isScrolled) && (
         <div
           id="horizontal-navbar"
-          className="hidden md:flex z-20 justify-end items-center align-middle   w-full bg-gradient-to-t from-card-primary-bottom to-card-primary-top fixed top-0 md:pt-5 md:pb-7"
+          className="hidden md:flex z-20 justify-end items-center align-middle w-full bg-gradient-to-t from-card-primary-bottom to-card-primary-top fixed top-0 md:pt-5 md:pb-7"
         >
           <ul className="flex justify-between w-full h-full md:px-20 lg:px-40">
             {scrambledLinks.map(({ id, scrambledTitle, url }) => {
@@ -181,11 +206,7 @@ const NavBar = ({ startNavbarAnimation }) => {
 
               return (
                 <li
-                id={`${
-                  isCurrentPage
-                    ? ""
-                    : "clickable"
-                }`}
+                  id={`${isCurrentPage ? "" : "clickable"}`}
                   key={id}
                   onClick={() => navigate(url)}
                   className={`text-color-primary font-inter font-bold px-5 mx-10 transition-all duration-300 text-2xl md:text-3xl ${
@@ -213,31 +234,34 @@ const NavBar = ({ startNavbarAnimation }) => {
       )}
 
       {/* Bottom Chat Icon and Scroll to Top Button */}
-      <div className="flex justify-between items-center fixed z-40 bottom-5 left-0 right-0 px-5 md:bottom-10 md:px-10">
-        <div className="flex items-center space-x-4 md:pl-5">
+      {!isHamburgerOpen && (
+        <div className="flex justify-between items-center fixed z-40 bottom-5 left-0 right-0 px-5 md:bottom-10 md:px-10">
+          <div className="flex items-center space-x-4 md:pl-5">
+            <button
+              id="clickable"
+              onClick={() => setIsChatOpen(true)}
+              className="bg-color-primary text-white p-3 rounded-full shadow-[0_0_5px_5px_rgba(var(--normal-shadow))] border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300"
+            >
+              <ChatIcon className="cursor-none w-5 md:w-8" />
+            </button>
+
+            <div className="hidden md:flex ">
+              <DarkMode
+                id="clickable"
+                className="shadow-xl border-2 border-color-primary hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300"
+              />
+            </div>
+          </div>
 
           <button
-          id="clickable"
-            onClick={() => setIsChatOpen(true)}
-            className="bg-color-primary text-white p-3 rounded-full shadow-[0_0_5px_5px_rgba(var(--normal-shadow))] border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300"
+            id="clickable"
+            onClick={scrollToTop}
+            className="bg-color-primary fill-white p-3 rounded-full md:mr-5 border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300 shadow-[0_0_5px_5px_rgba(var(--normal-shadow))]"
           >
-            <ChatIcon className="cursor-none w-5 md:w-8" />
+            <UpArrow id="clickable" className="cursor-none w-5 md:w-8" />
           </button>
-
-          
-          <div className="hidden md:flex ">
-            <DarkMode id="clickable" className="shadow-xl border-2 border-color-primary hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300" />
-          </div>
         </div>
-
-        <button
-        id="clickable"
-          onClick={scrollToTop}
-          className="bg-color-primary fill-white p-3 rounded-full md:mr-5 border-2 border-white hover:scale-110 hover:shadow-color-primary-shadow hover:shadow-xl transition-all duration-300 shadow-[0_0_5px_5px_rgba(var(--normal-shadow))]"
-        >
-          <UpArrow id="clickable" className="cursor-none w-5 md:w-8" />
-        </button>
-      </div>
+      )}
 
       {/* ChatBot Modal */}
       {isChatOpen && (
